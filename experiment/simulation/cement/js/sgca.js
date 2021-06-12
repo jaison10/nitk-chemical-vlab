@@ -1105,13 +1105,13 @@ function setEvalSets(){
 	var table = document.getElementById("configResultTable");
 
 	var rowCount = table.rows.length-1;
-	console.log(rowCount);
+	console.log("Pre count:  ",rowCount);
 	if(rowCount>0){
 		for(var x = 1; x <= rowCount; x++){
 			table.deleteRow(1);
 		}
 	}
-	
+
 	for(var i=1; i<= evalSets; i++ ){
 		var row = table.insertRow(i);
 		var cell1 = row.insertCell(0);
@@ -1123,5 +1123,19 @@ function setEvalSets(){
 		cell3.innerHTML = `<input name="length" id="inputSet${i}2" style="width:80px">`;
 		cell4.innerHTML = `<input name="length" id="inputSet${i}3" style="width:80px">`;
 	}
+
 }
 
+function evaluateConfig(){
+	var table = document.getElementById("configResultTable");
+	var rowCountPost = table.rows.length-1;
+	// if(evalSets == 1){
+	// 	rowCountPost = 1;
+	// }
+	console.log("Total rows: ",rowCountPost);
+	for(var z = 1; z<= rowCountPost; z++){
+		for(var y=0; y<=3; y++){
+			console.log(document.getElementById("inputSet"+z+y).value);
+		}
+	}
+}
