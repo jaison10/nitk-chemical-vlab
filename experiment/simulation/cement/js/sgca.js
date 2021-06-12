@@ -116,6 +116,7 @@ function magic()
 		}
 		else{
 			console.log("2 has chosen");
+
 		}
 	}
 
@@ -245,6 +246,13 @@ function fluidMoveAndPinMove(){
 	var h1Val = 35.00
 	var h2Val = 35.00
 	var valOfRato = 0.00;
+	
+	if( processFluid == "Water" &&  manoFluid == "Carbol tetrachloride"){
+		
+	}
+	else if( processFluid == "Kerosene" &&  manoFluid == "Mercury"){
+		
+	}
 	valueChange = setInterval(() => {
 		h1Val = h1Val + 0.25;
 		h1New = h1Val.toFixed(2);
