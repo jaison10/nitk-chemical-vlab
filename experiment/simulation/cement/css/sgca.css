@@ -253,40 +253,123 @@ background:#000
 
 
 /*ADDED  */
-.moveLeftFluid {
-    animation: moveLFluid 4s;
+
+/* Kerosene and Mercury */
+
+.KMLeftFluid1 {
+    animation: KMLeftFluid1 1s;
 }
 
-@keyframes moveLFluid {
+@keyframes KMLeftFluid1 {
     0% {
         top: 222px; left: 332px; width: 14px; height: 37px;
+    }
+    100% {
+        top: 208px; left: 332px; width: 14px; height: 50px;
+    }
+}
+
+.KMLeftFluid2 {
+    animation: KMLeftFluid2 2s;
+}
+
+@keyframes KMLeftFluid2 {
+    0% {
+        top: 208px; left: 332px; width: 14px; height: 50px;
+    }
+    100% {
+        top: 199px; left: 332px; width: 14px; height: 60px;
+    }
+}
+
+.KMLeftFluid3 {
+    animation: KMLeftFluid3 2s;
+}
+
+@keyframes KMLeftFluid3 {
+    0% {
+        top: 199px; left: 332px; width: 14px; height: 60px;
     }
     100% {
         top: 190px; left: 332px; width: 14px; height: 69px;
     }
 }
 
-.moveRightFluid {
-    animation: moveRFluid 4s;
+.KMRightFluid1 {
+    animation: KMRightFluid1 1s;
 }
 
-@keyframes moveRFluid {
+@keyframes KMRightFluid1 {
     0% {
         top: 222px; left: 380px; width: 14px; height: 37px;
     }
     
     100% {
-        top: 259px; left: 380px; width: 14px; height: 0px;
+        top: 230px; left: 380px; width: 14px; height: 28px;
     }
 }
 
-.movePin {
-    animation: movePinn 4s;
+.KMRightFluid2 {
+    animation: KMRightFluid2 2s;
 }
 
-@keyframes movePinn {
+@keyframes KMRightFluid2 {
+    0% {
+        top: 230px; left: 380px; width: 14px; height: 28px;
+    }
+    
+    100% {
+        top: 243px; left: 380px; width: 14px; height: 15px;
+    }
+}
+
+.KMRightFluid3 {
+    animation: KMRightFluid3 2s;
+}
+
+@keyframes KMRightFluid3 {
+    0% {
+        top: 243px; left: 380px; width: 14px; height: 15px;
+    }
+    
+    100% {
+        height:0px;
+    }
+}
+
+.movePin1 {
+    animation: movePin1 1s;
+}
+
+@keyframes movePin1 {
     0% {
         top: 259px;
+    }
+    100% {
+        top: 225px;
+    }
+}
+
+.movePin2 {
+    animation: movePin2 2s;
+}
+
+@keyframes movePin2 {
+    0% {
+        top: 225px;
+    }
+    100% {
+        top: 200px;
+    }
+}
+
+.movePin3 {
+    animation: movePin3 2s;
+}
+
+@keyframes movePin3 {
+    0% {
+        top: 200px;
     }
     100% {
         top: 189px;

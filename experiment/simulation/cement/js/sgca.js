@@ -135,6 +135,20 @@ function magic()
 	else if (simsubscreennum==4)
 	{
 		if(chosenActivity == 1){
+			if(manoFluid == "Carbol tetrachloride"){
+				document.getElementById("bottomU").style.visibility = "hidden";
+				document.getElementById("leftFluid").style.visibility = "hidden";
+				document.getElementById("rightFluid").style.visibility = "hidden";
+				document.getElementById("bottomPinkU").style.visibility = "visible";
+				document.getElementById("leftPinkFluid").style.visibility = "visible";
+				document.getElementById("rightPinkFluid").style.visibility = "visible";
+			}
+			numberOfClicks = 0;
+			numberOfClicks = 0;
+			h1Val = 35.00
+			h2Val = 35.00
+			valOfRato = 0.00;
+
 			document.getElementById("obserButton").onclick = "";
 			document.getElementById("goBackButton").onclick = "";
 			document.getElementById("experimentSetup").style.visibility = "hidden";
@@ -235,93 +249,579 @@ function setManoFluid(){
 }
 
 var x = 0;
+var numberOfClicks = 0;
+var h1Val = 35.00
+var h2Val = 35.00
+var valOfRato = 0.00;
+
 function fluidMoveAndPinMove(){
 	document.getElementById("gatewayRotate").style.cursor = "auto";
 	console.log("clicked");
-	document.getElementById("leftFluid").classList.add("moveLeftFluid");
-	document.getElementById("rightFluid").classList.add("moveRightFluid");
-	document.getElementById("rotatePin").classList.add("movePin");
-	document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 
-	var h1Val = 35.00
-	var h2Val = 35.00
-	var valOfRato = 0.00;
-	
-	if( processFluid == "Water" &&  manoFluid == "Carbol tetrachloride"){
+	if( processFluid == "Water" &&  manoFluid == "Mercury"){
+		numberOfClicks += 1;
 		
+		if(numberOfClicks == 1){
+			document.getElementById("leftFluid").classList.add("KMLeftFluid1");
+			document.getElementById("rightFluid").classList.add("KMRightFluid1");
+			document.getElementById("rotatePin").classList.add("movePin1");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.27;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 45.50){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);		
+					document.getElementById("gatewayRotate").style.cursor = "pointer";
+				}
+				document.getElementById("addtoTableButton").style.visibility = "visible";
+				document.getElementById("addtoTableButton").onclick = function(){
+					var table = document.getElementById("observeTable");
+					var row = table.insertRow(1);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					cell1.innerHTML = processFluid;
+					cell2.innerHTML = manoFluid;
+					cell3.innerHTML = h1New;
+					cell4.innerHTML = h2New;
+					cell5.innerHTML = valOfRatoNew;
+				}
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
+		}
+
+		if(numberOfClicks == 2){
+			document.getElementById("leftFluid").classList.add("KMLeftFluid2");
+			document.getElementById("rightFluid").classList.add("KMRightFluid2");
+			document.getElementById("rotatePin").classList.add("movePin2");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.27;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 58.00){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);	
+					document.getElementById("gatewayRotate").style.cursor = "pointer";
+				}
+
+				document.getElementById("addtoTableButton").style.visibility = "visible";
+				document.getElementById("addtoTableButton").onclick = function(){
+					var table = document.getElementById("observeTable");
+					var row = table.insertRow(1);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					cell1.innerHTML = processFluid;
+					cell2.innerHTML = manoFluid;
+					cell3.innerHTML = h1New;
+					cell4.innerHTML = h2New;
+					cell5.innerHTML = valOfRatoNew;
+				}
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
+		}
+		if(numberOfClicks == 3){
+			document.getElementById("leftFluid").classList.add("KMLeftFluid3");
+			document.getElementById("rightFluid").classList.add("KMRightFluid3");
+			document.getElementById("rotatePin").classList.add("movePin3");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			document.getElementById("gatewayRotate").style.cursor = "none";
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.27;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 70.00){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);	
+					document.getElementById("gatewayRotate").onclick = "";	
+					document.getElementById("addtoTableButton").style.visibility = "hidden";	
+				}
+				
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
+		}
 	}
 	else if( processFluid == "Kerosene" &&  manoFluid == "Mercury"){
+		numberOfClicks += 1;
 		
+		if(numberOfClicks == 1){
+			document.getElementById("leftFluid").classList.add("KMLeftFluid1");
+			document.getElementById("rightFluid").classList.add("KMRightFluid1");
+			document.getElementById("rotatePin").classList.add("movePin1");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.26;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 46.50){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);		
+					document.getElementById("gatewayRotate").style.cursor = "pointer";
+				}
+				document.getElementById("addtoTableButton").style.visibility = "visible";
+				document.getElementById("addtoTableButton").onclick = function(){
+					var table = document.getElementById("observeTable");
+					var row = table.insertRow(1);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					cell1.innerHTML = processFluid;
+					cell2.innerHTML = manoFluid;
+					cell3.innerHTML = h1New;
+					cell4.innerHTML = h2New;
+					cell5.innerHTML = valOfRatoNew;
+				}
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
+		}
+
+		if(numberOfClicks == 2){
+			document.getElementById("leftFluid").classList.add("KMLeftFluid2");
+			document.getElementById("rightFluid").classList.add("KMRightFluid2");
+			document.getElementById("rotatePin").classList.add("movePin2");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.26;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 58.00){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);	
+					document.getElementById("gatewayRotate").style.cursor = "pointer";
+				}
+
+				document.getElementById("addtoTableButton").style.visibility = "visible";
+				document.getElementById("addtoTableButton").onclick = function(){
+					var table = document.getElementById("observeTable");
+					var row = table.insertRow(1);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					cell1.innerHTML = processFluid;
+					cell2.innerHTML = manoFluid;
+					cell3.innerHTML = h1New;
+					cell4.innerHTML = h2New;
+					cell5.innerHTML = valOfRatoNew;
+				}
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
+		}
+		if(numberOfClicks == 3){
+			document.getElementById("leftFluid").classList.add("KMLeftFluid3");
+			document.getElementById("rightFluid").classList.add("KMRightFluid3");
+			document.getElementById("rotatePin").classList.add("movePin3");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			document.getElementById("gatewayRotate").style.cursor = "none";
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.26;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 70.00){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);	
+					document.getElementById("gatewayRotate").onclick = "";	
+					document.getElementById("addtoTableButton").style.visibility = "hidden";	
+				}
+				
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
+		}
 	}
-	valueChange = setInterval(() => {
-		h1Val = h1Val + 0.25;
-		h1New = h1Val.toFixed(2);
-
-		h2Val = h2Val - 0.25;
-		h2New = h2Val.toFixed(2);
-
-		valOfRato = valOfRato + 0.26;
-		valOfRatoNew = valOfRato.toFixed(2);
-
-		document.getElementById("leftCm").innerText = h1New;
-		document.getElementById("rightCm").innerText = h2New;
-		document.getElementById("ratoReadings").innerText = valOfRatoNew;
-
-		if(h1Val == 70){
-			console.log("Stopped at ", h1Val, "  ", h2Val, "  ", valOfRatoNew);
-			clearInterval(valueChange);
-			document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+	else if( processFluid == "Kerosene" &&  manoFluid == "Carbol tetrachloride"){
+		numberOfClicks += 1;
+		
+		if(numberOfClicks == 1){
+			document.getElementById("leftPinkFluid").classList.add("KMLeftFluid1");
+			document.getElementById("rightPinkFluid").classList.add("KMRightFluid1");
+			document.getElementById("rotatePin").classList.add("movePin1");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.053;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 46.50){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);		
+					document.getElementById("gatewayRotate").style.cursor = "pointer";
+				}
+				document.getElementById("addtoTableButton").style.visibility = "visible";
+				document.getElementById("addtoTableButton").onclick = function(){
+					var table = document.getElementById("observeTable");
+					var row = table.insertRow(1);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					cell1.innerHTML = processFluid;
+					cell2.innerHTML = manoFluid;
+					cell3.innerHTML = h1New;
+					cell4.innerHTML = h2New;
+					cell5.innerHTML = valOfRatoNew;
+				}
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
 		}
-	}, 28.57);
 
-	setTimeout(() => {
-		document.getElementById("leftFluid").style.visibility = "hidden";
-		document.getElementById("rightFluid").style.visibility = "hidden";
-		document.getElementById("leftFluidFinal").style.visibility = "visible";
-		document.getElementById("rightFluidFinal").style.visibility = "visible";
-		document.getElementById("rotatePin").style.visibility = "hidden";
-		document.getElementById("rotatePinFinal").style.visibility = "visible";
+		if(numberOfClicks == 2){
+			document.getElementById("leftPinkFluid").classList.add("KMLeftFluid2");
+			document.getElementById("rightPinkFluid").classList.add("KMRightFluid2");
+			document.getElementById("rotatePin").classList.add("movePin2");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.053;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 58.00){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);	
+					document.getElementById("gatewayRotate").style.cursor = "pointer";
+				}
 
-		var table = document.getElementById("observeTable");
-		var row = table.insertRow((x+1));
-		var cell1 = row.insertCell(0);
-		var cell2 = row.insertCell(1);
-		var cell3 = row.insertCell(2);
-		var cell4 = row.insertCell(3);
-		var cell5 = row.insertCell(4);
-		cell1.innerHTML = processFluid;
-		cell2.innerHTML = manoFluid;
-		cell3.innerHTML = h1New;
-		cell4.innerHTML = h2New;
-		cell5.innerHTML = valOfRatoNew;
-
-		// var tblRow = `<tr>
-		// 				<td>
-		// 					${processFluid}
-		// 				</td>
-		// 				<td>
-		// 					${manoFluid}
-		// 				</td>
-		// 				<td>
-		// 					${h1New}
-		// 				</td>
-		// 				<td>
-		// 					${h2New}
-		// 				</td>
-		// 				<td>
-		// 					${valOfRatoNew}
-		// 				</td>
-		// 			</tr>`;
-		// table.append(tblRow);
-
-		document.getElementById("obserButton").onclick = function(){
-			gotoObservation();
+				document.getElementById("addtoTableButton").style.visibility = "visible";
+				document.getElementById("addtoTableButton").onclick = function(){
+					var table = document.getElementById("observeTable");
+					var row = table.insertRow(1);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					cell1.innerHTML = processFluid;
+					cell2.innerHTML = manoFluid;
+					cell3.innerHTML = h1New;
+					cell4.innerHTML = h2New;
+					cell5.innerHTML = valOfRatoNew;
+				}
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
 		}
-		document.getElementById("goBackButton").onclick = function(){
-			goBacktoStep2();
+		if(numberOfClicks == 3){
+			document.getElementById("leftPinkFluid").classList.add("KMLeftFluid3");
+			document.getElementById("rightPinkFluid").classList.add("KMRightFluid3");
+			document.getElementById("rotatePin").classList.add("movePin3");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			document.getElementById("gatewayRotate").style.cursor = "none";
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.053;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 70.00){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);	
+					document.getElementById("gatewayRotate").onclick = "";	
+					document.getElementById("addtoTableButton").style.visibility = "hidden";	
+				}
+				
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
 		}
-	}, 4000);
+	}
+	else if( processFluid == "Water" &&  manoFluid == "Carbol tetrachloride"){
+		numberOfClicks += 1;
+		
+		if(numberOfClicks == 1){
+			document.getElementById("leftPinkFluid").classList.add("KMLeftFluid1");
+			document.getElementById("rightPinkFluid").classList.add("KMRightFluid1");
+			document.getElementById("rotatePin").classList.add("movePin1");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.048;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 46.50){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);		
+					document.getElementById("gatewayRotate").style.cursor = "pointer";
+				}
+				document.getElementById("addtoTableButton").style.visibility = "visible";
+				document.getElementById("addtoTableButton").onclick = function(){
+					var table = document.getElementById("observeTable");
+					var row = table.insertRow(1);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					cell1.innerHTML = processFluid;
+					cell2.innerHTML = manoFluid;
+					cell3.innerHTML = h1New;
+					cell4.innerHTML = h2New;
+					cell5.innerHTML = valOfRatoNew;
+				}
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
+		}
 
+		if(numberOfClicks == 2){
+			document.getElementById("leftPinkFluid").classList.add("KMLeftFluid2");
+			document.getElementById("rightPinkFluid").classList.add("KMRightFluid2");
+			document.getElementById("rotatePin").classList.add("movePin2");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.048;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 58.00){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);	
+					document.getElementById("gatewayRotate").style.cursor = "pointer";
+				}
+
+				document.getElementById("addtoTableButton").style.visibility = "visible";
+				document.getElementById("addtoTableButton").onclick = function(){
+					var table = document.getElementById("observeTable");
+					var row = table.insertRow(1);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					cell1.innerHTML = processFluid;
+					cell2.innerHTML = manoFluid;
+					cell3.innerHTML = h1New;
+					cell4.innerHTML = h2New;
+					cell5.innerHTML = valOfRatoNew;
+				}
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
+		}
+		if(numberOfClicks == 3){
+			document.getElementById("leftPinkFluid").classList.add("KMLeftFluid3");
+			document.getElementById("rightPinkFluid").classList.add("KMRightFluid3");
+			document.getElementById("rotatePin").classList.add("movePin3");
+			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			document.getElementById("gatewayRotate").style.cursor = "none";
+			
+			valueChange = setInterval(() => {
+				h1Val = h1Val + 0.25;
+				h1New = h1Val.toFixed(2);
+		
+				h2Val = h2Val - 0.25;
+				h2New = h2Val.toFixed(2);
+		
+				valOfRato = valOfRato + 0.048;
+				valOfRatoNew = valOfRato.toFixed(2);
+		
+				document.getElementById("leftCm").innerText = h1New;
+				document.getElementById("rightCm").innerText = h2New;
+				document.getElementById("ratoReadings").innerText = valOfRatoNew;
+				console.log(h1Val);
+				if(h1Val == 70.00){
+					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
+					clearInterval(valueChange);	
+					document.getElementById("gatewayRotate").onclick = "";	
+					document.getElementById("addtoTableButton").style.visibility = "hidden";	
+				}
+				
+					document.getElementById("obserButton").onclick = function(){
+						gotoObservation();
+					}
+					document.getElementById("goBackButton").onclick = function(){
+						goBacktoStep2();
+					}
+				
+			}, 28.57);
+		}
+	}
 }
 
 function gotoObservation(){

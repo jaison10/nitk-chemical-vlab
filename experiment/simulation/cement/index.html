@@ -176,9 +176,15 @@ var n;
     <img style="position: absolute; top: 181px; left: 389px; width: 26px; height: 8px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/smallPiece.png">
     <img style="position: absolute; top: 210px; left: 292px; width: 95px; height: 14px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/blacklong.png">
     <img style="position: absolute; top: 210px; left: 340px; width: 95px; height: 14px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/blacklong.png">
-    <img style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/botomU.png">
+    <img id="bottomU" style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/botomU.png">
     <img id="leftFluid" style="position: absolute; top: 222px; left: 332px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
     <img id="rightFluid" style="position: absolute; top: 222px; left: 380px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+
+    <!-- Fluid initial for CCL4 -->
+    <img id="bottomPinkU" style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkbottomU.png">
+    <img id="leftPinkFluid" style="position: absolute; top: 222px; left: 332px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
+    <img id="rightPinkFluid" style="position: absolute; top: 222px; left: 381px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
+
 
     <!-- FLUID FINAL -->
     <img id="leftFluidFinal" style="visibility: hidden; position: absolute; top: 190px; left: 332px; width: 14px; height: 69px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
@@ -210,6 +216,8 @@ var n;
     <p id="rightCm" style="position: absolute; top: 215px; left: 405px; width: 124px; font-size:10px;">35.00</p>
     <p style="position: absolute; top: 215px; left: 433px; width: 124px; font-size:10px;">cm</p>
   </div>
+
+  <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 425px; left: 485px; width: 194px; font-size:13px;">Add to Observation table</button>
 
   <button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
   <button id="obserButton" style="position: absolute; top: 465px; left: 585px; width: 94px; font-size:13px;">Observations</button>
