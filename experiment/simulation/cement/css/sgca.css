@@ -257,7 +257,7 @@ background:#000
 /* Kerosene and Mercury */
 
 .KMLeftFluid1 {
-    animation: KMLeftFluid1 1s;
+    animation: KMLeftFluid1 2s;
 }
 
 @keyframes KMLeftFluid1 {
@@ -296,16 +296,16 @@ background:#000
 }
 
 .KMRightFluid1 {
-    animation: KMRightFluid1 1s;
+    animation: KMRightFluid1 2s;
 }
 
 @keyframes KMRightFluid1 {
     0% {
-        top: 222px; left: 380px; width: 14px; height: 37px;
+        top: 222px; left: 381px; width: 14px; height: 37px;
     }
     
     100% {
-        top: 230px; left: 380px; width: 14px; height: 28px;
+        top: 230px; left: 381px; width: 14px; height: 28px;
     }
 }
 
@@ -315,11 +315,11 @@ background:#000
 
 @keyframes KMRightFluid2 {
     0% {
-        top: 230px; left: 380px; width: 14px; height: 28px;
+        top: 230px; left: 381px; width: 14px; height: 28px;
     }
     
     100% {
-        top: 243px; left: 380px; width: 14px; height: 15px;
+        top: 243px; left: 381px; width: 14px; height: 15px;
     }
 }
 
@@ -329,16 +329,16 @@ background:#000
 
 @keyframes KMRightFluid3 {
     0% {
-        top: 243px; left: 380px; width: 14px; height: 15px;
+        top: 243px; left: 381px; width: 14px; height: 15px;
     }
     
     100% {
-        height:0px;
+        height:0px; top:258px;
     }
 }
 
 .movePin1 {
-    animation: movePin1 1s;
+    animation: movePin1 2s;
 }
 
 @keyframes movePin1 {
@@ -346,7 +346,7 @@ background:#000
         top: 259px;
     }
     100% {
-        top: 225px;
+        top: 236.6px;
     }
 }
 
@@ -356,10 +356,10 @@ background:#000
 
 @keyframes movePin2 {
     0% {
-        top: 225px;
+        top: 236.6px;
     }
     100% {
-        top: 200px;
+        top: 213.3px;
     }
 }
 
@@ -369,7 +369,7 @@ background:#000
 
 @keyframes movePin3 {
     0% {
-        top: 200px;
+        top: 213.3px;
     }
     100% {
         top: 189px;
