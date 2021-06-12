@@ -253,45 +253,55 @@ background:#000
 
 
 /*ADDED  */
-.transitionAirfoil{
-    -webkit-transition:1s;
+.moveLeftFluid {
+    animation: moveLFluid 4s;
 }
-.air-items button{
-    border-radius: 3px;
 
-    background-color: rgb(18, 19, 18); /* Green background */
-      border: 1px solid rgb(25, 26, 25); /* Green border */
-      color: white; /* White text */
-      padding: 10px 24px; /* Some padding */
-      cursor: pointer; /* Pointer/hand icon */
-      margin-top: 2px;
-      /* width: 50%; Set a width if needed */
-      /* display: block;  */
+@keyframes moveLFluid {
+    0% {
+        top: 222px; left: 332px; width: 14px; height: 37px;
+    }
+    100% {
+        top: 190px; left: 332px; width: 14px; height: 69px;
+    }
 }
-.air-items button:hover {
-    background-color: #3d4f3d;
+
+.moveRightFluid {
+    animation: moveRFluid 4s;
+}
+
+@keyframes moveRFluid {
+    0% {
+        top: 222px; left: 380px; width: 14px; height: 37px;
+    }
+    
+    100% {
+        top: 259px; left: 380px; width: 14px; height: 0px;
+    }
+}
+
+.movePin {
+    animation: movePinn 4s;
+}
+
+@keyframes movePinn {
+    0% {
+        top: 259px;
+    }
+    100% {
+        top: 189px;
+    }
+}
+
+.rotateGatewall {
+    animation: rotateGatewallll 3s infinite linear;
+}
+  
+  @keyframes rotateGatewallll {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-359deg);
+    }
   }
-
-.verificationButton{
-    border-radius: 3px;
-
-    background-color: rgb(18, 19, 18); /* Green background */
-      border: 1px solid rgb(25, 26, 25); /* Green border */
-      color: white; /* White text */
-      padding: 6px 16px; /* Some padding */
-      cursor: pointer; /* Pointer/hand icon */
-      margin-top: 2px;
-}
-.lift-verify{
-    padding: 5px 15px;
-}
-
-.setColorNoInput{
-    color: rgb(13, 84, 160);;
-}
-.setColorCorrectInput{
-    color: rgb(8, 145, 8);
-}
-.setColorIncorrectInput{
-    color: rgb(194, 12, 12);
-}

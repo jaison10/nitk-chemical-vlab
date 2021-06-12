@@ -130,14 +130,14 @@ var n;
     </p>
     <p style="position: absolute; top: 150px;">Process fluid:  
       <select name="processFluid" id="processFluid" onchange="setProcessFluid();">
-        <option value="water">Water</option>
-        <option value="kerosene">Kerosene</option>
+        <option value="Water">Water</option>
+        <option value="Kerosene">Kerosene</option>
       </select>
     </p>
     <p style="position: absolute; top: 200px;">Manometric fluid:  
       <select name="manoFluid" id="manoFluid" onchange="setManoFluid();">
-        <option value="carbontetra">Carbol tetrachloride</option>
-        <option value="mercury">Mercury</option>
+        <option value="Carbol tetrachloride">Carbol tetrachloride</option>
+        <option value="Mercury">Mercury</option>
       </select>
     </p>
   </div>
@@ -153,21 +153,21 @@ var n;
 <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
 <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Experiment.</p>
   <!-- EXPERIMENT PART -->
-  <div>
+  <div id="experimentID" style="visibility: hidden;">
     <img style="position: absolute; top: 370px; left: 240px; width: 130px; height: 80px;" src="./Images/Flow through pipes_images/shapes/motor.png">
     <img style="position: absolute; top: 283px; left: 87px; width: 290px; height: 214px;" src="./Images/Flow through pipes_images/shapes/bricksPipe.png">
-    <img style="position: absolute; top: 293px; left: 240px; width: 40px; height: 40px;" src="./Images/Flow through pipes_images/shapes/gatewall.png">
+    <img id="gatewayRotate" style="position: absolute; top: 293px; left: 240px; width: 40px; height: 40px;" src="./Images/Flow through pipes_images/shapes/gatewall.png">
     <img style="position: absolute; top: 330px; left: 194px; width: 40px; height: 40px;" src="./Images/Flow through pipes_images/shapes/gatewall.png">
-    <img style="position: absolute; top: 407px; left: 317px; width: 18px; height: 18px;" src="./Images/Flow through pipes_images/shapes/red.png">
-    <img style="visibility: hidden; position: absolute; top: 407px; left: 317px; width: 18px; height: 18px;" src="./Images/Flow through pipes_images/shapes/green.png">
-    <img style="position: absolute; top: 164px; left: 235px; width: 53px; height: 128px;" src="./Images/Flow through pipes_images/shapes/top.png">
+    <img id="redColor" style="visibility: hidden; position: absolute; top: 407px; left: 317px; width: 18px; height: 18px;" src="./Images/Flow through pipes_images/shapes/red.png">
+    <img id="greenColor" style="position: absolute; top: 407px; left: 317px; width: 18px; height: 18px;" src="./Images/Flow through pipes_images/shapes/green.png">
+    <img style="position: absolute; top: 164px; left: 235px; width: 53px; height: 128px; z-index: 1;" src="./Images/Flow through pipes_images/shapes/top.png">
     <img style="position: absolute; top: 130px; left: 244px; width: 49px; height: 38px; z-index: 1;" src="./Images/Flow through pipes_images/leftOne.png">
     <img style="position: absolute; top: 133px; left: 285px; width: 343px; height: 11px; z-index: 1;" src="./Images/Flow through pipes_images/straightPipe.png">
     <img style="position: absolute; top: 105px; left: 611px; width: 40px; height: 50px; z-index: 1;" src="./Images/Flow through pipes_images/pipside.png">
     <img style="position: absolute; top: 65px; left: 614px; width: 36px; height: 41px;" src="./Images/Flow through pipes_images/topright.png  ">
-    <img style="position: absolute; top: 69px; left: 134px; width: 480px; height: 12px;" src="./Images/Flow through pipes_images/topPipeLong.png">
-    <img style="position: absolute; top: 66px; left: 88px; width: 46px; height: 35px;" src="./Images/Flow through pipes_images/topleft.png">
-    <img style="position: absolute; top: 200px; left: -8px; width: 210px; height: 12px; transform: rotate(90deg);" src="./Images/Flow through pipes_images/topPipeLong.png">
+    <img style="position: absolute; top: 69px; left: 154px; width: 460px; height: 12px;" src="./Images/Flow through pipes_images/topPipeLong.png">
+    <img style="position: absolute; top: 66px; left: 108px; width: 46px; height: 35px;" src="./Images/Flow through pipes_images/topleft.png">
+    <img style="position: absolute; top: 200px; left: 12px; width: 210px; height: 12px; transform: rotate(90deg);" src="./Images/Flow through pipes_images/topPipeLong.png">
     <img style="position: absolute; top: 89px; left: 145px; width: 26px; height: 8px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/smallPiece.png">
     <img style="position: absolute; top: 89px; left: 560px; width: 26px; height: 8px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/smallPiece.png">
     <img style="position: absolute; top: 106px; left: 155px; width: 421px; height: 82px; z-index: 0;" src="./Images/Flow through pipes_images/wire.png">
@@ -177,22 +177,54 @@ var n;
     <img style="position: absolute; top: 210px; left: 292px; width: 95px; height: 14px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/blacklong.png">
     <img style="position: absolute; top: 210px; left: 340px; width: 95px; height: 14px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/blacklong.png">
     <img style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/botomU.png">
-    <img style="position: absolute; top: 225px; left: 332px; width: 14px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
-    <img style="position: absolute; top: 225px; left: 381px; width: 14px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+    <img id="leftFluid" style="position: absolute; top: 222px; left: 332px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+    <img id="rightFluid" style="position: absolute; top: 222px; left: 380px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+
+    <!-- FLUID FINAL -->
+    <img id="leftFluidFinal" style="visibility: hidden; position: absolute; top: 190px; left: 332px; width: 14px; height: 69px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+    <img id="rightFluidFinal" style="visibility: hidden; position: absolute; top: 251px; left: 380px; width: 14px; height: 0px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+
+    <img style="position: absolute; top: 407.7px; left: 235px; width: 6px; height: 10.2px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+    <img style="position: absolute; top: 436px; left: 201.5px; width: 7px; height: 11.5px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+    <img style="position: absolute; top: 375.5px; left: 162.6px; width: 6px; height: 11.8px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+
+    <!-- Pin initial-->
+    <img id="rotatePin" style="position: absolute; top: 259px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through pipes_images/pin.png">
+    <!-- Pin final-->
+    <img id="rotatePinFinal" style="visibility: hidden; position: absolute; top: 189px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through pipes_images/pin.png">
+
+
     <img id="waterSteady" style="visibility: hidden; position: absolute; top: 449px; left: 102px; width: 125px; height: 38px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/waterSteady.png">
     <img id="waterFlow" style="position: absolute; top: 449px; left: 102px; width: 125px; height: 38px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/waterFlow.svg">
 
 
-    <p style="position: absolute; top: 195px; left: 121px; width: 124px;">ROTAMETER READING:</p>
-    <p id="readings" style="position: absolute; top: 235px; left: 121px; width: 124px;">0.00</p> 
-    <p style="position: absolute; top: 235px; left: 155px; width: 124px;">LPM</p>
+    <p style="position: absolute; top: 195px; left: 131px; width: 124px;">ROTAMETER READING:</p>
+    <p id="ratoReadings" style="position: absolute; top: 235px; left: 131px; width: 124px;">00.00</p> 
+    <p style="position: absolute; top: 235px; left: 173px; width: 124px;">LPM</p>
 
-    <p style="position: absolute; top: 195px; left: 290px; width: 124px; font-size:10px;">h1:</p>
-    <p style="position: absolute; top: 215px; left: 290px; width: 124px; font-size:10px;">35cm</p>
+    <p style="position: absolute; top: 195px; left: 287px; width: 124px; font-size:10px;">h1:</p>
+    <p id="leftCm" style="position: absolute; top: 215px; left: 287px; width: 124px; font-size:10px;">35.00</p>
+    <p style="position: absolute; top: 215px; left: 315px; width: 124px; font-size:10px;">cm</p>
 
     <p style="position: absolute; top: 195px; left: 405px; width: 124px; font-size:10px;">h2:</p>
-    <p style="position: absolute; top: 215px; left: 405px; width: 124px; font-size:10px;">35cm</p>
+    <p id="rightCm" style="position: absolute; top: 215px; left: 405px; width: 124px; font-size:10px;">35.00</p>
+    <p style="position: absolute; top: 215px; left: 433px; width: 124px; font-size:10px;">cm</p>
   </div>
+
+  <button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
+  <button id="obserButton" style="position: absolute; top: 465px; left: 585px; width: 94px; font-size:13px;">Observations</button>
+
+  <!-- Observation table! -->
+  <table id="observeTable" style="font-size: 14px; position:absolute; visibility: hidden; border: 1px solid black; width: 700px; top:50px;">
+    <tr style="">
+      <th>Process fluid</th>
+      <th>Manometric fluid</th>
+      <th>Flowrate(lpm)</th>
+      <th>h1(cm of Manometric fluid)</th>
+      <th>h2(cm of Manometric fluid)</th>
+    </tr>
+  </table>
+
 
 <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
 <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
