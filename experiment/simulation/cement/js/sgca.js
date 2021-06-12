@@ -321,9 +321,9 @@ function fluidMoveAndPinMove(){
 					var cell5 = row.insertCell(4);
 					cell1.innerHTML = processFluid;
 					cell2.innerHTML = manoFluid;
-					cell3.innerHTML = h1New;
-					cell4.innerHTML = h2New;
-					cell5.innerHTML = valOfRatoNew;
+					cell3.innerHTML = valOfRatoNew;
+					cell4.innerHTML = h1New;
+					cell5.innerHTML = h2New;
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -381,9 +381,9 @@ function fluidMoveAndPinMove(){
 					var cell5 = row.insertCell(4);
 					cell1.innerHTML = processFluid;
 					cell2.innerHTML = manoFluid;
-					cell3.innerHTML = h1New;
-					cell4.innerHTML = h2New;
-					cell5.innerHTML = valOfRatoNew;
+					cell3.innerHTML = valOfRatoNew;
+					cell4.innerHTML = h1New;
+					cell5.innerHTML = h2New;
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -489,9 +489,9 @@ function fluidMoveAndPinMove(){
 					var cell5 = row.insertCell(4);
 					cell1.innerHTML = processFluid;
 					cell2.innerHTML = manoFluid;
-					cell3.innerHTML = h1New;
-					cell4.innerHTML = h2New;
-					cell5.innerHTML = valOfRatoNew;
+					cell3.innerHTML = valOfRatoNew;
+					cell4.innerHTML = h1New;
+					cell5.innerHTML = h2New;
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -549,9 +549,9 @@ function fluidMoveAndPinMove(){
 					var cell5 = row.insertCell(4);
 					cell1.innerHTML = processFluid;
 					cell2.innerHTML = manoFluid;
-					cell3.innerHTML = h1New;
-					cell4.innerHTML = h2New;
-					cell5.innerHTML = valOfRatoNew;
+					cell3.innerHTML = valOfRatoNew;
+					cell4.innerHTML = h1New;
+					cell5.innerHTML = h2New;
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -657,9 +657,9 @@ function fluidMoveAndPinMove(){
 					var cell5 = row.insertCell(4);
 					cell1.innerHTML = processFluid;
 					cell2.innerHTML = manoFluid;
-					cell3.innerHTML = h1New;
-					cell4.innerHTML = h2New;
-					cell5.innerHTML = valOfRatoNew;
+					cell3.innerHTML = valOfRatoNew;
+					cell4.innerHTML = h1New;
+					cell5.innerHTML = h2New;
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -717,9 +717,9 @@ function fluidMoveAndPinMove(){
 					var cell5 = row.insertCell(4);
 					cell1.innerHTML = processFluid;
 					cell2.innerHTML = manoFluid;
-					cell3.innerHTML = h1New;
-					cell4.innerHTML = h2New;
-					cell5.innerHTML = valOfRatoNew;
+					cell3.innerHTML = valOfRatoNew;
+					cell4.innerHTML = h1New;
+					cell5.innerHTML = h2New;
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -825,9 +825,9 @@ function fluidMoveAndPinMove(){
 					var cell5 = row.insertCell(4);
 					cell1.innerHTML = processFluid;
 					cell2.innerHTML = manoFluid;
-					cell3.innerHTML = h1New;
-					cell4.innerHTML = h2New;
-					cell5.innerHTML = valOfRatoNew;
+					cell3.innerHTML = valOfRatoNew;
+					cell4.innerHTML = h1New;
+					cell5.innerHTML = h2New;
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -885,9 +885,9 @@ function fluidMoveAndPinMove(){
 					var cell5 = row.insertCell(4);
 					cell1.innerHTML = processFluid;
 					cell2.innerHTML = manoFluid;
-					cell3.innerHTML = h1New;
-					cell4.innerHTML = h2New;
-					cell5.innerHTML = valOfRatoNew;
+					cell3.innerHTML = valOfRatoNew;
+					cell4.innerHTML = h1New;
+					cell5.innerHTML = h2New;
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -953,6 +953,8 @@ function gotoObservation(){
 	document.getElementById("leftFluidFinal").style.visibility = "hidden";
 	document.getElementById("rightFluidFinal").style.visibility = "hidden";
 	document.getElementById("rotatePinFinal").style.visibility = "hidden";
+	document.getElementById("bottomU").style.visibility = "hidden";
+
 	document.getElementById("redColor").style.visibility = "hidden";
 	document.getElementById("obserButton").style.visibility = "hidden";
 
