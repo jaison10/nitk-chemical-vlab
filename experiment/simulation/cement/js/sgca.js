@@ -116,7 +116,8 @@ function magic()
 		}
 		else{
 			console.log("2 has chosen");
-
+			document.getElementById("configExp").style.visibility = "visible";
+			document.getElementById('nextButton').style.visibility="visible";
 		}
 	}
 
@@ -129,6 +130,10 @@ function magic()
 		}
 		else{
 			console.log("2 has chosen");
+			document.getElementById("configExp").style.visibility = "hidden";
+			document.getElementById('nextButton').style.visibility="hidden";
+			
+			document.getElementById("evaluatePart").style.visibility = "visible";
 		}
 		
 	}
@@ -281,6 +286,7 @@ function fluidMoveAndPinMove(){
 			document.getElementById("rightFluid").classList.add("KMRightFluid1");
 			document.getElementById("rotatePin").classList.add("movePin1");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
 			
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
@@ -306,11 +312,14 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftFluidSecond").style.visibility = "visible";
 					document.getElementById("rightFluidSecond").style.visibility = "visible";
 
+					document.getElementById("leftFluid").classList.remove("KMLeftFluid1");
+					document.getElementById("rightFluid").classList.remove("KMRightFluid1");
+
 					document.getElementById("rotatePin").style.visibility = "hidden";
 					document.getElementById("rotatePin").classList.remove("movePin1");
 					document.getElementById("rotatePinSecond").style.visibility = "visible";
+					document.getElementById("addtoTableButton").style.visibility = "visible";
 				}
-				document.getElementById("addtoTableButton").style.visibility = "visible";
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
 					var row = table.insertRow(1);
@@ -324,6 +333,7 @@ function fluidMoveAndPinMove(){
 					cell3.innerHTML = valOfRatoNew;
 					cell4.innerHTML = h1New;
 					cell5.innerHTML = h2New;
+					document.getElementById("addtoTableButton").style.visibility = "hidden";
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -341,6 +351,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("rotatePinSecond").classList.add("movePin2");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -365,12 +377,15 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftFluidThird").style.visibility = "visible";
 					document.getElementById("rightFluidThird").style.visibility = "visible";
 
+					document.getElementById("leftFluidSecond").classList.remove("KMLeftFluid2");
+					document.getElementById("rightFluidSecond").classList.remove("KMRightFluid2");
+
 					document.getElementById("rotatePinThird").style.visibility = "visible";
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
 					document.getElementById("rotatePinSecond").style.visibility = "hidden";
+					document.getElementById("addtoTableButton").style.visibility = "visible";
 				}
 
-				document.getElementById("addtoTableButton").style.visibility = "visible";
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
 					var row = table.insertRow(1);
@@ -384,6 +399,7 @@ function fluidMoveAndPinMove(){
 					cell3.innerHTML = valOfRatoNew;
 					cell4.innerHTML = h1New;
 					cell5.innerHTML = h2New;
+					document.getElementById("addtoTableButton").style.visibility = "hidden";
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -401,6 +417,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("gatewayRotate").style.cursor = "none";
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -419,12 +437,14 @@ function fluidMoveAndPinMove(){
 					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").onclick = "";	
-					document.getElementById("addtoTableButton").style.visibility = "hidden";
 					
 					document.getElementById("leftFluidThird").style.visibility = "hidden";
 					document.getElementById("rightFluidThird").style.visibility = "hidden";
 					document.getElementById("leftFluidFinal").style.visibility = "visible";
 					document.getElementById("rightFluidFinal").style.visibility = "visible";
+
+					document.getElementById("leftFluidThird").classList.remove("KMLeftFluid3");
+					document.getElementById("rightFluidThird").classList.remove("KMRightFluid3");
 
 					document.getElementById("rotatePinThird").style.visibility = "hidden";
 					document.getElementById("rotatePinThird").classList.remove("movePin3");
@@ -450,6 +470,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("rotatePin").classList.add("movePin1");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -474,11 +496,14 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftFluidSecond").style.visibility = "visible";
 					document.getElementById("rightFluidSecond").style.visibility = "visible";
 
+					document.getElementById("leftFluid").classList.remove("KMLeftFluid1");
+					document.getElementById("rightFluid").classList.remove("KMRightFluid1");
+
 					document.getElementById("rotatePin").style.visibility = "hidden";
 					document.getElementById("rotatePin").classList.remove("movePin1");
 					document.getElementById("rotatePinSecond").style.visibility = "visible";
+					document.getElementById("addtoTableButton").style.visibility = "visible";
 				}
-				document.getElementById("addtoTableButton").style.visibility = "visible";
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
 					var row = table.insertRow(1);
@@ -492,6 +517,7 @@ function fluidMoveAndPinMove(){
 					cell3.innerHTML = valOfRatoNew;
 					cell4.innerHTML = h1New;
 					cell5.innerHTML = h2New;
+					document.getElementById("addtoTableButton").style.visibility = "hidden";
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -509,6 +535,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("rotatePinSecond").classList.add("movePin2");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -533,12 +561,15 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftFluidThird").style.visibility = "visible";
 					document.getElementById("rightFluidThird").style.visibility = "visible";
 
+					document.getElementById("leftFluidSecond").classList.remove("KMLeftFluid2");
+					document.getElementById("rightFluidSecond").classList.remove("KMRightFluid2");
+
 					document.getElementById("rotatePinSecond").style.visibility = "hidden";
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
 					document.getElementById("rotatePinThird").style.visibility = "visible";
+					document.getElementById("addtoTableButton").style.visibility = "visible";
 				}
 
-				document.getElementById("addtoTableButton").style.visibility = "visible";
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
 					var row = table.insertRow(1);
@@ -552,6 +583,7 @@ function fluidMoveAndPinMove(){
 					cell3.innerHTML = valOfRatoNew;
 					cell4.innerHTML = h1New;
 					cell5.innerHTML = h2New;
+					document.getElementById("addtoTableButton").style.visibility = "hidden";
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -569,6 +601,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("gatewayRotate").style.cursor = "none";
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -594,6 +628,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftFluidFinal").style.visibility = "visible";
 					document.getElementById("rightFluidFinal").style.visibility = "visible";
 
+					document.getElementById("leftFluidThird").classList.remove("KMLeftFluid3");
+					document.getElementById("rightFluidThird").classList.remove("KMRightFluid3");
+
 					document.getElementById("rotatePinThird").style.visibility = "hidden";
 					document.getElementById("rotatePinThird").classList.remove("movePin3");
 					document.getElementById("rotatePinFinal").style.visibility = "visible";
@@ -618,6 +655,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("rotatePin").classList.add("movePin1");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -642,11 +681,14 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftPinkFluidSecond").style.visibility = "visible";
 					document.getElementById("rightPinkFluidSecond").style.visibility = "visible";
 
+					document.getElementById("leftPinkFluid").classList.remove("KMLeftFluid1");
+					document.getElementById("rightPinkFluid").classList.remove("KMRightFluid1");
+
 					document.getElementById("rotatePin").style.visibility = "hidden";
 					document.getElementById("rotatePin").classList.remove("movePin1");
 					document.getElementById("rotatePinSecond").style.visibility = "visible";
+					document.getElementById("addtoTableButton").style.visibility = "visible";
 				}
-				document.getElementById("addtoTableButton").style.visibility = "visible";
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
 					var row = table.insertRow(1);
@@ -660,6 +702,7 @@ function fluidMoveAndPinMove(){
 					cell3.innerHTML = valOfRatoNew;
 					cell4.innerHTML = h1New;
 					cell5.innerHTML = h2New;
+					document.getElementById("addtoTableButton").style.visibility = "hidden";
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -677,6 +720,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("rotatePinSecond").classList.add("movePin2");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -701,12 +746,15 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftPinkFluidThird").style.visibility = "visible";
 					document.getElementById("rightPinkFluidThird").style.visibility = "visible";
 
+					document.getElementById("leftPinkFluidSecond").classList.remove("KMLeftFluid2");
+					document.getElementById("rightPinkFluidSecond").classList.remove("KMRightFluid2");
+
 					document.getElementById("rotatePinSecond").style.visibility = "hidden";
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
 					document.getElementById("rotatePinThird").style.visibility = "visible";
+					document.getElementById("addtoTableButton").style.visibility = "visible";
 				}
 
-				document.getElementById("addtoTableButton").style.visibility = "visible";
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
 					var row = table.insertRow(1);
@@ -720,6 +768,7 @@ function fluidMoveAndPinMove(){
 					cell3.innerHTML = valOfRatoNew;
 					cell4.innerHTML = h1New;
 					cell5.innerHTML = h2New;
+					document.getElementById("addtoTableButton").style.visibility = "hidden";
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -737,6 +786,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("gatewayRotate").style.cursor = "none";
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -757,6 +808,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("gatewayRotate").onclick = "";	
 					document.getElementById("addtoTableButton").style.visibility = "hidden";
 					
+					document.getElementById("leftPinkFluidThird").classList.remove("KMLeftFluid3");
+					document.getElementById("rightPinkFluidThird").classList.remove("KMRightFluid3");
+			
 					document.getElementById("leftPinkFluidThird").style.visibility = "hidden";
 					document.getElementById("rightPinkFluidThird").style.visibility = "hidden";
 					document.getElementById("leftPinkFluidFinal").style.visibility = "visible";
@@ -786,6 +840,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("rotatePin").classList.add("movePin1");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -810,11 +866,14 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftPinkFluidSecond").style.visibility = "visible";
 					document.getElementById("rightPinkFluidSecond").style.visibility = "visible";
 
+					document.getElementById("leftPinkFluid").classList.remove("KMLeftFluid1");
+					document.getElementById("rightPinkFluid").classList.remove("KMRightFluid1");
+
 					document.getElementById("rotatePin").style.visibility = "hidden";
 					document.getElementById("rotatePin").classList.remove("movePin1");
 					document.getElementById("rotatePinSecond").style.visibility = "visible";
+					document.getElementById("addtoTableButton").style.visibility = "visible";
 				}
-				document.getElementById("addtoTableButton").style.visibility = "visible";
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
 					var row = table.insertRow(1);
@@ -828,6 +887,7 @@ function fluidMoveAndPinMove(){
 					cell3.innerHTML = valOfRatoNew;
 					cell4.innerHTML = h1New;
 					cell5.innerHTML = h2New;
+					document.getElementById("addtoTableButton").style.visibility = "hidden";
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -845,6 +905,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("rotatePinSecond").classList.add("movePin2");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -869,12 +931,15 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftPinkFluidThird").style.visibility = "visible";
 					document.getElementById("rightPinkFluidThird").style.visibility = "visible";
 
+					document.getElementById("leftPinkFluidSecond").classList.remove("KMLeftFluid2");
+					document.getElementById("rightPinkFluidSecond").classList.remove("KMRightFluid2");
+
 					document.getElementById("rotatePinSecond").style.visibility = "hidden";
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
 					document.getElementById("rotatePinThird").style.visibility = "visible";
+					document.getElementById("addtoTableButton").style.visibility = "visible";
 				}
 
-				document.getElementById("addtoTableButton").style.visibility = "visible";
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
 					var row = table.insertRow(1);
@@ -888,6 +953,7 @@ function fluidMoveAndPinMove(){
 					cell3.innerHTML = valOfRatoNew;
 					cell4.innerHTML = h1New;
 					cell5.innerHTML = h2New;
+					document.getElementById("addtoTableButton").style.visibility = "hidden";
 				}
 					document.getElementById("obserButton").onclick = function(){
 						gotoObservation();
@@ -905,6 +971,8 @@ function fluidMoveAndPinMove(){
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("gatewayRotate").style.cursor = "none";
 			
+			document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 			valueChange = setInterval(() => {
 				h1Val = h1Val + 0.25;
 				h1New = h1Val.toFixed(2);
@@ -929,6 +997,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rightPinkFluidThird").style.visibility = "hidden";
 					document.getElementById("leftPinkFluidFinal").style.visibility = "visible";
 					document.getElementById("rightPinkFluidFinal").style.visibility = "visible";
+
+					document.getElementById("leftPinkFluidThird").classList.remove("KMLeftFluid3");
+					document.getElementById("rightPinkFluidThird").classList.remove("KMRightFluid3");
 
 					document.getElementById("rotatePinThird").style.visibility = "hidden";
 					document.getElementById("rotatePinThird").classList.remove("movePin3");
@@ -991,3 +1062,66 @@ function goBacktoStep2(){
 	document.getElementById("experimentSetup").style.visibility = "visible";
 	document.getElementById('nextButton').style.visibility="visible";
 }
+
+
+// ============================  EVALUATION PART
+
+var pipeLengthEval = 1;
+
+function setPipeLengthEval(){
+	pipeLengthEval = document.getElementById("pipeLengthEval").value;
+	console.log(pipeLengthEval);
+}
+
+var chosenPipeDiaEval = 025;
+
+function setPipeDiaEval(){
+	chosenPipeDiaEval = document.getElementById("pipeDiaSelectEval").value;
+	console.log(chosenPipeDiaEval);
+}
+
+var processFluidEval = "Water"
+
+function setProcessFluidEval(){
+	processFluidEval = document.getElementById("processFluidEval").value;
+	console.log(processFluidEval);
+}
+
+var manoFluidEval = "Carbol tetrachloride"
+
+function setManoFluidEval(){
+	manoFluidEval = document.getElementById("manoFluidEval").value;
+	console.log(manoFluidEval);
+}
+
+// Step 3
+
+var evalSets = 1;
+
+function setEvalSets(){
+	evalSets = document.getElementById("evalSets").value;
+	console.log(evalSets);
+
+	var table = document.getElementById("configResultTable");
+
+	var rowCount = table.rows.length-1;
+	console.log(rowCount);
+	if(rowCount>0){
+		for(var x = 1; x <= rowCount; x++){
+			table.deleteRow(1);
+		}
+	}
+	
+	for(var i=1; i<= evalSets; i++ ){
+		var row = table.insertRow(i);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		cell1.innerHTML = `<input name="length" id="inputSet${i}0" style="width:80px">`;
+		cell2.innerHTML = `<input name="length" id="inputSet${i}1" style="width:80px">`;
+		cell3.innerHTML = `<input name="length" id="inputSet${i}2" style="width:80px">`;
+		cell4.innerHTML = `<input name="length" id="inputSet${i}3" style="width:80px">`;
+	}
+}
+
