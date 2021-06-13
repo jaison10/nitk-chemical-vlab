@@ -113,6 +113,7 @@ function magic()
 			console.log("One has chosen!");
 			document.getElementById("labelImage").style.visibility = "visible";
 			document.getElementById('nextButton').style.visibility="visible";
+			document.getElementById("configExp").style.visibility = "hidden";
 		}
 		else{
 			console.log("2 has chosen");
@@ -127,6 +128,7 @@ function magic()
 			document.getElementById("labelImage").style.visibility = "hidden";
 			document.getElementById("experimentSetup").style.visibility = "visible";
 			document.getElementById('nextButton').style.visibility="visible";
+			document.getElementById("evaluatePart").style.visibility = "hidden";
 		}
 		else{
 			console.log("2 has chosen");
