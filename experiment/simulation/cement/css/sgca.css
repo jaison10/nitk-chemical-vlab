@@ -294,10 +294,10 @@ background:#000
 }
 
 .KMLeftFluid4 {
-    animation: KMLeftFluid3 2s;
+    animation: KMLeftFluid4 2s;
 }
 
-@keyframes KMLeftFluid3 {
+@keyframes KMLeftFluid4 {
     0% {
         top: 202.8px; left: 332px; width: 14px; height: 56.2px;
     }
@@ -307,10 +307,10 @@ background:#000
 }
 
 .KMLeftFluid5 {
-    animation: KMLeftFluid3 2s;
+    animation: KMLeftFluid5 2s;
 }
 
-@keyframes KMLeftFluid3 {
+@keyframes KMLeftFluid5 {
     0% {
         top: 196.4px; left: 332px; width: 14px; height: 62.6px;
     }
@@ -362,10 +362,10 @@ background:#000
 }
 
 .KMRightFluid4 {
-    animation: KMRightFluid3 2s;
+    animation: KMRightFluid4 2s;
 }
 
-@keyframes KMRightFluid3 {
+@keyframes KMRightFluid4 {
     0% {
         top: 243.6px; left: 381px; width: 14px; height: 14.8px;
     }
@@ -376,10 +376,10 @@ background:#000
 }
 
 .KMRightFluid5 {
-    animation: KMRightFluid3 2s;
+    animation: KMRightFluid5 2s;
 }
 
-@keyframes KMRightFluid3 {
+@keyframes KMRightFluid5 {
     0% {
         top: 250.8px; left: 381px; width: 14px; height: 7.4px;
     }
@@ -429,10 +429,10 @@ background:#000
 }
 
 .movePin4 {
-    animation: movePin3 2s;
+    animation: movePin4 2s;
 }
 
-@keyframes movePin3 {
+@keyframes movePin4 {
     0% {
         top: 217px;
     }
@@ -442,10 +442,10 @@ background:#000
 }
 
 .movePin5 {
-    animation: movePin3 2s;
+    animation: movePin5 2s;
 }
 
-@keyframes movePin3 {
+@keyframes movePin5 {
     0% {
         top: 203px;
     }

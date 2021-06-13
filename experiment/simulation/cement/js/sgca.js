@@ -1548,8 +1548,6 @@ function fluidMoveAndPinMove(){
 }
 
 
-
-
 function gotoObservation(){
 	console.log("go to observ.");
 	document.getElementById("experimentID").style.visibility = "hidden";
