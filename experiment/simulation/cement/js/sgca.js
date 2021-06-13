@@ -1649,10 +1649,10 @@ function setEvalSets(){
 		var cell2 = row.insertCell(1);
 		var cell3 = row.insertCell(2);
 		var cell4 = row.insertCell(3);
-		cell1.innerHTML = `<input name="length" id="inputSet${i}0" style="width:80px">`;
-		cell2.innerHTML = `<input name="length" id="inputSet${i}1" style="width:80px">`;
-		cell3.innerHTML = `<input name="length" id="inputSet${i}2" style="width:80px">`;
-		cell4.innerHTML = `<input name="length" id="inputSet${i}3" style="width:80px">`;
+		cell1.innerHTML = `<input name="length" id="inputSet${i}0" style="width:80px" type="number">`;
+		cell2.innerHTML = `<input name="length" id="inputSet${i}1" style="width:80px" type="number">`;
+		cell3.innerHTML = `<input name="length" id="inputSet${i}2" style="width:80px" type="number">`;
+		cell4.innerHTML = `<input name="length" id="inputSet${i}3" style="width:80px" type="number">`;
 	}
 
 }
@@ -1698,16 +1698,13 @@ function evaluateConfig(){
 		console.log("Density of Process fluid is: ", den);
 		// Calculate Reynold's
 		calculatedReyn = ((den * diaMeter * lpmConvVelocity)/visco);
+		calculatedReyn = calculatedReyn.toFixed(5);                                            // ======    toFixed(5)
 		console.log("Calculated Reynold's value is: ", calculatedReyn);
 		
 		
 		var outFric = document.getElementById("showResInFric");
-		if(rowCountPost > 3){
-			out.style.top = "250px";
-			outFric.style.top = "280px";
-		}
 
-		// ========================================= Friction Factor calculation.
+		// ========================================================= Friction Factor calculation.
 		if(manoFluidEval == "Carbon tetrachloride"){
 			denMano = 1600;
 		}
@@ -1721,9 +1718,20 @@ function evaluateConfig(){
 		console.log("Calculated hf value's: ", hf);
 		// calculate FF
 		calculatedFricFact = ((2 * 9.8 * diaMeter * hf)/(4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
+		calculatedFricFact = calculatedFricFact.toFixed(5);                                          //========     toFixed(5)
 		console.log("Calculated F F value is: ", calculatedFricFact);
+
 		// Compare Reynold's and Friction Factor.
+		console.log("The rey value taken in is: ", reyn);
 		setTimeout(() => {
+			// if the count of rows in result table is more than 3, increase the top of both of the result showing paragraph.
+			var resultTable = document.getElementById("configResultTable");
+			var rowCountPost = resultTable.rows.length-1;
+			if(rowCountPost > 3){
+				out.style.top = "250px";
+				outFric.style.top = "280px";
+			}
+
 			if(calculatedReyn == reyn){
 				out.innerText = "Reynold's value is correct!";
 				out.style.color = "green";
@@ -1742,7 +1750,24 @@ function evaluateConfig(){
 				outFric.innerText = "Fraction Factot value is incorrect!";
 				outFric.style.color = "red";
 			}
+
+			//   -----------------------       DELETING ALL ROWS AND CHANGING THE NUMBER OF SETS BACK TO 0.
+			var table = document.getElementById("configInputTable");
+			var rowCounttt = table.rows.length-1;
+			console.log("Count of rows after showing result is:  ",rowCounttt);
+			document.getElementById("evalSets").value = 0;
+			if(rowCounttt>0){
+				for(var xx = 1; xx <= rowCounttt; xx++){
+					table.deleteRow(1);
+				}
+			}
+
 		}, 300);
+		setTimeout(() => {
+			out.innerText = "";
+			outFric.innerText = "";
+		}, 5000);
+		
 		// Add to result table.
 		var row = resultTable.insertRow(z);
 		var reyCell = row.insertCell(0);
