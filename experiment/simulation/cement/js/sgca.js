@@ -480,8 +480,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 4){
-			document.getElementById("leftFluidForth").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidForth").classList.add("KMRightFluid3");
+			document.getElementById("leftFluidForth").classList.add("KMLeftFluid4");
+			document.getElementById("rightFluidForth").classList.add("KMRightFluid4");
 			document.getElementById("rotatePinForth").classList.add("movePin4");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
@@ -511,8 +511,8 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftFluidFifth").style.visibility = "visible";
 					document.getElementById("rightFluidFifth").style.visibility = "visible";
 
-					document.getElementById("leftFluidForth").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidForth").classList.remove("KMRightFluid3");
+					document.getElementById("leftFluidForth").classList.remove("KMLeftFluid4");
+					document.getElementById("rightFluidForth").classList.remove("KMRightFluid4");
 
 					document.getElementById("rotatePinFifth").style.visibility = "visible";
 					document.getElementById("rotatePinForth").classList.remove("movePin4");
@@ -546,9 +546,9 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 5){
-			document.getElementById("leftFluidFifth").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidFifth").classList.add("KMRightFluid3");
-			document.getElementById("rotatePinFifth").classList.add("movePin3");
+			document.getElementById("leftFluidFifth").classList.add("KMLeftFluid5");
+			document.getElementById("rightFluidFifth").classList.add("KMRightFluid5");
+			document.getElementById("rotatePinFifth").classList.add("movePin5");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("gatewayRotate").style.cursor = "none";
 			
@@ -578,11 +578,11 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftFluidFinal").style.visibility = "visible";
 					document.getElementById("rightFluidFinal").style.visibility = "visible";
 
-					document.getElementById("leftFluidFifth").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidFifth").classList.remove("KMRightFluid3");
+					document.getElementById("leftFluidFifth").classList.remove("KMLeftFluid5");
+					document.getElementById("rightFluidFifth").classList.remove("KMRightFluid5");
 
 					document.getElementById("rotatePinFifth").style.visibility = "hidden";
-					document.getElementById("rotatePinFifth").classList.remove("movePin3");
+					document.getElementById("rotatePinFifth").classList.remove("movePin5");
 					document.getElementById("rotatePinFinal").style.visibility = "visible";
 				}
 				
@@ -796,8 +796,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 4){
-			document.getElementById("leftFluidForth").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidForth").classList.add("KMRightFluid3");
+			document.getElementById("leftFluidForth").classList.add("KMLeftFluid4");
+			document.getElementById("rightFluidForth").classList.add("KMRightFluid4");
 			document.getElementById("rotatePinForth").classList.add("movePin4");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
@@ -827,8 +827,8 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftFluidFifth").style.visibility = "visible";
 					document.getElementById("rightFluidFifth").style.visibility = "visible";
 
-					document.getElementById("leftFluidForth").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidForth").classList.remove("KMRightFluid3");
+					document.getElementById("leftFluidForth").classList.remove("KMLeftFluid4");
+					document.getElementById("rightFluidForth").classList.remove("KMRightFluid4");
 
 					document.getElementById("rotatePinFifth").style.visibility = "visible";
 					document.getElementById("rotatePinForth").classList.remove("movePin4");
@@ -862,9 +862,9 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 5){
-			document.getElementById("leftFluidFifth").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidFifth").classList.add("KMRightFluid3");
-			document.getElementById("rotatePinFifth").classList.add("movePin3");
+			document.getElementById("leftFluidFifth").classList.add("KMLeftFluid5");
+			document.getElementById("rightFluidFifth").classList.add("KMRightFluid5");
+			document.getElementById("rotatePinFifth").classList.add("movePin5");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("gatewayRotate").style.cursor = "none";
 			
@@ -894,11 +894,11 @@ function fluidMoveAndPinMove(){
 					document.getElementById("leftFluidFinal").style.visibility = "visible";
 					document.getElementById("rightFluidFinal").style.visibility = "visible";
 
-					document.getElementById("leftFluidFifth").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidFifth").classList.remove("KMRightFluid3");
+					document.getElementById("leftFluidFifth").classList.remove("KMLeftFluid5");
+					document.getElementById("rightFluidFifth").classList.remove("KMRightFluid5");
 
 					document.getElementById("rotatePinFifth").style.visibility = "hidden";
-					document.getElementById("rotatePinFifth").classList.remove("movePin3");
+					document.getElementById("rotatePinFifth").classList.remove("movePin5");
 					document.getElementById("rotatePinFinal").style.visibility = "visible";
 				}
 				
@@ -916,8 +916,8 @@ function fluidMoveAndPinMove(){
 		numberOfClicks += 1;
 		
 		if(numberOfClicks == 1){
-			document.getElementById("leftFluid").classList.add("KMLeftFluid1");
-			document.getElementById("rightFluid").classList.add("KMRightFluid1");
+			document.getElementById("leftPinkFluid").classList.add("KMLeftFluid1");
+			document.getElementById("rightPinkFluid").classList.add("KMRightFluid1");
 			document.getElementById("rotatePin").classList.add("movePin1");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("addtoTableButton").style.visibility = "hidden";
@@ -941,13 +941,13 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);		
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
 
-					document.getElementById("leftFluid").style.visibility = "hidden";
-					document.getElementById("rightFluid").style.visibility = "hidden";
-					document.getElementById("leftFluidSecond").style.visibility = "visible";
-					document.getElementById("rightFluidSecond").style.visibility = "visible";
+					document.getElementById("leftPinkFluid").style.visibility = "hidden";
+					document.getElementById("rightPinkFluid").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidSecond").style.visibility = "visible";
+					document.getElementById("rightPinkFluidSecond").style.visibility = "visible";
 
-					document.getElementById("leftFluid").classList.remove("KMLeftFluid1");
-					document.getElementById("rightFluid").classList.remove("KMRightFluid1");
+					document.getElementById("leftPinkFluid").classList.remove("KMLeftFluid1");
+					document.getElementById("rightPinkFluid").classList.remove("KMRightFluid1");
 
 					document.getElementById("rotatePin").style.visibility = "hidden";
 					document.getElementById("rotatePin").classList.remove("movePin1");
@@ -980,8 +980,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 2){
-			document.getElementById("leftFluidSecond").classList.add("KMLeftFluid2");
-			document.getElementById("rightFluidSecond").classList.add("KMRightFluid2");
+			document.getElementById("leftPinkFluidSecond").classList.add("KMLeftFluid2");
+			document.getElementById("rightPinkFluidSecond").classList.add("KMRightFluid2");
 			document.getElementById("rotatePinSecond").classList.add("movePin2");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
@@ -1006,13 +1006,13 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
 
-					document.getElementById("leftFluidSecond").style.visibility = "hidden";
-					document.getElementById("rightFluidSecond").style.visibility = "hidden";
-					document.getElementById("leftFluidThird").style.visibility = "visible";
-					document.getElementById("rightFluidThird").style.visibility = "visible";
+					document.getElementById("leftPinkFluidSecond").style.visibility = "hidden";
+					document.getElementById("rightPinkFluidSecond").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidThird").style.visibility = "visible";
+					document.getElementById("rightPinkFluidThird").style.visibility = "visible";
 
-					document.getElementById("leftFluidSecond").classList.remove("KMLeftFluid2");
-					document.getElementById("rightFluidSecond").classList.remove("KMRightFluid2");
+					document.getElementById("leftPinkFluidSecond").classList.remove("KMLeftFluid2");
+					document.getElementById("rightPinkFluidSecond").classList.remove("KMRightFluid2");
 
 					document.getElementById("rotatePinThird").style.visibility = "visible";
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
@@ -1046,8 +1046,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 3){
-			document.getElementById("leftFluidThird").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidThird").classList.add("KMRightFluid3");
+			document.getElementById("leftPinkFluidThird").classList.add("KMLeftFluid3");
+			document.getElementById("rightPinkFluidThird").classList.add("KMRightFluid3");
 			document.getElementById("rotatePinThird").classList.add("movePin3");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
@@ -1072,13 +1072,13 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
 
-					document.getElementById("leftFluidThird").style.visibility = "hidden";
-					document.getElementById("rightFluidThird").style.visibility = "hidden";
-					document.getElementById("leftFluidForth").style.visibility = "visible";
-					document.getElementById("rightFluidForth").style.visibility = "visible";
+					document.getElementById("leftPinkFluidThird").style.visibility = "hidden";
+					document.getElementById("rightPinkFluidThird").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidForth").style.visibility = "visible";
+					document.getElementById("rightPinkFluidForth").style.visibility = "visible";
 
-					document.getElementById("leftFluidThird").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidThird").classList.remove("KMRightFluid3");
+					document.getElementById("leftPinkFluidThird").classList.remove("KMLeftFluid3");
+					document.getElementById("rightPinkFluidThird").classList.remove("KMRightFluid3");
 
 					document.getElementById("rotatePinForth").style.visibility = "visible";
 					document.getElementById("rotatePinThird").classList.remove("movePin3");
@@ -1112,8 +1112,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 4){
-			document.getElementById("leftFluidForth").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidForth").classList.add("KMRightFluid3");
+			document.getElementById("leftPinkFluidForth").classList.add("KMLeftFluid4");
+			document.getElementById("rightPinkFluidForth").classList.add("KMRightFluid4");
 			document.getElementById("rotatePinForth").classList.add("movePin4");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
@@ -1138,13 +1138,13 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
 
-					document.getElementById("leftFluidForth").style.visibility = "hidden";
-					document.getElementById("rightFluidForth").style.visibility = "hidden";
-					document.getElementById("leftFluidFifth").style.visibility = "visible";
-					document.getElementById("rightFluidFifth").style.visibility = "visible";
+					document.getElementById("leftPinkFluidForth").style.visibility = "hidden";
+					document.getElementById("rightPinkFluidForth").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidFifth").style.visibility = "visible";
+					document.getElementById("rightPinkFluidFifth").style.visibility = "visible";
 
-					document.getElementById("leftFluidForth").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidForth").classList.remove("KMRightFluid3");
+					document.getElementById("leftPinkFluidForth").classList.remove("KMLeftFluid4");
+					document.getElementById("rightPinkFluidForth").classList.remove("KMRightFluid4");
 
 					document.getElementById("rotatePinFifth").style.visibility = "visible";
 					document.getElementById("rotatePinForth").classList.remove("movePin4");
@@ -1178,9 +1178,9 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 5){
-			document.getElementById("leftFluidFifth").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidFifth").classList.add("KMRightFluid3");
-			document.getElementById("rotatePinFifth").classList.add("movePin3");
+			document.getElementById("leftPinkFluidFifth").classList.add("KMLeftFluid5");
+			document.getElementById("rightPinkFluidFifth").classList.add("KMRightFluid5");
+			document.getElementById("rotatePinFifth").classList.add("movePin5");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("gatewayRotate").style.cursor = "none";
 			
@@ -1205,16 +1205,16 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").onclick = "";	
 					
-					document.getElementById("leftFluidFifth").style.visibility = "hidden";
-					document.getElementById("rightFluidFifth").style.visibility = "hidden";
-					document.getElementById("leftFluidFinal").style.visibility = "visible";
-					document.getElementById("rightFluidFinal").style.visibility = "visible";
+					document.getElementById("leftPinkFluidFifth").style.visibility = "hidden";
+					document.getElementById("rightPinkFluidFifth").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidFinal").style.visibility = "visible";
+					document.getElementById("rightPinkFluidFinal").style.visibility = "visible";
 
-					document.getElementById("leftFluidFifth").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidFifth").classList.remove("KMRightFluid3");
+					document.getElementById("leftPinkFluidFifth").classList.remove("KMLeftFluid5");
+					document.getElementById("rightPinkFluidFifth").classList.remove("KMRightFluid5");
 
 					document.getElementById("rotatePinFifth").style.visibility = "hidden";
-					document.getElementById("rotatePinFifth").classList.remove("movePin3");
+					document.getElementById("rotatePinFifth").classList.remove("movePin5");
 					document.getElementById("rotatePinFinal").style.visibility = "visible";
 				}
 				
@@ -1232,8 +1232,8 @@ function fluidMoveAndPinMove(){
 		numberOfClicks += 1;
 		
 		if(numberOfClicks == 1){
-			document.getElementById("leftFluid").classList.add("KMLeftFluid1");
-			document.getElementById("rightFluid").classList.add("KMRightFluid1");
+			document.getElementById("leftPinkFluid").classList.add("KMLeftFluid1");
+			document.getElementById("rightPinkFluid").classList.add("KMRightFluid1");
 			document.getElementById("rotatePin").classList.add("movePin1");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("addtoTableButton").style.visibility = "hidden";
@@ -1257,13 +1257,13 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);		
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
 
-					document.getElementById("leftFluid").style.visibility = "hidden";
-					document.getElementById("rightFluid").style.visibility = "hidden";
-					document.getElementById("leftFluidSecond").style.visibility = "visible";
-					document.getElementById("rightFluidSecond").style.visibility = "visible";
+					document.getElementById("leftPinkFluid").style.visibility = "hidden";
+					document.getElementById("rightPinkFluid").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidSecond").style.visibility = "visible";
+					document.getElementById("rightPinkFluidSecond").style.visibility = "visible";
 
-					document.getElementById("leftFluid").classList.remove("KMLeftFluid1");
-					document.getElementById("rightFluid").classList.remove("KMRightFluid1");
+					document.getElementById("leftPinkFluid").classList.remove("KMLeftFluid1");
+					document.getElementById("rightPinkFluid").classList.remove("KMRightFluid1");
 
 					document.getElementById("rotatePin").style.visibility = "hidden";
 					document.getElementById("rotatePin").classList.remove("movePin1");
@@ -1296,8 +1296,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 2){
-			document.getElementById("leftFluidSecond").classList.add("KMLeftFluid2");
-			document.getElementById("rightFluidSecond").classList.add("KMRightFluid2");
+			document.getElementById("leftPinkFluidSecond").classList.add("KMLeftFluid2");
+			document.getElementById("rightPinkFluidSecond").classList.add("KMRightFluid2");
 			document.getElementById("rotatePinSecond").classList.add("movePin2");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
@@ -1322,13 +1322,13 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
 
-					document.getElementById("leftFluidSecond").style.visibility = "hidden";
-					document.getElementById("rightFluidSecond").style.visibility = "hidden";
-					document.getElementById("leftFluidThird").style.visibility = "visible";
-					document.getElementById("rightFluidThird").style.visibility = "visible";
+					document.getElementById("leftPinkFluidSecond").style.visibility = "hidden";
+					document.getElementById("rightPinkFluidSecond").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidThird").style.visibility = "visible";
+					document.getElementById("rightPinkFluidThird").style.visibility = "visible";
 
-					document.getElementById("leftFluidSecond").classList.remove("KMLeftFluid2");
-					document.getElementById("rightFluidSecond").classList.remove("KMRightFluid2");
+					document.getElementById("leftPinkFluidSecond").classList.remove("KMLeftFluid2");
+					document.getElementById("rightPinkFluidSecond").classList.remove("KMRightFluid2");
 
 					document.getElementById("rotatePinThird").style.visibility = "visible";
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
@@ -1362,8 +1362,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 3){
-			document.getElementById("leftFluidThird").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidThird").classList.add("KMRightFluid3");
+			document.getElementById("leftPinkFluidThird").classList.add("KMLeftFluid3");
+			document.getElementById("rightPinkFluidThird").classList.add("KMRightFluid3");
 			document.getElementById("rotatePinThird").classList.add("movePin3");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
@@ -1388,13 +1388,13 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
 
-					document.getElementById("leftFluidThird").style.visibility = "hidden";
-					document.getElementById("rightFluidThird").style.visibility = "hidden";
-					document.getElementById("leftFluidForth").style.visibility = "visible";
-					document.getElementById("rightFluidForth").style.visibility = "visible";
+					document.getElementById("leftPinkFluidThird").style.visibility = "hidden";
+					document.getElementById("rightPinkFluidThird").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidForth").style.visibility = "visible";
+					document.getElementById("rightPinkFluidForth").style.visibility = "visible";
 
-					document.getElementById("leftFluidThird").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidThird").classList.remove("KMRightFluid3");
+					document.getElementById("leftPinkFluidThird").classList.remove("KMLeftFluid3");
+					document.getElementById("rightPinkFluidThird").classList.remove("KMRightFluid3");
 
 					document.getElementById("rotatePinForth").style.visibility = "visible";
 					document.getElementById("rotatePinThird").classList.remove("movePin3");
@@ -1428,8 +1428,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 4){
-			document.getElementById("leftFluidForth").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidForth").classList.add("KMRightFluid3");
+			document.getElementById("leftPinkFluidForth").classList.add("KMLeftFluid4");
+			document.getElementById("rightPinkFluidForth").classList.add("KMRightFluid4");
 			document.getElementById("rotatePinForth").classList.add("movePin4");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			
@@ -1454,13 +1454,13 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
 
-					document.getElementById("leftFluidForth").style.visibility = "hidden";
-					document.getElementById("rightFluidForth").style.visibility = "hidden";
-					document.getElementById("leftFluidFifth").style.visibility = "visible";
-					document.getElementById("rightFluidFifth").style.visibility = "visible";
+					document.getElementById("leftPinkFluidForth").style.visibility = "hidden";
+					document.getElementById("rightPinkFluidForth").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidFifth").style.visibility = "visible";
+					document.getElementById("rightPinkFluidFifth").style.visibility = "visible";
 
-					document.getElementById("leftFluidForth").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidForth").classList.remove("KMRightFluid3");
+					document.getElementById("leftPinkFluidForth").classList.remove("KMLeftFluid4");
+					document.getElementById("rightPinkFluidForth").classList.remove("KMRightFluid4");
 
 					document.getElementById("rotatePinFifth").style.visibility = "visible";
 					document.getElementById("rotatePinForth").classList.remove("movePin4");
@@ -1494,9 +1494,9 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 5){
-			document.getElementById("leftFluidFifth").classList.add("KMLeftFluid3");
-			document.getElementById("rightFluidFifth").classList.add("KMRightFluid3");
-			document.getElementById("rotatePinFifth").classList.add("movePin3");
+			document.getElementById("leftPinkFluidFifth").classList.add("KMLeftFluid5");
+			document.getElementById("rightPinkFluidFifth").classList.add("KMRightFluid5");
+			document.getElementById("rotatePinFifth").classList.add("movePin5");
 			document.getElementById("gatewayRotate").classList.add("rotateGatewall");
 			document.getElementById("gatewayRotate").style.cursor = "none";
 			
@@ -1521,16 +1521,16 @@ function fluidMoveAndPinMove(){
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").onclick = "";	
 					
-					document.getElementById("leftFluidFifth").style.visibility = "hidden";
-					document.getElementById("rightFluidFifth").style.visibility = "hidden";
-					document.getElementById("leftFluidFinal").style.visibility = "visible";
-					document.getElementById("rightFluidFinal").style.visibility = "visible";
+					document.getElementById("leftPinkFluidFifth").style.visibility = "hidden";
+					document.getElementById("rightPinkFluidFifth").style.visibility = "hidden";
+					document.getElementById("leftPinkFluidFinal").style.visibility = "visible";
+					document.getElementById("rightPinkFluidFinal").style.visibility = "visible";
 
-					document.getElementById("leftFluidFifth").classList.remove("KMLeftFluid3");
-					document.getElementById("rightFluidFifth").classList.remove("KMRightFluid3");
+					document.getElementById("leftPinkFluidFifth").classList.remove("KMLeftFluid5");
+					document.getElementById("rightPinkFluidFifth").classList.remove("KMRightFluid5");
 
 					document.getElementById("rotatePinFifth").style.visibility = "hidden";
-					document.getElementById("rotatePinFifth").classList.remove("movePin3");
+					document.getElementById("rotatePinFifth").classList.remove("movePin5");
 					document.getElementById("rotatePinFinal").style.visibility = "visible";
 				}
 				
@@ -1546,6 +1546,9 @@ function fluidMoveAndPinMove(){
 	}
 	
 }
+
+
+
 
 function gotoObservation(){
 	console.log("go to observ.");
