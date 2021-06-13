@@ -254,8 +254,6 @@ background:#000
 
 /*ADDED  */
 
-/* Kerosene and Mercury */
-
 .KMLeftFluid1 {
     animation: KMLeftFluid1 2s;
 }
@@ -265,7 +263,7 @@ background:#000
         top: 222px; left: 332px; width: 14px; height: 37px;
     }
     100% {
-        top: 208px; left: 332px; width: 14px; height: 50px;
+        top: 215.6px; left: 332px; width: 14px; height: 43.4px;
     }
 }
 
@@ -275,10 +273,10 @@ background:#000
 
 @keyframes KMLeftFluid2 {
     0% {
-        top: 208px; left: 332px; width: 14px; height: 50px;
+        top: 215.6px; left: 332px; width: 14px; height: 43.4px;
     }
     100% {
-        top: 199px; left: 332px; width: 14px; height: 60px;
+        top: 209.2px; left: 332px; width: 14px; height: 49.8px;
     }
 }
 
@@ -288,7 +286,33 @@ background:#000
 
 @keyframes KMLeftFluid3 {
     0% {
-        top: 199px; left: 332px; width: 14px; height: 60px;
+        top: 209.2px; left: 332px; width: 14px; height: 49.8px;
+    }
+    100% {
+        top: 202.8px; left: 332px; width: 14px; height: 56.2px;
+    }
+}
+
+.KMLeftFluid4 {
+    animation: KMLeftFluid3 2s;
+}
+
+@keyframes KMLeftFluid3 {
+    0% {
+        top: 202.8px; left: 332px; width: 14px; height: 56.2px;
+    }
+    100% {
+        top: 196.4px; left: 332px; width: 14px; height: 62.6px;
+    }
+}
+
+.KMLeftFluid5 {
+    animation: KMLeftFluid3 2s;
+}
+
+@keyframes KMLeftFluid3 {
+    0% {
+        top: 196.4px; left: 332px; width: 14px; height: 62.6px;
     }
     100% {
         top: 190px; left: 332px; width: 14px; height: 69px;
@@ -305,7 +329,7 @@ background:#000
     }
     
     100% {
-        top: 230px; left: 381px; width: 14px; height: 28px;
+        top: 229.2px; left: 381px; width: 14px; height: 29.6px;
     }
 }
 
@@ -315,11 +339,11 @@ background:#000
 
 @keyframes KMRightFluid2 {
     0% {
-        top: 230px; left: 381px; width: 14px; height: 28px;
+        top: 229.2px; left: 381px; width: 14px; height: 29.6px;
     }
     
     100% {
-        top: 243px; left: 381px; width: 14px; height: 15px;
+        top: 236.4px; left: 381px; width: 14px; height: 22.2px;
     }
 }
 
@@ -329,11 +353,39 @@ background:#000
 
 @keyframes KMRightFluid3 {
     0% {
-        top: 243px; left: 381px; width: 14px; height: 15px;
+        top: 236.4px; left: 381px; width: 14px; height: 22.2px;
     }
     
     100% {
-        height:0px; top:258px;
+        top: 243.6px; left: 381px; width: 14px; height: 14.8px;
+    }
+}
+
+.KMRightFluid4 {
+    animation: KMRightFluid3 2s;
+}
+
+@keyframes KMRightFluid3 {
+    0% {
+        top: 243.6px; left: 381px; width: 14px; height: 14.8px;
+    }
+    
+    100% {
+        top: 250.8px; left: 381px; width: 14px; height: 7.4px;
+    }
+}
+
+.KMRightFluid5 {
+    animation: KMRightFluid3 2s;
+}
+
+@keyframes KMRightFluid3 {
+    0% {
+        top: 250.8px; left: 381px; width: 14px; height: 7.4px;
+    }
+    
+    100% {
+        top: 258px; left: 381px; width: 14px; height: 0px;
     }
 }
 
@@ -346,7 +398,7 @@ background:#000
         top: 259px;
     }
     100% {
-        top: 236.6px;
+        top: 245px;
     }
 }
 
@@ -356,10 +408,10 @@ background:#000
 
 @keyframes movePin2 {
     0% {
-        top: 236.6px;
+        top: 245px;
     }
     100% {
-        top: 213.3px;
+        top: 231px;
     }
 }
 
@@ -369,7 +421,33 @@ background:#000
 
 @keyframes movePin3 {
     0% {
-        top: 213.3px;
+        top: 231px;
+    }
+    100% {
+        top: 217px;
+    }
+}
+
+.movePin4 {
+    animation: movePin3 2s;
+}
+
+@keyframes movePin3 {
+    0% {
+        top: 217px;
+    }
+    100% {
+        top: 203px;
+    }
+}
+
+.movePin5 {
+    animation: movePin3 2s;
+}
+
+@keyframes movePin3 {
+    0% {
+        top: 203px;
     }
     100% {
         top: 189px;
