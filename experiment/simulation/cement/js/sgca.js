@@ -142,7 +142,7 @@ function magic()
 	else if (simsubscreennum==4)
 	{
 		if(chosenActivity == 1){
-			if(manoFluid == "Carbol tetrachloride"){
+			if(manoFluid == "Carbon tetrachloride"){
 				document.getElementById("bottomU").style.visibility = "hidden";
 				document.getElementById("leftFluid").style.visibility = "hidden";
 				document.getElementById("rightFluid").style.visibility = "hidden";
@@ -161,13 +161,14 @@ function magic()
 			}
 			
 			numberOfClicks = 0;
-			numberOfClicks = 0;
 			h1Val = 35.00
 			h2Val = 35.00
 			valOfRato = 0.00;
 
 			document.getElementById("rotatePinSecond").style.visibility = "hidden";
 			document.getElementById("rotatePinThird").style.visibility = "hidden";
+			document.getElementById("rotatePinForth").style.visibility = "hidden";
+			document.getElementById("rotatePinFifth").style.visibility = "hidden";
 			document.getElementById("rotatePinFinal").style.visibility = "hidden";
 			document.getElementById("rotatePin").style.visibility = "visible";
 
@@ -263,7 +264,7 @@ function setProcessFluid(){
 	console.log(processFluid);
 }
 
-var manoFluid = "Carbol tetrachloride"
+var manoFluid = "Carbon tetrachloride"
 
 function setManoFluid(){
 	manoFluid = document.getElementById("manoFluid").value;
@@ -912,7 +913,7 @@ function fluidMoveAndPinMove(){
 			}, 28.57);
 		}
 	}
-	else if( processFluid == "Kerosene" &&  manoFluid == "Carbol tetrachloride" ){
+	else if( processFluid == "Kerosene" &&  manoFluid == "Carbon tetrachloride" ){
 		numberOfClicks += 1;
 		
 		if(numberOfClicks == 1){
@@ -1228,7 +1229,7 @@ function fluidMoveAndPinMove(){
 			}, 28.57);
 		}
 	}
-	else if( processFluid == "Water" &&  manoFluid == "Carbol tetrachloride" ){
+	else if( processFluid == "Water" &&  manoFluid == "Carbon tetrachloride" ){
 		numberOfClicks += 1;
 		
 		if(numberOfClicks == 1){
@@ -1603,7 +1604,7 @@ function setPipeLengthEval(){
 	console.log(pipeLengthEval);
 }
 
-var chosenPipeDiaEval = 025;
+var chosenPipeDiaEval = 0.25;
 
 function setPipeDiaEval(){
 	chosenPipeDiaEval = document.getElementById("pipeDiaSelectEval").value;
@@ -1617,7 +1618,7 @@ function setProcessFluidEval(){
 	console.log(processFluidEval);
 }
 
-var manoFluidEval = "Carbol tetrachloride"
+var manoFluidEval = "Carbon tetrachloride"
 
 function setManoFluidEval(){
 	manoFluidEval = document.getElementById("manoFluidEval").value;
@@ -1632,7 +1633,7 @@ function setEvalSets(){
 	evalSets = document.getElementById("evalSets").value;
 	console.log(evalSets);
 
-	var table = document.getElementById("configResultTable");
+	var table = document.getElementById("configInputTable");
 
 	var rowCount = table.rows.length-1;
 	console.log("Pre count:  ",rowCount);
@@ -1656,16 +1657,97 @@ function setEvalSets(){
 
 }
 
+var lpm, pres, reyn, fric;
+var den, diaMeter, lpmConvVelocity, visco, calculatedReyn, denMano, hf, calculatedFricFact;
+
 function evaluateConfig(){
-	var table = document.getElementById("configResultTable");
+	var table = document.getElementById("configInputTable");
+	var resultTable = document.getElementById("configResultTable");
+
 	var rowCountPost = table.rows.length-1;
-	// if(evalSets == 1){
-	// 	rowCountPost = 1;
-	// }
+
 	console.log("Total rows: ",rowCountPost);
 	for(var z = 1; z<= rowCountPost; z++){
-		for(var y=0; y<=3; y++){
-			console.log(document.getElementById("inputSet"+z+y).value);
+		var out = document.getElementById("showResRey");
+		out.innerText = "Calculating..."
+		
+		// taking values from columns
+		lpm = document.getElementById("inputSet"+z+"0").value;
+		pres = document.getElementById("inputSet"+z+"1").value;
+		reyn = document.getElementById("inputSet"+z+"2").value;
+		fric = document.getElementById("inputSet"+z+"3").value;
+		
+		if(processFluidEval == "Water"){
+			den = 1000;
 		}
+		else if(processFluidEval == "Kerosene"){
+			den = 820;
+		}
+		diaMeter = chosenPipeDiaEval / 39.37;  // convert inch to meter
+		console.log("Diameter is inch: ", chosenPipeDiaEval);
+		console.log("Diameter of the pipe in meter is: ", diaMeter);
+		lpmConvVelocity = lpm * 0.000017;  // convert lpm to m3/s              V E L O C I T Y
+		console.log("Velocity value is: ", lpmConvVelocity);
+		if(manoFluidEval == "Carbon tetrachloride"){
+			visco = 0.901;
+		}
+		else if(manoFluidEval == "Mercury"){
+			visco = 1.55;
+		}
+		console.log("Viscosity value is: ",  visco);
+		console.log("Density of Process fluid is: ", den);
+		// Calculate Reynold's
+		calculatedReyn = ((den * diaMeter * lpmConvVelocity)/visco);
+		console.log("Calculated Reynold's value is: ", calculatedReyn);
+		
+		
+		var outFric = document.getElementById("showResInFric");
+		if(rowCountPost > 3){
+			out.style.top = "250px";
+			outFric.style.top = "280px";
+		}
+
+		// ========================================= Friction Factor calculation.
+		if(manoFluidEval == "Carbon tetrachloride"){
+			denMano = 1600;
+		}
+		else if(manoFluidEval == "Mercury"){
+			denMano = 13600;
+		}
+		console.log("Manometric density value is: ", denMano);
+
+		// calculate hf value
+		hf = (((denMano-den)*pres)/den);
+		console.log("Calculated hf value's: ", hf);
+		// calculate FF
+		calculatedFricFact = ((2 * 9.8 * diaMeter * hf)/(4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
+		console.log("Calculated F F value is: ", calculatedFricFact);
+		// Compare Reynold's and Friction Factor.
+		setTimeout(() => {
+			if(calculatedReyn == reyn){
+				out.innerText = "Reynold's value is correct!";
+				out.style.color = "green";
+				
+			}
+			else{
+				out.innerText = "Reynold's value is incorrect!";
+				out.style.color = "red";
+			}
+			if(calculatedFricFact == fric){
+				outFric.innerText = "Fraction Factot value is correct!";
+				outFric.style.color = "green";
+				
+			}
+			else{
+				outFric.innerText = "Fraction Factot value is incorrect!";
+				outFric.style.color = "red";
+			}
+		}, 300);
+		// Add to result table.
+		var row = resultTable.insertRow(z);
+		var reyCell = row.insertCell(0);
+		var fricCell = row.insertCell(1);
+		reyCell.innerHTML = calculatedReyn;
+		fricCell.innerHTML = calculatedFricFact;
 	}
 }
