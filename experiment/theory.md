@@ -132,7 +132,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 </br>
 
 <p style="text-indent:50px; text-align: justify">
-    Head Loss due to skin friction (hfs) can be related to wall shear. 
+    Head Loss due to skin friction (h<sub>fs</sub>) can be related to wall shear. 
 </p>
 <img src="images/5.gif" style="height:150px; width:250px;"></img>
 
