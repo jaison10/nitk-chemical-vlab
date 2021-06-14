@@ -178,7 +178,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 </p>
 
 <p style="text-indent:50px; text-align: justify">    
-    f=16/N<sub>Re</sub>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    (<sub>9</sub>) 
+    f=16/N<sub>Re</sub>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <sub>(9)</sub> 
 </p>
 
 
