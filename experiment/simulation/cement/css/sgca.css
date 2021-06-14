@@ -472,3 +472,19 @@ td, th {
     border: 1px solid #999; 
     padding: 0.2rem;
 }
+th {
+    background: lightblue;
+    color: #000;
+}
+
+tbody {
+    display: block;
+    /* height: auto; */
+    max-height: 400px;
+    overflow: auto;
+}
+thead, tbody tr {
+    display: table;                 /*This can be removed.*/
+    width: 100%;
+    table-layout: fixed;/* even columns width , fix width of table too*/
+}
