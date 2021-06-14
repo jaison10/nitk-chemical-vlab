@@ -1,1 +1,1 @@
-Marine Structure Lab
+Chemical Lab

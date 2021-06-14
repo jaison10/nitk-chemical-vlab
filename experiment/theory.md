@@ -1,6 +1,6 @@
 ### INTRODUCTION<br>
 
-### Specific Gravity of Cement :
+### Flow through pipes :
 
 <p style="text-indent:50px; text-align: justify">Specific Gravity is ratio of weight of a volume of a particular material to the weight of the same volume of water at a specified temperature. Every material has solid particles and pores which may contain water in it. Normally nominal mix design is based on the value of Specific Gravity of cement as 3.15. The value will change over time if the cement is exposed to various weather conditions. So it is essential to determine the Specific Gravity of cement before using it. We all know that water cement ratio is an important factor which is directly proportional to workability and the strength of a bonding. If the cement has already more moisture in it then, the value of water cement ratio will actually affect the workability and strength rather than increasing it. If the Specific Gravity of cement is greater than 3.19 then, the cement is either not minced finely as per the industry standard or it has more moisture content which will affect the mix and bonding.</p>
 

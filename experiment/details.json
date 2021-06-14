@@ -2,9 +2,9 @@
 
    "details": [
        {
-			"Experiment": "Specific Gravity of Cement and Aggregates",
-			"Lab": "Marine Structure Lab",
-			"Discipline": "Civil Engineering",
+			"Experiment": "Flow through pipes",
+			"Lab": "Chemical Lab",
+			"Discipline": "Chemical Engineering",
 			"Technology": "HTML, Javascript, CSS, JQuery, Inkscape"
        }
    ],
@@ -54,11 +54,21 @@
 			"InstituteAcronym": "NITK, Surathkal"
        },
 
-			 {
-		 	 "Contributer": "Sushamitha Wadde",
-		 	 "Institute": "National Institute of Technology Karnataka, Surathkal",
-		 	 "InstituteAcronym": "NITK, Surathkal"
-			 }
+		{
+			"Contributer": "Sushamitha Wadde",
+			"Institute": "National Institute of Technology Karnataka, Surathkal",
+			"InstituteAcronym": "NITK, Surathkal"
+		},
+		{
+			"Contributer": "Jaison DSouza B",
+			"Institute": "National Institute of Technology Karnataka, Surathkal",
+			"InstituteAcronym": "NITK, Surathkal"
+		},
+		{
+			"Contributer": "Shreyas Sabare",
+			"Institute": "National Institute of Technology Karnataka, Surathkal",
+			"InstituteAcronym": "NITK, Surathkal"
+		}
    ]
 
 }
