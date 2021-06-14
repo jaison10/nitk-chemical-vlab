@@ -103,7 +103,8 @@ function magic()
 	{
 		// this is for STEP1
 		refresh1();
-		
+		document.getElementById("completeSetUp").style.visibility = "hidden";
+		document.getElementById("human").style.visibility = "hidden";
 		document.getElementById('nextButton').style.visibility="hidden";
 	}
 	
