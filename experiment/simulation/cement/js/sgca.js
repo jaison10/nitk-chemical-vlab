@@ -1658,7 +1658,7 @@ function setEvalSets(){
 }
 
 var lpm, pres, reyn, fric;
-var den, diaMeter, lpmConvVelocity, visco, calculatedReyn, denMano, hf, calculatedFricFact;
+var den, diaMeter, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hf, calculatedFricFact;
 
 function evaluateConfig(){
 	var table = document.getElementById("configInputTable");
@@ -1677,24 +1677,29 @@ function evaluateConfig(){
 		reyn = document.getElementById("inputSet"+z+"2").value;
 		fric = document.getElementById("inputSet"+z+"3").value;
 		
+		presInMeter = pres / 100;
 		if(processFluidEval == "Water"){
 			den = 1000;
+			// visco = 0.89;
+			visco = 0.001;
 		}
 		else if(processFluidEval == "Kerosene"){
 			den = 820;
+			// visco = 0.00164;
+			visco = 0.00215;
 		}
 		diaMeter = chosenPipeDiaEval / 39.37;  // convert inch to meter
 		console.log("Diameter is inch: ", chosenPipeDiaEval);
 		console.log("Diameter of the pipe in meter is: ", diaMeter);
-		lpmConvVelocity = lpm * 0.000017;  // convert lpm to m3/s              V E L O C I T Y
+		lpmConvVelocity = (lpm * 0.000017)/(3.14*(diaMeter/2)*(diaMeter/2));  // convert lpm to m3/s              V E L O C I T Y
 		console.log("Velocity value is: ", lpmConvVelocity);
-		if(manoFluidEval == "Carbon tetrachloride"){
-			visco = 0.901;
-		}
-		else if(manoFluidEval == "Mercury"){
-			visco = 1.55;
-		}
-		console.log("Viscosity value is: ",  visco);
+		// if(manoFluidEval == "Carbon tetrachloride"){
+		// 	visco = 0.901;
+		// }
+		// else if(manoFluidEval == "Mercury"){
+		// 	visco = 1.55;
+		// }
+		console.log("Viscosity value of "+ processFluid+" at 25 deg C is: ",  visco);
 		console.log("Density of Process fluid is: ", den);
 		// Calculate Reynold's
 		calculatedReyn = ((den * diaMeter * lpmConvVelocity)/visco);
@@ -1711,10 +1716,10 @@ function evaluateConfig(){
 		else if(manoFluidEval == "Mercury"){
 			denMano = 13600;
 		}
-		console.log("Manometric density value is: ", denMano);
+		console.log("Manometric density value of " + manoFluidEval + " is: ", denMano);
 
-		// calculate hf value
-		hf = (((denMano-den)*pres)/den);
+		// calculate hf value		
+		hf = (((denMano-den)*presInMeter)/den);
 		console.log("Calculated hf value's: ", hf);
 		// calculate FF
 		calculatedFricFact = ((2 * 9.8 * diaMeter * hf)/(4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
