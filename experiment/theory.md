@@ -81,7 +81,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     η = dynamic viscosity / density = μ / ρ
 </p>
 
-
+</br>
 <p style="text-indent:50px; text-align: justify">
     The Reynolds number is important in analyzing any type of flow when there is substantial velocity gradient (i.e. shear.) It indicates the relative significance of the viscous effect compared to the inertia effect.
 </p>
@@ -97,6 +97,51 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     Transient turbulent when 4000 < N<sub>Re</sub>
   </li>
 </ul>
+
+<p style="text-indent:50px; text-align: justify">
+    At the laminar region,viscous forces are dominant as compared to inertial forces. Under laminar flow condition the pressure drop per unit length is proportional to the velocity. At the transition region, the experimental results are not reproducible. Finally, at turbulent regions, inertial forces are dominant. For turbulent flow, the pressure drop becomes proportional to the velocity raised to a power of 2.
+</p>
+
+</br>
+
+#### Relationship Between Frictional Head Loss and Frictional Pressure Drop
+<p style="text-indent:50px; text-align: justify">
+    The energy loss in pipe flow due to friction can be expressed as a pressure drop instead of as a head loss. Chemical and mechanical engineers often work with pressure drop, whereas civil engineers usually work with head loss. The relationship between frictional head loss and frictional pressure drop is simply:
+</p>
+
+<p style="text-indent:50px; text-align: justify">
+    (-△P)<sub>f</sub> = ρgh<sub>fs</sub>
+</p>
+
+<p style="text-indent:50px; text-align: justify">
+    Where:
+</p>
+<p style="text-indent:50px; text-align: justify">
+    (-△P)<sub>f</sub> = ρgh<sub>fs</sub> = frictional pressure drop 
+</p>
+<p style="text-indent:50px; text-align: justify">
+    h<sub>fs</sub> = frictional head loss due to skin friction 
+</p>
+<p style="text-indent:50px; text-align: justify">
+    ρ = fluid density 
+</p>
+<p style="text-indent:50px; text-align: justify">
+    g = acceleration due to gravity 
+</p>
+
+</br>
+
+<p style="text-indent:50px; text-align: justify">
+    Head Loss due to skin friction (hfs) can be related to wall shear. 
+</p>
+<img src="images/5.gif" style="height:150px; width:250px;"></img>
+
+
+
+
+
+
+
 
 
 
