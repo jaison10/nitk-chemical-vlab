@@ -2,12 +2,62 @@
 
 ### Flow through pipes :
 
-<p style="text-indent:50px; text-align: justify">Specific Gravity is ratio of weight of a volume of a particular material to the weight of the same volume of water at a specified temperature. Every material has solid particles and pores which may contain water in it. Normally nominal mix design is based on the value of Specific Gravity of cement as 3.15. The value will change over time if the cement is exposed to various weather conditions. So it is essential to determine the Specific Gravity of cement before using it. We all know that water cement ratio is an important factor which is directly proportional to workability and the strength of a bonding. If the cement has already more moisture in it then, the value of water cement ratio will actually affect the workability and strength rather than increasing it. If the Specific Gravity of cement is greater than 3.19 then, the cement is either not minced finely as per the industry standard or it has more moisture content which will affect the mix and bonding.</p>
+<p style="text-indent:50px; text-align: justify">Pipe flow under pressure is used for a lot of purposes. A fundamental understanding of fluid flow is essential to almost every industry related to chemical engineering. In the chemical and manufacturing industries, large flow networks are necessary to achieve continuous transport of products and raw materials from different processing units. This requires a detailed understanding of fluid flow in pipes. Energy input to the gas or liquid is needed to make it flow through the pipe. This energy input is needed because there is frictional energy loss (also called frictional head loss or frictional pressure drop) due to the friction between the fluid and the pipe wall and internal friction within the fluid. In pipe flow substantial energy is lost due to frictional resistances.</p>
 
-<p style="text-indent:50px; text-align: justify">Standard Le-Chatelier flask conforming to the dimensions shown in figure is used to determine Specific Gravity of cement. The samples of the cement shall be taken in accordance with the requirements of IS : 3535-1986 and the relevant standard specification for the type of cement being tested.</p>
+<p style="text-indent:50px; text-align: justify">One of the most common problems in fluid mechanics is the estimation of this pressure loss. Calculating pressure losses is necessary for determining the appropriate size pump. Knowledge of the magnitude of frictional losses is of great importance because it determines the power requirements of the pump forcing the fluid through the pipe. For example, in refining and petrochemical industries, these losses have to be calculated accurately to determine where booster pumps have to be placed when pumping crude oil or other fluids in pipes to distances thousands of kilometres away.</p>
+
+<p style="text-indent:50px; text-align: justify">Pipe losses in a piping system result from a number of system characteristics, which include among others; pipe friction, changes in direction of flow, obstructions in flow path, and sudden or gradual changes in the cross-section and shape of flow path.</p>
+
+<p style="text-indent:50px; text-align: justify">In this experiment, pressure loss measurements are made as a function of flowrate on different pipe components, namely; a) straight pipe, (b)globe valve (c) o gate valve (d)an Expander (e)Reducer (f)standard elbow (g) 90 Bend.
+</p>
+
+#### Resistance to flow in a pipe
+<p style="text-indent:50px; text-align: justify">When a fluid flows through a pipe, the internal roughness of the pipe wall can create local eddy currents within the fluid adding a resistance to flow of the fluid. The velocity profile in a pipe will show that the fluid elements in the center of the pipe will move at a higher speed than those closer to the wall. . Therefore friction will occur between layers within the fluid. This movement of fluid elements relative to each other is associated with pressure drop, called frictional losses. Pipes with smooth walls such as glass, copper, brass and polyethylene have only a small effect on the frictional resistance. Pipes with less smooth walls such as concrete, cast iron and steel will create larger eddy currents which will sometimes have a significant effect on the frictional resistance. Rougher the inner wall of the pipe, more will be the pressure loss due to friction.</p>
+
+<p style="text-indent:50px; text-align: justify">As the average velocity increases, pressure losses increase. Velocity is directly related to flow rate.
+</br>
+Velocity=Volumetric flow rate /Cross sectional area of the pipe.
+</p>
+
+<p style="text-indent:50px; text-align: justify">An increase or decrease in flow rate will result in a corresponding increase or decrease in velocity. Smaller pipe causes a greater proportion of the liquid to be in contact with the pipe, which creates friction. Pipe size also affects velocity. Given a constant flow rate, decreasing pipe size increases the velocity, which increases friction. The friction losses are cumulative as the fluid travels through the length of pipe. The greater the distance, the greater the friction losses will be. Fluids with a high viscosity will flow more slowly and will generally not support eddy currents and therefore the internal roughness of the pipe will have no effect on the frictional resistance. This condition is known as laminar flow.</p>
+
+<p style="text-indent:50px; text-align: justify">There are in general three types of fluid flow in pipes</p>
+
+<ul>
+  <li>
+    Laminar
+  </li>
+  <li>
+    Turbulent
+  </li>
+  <li>
+    Transient
+  </li>
+</ul>
+
+#### Laminar flow
+
+<p style="text-indent:50px; text-align: justify">Laminar flow generally happens when dealing with small pipes , low flow velocities and with highly viscous fluids. At low velocities fluids tend to flow without lateral mixing,and adjacent layers slide past one another like playing cards. There are neither cross currents nor eddies. Laminar flow can be regarded as a series of liquid cylinders in the pipe, where the innermost parts flow the fastest, and the cylinder touching the pipe isn't moving at all.</p>
+
+#### Turbulent flow
+
+<p style="text-indent:50px; text-align: justify">In turbulent flow, the fluid moves erratically in the form of cross currents and eddies. Turbulent flow happens in general at high flow rates and with larger pipes.</p>
+
+#### Transitional flow
+
+<p style="text-indent:50px; text-align: justify">Transitional flow is a mixture of laminar and turbulent flow, with turbulence in the center of the pipe, and laminar flow near the edges.</p>
+
+</br>
+
+<p style="text-indent:50px; text-align: justify">Each of these flows behave in different manners in terms of their frictional energy loss while flowing, and have different equations that predict their behavior.Reynolds studied the conditions under which one type of flow changes into the other and found that the critical velocity ,at which laminar flow changes into turbulent flow ,depends on four quantities: the diameter of the tube, viscosity, density and average velocity of the liquid. He found that these four factors can be combined into one group and that the change in kind of flow occurs at a definite value of the group. The grouping of the variables so found was Reynolds Number() .Turbulent or laminar flow is determined by Reynolds Number.</p>
+
+</br>
+
+<p style="text-indent:50px; text-align: justify">The Reynolds number expresses the ratio of inertial (resistant to change or motion) forces to viscous forces.</p>
+
 
 <center>
-<img src="images/theorypic-1.png"></img><br><br>
+<img src="images/1.gif"></img><br><br>
 Standard Le-Chatelier Flask <br>
 ( Source: IS 4031 (Part II) - 1988 )
 </center>
