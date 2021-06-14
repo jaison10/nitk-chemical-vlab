@@ -69,7 +69,6 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
         <p style="text-indent:50px; text-align: justify"> is the density of fluid</p>
     </div>
 </div> -->
-<p style="text-indent:50px; text-align: justify"><img src="images/2.gif" style="height:50px; width:50px;"></img> is the density of fluid</p>
 
 <p style="text-indent:50px; text-align: justify">ρ is the density of fluid</p>
 <p style="text-indent:50px; text-align: justify">V is the average velocity of the fluid</p>
@@ -138,7 +137,20 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 <img src="images/5.gif" style="height:150px; width:250px;"></img>
 
 
+<p style="text-indent:50px; text-align: justify">
+    Where <img src="images/6.gif" style="height:50px; width:50px;"></img>  is the shear stress at the wall of the pipe ,L is the length of the pipe and
+    <img src="images/7.gif" style="height:50px; width:50px;"></img>  is pressure drop due to friction losses. </br>
+    <img src="images/6.gif" style="height:50px; width:50px;"></img> is not conveniently determined so the dimensionless friction factor is introduced into the equations.
+</p>
 
+<p style="text-indent:50px; text-align: justify">
+    The Friction Factor It is denoted by f and defined as the ratio of the wall shear stress to the product of the velocity head (V<sup>2</sup>/2) and density = 
+</p>
+<img src="images/8.gif" style="height:150px; width:250px;"></img>
+
+<p style="text-indent:50px; text-align: justify">
+    <img src="images/9.gif" style="height:150px; width:250px;"></img> <img src="images/10.gif" style="height:150px; width:250px;"></img> 
+</p>
 
 
 
