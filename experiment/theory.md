@@ -181,6 +181,14 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     f=16/N<sub>Re</sub>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(9)</sub> 
 </p>
 
+<p style="text-indent:50px; text-align: justify">
+    A first principle analysis can not be used to develop a relation between friction factor and Reynolds numbers for turbulent flow. A variety of empirical correlations exist for turbulent flow in smooth pipes. Blasius equations :
+</p>
+<p style="text-indent:50px; text-align: justify">
+    <img src="images/12.gif" style="height:150px; width:250px;"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(10)</sub> 
+</p>
+
+
 
 
 
