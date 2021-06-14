@@ -70,14 +70,16 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     </div>
 </div> -->
 
-<p style="text-indent:50px; text-align: justify">μ is the density of fluid</p>
-<p style="text-indent:50px; text-align: justify"> is the average velocity of the fluid</p>
-<p style="text-indent:50px; text-align: justify"> is the viscosity of fluid</p> </br>
+<p style="text-indent:50px; text-align: justify">ρ is the density of fluid</p>
+<p style="text-indent:50px; text-align: justify">V is the average velocity of the fluid</p>
+<p style="text-indent:50px; text-align: justify">μ is the viscosity of fluid</p> </br>
 
 <p style="text-indent:50px; text-align: justify">
-The Reynolds number can be written in terms of kinematic viscosity ( η)
+    The Reynolds number can be written in terms of kinematic viscosity ( η)
 </p>
-
+<p style="text-indent:50px; text-align: justify">
+    η = dynamic viscosity / density = μ / ρ
+</p>
 
 
 
