@@ -466,3 +466,9 @@ background:#000
       transform: rotate(-359deg);
     }
   }
+
+
+td, th {
+    border: 1px solid #999; 
+    padding: 0.2rem;
+}
