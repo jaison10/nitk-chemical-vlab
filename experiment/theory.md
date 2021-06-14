@@ -187,7 +187,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 <p style="text-indent:50px; text-align: justify">
     <img src="images/12.gif" style="height:150px; width:250px;"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(10)</sub> 
 </p>
-
+The above correlation is valid for 4000 < N<sub>Re</sub> <= 10<sup>5</sup>
 
 
 
