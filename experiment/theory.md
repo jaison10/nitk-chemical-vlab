@@ -69,6 +69,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
         <p style="text-indent:50px; text-align: justify"> is the density of fluid</p>
     </div>
 </div> -->
+<p style="text-indent:50px; text-align: justify"><img src="images/2.gif" style="height:50px; width:50px;"></img> is the density of fluid</p>
 
 <p style="text-indent:50px; text-align: justify">ρ is the density of fluid</p>
 <p style="text-indent:50px; text-align: justify">V is the average velocity of the fluid</p>
