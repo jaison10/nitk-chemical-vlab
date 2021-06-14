@@ -152,6 +152,40 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     <img src="images/9.gif" style="height:150px; width:250px;"></img> <img src="images/10.gif" style="height:150px; width:250px;"></img> 
 </p>
 
+<p style="text-indent:50px; text-align: justify">Where f is the Fanning's friction factor</p>
+<ul>
+  <li>
+    Only need L, D, V and f to get friction loss
+  </li>
+  <li>
+    Valid for both laminar and turbulent flow
+  </li>
+  <li>
+    Valid for Newtonian and Non-Newtonian fluids
+  </li>
+</ul>
+
+<p style="text-indent:50px; text-align: justify">
+    Correlations were made between the fanning friction factor and the Reynolds number for both laminar and turbulent flow in a variety of pipes.
+</p>
+<p style="text-indent:50px; text-align: justify">
+    For laminar flow, first principles can be used to develop a relation between Reynolds number and friction factor. The Hagen-Poiseuille equation relates the frictional pressure drop to fluid velocity, viscosity, and pipe dimension:
+</p>
+<img src="images/11.gif" style="height:150px; width:250px;"></img>
+
+<p style="text-indent:50px; text-align: justify">
+    Equating the pressure drop due to friction in the Hagen-Poiseuille equation given by Eq.8, with the overall pressure drop across the pipe, and combining with the Fanning equation given by Eq.7, results in relation for laminar flow as
+</p>
+
+<p style="text-indent:50px; text-align: justify">    
+    f=16/N<sub>Re</sub>        (9) 
+</p>
+
+
+
+
+
+
 
 
 
