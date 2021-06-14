@@ -145,6 +145,9 @@ function magic()
 	else if (simsubscreennum==4)
 	{
 		if(chosenActivity == 1){
+			document.getElementById("infoAboutWhatToDo").innerText = "Click on Green button to start the motor.";
+			document.getElementById("infoAboutWhatToDo").style.color = "black";
+
 			document.getElementById("step4Heading").innerText = "Experiment";
 			document.getElementById("ratoReadings").innerText = "0.00";
 			if(manoFluid == "Carbon tetrachloride"){
@@ -191,6 +194,15 @@ function magic()
 			document.getElementById("greenColor").onclick = function(){
 				document.getElementById("greenColor").style.visibility = "hidden";
 				document.getElementById("redColor").style.visibility = "visible";
+
+				// Change the NOTE content.
+				document.getElementById("infoAboutWhatToDo").innerText = "Click on Gatewall to rotate it."
+
+				// water starts flowing.
+				document.getElementById("waterPourFirst").style.visibility = "visible"; 
+				// changing the steady water to flowing one.
+				document.getElementById("waterSteady").style.visibility = "hidden"; 
+				document.getElementById("waterFlow").style.visibility = "visible"; 
 
 				// Show the water flow.
 				document.getElementById("gatewayRotate").style.cursor = "pointer";
@@ -283,6 +295,7 @@ var h2Val = 35.00
 var valOfRato = 0.00;
 
 function fluidMoveAndPinMove(){
+	document.getElementById("waterPourSecondLongOne").style.visibility = "visible";
 	document.getElementById("gatewayRotate").style.cursor = "auto";
 	console.log("clicked");
 	document.getElementById("gatewayRotate").onclick = "";
@@ -565,6 +578,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 5){
+			document.getElementById("infoAboutWhatToDo").innerText = "";
+
 			document.getElementById("leftFluidFifth").classList.add("KMLeftFluid5");
 			document.getElementById("rightFluidFifth").classList.add("KMRightFluid5");
 			document.getElementById("rotatePinFifth").classList.add("movePin5");
@@ -603,6 +618,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinFifth").style.visibility = "hidden";
 					document.getElementById("rotatePinFifth").classList.remove("movePin5");
 					document.getElementById("rotatePinFinal").style.visibility = "visible";
+
+					document.getElementById("infoAboutWhatToDo").innerText = "Manometric fluid is about to overflow. Change the Manometer!";
+					document.getElementById("infoAboutWhatToDo").style.color = "red";
 				}
 				
 					document.getElementById("obserButton").onclick = function(){
@@ -893,6 +911,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 5){
+			document.getElementById("infoAboutWhatToDo").innerText = "";
+					
 			document.getElementById("leftFluidFifth").classList.add("KMLeftFluid5");
 			document.getElementById("rightFluidFifth").classList.add("KMRightFluid5");
 			document.getElementById("rotatePinFifth").classList.add("movePin5");
@@ -931,6 +951,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinFifth").style.visibility = "hidden";
 					document.getElementById("rotatePinFifth").classList.remove("movePin5");
 					document.getElementById("rotatePinFinal").style.visibility = "visible";
+
+					document.getElementById("infoAboutWhatToDo").innerText = "Manometric fluid is about to overflow. Change the Manometer!";
+					document.getElementById("infoAboutWhatToDo").style.color = "red";
 				}
 				
 					document.getElementById("obserButton").onclick = function(){
@@ -1221,6 +1244,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 5){
+			document.getElementById("infoAboutWhatToDo").innerText = "";
+					
 			document.getElementById("leftPinkFluidFifth").classList.add("KMLeftFluid5");
 			document.getElementById("rightPinkFluidFifth").classList.add("KMRightFluid5");
 			document.getElementById("rotatePinFifth").classList.add("movePin5");
@@ -1259,6 +1284,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinFifth").style.visibility = "hidden";
 					document.getElementById("rotatePinFifth").classList.remove("movePin5");
 					document.getElementById("rotatePinFinal").style.visibility = "visible";
+
+					document.getElementById("infoAboutWhatToDo").innerText = "Manometric fluid is about to overflow. Change the Manometer!";
+					document.getElementById("infoAboutWhatToDo").style.color = "red";
 				}
 				
 					document.getElementById("obserButton").onclick = function(){
@@ -1549,6 +1577,8 @@ function fluidMoveAndPinMove(){
 		}
 
 		if(numberOfClicks == 5){
+			document.getElementById("infoAboutWhatToDo").innerText = "";
+					
 			document.getElementById("leftPinkFluidFifth").classList.add("KMLeftFluid5");
 			document.getElementById("rightPinkFluidFifth").classList.add("KMRightFluid5");
 			document.getElementById("rotatePinFifth").classList.add("movePin5");
@@ -1587,6 +1617,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinFifth").style.visibility = "hidden";
 					document.getElementById("rotatePinFifth").classList.remove("movePin5");
 					document.getElementById("rotatePinFinal").style.visibility = "visible";
+
+					document.getElementById("infoAboutWhatToDo").innerText = "Manometric fluid is about to overflow. Change the Manometer!";
+					document.getElementById("infoAboutWhatToDo").style.color = "red";
 				}
 				
 					document.getElementById("obserButton").onclick = function(){
@@ -1605,6 +1638,9 @@ function fluidMoveAndPinMove(){
 
 function gotoObservation(){
 	console.log("go to observ.");
+	document.getElementById("waterPourFirst").style.visibility = "hidden";
+	document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
+
 	document.getElementById("step4Heading").innerText = "Observations";
 	document.getElementById("experimentID").style.visibility = "hidden";
 	document.getElementById("leftFluidFinal").style.visibility = "hidden";
@@ -1624,6 +1660,10 @@ function gotoObservation(){
 }
 
 function goBacktoStep2(){
+
+	document.getElementById("waterPourFirst").style.visibility = "hidden";
+	document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
+
 
 	document.getElementById("experimentID").style.visibility = "hidden";
 	document.getElementById("leftFluidFinal").style.visibility = "hidden";
