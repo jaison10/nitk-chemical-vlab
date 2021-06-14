@@ -146,6 +146,7 @@ function magic()
 	{
 		if(chosenActivity == 1){
 			document.getElementById("step4Heading").innerText = "Experiment";
+			document.getElementById("ratoReadings").innerText = "0.00";
 			if(manoFluid == "Carbon tetrachloride"){
 				document.getElementById("bottomU").style.visibility = "hidden";
 				document.getElementById("leftFluid").style.visibility = "hidden";
@@ -284,6 +285,7 @@ var valOfRato = 0.00;
 function fluidMoveAndPinMove(){
 	document.getElementById("gatewayRotate").style.cursor = "auto";
 	console.log("clicked");
+	document.getElementById("gatewayRotate").onclick = "";
 
 	if( processFluid == "Water" &&  manoFluid == "Mercury"){
 		numberOfClicks += 1;
@@ -326,6 +328,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePin").classList.remove("movePin1");
 					document.getElementById("rotatePinSecond").style.visibility = "visible";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
@@ -391,6 +396,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
 					document.getElementById("rotatePinSecond").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -457,6 +465,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinThird").classList.remove("movePin3");
 					document.getElementById("rotatePinThird").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -523,6 +534,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinForth").classList.remove("movePin4");
 					document.getElementById("rotatePinForth").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -642,6 +656,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePin").classList.remove("movePin1");
 					document.getElementById("rotatePinSecond").style.visibility = "visible";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
@@ -707,6 +724,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
 					document.getElementById("rotatePinSecond").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -773,6 +793,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinThird").classList.remove("movePin3");
 					document.getElementById("rotatePinThird").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -839,6 +862,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinForth").classList.remove("movePin4");
 					document.getElementById("rotatePinForth").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -958,6 +984,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePin").classList.remove("movePin1");
 					document.getElementById("rotatePinSecond").style.visibility = "visible";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
@@ -1023,6 +1052,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
 					document.getElementById("rotatePinSecond").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -1089,6 +1121,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinThird").classList.remove("movePin3");
 					document.getElementById("rotatePinThird").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -1155,6 +1190,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinForth").classList.remove("movePin4");
 					document.getElementById("rotatePinForth").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -1274,6 +1312,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePin").classList.remove("movePin1");
 					document.getElementById("rotatePinSecond").style.visibility = "visible";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
@@ -1339,6 +1380,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinSecond").classList.remove("movePin2");
 					document.getElementById("rotatePinSecond").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -1405,6 +1449,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinThird").classList.remove("movePin3");
 					document.getElementById("rotatePinThird").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
@@ -1471,6 +1518,9 @@ function fluidMoveAndPinMove(){
 					document.getElementById("rotatePinForth").classList.remove("movePin4");
 					document.getElementById("rotatePinForth").style.visibility = "hidden";
 					document.getElementById("addtoTableButton").style.visibility = "visible";
+					document.getElementById("gatewayRotate").onclick = function(){
+						fluidMoveAndPinMove();
+					}
 				}
 
 				document.getElementById("addtoTableButton").onclick = function(){
