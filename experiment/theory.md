@@ -75,15 +75,28 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 <p style="text-indent:50px; text-align: justify">μ is the viscosity of fluid</p> </br>
 
 <p style="text-indent:50px; text-align: justify">
-    The Reynolds number can be written in terms of kinematic viscosity ( η)
+    The Reynolds number can be written in terms of kinematic viscosity ( η )
 </p>
 <p style="text-indent:50px; text-align: justify">
     η = dynamic viscosity / density = μ / ρ
 </p>
 
 
-
-
+<p style="text-indent:50px; text-align: justify">
+    The Reynolds number is important in analyzing any type of flow when there is substantial velocity gradient (i.e. shear.) It indicates the relative significance of the viscous effect compared to the inertia effect.
+</p>
+<p style="text-indent:50px; text-align: justify">The flow is</p>
+<ul>
+  <li>
+    Laminar when N<sub>Re</sub> < 2100
+  </li>
+  <li>
+    Turbulent transient when 2100 < N<sub>Re</sub> < 4000
+  </li>
+  <li>
+    Transient turbulent when 4000 < N<sub>Re</sub>
+  </li>
+</ul>
 
 
 
