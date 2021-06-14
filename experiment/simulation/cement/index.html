@@ -82,9 +82,9 @@ var n;
 <div class="simsubscreen" id="canvas1" style="visibility:hidden">
 <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
-<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Let's learn what a wing and an airfoil is.</p>
+<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Choose what you want to do.</p>
 
-  <p style="top: 100pxl;font-family:verdana; font-size:24px;">What would you like to do?</p>
+  <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p>
 
   <button onclick="selectAction(1)" style="position: absolute; top: 130px; left: 200px; width: 250px; height: 30px;">Performance experiment</button>
   <button onclick="selectAction(2)" style="position: absolute; top: 170px; left: 200px; width: 250px; height: 30px">Evaluate yourself</button>
@@ -97,20 +97,19 @@ var n;
 </div>
 
 
-
 <!--Step2	-->	
 
 <div class="simsubscreen" id="canvas2" style="visibility:hidden">
 
 <strong id="titlestep" class="incanvas">STEP &nbsp;</strong>
 <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
-<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Details</p>
+<p id="step2Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Details</p>
   <!-- EXPERIMENT PART -->
   <img id="labelImage" style="visibility: hidden; position: absolute;left:30px; top:90px; width: 640px; height: 390px;" src="./Images/Flow through pipes_images/labelPng.png">
 
   <!-- Evaluation part -->
   <div id="configExp">
-    <p style="position: absolute; top: 50px;">Length of the pipe:  
+    <p style="position: absolute; top: 50px;">Number of Observations:   
       <input type="number" value="1" id="pipeLengthEval" name="length" min="1" max="100" onchange="setPipeLengthEval();"> 
     </p>
     <p style="position: absolute; top: 100px;">Nominal diameter of the pipe  
@@ -139,7 +138,7 @@ var n;
 <!--Step3	-->	
 <div class="simsubscreen" id="canvas3" style="visibility:hidden">
 <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span>
-<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Choose </p>
+<p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Choose </p>
   <!-- EXPERIMENT PART -->
   <div id="experimentSetup" style="visibility: hidden;">
     <p style="position: absolute; top: 50px;">Length of the pipe:  
@@ -166,7 +165,7 @@ var n;
 
   <!-- Evaluation Part -->
   <div id="evaluatePart">
-    <p style="position: absolute; top: 30px;">Length of the pipe:  
+    <p style="position: absolute; top: 30px;">Number of Observations:  
       <input type="number" value="0" id="evalSets" name="length" min="1" max="100" onchange="setEvalSets();"> 
     </p>
     <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid black; width: 450px; top:70px;">
@@ -195,12 +194,10 @@ var n;
 </div>
 
 
-
-
 <!--Step4	-->	
 <div class="simsubscreen" id="canvas4" style="visibility:hidden">
 <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
-<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Experiment.</p>
+<p id="step4Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Experiment.</p>
   <!-- EXPERIMENT PART -->
   <div id="experimentID" style="visibility: hidden;">
     <img style="position: absolute; top: 370px; left: 240px; width: 130px; height: 80px;" src="./Images/Flow through pipes_images/shapes/motor.png">
@@ -456,6 +453,6 @@ var n;
 <!--Blinking Arrow	-->	
 <img class ="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png"/>
 
-<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+<div id="copyright"> &copy; <script>document.write(new Date().getFullYear());</script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 </body>
 </html>

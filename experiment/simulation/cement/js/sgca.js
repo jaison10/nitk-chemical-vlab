@@ -117,6 +117,7 @@ function magic()
 		}
 		else{
 			console.log("2 has chosen");
+			document.getElementById("step2Heading").innerText = "Choose"
 			document.getElementById("configExp").style.visibility = "visible";
 			document.getElementById('nextButton').style.visibility="visible";
 		}
@@ -132,6 +133,7 @@ function magic()
 		}
 		else{
 			console.log("2 has chosen");
+			document.getElementById("step3Heading").innerText = "Evaluation!"
 			document.getElementById("configExp").style.visibility = "hidden";
 			document.getElementById('nextButton').style.visibility="hidden";
 			
@@ -142,6 +144,7 @@ function magic()
 	else if (simsubscreennum==4)
 	{
 		if(chosenActivity == 1){
+			document.getElementById("step4Heading").innerText = "Experiment";
 			if(manoFluid == "Carbon tetrachloride"){
 				document.getElementById("bottomU").style.visibility = "hidden";
 				document.getElementById("leftFluid").style.visibility = "hidden";
@@ -1551,6 +1554,7 @@ function fluidMoveAndPinMove(){
 
 function gotoObservation(){
 	console.log("go to observ.");
+	document.getElementById("step4Heading").innerText = "Observations";
 	document.getElementById("experimentID").style.visibility = "hidden";
 	document.getElementById("leftFluidFinal").style.visibility = "hidden";
 	document.getElementById("rightFluidFinal").style.visibility = "hidden";
@@ -1691,6 +1695,7 @@ function evaluateConfig(){
 		diaMeter = chosenPipeDiaEval / 39.37;  // convert inch to meter
 		console.log("Diameter is inch: ", chosenPipeDiaEval);
 		console.log("Diameter of the pipe in meter is: ", diaMeter);
+		console.log("Radius is: ", (diaMeter/2));
 		lpmConvVelocity = (lpm * 0.000017)/(3.14*(diaMeter/2)*(diaMeter/2));  // convert lpm to m3/s              V E L O C I T Y
 		console.log("Velocity value is: ", lpmConvVelocity);
 		// if(manoFluidEval == "Carbon tetrachloride"){
@@ -1699,8 +1704,8 @@ function evaluateConfig(){
 		// else if(manoFluidEval == "Mercury"){
 		// 	visco = 1.55;
 		// }
-		console.log("Viscosity value of "+ processFluid+" at 25 deg C is: ",  visco);
-		console.log("Density of Process fluid is: ", den);
+		console.log("Viscosity value of "+ processFluid+" at 20 deg C is: ",  visco);
+		console.log("Density of "+processFluidEval+" fluid is: ", den);
 		// Calculate Reynold's
 		calculatedReyn = ((den * diaMeter * lpmConvVelocity)/visco);
 		calculatedReyn = calculatedReyn.toFixed(5);                                            // ======    toFixed(5)
@@ -1721,8 +1726,11 @@ function evaluateConfig(){
 		// calculate hf value		
 		hf = (((denMano-den)*presInMeter)/den);
 		console.log("Calculated hf value's: ", hf);
+
+		console.log("Length of pipe is: ", pipeLengthEval);
 		// calculate FF
 		calculatedFricFact = ((2 * 9.8 * diaMeter * hf)/(4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
+		calculatedFricFact = calculatedFricFact * 10000;
 		calculatedFricFact = calculatedFricFact.toFixed(5);                                          //========     toFixed(5)
 		console.log("Calculated F F value is: ", calculatedFricFact);
 
