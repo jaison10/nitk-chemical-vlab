@@ -1,1 +1,8 @@
-To determine the specific gravity of cement and aggregates using Le-Chatelier flask and Pycnometer respectively, and its effect on specific gravity of cement.
+<ul>
+  <li>
+    To determine the frictional losses encountered in a hydraulically smooth pipe under laminar and turbulent flow situations.
+  </li>
+  <li>
+    To determine the effect of Reynolds number on Fanning friction factor for laminar and turbulent flow situations in a hydraulically smooth pipe. Verify the correlations for laminar flow and turbulent flow.
+  </li>
+</ul>
