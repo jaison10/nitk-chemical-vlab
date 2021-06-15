@@ -80,7 +80,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     The Reynolds number can be written in terms of kinematic viscosity ( η )
 </p>
 <p style="text-indent:50px; text-align: justify">
-    η = dynamic viscosity / density = μ / ρ    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(2)</sub>
+    <b>η = dynamic viscosity / density = μ / ρ </b>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(2)</sub>
 </p>
 
 </br>
