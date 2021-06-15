@@ -112,7 +112,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 </p>
 
 <p style="text-indent:50px; text-align: justify">
-    (-△P)<sub>f</sub> = ρgh<sub>fs</sub>
+    <b>(-△P)<sub>f</sub> = ρgh<sub>fs</sub>  </b>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(4)</sub>
 </p>
 
 <p style="text-indent:50px; text-align: justify">
@@ -136,7 +136,9 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 <p style="text-indent:50px; text-align: justify">
     Head Loss due to skin friction (h<sub>fs</sub>) can be related to wall shear. 
 </p>
-<img src="images/5.gif" style="height:150px; width:250px;"></img>
+<p style="text-indent:50px; text-align: justify">
+    <img src="images/5.gif" style="height:150px; width:250px;"></img>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(5)</sub>
+</p>
 
 
 <p style="text-indent:50px; text-align: justify">
