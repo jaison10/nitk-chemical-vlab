@@ -210,7 +210,7 @@ The above correlation is valid for 4000 < N<sub>Re</sub> <= 10<sup>5</sup>
 </p>
 for Re > 4000, Turbulent.
 
-</br>
+</br> </br>
 
 <p style="text-indent:50px; text-align: justify">
     It has long been known that in turbulent flow a rough pipe leads to a larger friction factor for a given Reynolds number than a smooth pipe does. If a rough pipe is smoothed , the friction factor is reduced. When further smoothing brings about no further reduction in friction factor for a given Reynolds number,the tube is said to be hydraulically smooth.
