@@ -18,14 +18,14 @@
       <animateTransform additive="sum" attributeName="gradientTransform" dur="2s" from="0.0" repeatCount="indefinite" to="0.0" type="rotate"/>
       <animateTransform additive="sum" attributeName="gradientTransform" dur="2s" from="0.0955 0.0351" repeatCount="indefinite" to="0.0955 0.0351" type="scale"/>
       <animateTransform additive="sum" attributeName="gradientTransform" dur="2s" from="0.0" repeatCount="indefinite" to="0.0" type="skewX"/>
-      <stop offset="0.0" stop-color="#02cbfd" stop-opacity="0.47058824">
+      <stop offset="0.0" stop-color="#f1f1f1" stop-opacity="0.47058824">
         <animate attributeName="offset" dur="2s" repeatCount="indefinite" values="0.0;0.0"/>
-        <animate attributeName="stop-color" dur="2s" repeatCount="indefinite" values="#02cbfd;#02cbfd"/>
+        <animate attributeName="stop-color" dur="2s" repeatCount="indefinite" values="#f1f1f1;#f1f1f2"/>
         <animate attributeName="stop-opacity" dur="2s" repeatCount="indefinite" values="0.47058824;0.47058824"/>
       </stop>
-      <stop offset="1.0" stop-color="#018cfd" stop-opacity="0.76862746">
+      <stop offset="1.0" stop-color="#ffffff" stop-opacity="0.76862746">
         <animate attributeName="offset" dur="2s" repeatCount="indefinite" values="1.0;1.0"/>
-        <animate attributeName="stop-color" dur="2s" repeatCount="indefinite" values="#018cfd;#018cfd"/>
+        <animate attributeName="stop-color" dur="2s" repeatCount="indefinite" values="#ffffff;#ffffff"/>
         <animate attributeName="stop-opacity" dur="2s" repeatCount="indefinite" values="0.76862746;0.76862746"/>
       </stop>
     </linearGradient>
