@@ -57,7 +57,9 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 
 
 <center>
-<img src="images/1.gif"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(1)</sub>
+<p style="text-indent:50px; text-align: justify">
+    <img src="images/1.gif"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(1)</sub>
+</p>
 </center>
 <p style="text-indent:50px; text-align: justify">Where,</p>
 <p style="text-indent:50px; text-align: justify">D is the diameter of the pipe</p>
