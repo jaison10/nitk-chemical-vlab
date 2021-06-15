@@ -57,7 +57,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 
 
 <center>
-<img src="images/1.gif"></img>
+<img src="images/1.gif"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(1)</sub>
 </center>
 <p style="text-indent:50px; text-align: justify">Where,</p>
 <p style="text-indent:50px; text-align: justify">D is the diameter of the pipe</p>
@@ -198,6 +198,7 @@ The above correlation is valid for 4000 < N<sub>Re</sub> <= 10<sup>5</sup>
 </p>
 for Re > 4000, turbulent
 
+</br>
 
 <p style="text-indent:50px; text-align: justify">
     It has long been known that in turbulent flow a rough pipe leads to a larger friction factor for a given Reynolds number than a smooth pipe does. If a rough pipe is smoothed , the friction factor is reduced. When further smoothing brings about no further reduction in friction factor for a given Reynolds number,the tube is said to be hydraulically smooth.
@@ -213,7 +214,3 @@ for Re > 4000, turbulent
 <p style="text-indent:50px; text-align: justify">
     In a smooth pipe flow, the viscous sublayer completely submerges the effect of k on the flow. In this case, the friction factor f is a function of N<sub>Re</sub> and is independent of the effect of k on the flow. In case of rough pipe flow, the viscous sublayer thickness is very small when compared to roughness height and thus the flow is dominated by the roughness of the pipe wall and f is the function only of k/D and is independent of N<sub>Re</sub>. For design purposes, the frictional characteristics of round pipes, both smooth and rough, are summarized by the friction factor chart, which is a log-log plot of Fanning friction factor( f ) vs N<sub>Re</sub> which is based on Moody’s chart . 
 </p>
-
-
-#### Relevant Indian Standard :
-1. IS 2386 (Part III) -1963: Methods of Test for Aggregates for Concrete, Reaffirmed 2002. <br>
