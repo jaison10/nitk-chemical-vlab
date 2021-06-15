@@ -29,7 +29,7 @@ Sr No | Name | Faculty or Student | Department| Institute | Email id
 :--|:--|:--|:--|:--|:--|
 1 | Rohit V Halakatti | Student | Information Technology | National Institute of Technology Karnataka, Surathkal | rvhalakatti123@gmail.com
 2 | M R Ashrit | Student | Computer Science | National Institute of Technology Karnataka, Surathkal |16co122.ashrit@nitk.edu.in
-3 | Shreyas Sabare | Student | Chemical Engineering | National Institute of Technology Karnataka, Surathkal |jatin.171mt017@nitk.edu.in
+3 | Shreyas Sabare | Student | Chemical Engineering | National Institute of Technology Karnataka, Surathkal |shreyash.171ch045@nitk.edu.in
 5 | Arjun Krishna | Student | Metallurgical and Materials Engineering | National Institute of Technology Karnataka, Surathkal |arjunkrishna.171mt005@nitk.edu.in
 6 | Aishwarya Hegde | Student | Applied Mechanics and Hydraulics | National Institute of Technology Karnataka, Surathkal |aishwaryahegde29@gmail.com
 7 | Aishwarya Shetty | Student | Applied Mechanics and Hydraulics | National Institute of Technology Karnataka, Surathkal |aishwarya.shetty1995@gmail.com
