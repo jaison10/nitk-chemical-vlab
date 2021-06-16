@@ -80,53 +80,53 @@
 
   const myQuestions = [
     {
-      question: "Specific Gravity is important in",
+      question: "What is Darcy-Weisbach formula for heat loss due to friction? Where, f = Darcy's coefficient of friction",
       answers: {
-        a: "Mix design",
-        b: "Deleterious material identification",
-        c: "Material property change",
-        d: "All the above"
+        a: "hf = (f l V2) / (g d)",
+        b: "hf = (f l V2) / (2 g d)",
+        c: "hf = (16 f l V2) / (2 g d)",
+        d: "hf = (4 f l V2) / (2 g d)"
       },
       correctAnswer: "d"
     },
 
     {
-      question: "Stock cements are avoided in concreting especially because of",
+      question: "Minor losses do not make any serious effect in",
       answers: {
-        a: "Moisture activity",
-        b: "Chemical activity",
-        c: "Thermal activity",
-        d: "None of the above"
+        a: "Long pipes",
+        b: "Short pipes",
+        c: "Both the short as well as long pipes",
+        d: "Cannot say"
       },
       correctAnswer: "a"
     },
 
     {
-      question: "The major factor which affect the Specific Gravity is",
+      question: "What is the effect of change in Reynold's number on friction factor in turbulent flow?",
       answers: {
-        a: "Pores",
-        b: "Moisture contents",
-        c: "Both A and B",
-        d: "None of these"
+        a: "As the Reynold's number increases the friction factor increases in turbulent flow",
+        b: "Change in Reynold's number does not affect the friction factor in turbulent flow",
+        c: "As the Reynold's number increases the friction factor decreases in turbulent flow",
+        d: "Unpredictable"
       },
       correctAnswer: "c"
     },
     {
-      question: "According to standard the Specific Gravity of coarse aggregate should be in between",
+      question: "The friction factor in fluid flowing through pipe depends upon",
       answers: {
-        a: "27-29",
-        b: "25-28",
-        c: "315-319",
-        d: "26-285 "
+        a: "Reynold's number",
+        b: "Relative roughness of pipe surface",
+        c: "Both a and b",
+        d: "None of the above"
       },
-      correctAnswer: "b"
+      correctAnswer: "c"
     },
     {
-      question: "Why is kerosene used to determine the Specific Gravity of cement? ",
+      question: "The head loss through fluid flowing pipe due to friction is",
       answers: {
-        a: "Its Specific Gravity is higher than cement",
-        b: "It does not react with cement as water does",
-        c: "Its Specific Gravity is lower than cement",
+        a: "The minor loss",
+        b: "The major loss",
+        c: "Both a and b",
         d: "None of these"
       },
       correctAnswer: "b"

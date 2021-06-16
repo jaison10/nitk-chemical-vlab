@@ -1,31 +1,31 @@
 ## Post test
 <br>
-Q 1. Specific Gravity is important in <br>
-a. Mix design<br>
-b. Deleterious material identification<br>
-c. Material property change<br>
-<b>d. All the above</b><br><br>
+Q 1. What is Darcy-Weisbach formula for heat loss due to friction? Where, f = Darcy's coefficient of friction <br>
+a. h<sub>f</sub> = (f l V<sup>2</sup>) / (g d)<br>
+b. h<sub>f</sub> = (f l V<sup>2</sup>) / (2 g d)<br>
+c. h<sub>f</sub> = (16 f l V<sup>2</sup>) / (2 g d)<br>
+<b>d. h<sub>f</sub> = (4 f l V<sup>2</sup>) / (2 g d)</b><br><br>
 
-Q 2. Stock cements are avoided in concreting especially because of  <br>
-<b>a. Moisture activity</b><br>
-b. Chemical activity<br>
-c. Thermal activity<br>
-d. None of the above<br>
+Q 2. Minor losses do not make any serious effect in <br>
+<b>a. Long pipes</b><br>
+b. Short pipes<br>
+c. Both the short as well as long pipes<br>
+d. Cannot say<br>
 
-Q 3. The major factor which affect the Specific Gravity is <br>
-a. Pores<br>
-b. Moisture contents<br>
-<b>c. Both A and B</b><br>
-d. None of these<br>
+Q 3. What is the effect of change in Reynold's number on friction factor in turbulent flow?<br>
+a. As the Reynold's number increases the friction factor increases in turbulent flow<br>
+b. Change in Reynold's number does not affect the friction factor in turbulent flow<br>
+<b>c. As the Reynold's number increases the friction factor decreases in turbulent flow</b><br>
+d. Unpredictable<br>
 
-Q 4. According to standard the Specific Gravity of coarse aggregate should be in between <br>
-a. 27-29<br>
-<b>b. 25-28</b><br>
-c. 315-319<br>
-d. 26-285 <br>
+Q 4. The friction factor in fluid flowing through pipe depends upon <br>
+a. Reynold's number<br>
+b. Relative roughness of pipe surface</b><br>
+<b>c. Both a and b<br>
+d. None of the above <br>
 
-Q 5. Why is kerosene used to determine the Specific Gravity of cement?  <br>
-a. Its Specific Gravity is higher than cement<br>
-<b>b. It does not react with cement as water does</b><br>
-c. Its Specific Gravity is lower than cement<br>
+Q 5. The head loss through fluid flowing pipe due to friction is <br>
+a. The minor loss<br>
+<b>b. The major loss</b><br>
+c. Both a and b<br>
 d. None of these<br>

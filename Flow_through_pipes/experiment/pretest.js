@@ -80,50 +80,52 @@
 
   const myQuestions = [
     {
-      question: "The purpose of using fine aggregate in concrete is to ",
+      question: "For hydraulically smooth pipe, the resistance to flow depends only on the?",
       answers: {
-        a: "Fill voids",
-        b: "Workability agent",
-        c: "Both A and B",
-        d: "Provide strength"
+        a: "Absolute roughness",
+        b: "Flow Reynolds number",
+        c: "Reynolds number and relative roughness",
+        d: "Relative roughness"
       },
       correctAnswer: "c"
     },
 
     {
-      question: "Which of the following will float in water? The density of water is 1g/ml",
+      question: "Two identical pressure gauges at the foot of two storage tanks that are at the same elevation, the water levels in the tanks are the same, one tank holds 1,00,000 litre (tank 1), the other holds 1000 litre (tank 2). Say which one is true?",
       answers: {
-        a: "Object 1: m = 5g and v = 2ml",
-        b: "Object 2: m = 3g and v = 4ml",
-        c: "Object 3: m = 3g and v = 1ml",
-        d: "Object 4: m = 4g and v = 3ml"
+        a: "Pressure gauge reading of tank 1 and that of tank 2 are same",
+        b: "Pressure gauge reading of tank 2 is greater than that of tank 1",
+        c: "Pressure gauge reading of tank 1 is greater than that of tank 2",
       },
       correctAnswer: "a"
     },
 
     {
-      question: "Presence of large number of deleterious materials on aggregate results in high Specific Gravity value. ",
+      question: "Applying a pressure drop across a capillary results in a volumetric flow rate Q under laminar flow conditions. The flow rate, for the same pressure drop, in a capillary of the same length but half the radius is.",
       answers: {
-        a: "True",
-        b: "False"
+        a: "Q/16",
+        b: "Q/8",
+        b: "Q/4",
+        b: "Q/2"
       },
       correctAnswer: "b"
     },
     {
-        question: "The Specific Gravity of cement is greater than 3.19, it indicates that ",
+        question: "Under otherwise uniform conditions Fanning friction factor for a rough pipe is?",
         answers: {
-          a: "It has more moisture content",
-          b: "The cement is not minced finely as per the industry standard",
-          c: "Both A and B",
-          d: "None of these"
+          a: "Equal to that for a smooth pipe",
+          b: "Smaller than that for a smooth pipe",
+          c: "Smaller than that for a smooth pipe",
         },
-        correctAnswer: "d"
+        correctAnswer: "c"
       },
-    {
-        question: "According to the IS Code, Zone IV aggregate is finer than Zone I aggregate.",
+    { 
+        question: "For laminar flow in a pipe, the Fanning friction factor depends on Reynolds number according to the relation? ",
     answers: {
-          a: "No",
-          b: "Yes"
+          a: "None",
+          b: "f = 16/ Re",
+          b: "f = 18.5/ Re",
+          b: "f = 24/ Re"
         },
         correctAnswer: "b"
       }
