@@ -15,7 +15,7 @@ p=Math.floor(Math.random()*(4));
 
 function navNext()
 {
-  for (temp = 0; temp <= 7 ; temp++) 
+  for (temp = 0; temp <= 4 ; temp++) 
   { 
       document.getElementById('canvas'+temp).style.visibility="hidden";
   }
@@ -25,57 +25,6 @@ function navNext()
  document.getElementById('nextButton').style.visibility="hidden";
  magic();
 }
-
-
-// var ca;
-// var questions=["Capacity of Le-Chatelier Flask used for determining</br> Specific Gravity of Cement is",
-// 				"The amount of cement taken is calculated as ",
-// 				"Care should be taken for the Kerosene to be free from water.",
-// 				"If the cement is exposed to extreme moisture content due to bad weather</br> conditions, then the specific gravity of cement may go up to "];
-				
-// var options2=[["100ml","250ml","500ml","1000ml"],//250ml
-// 			  ["W1+W2","W1-W2","W2-W1","W2"],//W2-W1
-// 			  ["True","False"],//True
-// 			  ["3.9","3.11","3.16","3.19"]];//3.19
-			  
-// function validateAnswer(qn,ans,left,top)
-// {
-// 	 $("#answer").empty();
-// 	document.getElementById("a").innerHTML="";
-// 	document.getElementById("questDiv").style="position:absolute; font-size:14px; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:visible; left:"+left+";top:"+top+";";
-// 	document.getElementById("q").innerHTML=questions[qn];
-// 	el = document.createElement("option");
-// 	el.textContent = " ";
-// 	el.value = " ";
-// 	answer.appendChild(el);
-  
-// 	for(j=0;j<options2[qn].length;j++)
-// 	{
-// 		opt = options2[qn][j];
-
-// 		el = document.createElement("option");
-// 		el.textContent = opt;
-// 		el.value = opt;
-// 		answer.appendChild(el);
-// 		$("#answer").change(function()
-// 		{
-// 			ca=$(this).children("option:selected").val();
-// 			if(options2[qn][ans]==ca)
-// 			{
-// 				document.getElementById("a").innerHTML="Correct Answer!";
-// 			}
-// 			else
-// 			{
-// 				document.getElementById("a").innerHTML="Wrong! Answer is "+options2[qn][ans];
-// 			}
-// 			setTimeout(function()
-// 			{
-// 				document.getElementById("questDiv").style.visibility="hidden";
-// 				document.getElementById("nextButton").style.visibility="visible";
-// 			},1500);
-// 		});
-// 	}
-// }
 
 //-----------------------------------------blink arrow on the next step---------------------------------------------
 //blink arrow on the next step
@@ -102,7 +51,6 @@ function magic()
 	if (simsubscreennum==1)
 	{
 		// this is for STEP1
-		refresh1();
 		document.getElementById("completeSetUp").style.visibility = "hidden";
 		document.getElementById("human").style.visibility = "hidden";
 		document.getElementById('nextButton').style.visibility="hidden";
@@ -218,37 +166,6 @@ function magic()
 			console.log("2 has chosen");
 		}
 		
-	}
-	else if (simsubscreennum==5)
-	{
-				refresh1();
-
-		document.getElementById('flask5').style.visibility="visible";
-	    document.getElementById('nob5-1').style.visibility="visible";
-        document.getElementById('a7').style.visibility="hidden";
-	    document.getElementById('a8').style.visibility="hidden";
-        document.getElementById('k3').style.visibility="hidden";
-		document.getElementById('nextButton').style.visibility="hidden";
-		myInt = setInterval(function(){ animatearrow(); }, 500);
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
-			
-		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-		// Code for IE9
-		document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-		// Standard syntax
-		document.getElementById("arrow1").style.transform = "rotate(180deg)";
-		
-		
-		document.getElementById('nob5-1').onclick=function() { step5(); };
-				
-	}
-	else if (simsubscreennum==6)
-	{
-		refresh1();
-	}
-	else if (simsubscreennum==7)
-	{
-	
 	}
 }
 
@@ -1809,10 +1726,10 @@ function setEvalSets(){
 		var cell2 = row.insertCell(1);
 		var cell3 = row.insertCell(2);
 		var cell4 = row.insertCell(3);
-		cell1.innerHTML = `<input name="length" id="inputSet${i}0" style="width:80px" type="number">`;
-		cell2.innerHTML = `<input name="length" id="inputSet${i}1" style="width:80px" type="number">`;
-		cell3.innerHTML = `<input name="length" id="inputSet${i}2" style="width:80px" type="number">`;
-		cell4.innerHTML = `<input name="length" id="inputSet${i}3" style="width:80px" type="number">`;
+		cell1.innerHTML = `<input name="length" id="inputSet${i}0" style="width:90px" type="number">`;
+		cell2.innerHTML = `<input name="length" id="inputSet${i}1" style="width:90px" type="number">`;
+		cell3.innerHTML = `<input name="length" id="inputSet${i}2" style="width:90px" type="number">`;
+		cell4.innerHTML = `<input name="length" id="inputSet${i}3" style="width:90px" type="number">`;
 	}
 
 }
@@ -1896,29 +1813,30 @@ function evaluateConfig(){
 			// if the count of rows in result table is more than 3, increase the top of both of the result showing paragraph.
 			var resultTable = document.getElementById("configResultTable");
 			var rowCountPost = resultTable.rows.length-1;
-			if(rowCountPost > 3){
-				out.style.top = "250px";
-				outFric.style.top = "280px";
-			}
+			// ======================================================= VERIFICATION MESSAGE
+			// if(rowCountPost > 3){
+			// 	out.style.top = "250px";
+			// 	outFric.style.top = "280px";
+			// }
 
-			if(calculatedReyn == reyn){
-				out.innerText = "Reynold's value is correct!";
-				out.style.color = "green";
+			// if(calculatedReyn == reyn){
+			// 	out.innerText = "Reynold's value is correct!";
+			// 	out.style.color = "green";
 				
-			}
-			else{
-				out.innerText = "Reynold's value is incorrect!";
-				out.style.color = "red";
-			}
-			if(calculatedFricFact == fric){
-				outFric.innerText = "Fraction Factot value is correct!";
-				outFric.style.color = "green";
+			// }
+			// else{
+			// 	out.innerText = "Reynold's value is incorrect!";
+			// 	out.style.color = "red";
+			// }
+			// if(calculatedFricFact == fric){
+			// 	outFric.innerText = "Fraction Factot value is correct!";
+			// 	outFric.style.color = "green";
 				
-			}
-			else{
-				outFric.innerText = "Fraction Factot value is incorrect!";
-				outFric.style.color = "red";
-			}
+			// }
+			// else{
+			// 	outFric.innerText = "Fraction Factot value is incorrect!";
+			// 	outFric.style.color = "red";
+			// }
 
 			//   -----------------------       DELETING ALL ROWS AND CHANGING THE NUMBER OF SETS BACK TO 0.
 			var table = document.getElementById("configInputTable");
@@ -1930,7 +1848,7 @@ function evaluateConfig(){
 					table.deleteRow(1);
 				}
 			}
-
+			out.innerText = "";
 		}, 300);
 		setTimeout(() => {
 			out.innerText = "";
