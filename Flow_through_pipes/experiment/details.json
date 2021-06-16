@@ -19,24 +19,6 @@
 
    "contributer": [
        {
-			"Contributer": "Anusha B Salian",
-      "Institute": "National Institute of Technology Karnataka, Surathkal",
-			"InstituteAcronym": "NITK, Surathkal"
-       },
-
-			 {
-			 "Contributer": "Akshaya",
-			 "Institute": "National Institute of Technology Karnataka, Surathkal",
-			 "InstituteAcronym": "NITK, Surathkal"
-			 },
-
-       {
-			"Contributer": "Swathi Shetty",
-			"Institute": "National Institute of Technology Karnataka, Surathkal",
-			"InstituteAcronym": "NITK, Surathkal"
-       },
-
-       {
 			"Contributer": "Aishwarya Shetty",
 			"Institute": "National Institute of Technology Karnataka, Surathkal",
 			"InstituteAcronym": "NITK, Surathkal"
@@ -47,15 +29,8 @@
 			"Institute": "National Institute of Technology Karnataka, Surathkal",
 			"InstituteAcronym": "NITK, Surathkal"
        },
-
-       {
-			"Contributer": "Shanshank K Pal",
-			"Institute": "National Institute of Technology Karnataka, Surathkal",
-			"InstituteAcronym": "NITK, Surathkal"
-       },
-
 		{
-			"Contributer": "Sushamitha Wadde",
+			"Contributer": "Shreyas Sabare",
 			"Institute": "National Institute of Technology Karnataka, Surathkal",
 			"InstituteAcronym": "NITK, Surathkal"
 		},
@@ -63,12 +38,6 @@
 			"Contributer": "Jaison DSouza B",
 			"Institute": "National Institute of Technology Karnataka, Surathkal",
 			"InstituteAcronym": "NITK, Surathkal"
-		},
-		{
-			"Contributer": "Shreyas Sabare",
-			"Institute": "National Institute of Technology Karnataka, Surathkal",
-			"InstituteAcronym": "NITK, Surathkal"
 		}
    ]
-
 }
