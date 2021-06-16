@@ -145,6 +145,8 @@ function magic()
 	else if (simsubscreennum==4)
 	{
 		if(chosenActivity == 1){
+			document.getElementById("waterSteady").style.visibility = "visible";
+
 			document.getElementById("infoAboutWhatToDo").innerText = "Click on Green button to start the motor.";
 			document.getElementById("infoAboutWhatToDo").style.color = "black";
 
@@ -1638,6 +1640,10 @@ function fluidMoveAndPinMove(){
 
 function gotoObservation(){
 	console.log("go to observ.");
+	document.getElementById("waterFlow").style.visibility = "hidden";
+	document.getElementById("waterSteady").style.visibility = "hidden";
+	document.getElementById("addtoTableButton").style.visibility = "hidden";
+
 	document.getElementById("waterPourFirst").style.visibility = "hidden";
 	document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
 
@@ -1688,7 +1694,10 @@ function gotoObservation(){
 }
 
 function goBacktoStep2(){
-
+	document.getElementById("waterFlow").style.visibility = "hidden";
+	document.getElementById("waterSteady").style.visibility = "hidden";
+	document.getElementById("addtoTableButton").style.visibility = "hidden";
+	
 	document.getElementById("waterPourFirst").style.visibility = "hidden";
 	document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
 
