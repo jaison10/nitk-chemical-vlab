@@ -58,7 +58,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
 
 <center>
 <p style="text-indent:50px; text-align: justify">
-    <img src="images/1.gif"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(1)</sub>
+    <img src="images/n1.jpeg"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(1)</sub>
 </p>
 </center>
 <p style="text-indent:50px; text-align: justify">Where,</p>
@@ -137,7 +137,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     Head Loss due to skin friction (h<sub>fs</sub>) can be related to wall shear. 
 </p>
 <p style="text-indent:50px; text-align: justify">
-    <img src="images/5.gif" style="height:150px; width:250px;"></img>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(5)</sub>
+    <img src="images/n3.jpeg" style="height:150px; width:250px;"></img>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(5)</sub>
 </p>
 
 
@@ -151,12 +151,12 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     The Friction Factor It is denoted by f and defined as the ratio of the wall shear stress to the product of the velocity head (V<sup>2</sup>/2) and density = 
 </p>
 <p style="text-indent:50px; text-align: justify">
-    <img src="images/8.gif" style="height:150px; width:250px;"></img>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(6)</sub>
+    <img src="images/n4.jpeg" style="height:150px; width:250px;"></img>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(6)</sub>
 </p>
 
 
 <p style="text-indent:50px; text-align: justify">
-    <img src="images/9.gif" style="height:150px; width:250px;"></img> <img src="images/10.gif" style="height:150px; width:250px;"></img>    
+    <img src="images/n5.jpeg" style="height:150px; width:250px;"></img>    
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(7)</sub>
 </p>
 
@@ -180,7 +180,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     For laminar flow, first principles can be used to develop a relation between Reynolds number and friction factor. The Hagen-Poiseuille equation relates the frictional pressure drop to fluid velocity, viscosity, and pipe dimension:
 </p>
 <p style="text-indent:50px; text-align: justify">
-    <img src="images/11.gif" style="height:150px; width:250px;"></img>    
+    <img src="images/n7.jpeg" style="height:150px; width:250px;"></img>    
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(8)</sub>
 </p>
 
@@ -197,7 +197,7 @@ Velocity=Volumetric flow rate /Cross sectional area of the pipe.
     A first principle analysis can not be used to develop a relation between friction factor and Reynolds numbers for turbulent flow. A variety of empirical correlations exist for turbulent flow in smooth pipes. Blasius equations :
 </p>
 <p style="text-indent:50px; text-align: justify">
-    <img src="images/12.gif" style="height:150px; width:250px;"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(10)</sub> 
+    <img src="images/n6.jpeg" style="height:150px; width:250px;"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(10)</sub> 
 </p>
 The above correlation is valid for 4000 < N<sub>Re</sub> <= 10<sup>5</sup>
 
@@ -206,7 +206,7 @@ The above correlation is valid for 4000 < N<sub>Re</sub> <= 10<sup>5</sup>
     The Blasius equation is purely an empirical equation and has no theoretical basis, but it is a convenient form for application. The entire turbulent region can be represented by the von Kármán-Nikuradse equation:
 </p>
 <p style="text-indent:50px; text-align: justify">
-    <img src="images/13.gif" style="height:150px; width:250px;"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(11)</sub> 
+    <img src="images/n9.jpeg" style="height:150px; width:250px;"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <sub>(11)</sub> 
 </p>
 for Re > 4000, Turbulent.
 
