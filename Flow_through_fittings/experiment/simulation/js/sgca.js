@@ -236,7 +236,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.539;
+				valOfRato = valOfRato + 0.27;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -304,7 +304,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.262;
+				valOfRato = valOfRato + 0.27;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -373,7 +373,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.208;
+				valOfRato = valOfRato + 0.27;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -442,7 +442,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.1813;
+				valOfRato = valOfRato + 0.27;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -514,7 +514,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.164;
+				valOfRato = valOfRato + 0.27;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -569,7 +569,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.518;
+				valOfRato = valOfRato + 0.26;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -637,7 +637,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.253;
+				valOfRato = valOfRato + 0.26;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -706,7 +706,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.199;
+				valOfRato = valOfRato + 0.26;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -775,7 +775,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.175;
+				valOfRato = valOfRato + 0.26;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -847,7 +847,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.156;
+				valOfRato = valOfRato + 0.26;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -855,10 +855,6 @@ function fluidMoveAndPinMove(){
 				document.getElementById("ratoReadings").innerText = valOfRatoNew;
 				console.log(h1Val);
 				if(h1Val == 70.00){
-					valOfRatoNew = 36.42;
-					valOfRatoNew = 36.42;
-					document.getElementById("ratoReadings").innerText = valOfRatoNew;
-
 					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").onclick = "";	
@@ -906,7 +902,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.1039;
+				valOfRato = valOfRato + 0.053;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -914,10 +910,6 @@ function fluidMoveAndPinMove(){
 				document.getElementById("ratoReadings").innerText = valOfRatoNew;
 				console.log(h1Val);
 				if(h1Val == 42.00){
-					// valOfRato =    2.92
-					// valOfRatoNew = 2.92;
-					// document.getElementById("ratoReadings").innerText = valOfRatoNew;
-
 					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
 					clearInterval(valueChange);		
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
@@ -978,7 +970,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.051;
+				valOfRato = valOfRato + 0.053;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -1047,7 +1039,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.041;
+				valOfRato = valOfRato + 0.053;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -1116,7 +1108,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.036;
+				valOfRato = valOfRato + 0.053;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -1188,7 +1180,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.033;
+				valOfRato = valOfRato + 0.053;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -1196,7 +1188,6 @@ function fluidMoveAndPinMove(){
 				document.getElementById("ratoReadings").innerText = valOfRatoNew;
 				console.log(h1Val);
 				if(h1Val == 70.00){
-					
 					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").onclick = "";	
@@ -1244,7 +1235,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.095;
+				valOfRato = valOfRato + 0.048;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -1252,11 +1243,6 @@ function fluidMoveAndPinMove(){
 				document.getElementById("ratoReadings").innerText = valOfRatoNew;
 				console.log(h1Val);
 				if(h1Val == 42.00){
-					// valOfRatoNew = 2.67;
-					// valOfRato = 2.67
-					// document.getElementById("ratoReadings").innerText = valOfRatoNew;
-
-
 					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
 					clearInterval(valueChange);		
 					document.getElementById("gatewayRotate").style.cursor = "pointer";
@@ -1317,7 +1303,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.045;
+				valOfRato = valOfRato + 0.048;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -1386,7 +1372,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.037;
+				valOfRato = valOfRato + 0.048;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -1455,7 +1441,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.032;
+				valOfRato = valOfRato + 0.048;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -1527,7 +1513,7 @@ function fluidMoveAndPinMove(){
 				h2Val = h2Val - 0.25;
 				h2New = h2Val.toFixed(2);
 		
-				valOfRato = valOfRato + 0.030;
+				valOfRato = valOfRato + 0.048;
 				valOfRatoNew = valOfRato.toFixed(2);
 		
 				document.getElementById("leftCm").innerText = h1New;
@@ -1535,10 +1521,6 @@ function fluidMoveAndPinMove(){
 				document.getElementById("ratoReadings").innerText = valOfRatoNew;
 				console.log(h1Val);
 				if(h1Val == 70.00){
-					valOfRatoNew = 6.67;
-					valOfRatoNew = 6.67;
-					document.getElementById("ratoReadings").innerText = valOfRatoNew;
-
 					document.getElementById("gatewayRotate").classList.remove("rotateGatewall");
 					clearInterval(valueChange);	
 					document.getElementById("gatewayRotate").onclick = "";	
