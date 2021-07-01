@@ -26,7 +26,10 @@ function gotoPage1(){
 	{ 
 		document.getElementById('canvas'+temp).style.visibility="hidden";
 	}
-	document.getElementById('canvas1').style.visibility="visible";
+	simsubscreennum = 1;
+	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+	magic();
+	
 }
 
 
@@ -68,9 +71,9 @@ function magic()
 	if (simsubscreennum==1)
 	{
 		// this is for STEP1
-		document.getElementById("completeSetUp").style.visibility = "hidden";
-		document.getElementById("human").style.visibility = "hidden";
-		document.getElementById('nextButton').style.visibility="hidden";
+		// document.getElementById("completeSetUp").style.visibility = "hidden";
+		// document.getElementById("human").style.visibility = "hidden";
+		// document.getElementById('nextButton').style.visibility="hidden";
 	}
 	
 	else if (simsubscreennum==2)
@@ -186,6 +189,18 @@ function magic()
 	}
 }
 
+function gotoPage5(){
+	for (temp = 0; temp <= 4 ; temp++) 
+	{ 
+		document.getElementById('canvas'+temp).style.visibility="hidden";
+	}
+	simsubscreennum = 5;
+	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+	document.getElementById("titleLarge").style.visibility = "hidden";
+	document.getElementById("titleSmall").style.visibility = "visible";
+	document.getElementById("buttonsList").style.visibility = "visible";
+}
+
 // ADDED By Jaison.
 var chosenActivity
 
@@ -193,7 +208,8 @@ function selectAction(n)
 {	
 	chosenActivity = n
 	console.log(chosenActivity);
-	navNext();
+	simsubscreennum = 5;
+	gotoPage5();
 }
 
 var pipeLength = 1;

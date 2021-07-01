@@ -54,31 +54,49 @@ var n;
 <div id="simscreen">
 
 <!--Title of Simulation		-->
-<div id="title"><h3>Flow through pipes</h3></div>
+<div id="titleLarge" class="title" style="visibility: visible;"><h3>Flow through pipes</h3></div>
+<div id="titleSmall" class="title2" style="visibility:hidden"><h3>Flow through pipes</h3></div>
+
+<div id="buttonsList" style="position: absolute; visibility: hidden; top: 20px; left: 400px; color: white; z-index: 1;">
+  <div style="">
+    <button style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Demo</b></button>
+    <button style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Label</b></button>
+    <button style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Setup</b></button>
+    <button style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Experiment</b></button>
+  </div>
+</div>
 
 <!--SubScreen Home	-->	
 <div class="simsubscreen" id="canvas0" style="background-color: black;">
 
-  <p id="start" style="position: absolute; width: 800px; top: 150px; left: 150px; color: white; font-size: xx-large;">NITK Virtual lab presents...</p>
+  <p id="start" style="position: absolute; width: 800px; top: 150px; left: 70px; color: white; font-size: xx-large;">Department of Chemical engineering NITK presents...</p>
   <p id="landingPageButton" style="position: absolute; top: 400px; left: 600px; color: white; visibility: hidden;"><b>CONTINUE..</b></p>
 </div>
 
 <!--Step1	-->	
 <div class="simsubscreen" id="canvas1" style="visibility:hidden">
-<strong id="titlestep" class="incanvas">STEP </strong>
-<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
-<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Choose what you want to do.</p>
+<!-- <strong id="titlestep" class="incanvas">STEP </strong>
+<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span> -->
+<p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:14px; color: #fff; top: 50px; left: 50px;">Choose what you want to do.</p>
 
   <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p>
 
-  <button onclick="selectAction(1)" style="position: absolute; top: 130px; left: 200px; width: 250px; height: 30px;">Perform experiment</button>
-  <button onclick="selectAction(2)" style="position: absolute; top: 170px; left: 200px; width: 250px; height: 30px">Evaluate yourself</button>
+  <button onclick="selectAction(1)" style="position: absolute; top: 130px; left: 250px; width: 250px; height: 30px;">Perform experiment</button>
+  <button onclick="selectAction(2)" style="position: absolute; top: 170px; left: 250px; width: 250px; height: 30px">Evaluate yourself</button>
 
   <!-- <img id="" style="position: absolute; left: 430px; top: 255px;" src="Images/ewm.png"/> -->
   <!-- <img id="a4" style="position: absolute; left: 520px; top: 50px;visibility:hidden;" src="Images/1.12.png"/> -->
   <!-- <p id="can1" style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;"></p> -->
   <p id="v1" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
 
+</div>
+
+<!-- ADDITIONAL STEP ADDED -->
+<div class="simsubscreen" id="canvas5" style="visibility:hidden">
+
+  <p class="step5p" style="position: absolute; font-family:verdana; font-size:24px; color: #fff; top: 200px; left: 200px;">VIRTUAL LAB @ NITK</p>
+  
+  
 </div>
 
 

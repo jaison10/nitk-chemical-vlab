@@ -24,8 +24,9 @@ font-family: verdana;
 font-size:12px
 }
 
-#title{
-position:relative;
+.title{
+position:absolute;
+width: 100%;
 left: 0px;
 top: 0px;
 height:40px;
@@ -37,10 +38,32 @@ color: White;
 text-transform: uppercase; 
 }
 
-#title h3{
-padding-top:2px;
-margin:0px;}
+.title2{
+position:absolute;
+width: 100%;
+left: 0px;
+top: 0px;
+height:40px;
+/* text-align:center; */
+background-color: black;
+font-family: verdana;
+color: White;
+text-transform: uppercase; 
+}
 
+.title h3{
+padding-top:2px;
+margin:0px;
+}
+
+.title2 h3{
+padding-top:2px;
+font-size: 15px;
+/* margin:0px; */
+margin-left: 40px;
+}
+
+    
 #question-div{
 	position: absolute;
 	left:300px;
@@ -61,7 +84,7 @@ left: 0px;
 top: 40px;
 height:540px;
 width:800px;
-
+background-color: #000;
 }
 
 .incanvas
@@ -526,4 +549,29 @@ thead, tbody tr {
 }
 
 
-
+/* Step5 p tag */
+.step5p {
+    font-weight: 700;
+    text-align: center;
+    font-size: 40px;
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine2 3s linear infinite;
+    position: relative;
+  }
+  
+  @keyframes shine2 {
+    0% {
+      background-position-x: -500%;
+    }
+    100% {
+      background-position-x: 500%;
+    }
+  }
