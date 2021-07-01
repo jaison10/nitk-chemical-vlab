@@ -6,11 +6,28 @@ var a,p,lastp,n,b,q,flag=0,avg,average;
 
 
 document.addEventListener('DOMContentLoaded', () => {
+	document.getElementById("nextButton").style.visibility = "hidden";
 	setTimeout(() => {
 		var start = document.getElementById("start");
-		start.innerText = "Flow through pipes";
+		start.innerText = "FLOW THROUGH PIPES";
+		start.classList.add("content-shine");
+		start.style.left = "570px";
+		start.style.top = "170px";
+		document.getElementById("landingPageButton").style.visibility = "visible";
+		document.getElementById("landingPageButton").style.cursor = "pointer";
+		document.getElementById("landingPageButton").onclick = function(){
+			gotoPage1();
+		}
 	}, 3000);
 });
+
+function gotoPage1(){
+	for (temp = 0; temp <= 4 ; temp++) 
+	{ 
+		document.getElementById('canvas'+temp).style.visibility="hidden";
+	}
+	document.getElementById('canvas1').style.visibility="visible";
+}
 
 
 function navNext()
