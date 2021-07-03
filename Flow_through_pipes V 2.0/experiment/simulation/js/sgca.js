@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	setTimeout(() => {
 		var start = document.getElementById("start");
 		start.innerText = "FLOW THROUGH PIPES";
+		start.style.fontSize = "xx-large";
 		start.classList.add("content-shine");
 		start.style.left = "570px";
 		start.style.top = "170px";
@@ -29,7 +30,6 @@ function gotoPage1(){
 	simsubscreennum = 1;
 	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
 	magic();
-	
 }
 
 
@@ -80,15 +80,16 @@ function magic()
 	{
 		if(chosenActivity == 1){
 			console.log("One has chosen!");
+			document.getElementById("experimentSetup").style.visibility = "hidden";
 			document.getElementById("labelImage").style.visibility = "visible";
-			document.getElementById('nextButton').style.visibility="visible";
+			document.getElementById('nextButton').style.visibility="hidden";
 			document.getElementById("configExp").style.visibility = "hidden";
 		}
 		else{
 			console.log("2 has chosen");
 			document.getElementById("step2Heading").innerText = "Choose"
 			document.getElementById("configExp").style.visibility = "visible";
-			document.getElementById('nextButton').style.visibility="visible";
+			document.getElementById('nextButton').style.visibility="hidden";
 		}
 	}
 
@@ -97,7 +98,7 @@ function magic()
 		if(chosenActivity == 1){
 			document.getElementById("labelImage").style.visibility = "hidden";
 			document.getElementById("experimentSetup").style.visibility = "visible";
-			document.getElementById('nextButton').style.visibility="visible";
+			document.getElementById('nextButton').style.visibility="hidden";
 			document.getElementById("evaluatePart").style.visibility = "hidden";
 		}
 		else{
@@ -117,6 +118,7 @@ function magic()
 
 			document.getElementById("infoAboutWhatToDo").innerText = "Click on Green button to start the motor.";
 			document.getElementById("infoAboutWhatToDo").style.color = "black";
+			document.getElementById('nextButton').style.visibility="hidden";
 
 			document.getElementById("step4Heading").innerText = "Experiment";
 			document.getElementById("ratoReadings").innerText = "0.00";
@@ -187,6 +189,13 @@ function magic()
 		}
 		
 	}
+	else if(simsubscreennum == 6){
+		if(chosenActivity == 1){
+			document.getElementById("experimentSetup").style.visibility = "hidden";
+			document.getElementById("labelImage").style.visibility = "hidden";
+			document.getElementById('nextButton').style.visibility="hidden";
+		}
+	}
 }
 
 function gotoPage5(){
@@ -198,7 +207,207 @@ function gotoPage5(){
 	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
 	document.getElementById("titleLarge").style.visibility = "hidden";
 	document.getElementById("titleSmall").style.visibility = "visible";
-	document.getElementById("buttonsList").style.visibility = "visible";
+	if(chosenActivity == 1){
+		document.getElementById("buttonsList").style.visibility = "visible";
+		document.getElementById("demoButton").style.cursor = "pointer";
+		// document.getElementById("labelButton").style.cursor = "pointer";
+		document.getElementById("demoButton").onclick = function(){
+			goto6th();
+		}
+	}
+	else if(chosenActivity == 2){
+		document.getElementById("buttonsListEval").style.visibility = "visible";
+		document.getElementById("demoButtonEval").style.cursor = "pointer";
+		// document.getElementById("labelButton").style.cursor = "pointer";
+		document.getElementById("demoButtonEval").onclick = function(){
+			goto6th();
+		}
+	}
+	// document.getElementById("labelButton").onclick = function(){
+	// 	gotoLabel();
+	// }
+}
+
+function goto6th(){
+	console.log("At 6th canvas");
+	for (temp = 0; temp <= 6 ; temp++) 
+	{ 
+		document.getElementById('canvas'+temp).style.visibility="hidden";
+	}
+	simsubscreennum = 6;
+	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+	magic();
+	
+	if(chosenActivity == 1){
+		document.getElementById("demoOne").style.visibility = "visible";
+		document.getElementById("labelButton").style.cursor = "pointer";
+		document.getElementById("labelButton").onclick = function(){
+			gotoLabel();
+		}
+	}
+	else if(chosenActivity == 2){
+		document.getElementById("demoTwo").style.visibility = "visible";
+		document.getElementById("labelButtonEval").style.cursor = "pointer";
+		document.getElementById("labelButtonEval").onclick = function(){
+			gotoLabel();
+		}
+	}
+}
+
+function gotoLabel(){
+	for (temp = 0; temp <= 6 ; temp++) 
+	{ 
+		document.getElementById('canvas'+temp).style.visibility="hidden";
+	}
+	simsubscreennum = 2;
+	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+	magic();
+
+	if(chosenActivity == 1){
+		document.getElementById("demoButton").onclick = function(){
+			goto6th();
+		}
+		document.getElementById("setupButton").style.cursor = "pointer";
+		document.getElementById("setupButton").onclick = function(){
+			gotoSetup();
+		}
+	}
+	else if(chosenActivity == 2){
+		document.getElementById("demoButtonEval").onclick = function(){
+			console.log("Pressed demo");
+			// document.getElementById("configExp").style.visibility = "hidden";
+			goto6th();
+		}
+		document.getElementById("setupButtonEval").style.cursor = "pointer";
+		document.getElementById("setupButtonEval").onclick = function(){
+			gotoSetup();
+		}
+	}
+
+}
+
+function gotoSetup(){
+	console.log("Going to setup");
+	for (temp = 0; temp <= 6 ; temp++) 
+	{ 
+		document.getElementById('canvas'+temp).style.visibility="hidden";
+	}
+	simsubscreennum = 3;
+	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+	magic();
+
+	document.getElementById("expButton").style.cursor = "pointer";
+	document.getElementById("expButton").onclick = function(){
+		gotoExp();
+	}
+	if(chosenActivity == 2){
+		document.getElementById("labelButtonEval").onclick = function(){
+			goBacktoStep2Eval();
+		}
+		document.getElementById("demoButtonEval").onclick = function(){
+			goBacktoStep1Eval();
+		}
+	}
+	
+}
+
+function goBacktoStep1Eval(){
+	console.log("Going to 6th one");
+	document.getElementById("configExp").style.visibility = "hidden";
+	document.getElementById("evaluatePart").style.visibility = "hidden";
+	for (temp = 0; temp <= 6 ; temp++) 
+	{ 
+		document.getElementById('canvas'+temp).style.visibility="hidden";
+	}
+	simsubscreennum = 6;
+	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+	magic();
+}
+
+function goBacktoStep2Eval(){
+	console.log("Going to second");
+	document.getElementById("evaluatePart").style.visibility = "hidden";
+	for (temp = 0; temp <= 6 ; temp++) 
+	{ 
+		document.getElementById('canvas'+temp).style.visibility="hidden";
+	}
+	simsubscreennum = 2;
+	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+
+	magic();
+}
+
+function gotoExp(){
+	console.log("Experiment part.");
+	for (temp = 0; temp <= 6 ; temp++) 
+	{ 
+		document.getElementById('canvas'+temp).style.visibility="hidden";
+	}
+	simsubscreennum = 4;
+	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+	magic();
+
+	document.getElementById("setupButton").onclick = function(){
+		console.log("clicked for setup");
+		document.getElementById("greenColor").style.visibility = "hidden";
+		document.getElementById("nextButton").style.visibility = "hidden";
+		document.getElementById("nextButton").style.zIndex = -1;
+		
+		goBacktoStep2();
+	}
+	document.getElementById("labelButton").onclick = function(){
+		hideAllExperimentParts();
+		gotoLabel();
+	}
+	document.getElementById("demoButton").onclick = function(){
+		hideAllExperimentParts();
+		goto6th();
+	}
+}
+
+function hideAllExperimentParts(){
+	document.getElementById("experimentID").style.visibility = "hidden";
+		document.getElementById("waterSteady").style.visibility = "hidden";
+		document.getElementById("obserButton").style.visibility = "hidden";
+		document.getElementById("bottomPinkU").style.visibility = "hidden";
+		document.getElementById("leftFluidFinal").style.visibility = "hidden";
+		document.getElementById("rightFluidFinal").style.visibility = "hidden";
+		document.getElementById("leftFluid").style.visibility = "hidden";
+		document.getElementById("rightFluid").style.visibility = "hidden";
+		document.getElementById("leftFluidSecond").style.visibility = "hidden";
+		document.getElementById("rightFluidSecond").style.visibility = "hidden";
+		document.getElementById("leftFluidThird").style.visibility = "hidden";
+		document.getElementById("rightFluidThird").style.visibility = "hidden";
+		document.getElementById("leftFluidForth").style.visibility = "hidden";
+		document.getElementById("rightFluidForth").style.visibility = "hidden";
+		document.getElementById("leftFluidFifth").style.visibility = "hidden";
+		document.getElementById("rightFluidFifth").style.visibility = "hidden";
+		document.getElementById("bottomU").style.visibility = "hidden";
+
+		document.getElementById("rotatePin").style.visibility = "hidden";
+		document.getElementById("rotatePinFinal").style.visibility = "hidden";
+		document.getElementById("rotatePinSecond").style.visibility = "hidden";
+		document.getElementById("rotatePinThird").style.visibility = "hidden";
+		document.getElementById("rotatePinForth").style.visibility = "hidden";
+		document.getElementById("rotatePinFifth").style.visibility = "hidden";
+
+		document.getElementById("greenColor").style.visibility = "hidden";
+		document.getElementById("redColor").style.visibility = "hidden";
+		document.getElementById("obserButton").style.visibility = "hidden";
+
+		document.getElementById("leftPinkFluidFinal").style.visibility = "hidden";
+		document.getElementById("rightPinkFluidFinal").style.visibility = "hidden";
+		document.getElementById("leftPinkFluid").style.visibility = "hidden";
+		document.getElementById("rightPinkFluid").style.visibility = "hidden";
+		document.getElementById("leftPinkFluidSecond").style.visibility = "hidden";
+		document.getElementById("rightPinkFluidSecond").style.visibility = "hidden";
+		document.getElementById("leftPinkFluidThird").style.visibility = "hidden";
+		document.getElementById("rightPinkFluidThird").style.visibility = "hidden";
+		document.getElementById("leftPinkFluidForth").style.visibility = "hidden";
+		document.getElementById("rightPinkFluidForth").style.visibility = "hidden";
+		document.getElementById("leftPinkFluidFifth").style.visibility = "hidden";
+		document.getElementById("rightPinkFluidFifth").style.visibility = "hidden";
+		document.getElementById("bottomPinkU").style.visibility = "hidden";
 }
 
 // ADDED By Jaison.
@@ -299,6 +508,8 @@ function fluidMoveAndPinMove(){
 				}
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.border = "solid 2px #fff";
+					table.style.color = "#fff";
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -368,6 +579,7 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -437,6 +649,7 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -506,6 +719,7 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -632,6 +846,8 @@ function fluidMoveAndPinMove(){
 				}
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.border = "solid 2px #fff";
+					table.style.color = "#fff";
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -701,6 +917,7 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -770,6 +987,7 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -839,6 +1057,7 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -973,6 +1192,9 @@ function fluidMoveAndPinMove(){
 				}
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
+					table.style.border = "solid 2px #fff";
+
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -1042,6 +1264,8 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
+
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -1111,6 +1335,8 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
+
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -1180,6 +1406,8 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
+
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -1312,6 +1540,8 @@ function fluidMoveAndPinMove(){
 				}
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.border = "solid 2px #fff";
+					table.style.color = "#fff";
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -1381,6 +1611,8 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
+
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -1450,6 +1682,8 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
+
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -1519,6 +1753,8 @@ function fluidMoveAndPinMove(){
 
 				document.getElementById("addtoTableButton").onclick = function(){
 					var table = document.getElementById("observeTable");
+					table.style.color = "#fff";
+
 					var row = table.insertRow(1);
 					var cell1 = row.insertCell(0);
 					var cell2 = row.insertCell(1);
@@ -1658,10 +1894,16 @@ function gotoObservation(){
 	document.getElementById("bottomPinkU").style.visibility = "hidden";
 
 	document.getElementById("observeTable").style.visibility = "visible";
-	
+	document.getElementById("setupButton").onclick = function(){
+		goBacktoStep2();
+	}
 }
 
 function goBacktoStep2(){
+	document.getElementById("nextButton").style.visibility = "hidden";
+		document.getElementById("nextButton").style.zIndex = -1;
+	document.getElementById('nextButton').style.visibility="hidden";
+
 	document.getElementById("waterFlow").style.visibility = "hidden";
 	document.getElementById("waterSteady").style.visibility = "hidden";
 	document.getElementById("addtoTableButton").style.visibility = "hidden";
@@ -1891,6 +2133,7 @@ function evaluateConfig(){
 
 			//   -----------------------       DELETING ALL ROWS AND CHANGING THE NUMBER OF SETS BACK TO 0.
 			var table = document.getElementById("configInputTable");
+			table.style.color = "#fff";
 			var rowCounttt = table.rows.length-1;
 			console.log("Count of rows after showing result is:  ",rowCounttt);
 			document.getElementById("evalSets").value = 0;
@@ -1908,6 +2151,7 @@ function evaluateConfig(){
 		
 		// Add to result table.
 		var row = resultTable.insertRow(z);
+		row.style.color = "#fff";
 		var reyCell = row.insertCell(0);
 		var fricCell = row.insertCell(1);
 		reyCell.innerHTML = calculatedReyn;

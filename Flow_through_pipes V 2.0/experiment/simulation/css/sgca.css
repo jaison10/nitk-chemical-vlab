@@ -540,9 +540,6 @@ thead, tbody tr {
     0%{
         background-position: 0
     }
-    /* 60%{
-        background-position: 500px
-    } */
     100%{
         background-position: 500px
     }
@@ -575,3 +572,7 @@ thead, tbody tr {
       background-position-x: 500%;
     }
   }
+
+.fontColorChange{
+    color: rgb(7, 177, 12);
+}

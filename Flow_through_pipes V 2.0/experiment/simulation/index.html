@@ -59,17 +59,23 @@ var n;
 
 <div id="buttonsList" style="position: absolute; visibility: hidden; top: 20px; left: 400px; color: white; z-index: 1;">
   <div style="">
-    <button style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Demo</b></button>
-    <button style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Label</b></button>
-    <button style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Setup</b></button>
-    <button style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Experiment</b></button>
+    <button id="demoButton" style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Demo</b></button>
+    <button id="labelButton" style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Label</b></button>
+    <button id="setupButton" style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Setup</b></button>
+    <button id="expButton" style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Experiment</b></button>
   </div>
 </div>
-
+<div id="buttonsListEval" style="position: absolute; visibility: hidden; top: 20px; left: 470px; color: white; z-index: 1;">
+  <div style="">
+    <button id="demoButtonEval" style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Demo</b></button>
+    <button id="labelButtonEval" style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Data</b></button>
+    <button id="setupButtonEval" style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Evaluation</b></button>
+  </div>
+</div>
 <!--SubScreen Home	-->	
 <div class="simsubscreen" id="canvas0" style="background-color: black;">
 
-  <p id="start" style="position: absolute; width: 800px; top: 150px; left: 70px; color: white; font-size: xx-large;">Department of Chemical engineering NITK presents...</p>
+  <p id="start" style="position: absolute; width: 800px; top: 150px; left: 70px; color: white; font-size:x-large">Department of Chemical engineering NITK presents...</p>
   <p id="landingPageButton" style="position: absolute; top: 400px; left: 600px; color: white; visibility: hidden;"><b>CONTINUE..</b></p>
 </div>
 
@@ -96,37 +102,97 @@ var n;
 
   <p class="step5p" style="position: absolute; font-family:verdana; font-size:24px; color: #fff; top: 200px; left: 200px;">VIRTUAL LAB @ NITK</p>
   
-  
 </div>
 
+<div class="simsubscreen" id="canvas6" style="visibility:hidden">
+
+  <div id="demoOne" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;">
+    <ul>
+      <li>
+        Click on <span class="fontColorChange">Label</span> Tab to see the Experimental Setup.
+      </li>
+      <li>
+        Click on <span class="fontColorChange">Setup</span> Tab to Configure Experimental Setup.
+      </li>
+      <li>
+        Choose length of pipe by either clicking the textbox provided in front of it or clicking the arrow buttons.
+      </li>
+      <li>
+        Select other parameters by clicking the comboBox.
+      </li>
+      <li>
+        Now click on <span class="fontColorChange">Experiment</span> Tab to perform the experiment.
+      </li>
+      <li>
+        To start the experiment first <span class="fontColorChange">switch ON</span> the pump by clicking the <span class="fontColorChange">Green</span> button on the pump.
+      </li>
+      <li>
+        Once the pump is turned on <span class="fontColorChange">Setup</span> Tab will be disabled and will be enabled only if pump is OFF. Click on <span class="fontColorChange">Red</span> button on pump to <span>Switch off </span>the pump.
+      </li>
+      <li>
+        To set the required flowrate click on the <span class="fontColorChange">Main valve</span>.
+      </li>
+      <li>
+        Note the change in limb level of manometer. <span class="fontColorChange">h1</span> and <span class="fontColorChange">h2</span> are curresponding Manometric Limb heights from reference level.
+      </li>
+      <li>
+        Click on <span class="fontColorChange">Add current readings</span> button to record the reading in Observation table.
+      </li>
+      <li>
+        Click on <span class="fontColorChange">Observations</span> button to see the Observation table. 
+      </li>
+      <li>
+        If you get Manometric error, go to <span class="fontColorChange">Setup </span>Tab and change the manometer.
+      </li>
+    </ul>
+  </div>
+
+  <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;">
+    <ul>
+      <li>
+        Click on <span class="fontColorChange">Data</span> tab to configure Experimental data.
+      </li>
+      <li>
+        Click on <span class="fontColorChange">Observation</span> tab to Enter your Observations. Specify number of sets of readings.
+      </li>
+      <li>
+        Click on <span class="fontColorChange">Evaluate</span> button to see the <span class="fontColorChange">Results</span>.
+      </li>
+      <li>
+        To perform experiment again click on the <span class="fontColorChange">Data</span>.
+      </li>
+    </ul>
+  </div>
+
+</div>
 
 <!--Step2	-->	
 
 <div class="simsubscreen" id="canvas2" style="visibility:hidden">
 
-<strong id="titlestep" class="incanvas">STEP &nbsp;</strong>
-<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+<!-- <strong id="titlestep" class="incanvas">STEP &nbsp;</strong>
+<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span> -->
 <p id="step2Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Details</p>
   <!-- EXPERIMENT PART -->
-  <img id="labelImage" style="visibility: hidden; position: absolute;left:30px; top:90px; width: 640px; height: 390px;" src="./Images/Flow through pipes_images/labelPng.png">
+  <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:90px; width: 640px; height: 390px;" src="./Images/Flow through pipes_images/labelPng.png">
 
   <!-- Evaluation part -->
   <div id="configExp">
-    <p style="position: absolute; top: 50px;">Number of Observations:   
+    <p style="position: absolute; top: 50px; color: #fff;">Number of Observations:   
       <input style="position: absolute; left: 218px;" type="number" value="1" id="pipeLengthEval" name="length" min="1" max="100" onchange="setPipeLengthEval();"> 
     </p>
-    <p style="position: absolute; top: 100px;">Nominal diameter of the pipe:  
+    <p style="position: absolute; top: 100px; color: #fff;">Nominal diameter of the pipe:  
       <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
         <option value="0.25">0.25 inch</option>
       </select>
     </p>
-    <p style="position: absolute; top: 150px;">Process fluid:  
+    <p style="position: absolute; top: 150px; color: #fff;">Process fluid:  
       <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
         <option value="Water">Water</option>
         <option value="Kerosene">Kerosene</option>
       </select>
     </p>
-    <p style="position: absolute; top: 200px;">Manometric fluid:  
+    <p style="position: absolute; top: 200px; color: #fff;">Manometric fluid:  
       <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
         <option value="Mercury">Mercury</option>
@@ -140,25 +206,25 @@ var n;
 
 <!--Step3	-->	
 <div class="simsubscreen" id="canvas3" style="visibility:hidden">
-<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span>
-<p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Choose </p>
+<!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span> -->
+<p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p>
   <!-- EXPERIMENT PART -->
-  <div id="experimentSetup" style="visibility: hidden;">
-    <p style="position: absolute; top: 50px;">Length of the pipe:  
+  <div id="experimentSetup" style="visibility: hidden; left: 100px;">
+    <p style="position: absolute; top: 50px; color: #fff;">Length of the pipe:  
       <input style="position: absolute; left: 218px;" type="number" value="1" id="pipeLength" name="length" min="1" max="100" onchange="setPipeLength();"> 
     </p>
-    <p style="position: absolute; top: 100px;">Nominal diameter of the pipe: 
+    <p style="position: absolute; top: 100px; color: #fff;">Nominal diameter of the pipe: 
       <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
         <option value="025">0.25 inch</option>
       </select>
     </p>
-    <p style="position: absolute; top: 150px;">Process fluid:  
+    <p style="position: absolute; top: 150px; color: #fff;">Process fluid:  
       <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
         <option value="Water">Water</option>
         <option value="Kerosene">Kerosene</option>
       </select>
     </p>
-    <p style="position: absolute; top: 200px;">Manometric fluid:  
+    <p style="position: absolute; top: 200px; color: #fff;">Manometric fluid:  
       <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
         <option value="Mercury">Mercury</option>
@@ -168,10 +234,10 @@ var n;
 
   <!-- Evaluation Part -->
   <div id="evaluatePart">
-    <p style="position: absolute; top: 30px;">Number of Observations:  
+    <p style="position: absolute; top: 30px; color: #fff;">Number of Observations:  
       <input type="number" value="0" id="evalSets" name="length" min="1" max="100" onchange="setEvalSets();"> 
     </p>
-    <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid black; width: 450px; top:70px;">
+    <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 450px; top:70px;">
       <tr style="">
         <!-- <th>Sl no.</th> -->
         <th>Flowrate(lpm)</th>
@@ -180,7 +246,7 @@ var n;
         <th>Friction factor * 10<sup>4</sup></th>
       </tr>
     </table>
-    <table id="configResultTable" style="font-size: 12px; position:absolute; border: 1px solid black; left: 470px; width: 250px; top:70px;">
+    <table id="configResultTable" style=" font-size: 12px; position:absolute; border: 1px solid #fff; left: 470px; width: 250px; top:70px;">
       <tr style="">
         <th>Reynolds no.</th>
         <th>Friction factor * 10<sup>4</sup></th>
@@ -199,7 +265,7 @@ var n;
 
 <!--Step4	-->	
 <div class="simsubscreen" id="canvas4" style="visibility:hidden">
-<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
+<!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span> -->
 <p id="step4Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Experiment.</p>
   <!-- EXPERIMENT PART -->
   <div id="experimentID" style="visibility: hidden;">
@@ -301,30 +367,30 @@ var n;
     <img id="waterPourSecondLongOne" style="visibility: hidden; position: absolute; top: 298px; left: 69px; width: 110px; height: 178px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/waterPng.png">
 
     <!-- INFORMATION -->
-    <p style="position: absolute; top: 275px; left: 441px; width: 300px; font-size:12px;"><b>NOTE:</b></p>
-    <p id="infoAboutWhatToDo" style="position: absolute; top: 295px; left: 441px; width: 300px; font-size:12px;"></p>
+    <p style="position: absolute; top: 275px; left: 441px; width: 300px; font-size:12px; color: #fff;"><b>NOTE:</b></p>
+    <p id="infoAboutWhatToDo" style="position: absolute; top: 295px; left: 441px; width: 300px; font-size:12px; color: #fff;"></p>
 
 
-    <p style="position: absolute; top: 195px; left: 141px; width: 124px;">ROTAMETER READING:</p>
-    <p id="ratoReadings" style="position: absolute; top: 235px; left: 141px; width: 124px;">00.00</p> 
-    <p style="position: absolute; top: 235px; left: 183px; width: 124px;">LPM</p>
+    <p style="position: absolute; top: 195px; left: 141px; width: 124px; color: #fff;">ROTAMETER READING:</p>
+    <p id="ratoReadings" style="position: absolute; top: 235px; left: 141px; width: 124px; color: #fff;">00.00</p> 
+    <p style="position: absolute; top: 235px; left: 183px; width: 124px; color: #fff;">LPM</p>
 
-    <p style="position: absolute; top: 195px; left: 287px; width: 124px; font-size:10px;">h1:</p>
-    <p id="leftCm" style="position: absolute; top: 215px; left: 287px; width: 124px; font-size:10px;">35.00</p>
-    <p style="position: absolute; top: 215px; left: 315px; width: 124px; font-size:10px;">cm</p>
+    <p style="position: absolute; top: 195px; left: 287px; width: 124px; font-size:10px; color: #fff;">h1:</p>
+    <p id="leftCm" style="position: absolute; top: 215px; left: 287px; width: 124px; font-size:10px; color: #fff;">35.00</p>
+    <p style="position: absolute; top: 215px; left: 315px; width: 124px; font-size:10px; color: #fff;">cm</p>
 
-    <p style="position: absolute; top: 195px; left: 405px; width: 124px; font-size:10px;">h2:</p>
-    <p id="rightCm" style="position: absolute; top: 215px; left: 405px; width: 124px; font-size:10px;">35.00</p>
-    <p style="position: absolute; top: 215px; left: 433px; width: 124px; font-size:10px;">cm</p>
+    <p style="position: absolute; top: 195px; left: 405px; width: 124px; font-size:10px; color: #fff;">h2:</p>
+    <p id="rightCm" style="position: absolute; top: 215px; left: 405px; width: 124px; font-size:10px; color: #fff;">35.00</p>
+    <p style="position: absolute; top: 215px; left: 433px; width: 124px; font-size:10px; color: #fff;">cm</p>
   </div>
 
-  <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 425px; left: 485px; width: 194px; font-size:13px;">Add to Observation table</button>
+  <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 425px; left: 485px; width: 194px; font-size:13px;">Add current readings</button>
 
   <button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
   <button id="obserButton" style="position: absolute; top: 465px; left: 585px; width: 94px; font-size:13px;">Observations</button>
 
   <!-- Observation table! -->
-  <table id="observeTable" style="overflow-y: scroll; font-size: 12px; position:absolute; visibility: hidden; border: 1px solid black; width: 700px; top:50px;">
+  <table id="observeTable" style="overflow-y: scroll; font-size: 12px; position:absolute; visibility: hidden; border: 1px solid #fff; width: 700px; top:50px; left: 45px;">
     <tr style="">
       <th>Process fluid</th>
       <th>Manometric fluid</th>
