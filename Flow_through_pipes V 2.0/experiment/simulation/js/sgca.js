@@ -117,7 +117,7 @@ function magic()
 			document.getElementById("waterSteady").style.visibility = "visible";
 
 			document.getElementById("infoAboutWhatToDo").innerText = "Click on Green button to start the motor.";
-			document.getElementById("infoAboutWhatToDo").style.color = "black";
+			document.getElementById("infoAboutWhatToDo").style.color = "white";
 			document.getElementById('nextButton').style.visibility="hidden";
 
 			document.getElementById("step4Heading").innerText = "Experiment";

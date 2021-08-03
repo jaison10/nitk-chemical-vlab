@@ -260,10 +260,10 @@ background:#000
 
 @keyframes KMLeftFluid1 {
     0% {
-        top: 222px; left: 332px; width: 14px; height: 37px;
+        top: 316px; left: 455px; width: 14px; height: 37px;
     }
     100% {
-        top: 215.6px; left: 332px; width: 14px; height: 43.4px;
+        top: 309.6px; left: 455px; width: 14px; height: 43.4px;
     }
 }
 
@@ -273,10 +273,10 @@ background:#000
 
 @keyframes KMLeftFluid2 {
     0% {
-        top: 215.6px; left: 332px; width: 14px; height: 43.4px;
+        top: 309.6px; left: 455px; width: 14px; height: 43.4px;
     }
     100% {
-        top: 209.2px; left: 332px; width: 14px; height: 49.8px;
+        top: 303.2px; left: 455px; width: 14px; height: 49.8px;
     }
 }
 
@@ -286,10 +286,10 @@ background:#000
 
 @keyframes KMLeftFluid3 {
     0% {
-        top: 209.2px; left: 332px; width: 14px; height: 49.8px;
+        top: 303.2px; left: 455px; width: 14px; height: 49.8px;
     }
     100% {
-        top: 202.8px; left: 332px; width: 14px; height: 56.2px;
+        top: 298.8px; left: 455px; width: 14px; height: 56.2px;
     }
 }
 
@@ -299,10 +299,10 @@ background:#000
 
 @keyframes KMLeftFluid4 {
     0% {
-        top: 202.8px; left: 332px; width: 14px; height: 56.2px;
+        top: 298.8px; left: 455px; width: 14px; height: 56.2px;
     }
     100% {
-        top: 196.4px; left: 332px; width: 14px; height: 62.6px;
+        top: 290.4px; left: 455px; width: 14px; height: 62.6px;
     }
 }
 
@@ -312,10 +312,10 @@ background:#000
 
 @keyframes KMLeftFluid5 {
     0% {
-        top: 196.4px; left: 332px; width: 14px; height: 62.6px;
+        top: 290.4px; left: 455px; width: 14px; height: 62.6px;
     }
     100% {
-        top: 190px; left: 332px; width: 14px; height: 69px;
+        top: 284px; left: 455px; width: 14px; height: 69px;
     }
 }
 
@@ -325,11 +325,11 @@ background:#000
 
 @keyframes KMRightFluid1 {
     0% {
-        top: 222px; left: 381px; width: 14px; height: 37px;
+        top: 316px; left: 504px; width: 14px; height: 37px;
     }
     
     100% {
-        top: 229.2px; left: 381px; width: 14px; height: 29.6px;
+        top: 323.2px; left: 504px; width: 14px; height: 29.6px;
     }
 }
 
@@ -339,11 +339,11 @@ background:#000
 
 @keyframes KMRightFluid2 {
     0% {
-        top: 229.2px; left: 381px; width: 14px; height: 29.6px;
+        top: 323.2px; left: 504px; width: 14px; height: 29.6px;
     }
     
     100% {
-        top: 236.4px; left: 381px; width: 14px; height: 22.2px;
+        top: 329.4px; left: 504px; width: 14px; height: 22.2px;
     }
 }
 
@@ -353,11 +353,11 @@ background:#000
 
 @keyframes KMRightFluid3 {
     0% {
-        top: 236.4px; left: 381px; width: 14px; height: 22.2px;
+        top: 329.4px; left: 504px; width: 14px; height: 22.2px;
     }
     
     100% {
-        top: 243.6px; left: 381px; width: 14px; height: 14.8px;
+        top: 338.6px; left: 504px; width: 14px; height: 14.8px;
     }
 }
 
@@ -367,11 +367,11 @@ background:#000
 
 @keyframes KMRightFluid4 {
     0% {
-        top: 243.6px; left: 381px; width: 14px; height: 14.8px;
+        top: 338.6px; left: 504px; width: 14px; height: 14.8px;
     }
     
     100% {
-        top: 250.8px; left: 381px; width: 14px; height: 7.4px;
+        top: 345.8px; left: 504px; width: 14px; height: 7.4px;
     }
 }
 
@@ -381,11 +381,11 @@ background:#000
 
 @keyframes KMRightFluid5 {
     0% {
-        top: 250.8px; left: 381px; width: 14px; height: 7.4px;
+        top: 345.8px; left: 504px; width: 14px; height: 7.4px;
     }
     
     100% {
-        top: 258px; left: 381px; width: 14px; height: 0px;
+        top: 258px; left: 504px; width: 14px; height: 0px;
     }
 }
 
