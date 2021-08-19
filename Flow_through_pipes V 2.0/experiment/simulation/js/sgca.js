@@ -70,6 +70,7 @@ function magic()
 	
 	if (simsubscreennum==1)
 	{
+		document.getElementById("observeTable").style.visibility = "hidden";
 		// this is for STEP1
 		// document.getElementById("completeSetUp").style.visibility = "hidden";
 		// document.getElementById("human").style.visibility = "hidden";
@@ -78,6 +79,10 @@ function magic()
 	
 	else if (simsubscreennum==2)
 	{
+		document.getElementById("observeTable").style.visibility = "hidden";
+		document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
+		document.getElementById("waterPourFirst").style.visibility = "hidden";
+		document.getElementById("waterFlow").style.visibility = "hidden";
 		if(chosenActivity == 1){
 			console.log("One has chosen!");
 			document.getElementById("experimentSetup").style.visibility = "hidden";
@@ -95,6 +100,10 @@ function magic()
 
 	else if (simsubscreennum==3)
 	{
+		document.getElementById("observeTable").style.visibility = "hidden";
+		document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
+		document.getElementById("waterPourFirst").style.visibility = "hidden";
+		document.getElementById("waterFlow").style.visibility = "hidden";
 		if(chosenActivity == 1){
 			document.getElementById("labelImage").style.visibility = "hidden";
 			document.getElementById("experimentSetup").style.visibility = "visible";
@@ -113,6 +122,10 @@ function magic()
 	}
 	else if (simsubscreennum==4)
 	{
+		document.getElementById("observeTable").style.visibility = "hidden";
+		document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
+		document.getElementById("waterPourFirst").style.visibility = "hidden";
+		document.getElementById("waterFlow").style.visibility = "hidden";
 		if(chosenActivity == 1){
 			document.getElementById("waterSteady").style.visibility = "visible";
 
@@ -191,6 +204,11 @@ function magic()
 	}
 	else if(simsubscreennum == 6){
 		if(chosenActivity == 1){
+			document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
+			document.getElementById("waterPourFirst").style.visibility = "hidden";
+			document.getElementById("waterFlow").style.visibility = "hidden";
+			
+			document.getElementById("observeTable").style.visibility = "hidden";
 			document.getElementById("experimentSetup").style.visibility = "hidden";
 			document.getElementById("labelImage").style.visibility = "hidden";
 			document.getElementById('nextButton').style.visibility="hidden";
