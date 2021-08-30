@@ -196,12 +196,12 @@ function magic()
 				// });
 				var rotateElement = document.getElementById("gatewayRotate");
 				new Propeller(rotateElement , {
-					inertia: 0, speed: 0, step: 1, onRotate
+					inertia: 0, speed: 0, onRotate
 				});
 				function onRotate(){
 					console.log(this.angle);
 				}
-				
+
 			}
 			
 		}
@@ -1519,7 +1519,7 @@ function fluidMoveAndPinMove(){
 			}, 28.57);
 		}
 	}
-	else if( processFluid == "Water" &&  manoFluid == "Carbon tetrachloride" ){
+	else if( processFluid == "Water" &&  manoFluid == "Carbon tetrachloride" && chosenPipeDia == 025){
 		numberOfClicks += 1;
 		
 		if(numberOfClicks == 1){
