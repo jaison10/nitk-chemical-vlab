@@ -196,15 +196,12 @@ function magic()
 				// });
 				var rotateElement = document.getElementById("gatewayRotate");
 				new Propeller(rotateElement , {
-					inertia: 0, speed: 0, step: 1
-				}, onRotate);
+					inertia: 0, speed: 0, step: 1, onRotate
+				});
 				function onRotate(){
 					console.log(this.angle);
 				}
-				// document.getElementById("gatewayRotate").onclick = function(){
-				// 	// fluidMoveAndPinMove();
-				// 	dragAndRotate();
-				// }
+				
 			}
 			
 		}
