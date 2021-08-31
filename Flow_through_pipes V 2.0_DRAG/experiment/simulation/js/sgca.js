@@ -1195,6 +1195,18 @@ function gotoObservation(){
 }
 
 function goBacktoStep2(){
+	document.getElementById("leftFluid").style.height = "37px";
+	document.getElementById("leftFluid").style.top = "222px";
+	document.getElementById("rightFluid").style.height = "37px";
+	document.getElementById("rightFluid").style.top = "222px";
+	document.getElementById("rotatePin").style.top = "259px";
+
+	document.getElementById("leftPinkFluid").style.height = "37px";
+	document.getElementById("leftPinkFluid").style.top = "222px";
+	document.getElementById("rightPinkFluid").style.height = "37px";
+	document.getElementById("rightPinkFluid").style.top = "222px";
+	document.getElementById("rotatePin").style.top = "259px";
+
 	 h1Val = 35.00
 	 h2Val = 35.00
 	 h1New = 35.00
