@@ -319,6 +319,9 @@ function gotoLabel(){
 }
 
 function gotoSetup(){
+	h1Val = 35.00
+	h2Val = 35.00
+	valOfRato = 0.00;
 	console.log("Going to setup");
 	for (temp = 0; temp <= 6 ; temp++) 
 	{ 
@@ -460,7 +463,7 @@ function setPipeLength(){
 	console.log(pipeLength);
 }
 
-var chosenPipeDia = 025;
+var chosenPipeDia = 0.25;
 
 function setPipeDia(){
 	chosenPipeDia = document.getElementById("pipeDiaSelect").value;
@@ -488,10 +491,13 @@ var h2Val = 35.00
 var valOfRato = 0.00;
 
 function fluidMoveAndPinMove(angle){
+	h1Val = 35.00
+	h2Val = 35.00
+	valOfRato = 0.00;
 	document.getElementById("waterPourSecondLongOne").style.visibility = "visible";
 	document.getElementById("gatewayRotate").style.cursor = "auto";
-	console.log("clicked");
-	document.getElementById("gatewayRotate").onclick = "";
+	// console.log("clicked");
+	// document.getElementById("gatewayRotate").onclick = "";
 
 	if( processFluid == "Water" &&  manoFluid == "Mercury"){
 		numberOfClicks += 1;
@@ -1521,22 +1527,88 @@ function fluidMoveAndPinMove(angle){
 		}
 	}
 	else if( processFluid == "Water" &&  manoFluid == "Carbon tetrachloride"){
-		if(chosenPipeDia == 025){
+		console.log("HERE");
+		console.log("Chosen pipe dia is: ",chosenPipeDia);
+		if(chosenPipeDia == 0.25){
 			console.log("Current deg: ", angle);
 	
 			h1Val = (356-angle)*0.196;
 			valOfRato = (356-angle)*0.019;
 			valOfRatoNew = valOfRato.toFixed(2);
 			h1New = h1Val.toFixed(2);
+
+			h2Val = 70 - (356-angle)*0.196;
+			h2New = h2Val.toFixed(2);
+
 			if(h1New >= 68){
 				h1New = 70;
+				h2New = 0;
 				valOfRatoNew = 6.67;
 			}
 			document.getElementById("leftCm").innerText = (h1New);
-			// document.getElementById("rightCm").innerText = h2New;
+			document.getElementById("rightCm").innerText = h2New;
 			document.getElementById("ratoReadings").innerText = (valOfRatoNew);
 		}
-		
+		else if(chosenPipeDia == 0.50){
+			console.log("Current deg: ", angle);
+	
+			h1Val = (356-angle)*0.196;
+			valOfRato = (356-angle)*0.0798;
+			valOfRatoNew = valOfRato.toFixed(2);
+			h1New = h1Val.toFixed(2);
+
+			h2Val = 70 - (356-angle)*0.196;
+			h2New = h2Val.toFixed(2);
+
+			// if(h1New >= 68){
+			// 	h1New = 70;
+			// 	h2New = 0;
+			// 	valOfRatoNew = 6.67;
+			// }
+			document.getElementById("leftCm").innerText = (h1New);
+			document.getElementById("rightCm").innerText = h2New;
+			document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+		}
+		else if(chosenPipeDia == 1.00){
+			console.log("Current deg: ", angle);
+	
+			h1Val = (356-angle)*0.11236;
+			valOfRato = (356-angle)*0.11236;
+			valOfRatoNew = valOfRato.toFixed(2);
+			h1New = h1Val.toFixed(2);
+
+			h2Val = 70 - (356-angle)*0.11236;
+			h2New = h2Val.toFixed(2);
+
+			// if(h1New >= 68){
+			// 	h1New = 70;
+			// 	h2New = 0;
+			// 	valOfRatoNew = 6.67;
+			// }
+			document.getElementById("leftCm").innerText = (h1New);
+			document.getElementById("rightCm").innerText = h2New;
+			document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+		}
+		else if(chosenPipeDia == 1.50){
+			console.log("Current deg: ", angle);
+	
+			h1Val = (356-angle)*0.0983;
+			valOfRato = (356-angle)*0.11236;
+			valOfRatoNew = valOfRato.toFixed(2);
+			h1New = h1Val.toFixed(2);
+
+			h2Val = 70 - (356-angle)*0.0983;
+			h2New = h2Val.toFixed(2);
+
+			// if(h1New >= 68){
+			// 	h1New = 70;
+			// 	h2New = 0;
+			// 	valOfRatoNew = 6.67;
+			// }
+			document.getElementById("leftCm").innerText = (h1New);
+			document.getElementById("rightCm").innerText = h2New;
+			document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+		}
 	}
 	
 }
@@ -1600,6 +1672,16 @@ function gotoObservation(){
 }
 
 function goBacktoStep2(){
+	 h1Val = 35.00
+	 h2Val = 35.00
+	 h1New = 35.00
+	 h2New = 35.00
+	 valOfRatoNew = 0.00;
+	 valOfRato = 0.00;
+	 document.getElementById("leftCm").innerText = (h1New);
+	 document.getElementById("rightCm").innerText = h2New;
+	 document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+
 	document.getElementById("nextButton").style.visibility = "hidden";
 		document.getElementById("nextButton").style.zIndex = -1;
 	document.getElementById('nextButton').style.visibility="hidden";
