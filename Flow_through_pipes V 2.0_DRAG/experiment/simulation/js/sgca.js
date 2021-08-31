@@ -520,6 +520,8 @@ function fluidMoveAndPinMove(angle){
 
 	document.getElementById("waterPourSecondLongOne").style.visibility = "visible";
 	document.getElementById("gatewayRotate").style.cursor = "auto";
+	
+	document.getElementById("addtoTableButton").style.visibility = "visible";
 
 
 	if( processFluid == "Water" &&  manoFluid == "Mercury"){
@@ -1133,7 +1135,24 @@ function fluidMoveAndPinMove(angle){
 		document.getElementById("rightPinkFluid").style.top = parseInt(222)+parseInt(topRightNew)+"px";
 		document.getElementById("rotatePin").style.top = parseInt(259)-parseInt(topPinNew)+"px";
 	}
-	
+	document.getElementById("addtoTableButton").onclick= function(){
+		var table = document.getElementById("observeTable");
+		table.style.color = "#fff";
+		var row = table.insertRow(1);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		var cell5 = row.insertCell(4);
+		cell1.innerHTML = processFluid;
+		cell2.innerHTML = manoFluid;
+		cell3.innerHTML = valOfRatoNew;
+		cell4.innerHTML = h1Final;
+		cell5.innerHTML = h2Final;
+	}
+	document.getElementById("obserButton").onclick = function(){
+		gotoObservation();
+	}
 }
 
 
