@@ -1136,6 +1136,7 @@ function fluidMoveAndPinMove(angle){
 		document.getElementById("rotatePin").style.top = parseInt(259)-parseInt(topPinNew)+"px";
 	}
 	document.getElementById("addtoTableButton").onclick= function(){
+		document.getElementById("addtoTableButton").style.visibility = "hidden";
 		var table = document.getElementById("observeTable");
 		table.style.color = "#fff";
 		var row = table.insertRow(1);
