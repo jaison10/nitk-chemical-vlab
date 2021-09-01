@@ -311,6 +311,7 @@ function gotoSetup() {
 
     document.getElementById("expButton").style.cursor = "pointer";
     document.getElementById("expButton").onclick = function() {
+        document.getElementById('overflow').style.visibility = "hidden";
         gotoExp();
     }
     if (chosenActivity == 2) {
@@ -358,6 +359,8 @@ function gotoExp() {
     magic();
 
     document.getElementById("setupButton").onclick = function() {
+        document.getElementById('overflow').style.visibility = "hidden";
+
         console.log("clicked for setup");
         document.getElementById("greenColor").style.visibility = "hidden";
         document.getElementById("nextButton").style.visibility = "hidden";
@@ -376,6 +379,7 @@ function gotoExp() {
 }
 
 function hideAllExperimentParts() {
+    document.getElementById('overflow').style.visibility = "hidden";
     document.getElementById("experimentID").style.visibility = "hidden";
     document.getElementById("waterSteady").style.visibility = "hidden";
     document.getElementById("obserButton").style.visibility = "hidden";
@@ -532,6 +536,10 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 70;
                 h2Final = 0;
                 valOfRatoNew = 37.92;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
+
             }
         } else if (chosenPipeDia == 0.50) {
             heightLeft = (356 - angle) * 0.014;
@@ -566,6 +574,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 38;
                 h2Final = 32;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         } else if (chosenPipeDia == 1.00) {
             heightLeft = (356 - angle) * 0;
@@ -600,6 +611,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 35.2;
                 h2Final = 34.8;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         } else if (chosenPipeDia == 1.50) {
             heightLeft = (356 - angle) * 0;
@@ -634,6 +648,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 35;
                 h2Final = 35;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         }
         document.getElementById("leftCm").innerText = (h1Final);
@@ -679,6 +696,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 70;
                 h2Final = 0;
                 valOfRatoNew = 36.42;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         } else if (chosenPipeDia == 0.50) {
             heightLeft = (356 - angle) * 0.04;
@@ -713,6 +733,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 38.3;
                 h2Final = 31.7;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         } else if (chosenPipeDia == 1.00) {
             heightLeft = (356 - angle) * 0.006;
@@ -747,6 +770,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 35.3;
                 h2Final = 34.7;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         } else if (chosenPipeDia == 1.50) {
             heightLeft = (356 - angle) * 0;
@@ -781,6 +807,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 35;
                 h2Final = 35;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         }
         document.getElementById("leftCm").innerText = (h1Final);
@@ -828,6 +857,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 70;
                 h2Final = 0;
                 valOfRatoNew = 7.42;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         } else if (chosenPipeDia == 0.50) {
 
@@ -864,6 +896,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 70;
                 h2Final = 0;
                 valOfRatoNew = 31.42;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         } else if (chosenPipeDia == 1.00) {
             heightLeft = (356 - angle) * 0.04;
@@ -898,6 +933,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 39.4;
                 h2Final = 30.6;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         } else if (chosenPipeDia == 1.50) {
 
@@ -934,6 +972,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 35.6;
                 h2Final = 34.4;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
         }
         document.getElementById("leftCm").innerText = (h1Final);
@@ -984,6 +1025,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 70;
                 h2Final = 0;
                 valOfRatoNew = 6.67;
+                console.log("Overflow condition");
+                document.getElementById("overflow").style.visibility = "visible";
+
             }
 
         } else if (chosenPipeDia == 0.50) {
@@ -1017,6 +1061,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 70;
                 h2Final = 0;
                 valOfRatoNew = 28.42;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
 
         } else if (chosenPipeDia == 1.00) {
@@ -1049,6 +1096,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 40.2;
                 h2Final = 29.8;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
 
         } else if (chosenPipeDia == 1.50) {
@@ -1081,6 +1131,9 @@ function fluidMoveAndPinMove(angle) {
                 h1Final = 35.70;
                 h2Final = 34.30;
                 valOfRatoNew = 40;
+                console.log("Overflow condition");
+                document.getElementById('overflow').style.visibility = "visible";
+
             }
 
         }
@@ -1095,6 +1148,7 @@ function fluidMoveAndPinMove(angle) {
         document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
     }
     document.getElementById("addtoTableButton").onclick = function() {
+        document.getElementById("addtoTableButton").style.visibility = "hidden";
         var table = document.getElementById("observeTable");
         table.style.color = "#fff";
         var row = table.insertRow(1);
@@ -1168,6 +1222,7 @@ function gotoObservation() {
 
     document.getElementById("observeTable").style.visibility = "visible";
     document.getElementById("setupButton").onclick = function() {
+        document.getElementById('overflow').style.visibility = "hidden";
         goBacktoStep2();
     }
 }
