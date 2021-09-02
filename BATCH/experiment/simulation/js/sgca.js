@@ -462,8 +462,30 @@ function setManoFluid() {
     console.log(manoFluid);
 }
 
+var reactorVolume = 1;
+
+function setReactorVolume(){
+    reactorVolume = document.getElementById("reactorVolume").value;
+    console.log(reactorVolume);
+}
+
+var initialMRR = 1;
+
+function setInitialMRR(){
+    initialMRR = document.getElementById("initialMRR").value;
+    console.log(initialMRR);
+}
+
+var reactionTemp = 30;
+
+function setReactorVolume(){
+    reactionTemp = document.getElementById("reactionTemp").value;
+    console.log(reactionTemp);
+}
+
 // slider
 function rangeSlideEthyl(value) {
+    console.log(document.getElementById('rangeValueEthyl').value);
     document.getElementById('rangeValueEthyl').innerHTML = value;
 }
 
@@ -471,7 +493,7 @@ function rangeSlideNaOH(value) {
     document.getElementById('rangeValueNaOH').innerHTML = value;
 }
 
-// Values from experimental page:
+// Values from experimental page of experiment PART, not the evaluation.:
 var firstML = 1;
 
 function setMLone(){
