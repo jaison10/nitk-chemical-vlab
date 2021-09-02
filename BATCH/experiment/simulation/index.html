@@ -54,10 +54,10 @@
 
         <!--Title of Simulation		-->
         <div id="titleLarge" class="title" style="visibility: visible;">
-            <h3>Flow through pipes</h3>
+            <h3>Reaction Kinetic studies in a batch reactor</h3>
         </div>
         <div id="titleSmall" class="title2" style="visibility:hidden">
-            <h3>Flow through pipes</h3>
+            <h5>Reaction Kinetic studies in a batch reactor</h5>
         </div>
 
         <div id="buttonsList" style="position: absolute; visibility: hidden; top: 20px; left: 400px; color: white; z-index: 1;">
@@ -118,35 +118,19 @@
                         Click on <span class="fontColorChange">Setup</span> Tab to Configure Experimental Setup.
                     </li>
                     <li>
-                        Choose length of pipe by either clicking the textbox provided in front of it or clicking the arrow buttons.
+                        Click on <span class="fontColorChange">Experiment</span> Tab to perform the experiment.
                     </li>
                     <li>
-                        Select other parameters by clicking the comboBox.
+                        Calculate and Enter the volume of NaOH and Ethyl Acetate
                     </li>
                     <li>
-                        Now click on <span class="fontColorChange">Experiment</span> Tab to perform the experiment.
+                        Click on <span class="fontColorChange">Add NaOH</span> button. 
                     </li>
                     <li>
-                        To start the experiment first <span class="fontColorChange">switch ON</span> the pump by clicking the <span class="fontColorChange">Green</span> button on the pump.
+                        Once Set Temperature and Current Temperature are same you can add preheated Ethyl Acetate.
                     </li>
                     <li>
-                        Once the pump is turned on <span class="fontColorChange">Setup</span> Tab will be disabled and will be enabled only if pump is OFF. Click on <span class="fontColorChange">Red</span> button on pump to <span>Switch off </span>the
-                        pump.
-                    </li>
-                    <li>
-                        To set the required flowrate click on the <span class="fontColorChange">Main valve</span>.
-                    </li>
-                    <li>
-                        Note the change in limb level of manometer. <span class="fontColorChange">h1</span> and <span class="fontColorChange">h2</span> are curresponding Manometric Limb heights from reference level.
-                    </li>
-                    <li>
-                        Click on <span class="fontColorChange">Add current readings</span> button to record the reading in Observation table.
-                    </li>
-                    <li>
-                        Click on <span class="fontColorChange">Observations</span> button to see the Observation table.
-                    </li>
-                    <li>
-                        If you get Manometric error, go to <span class="fontColorChange">Setup </span>Tab and change the manometer.
+                        Simultaneously stop watch is started and enter the readings to the Observation by clicking on <span class="fontColorChange">Add Current Readings</span> button. 
                     </li>
                 </ul>
             </div>
@@ -157,13 +141,13 @@
                         Click on <span class="fontColorChange">Data</span> tab to configure Experimental data.
                     </li>
                     <li>
-                        Click on <span class="fontColorChange">Observation</span> tab to Enter your Observations. Specify number of sets of readings.
-                    </li>
-                    <li>
                         Click on <span class="fontColorChange">Evaluate</span> button to see the <span class="fontColorChange">Results</span>.
                     </li>
                     <li>
-                        To perform experiment again click on the <span class="fontColorChange">Data</span>.
+                        Click on <span class="fontColorChange">Evaluation</span> tab to check the Simulated Values.
+                    </li>
+                    <li>
+                        To perform experiment again click on the title of the experiment.
                     </li>
                 </ul>
             </div>
@@ -178,33 +162,27 @@
 <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span> -->
             <p id="step2Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Details</p>
             <!-- EXPERIMENT PART -->
-            <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:90px; width: 640px; height: 390px;" src="./Images/Flow through pipes_images/labelPng.png">
+            <img id="labelImage" style="visibility: hidden; position: absolute; left: 70px; top: 20px; width: 550px; height: 480px;" src="./Images/label.png">
 
             <!-- Evaluation part -->
             <div id="configExp">
-                <p style="position: absolute; top: 50px; color: #fff;">Number of Observations:
-                    <input style="position: absolute; left: 218px;" type="number" value="1" id="pipeLengthEval" name="length" min="1" max="100" onchange="setPipeLengthEval();">
+                <p style="position: absolute; top: 50px; color: #fff;">Reaction Temperature:
+                    <input style="position: absolute; left: 260px;" type="number" step="1" value="30" id="reactionTempEval" name="Reaction Temperature" min="30" max="50" onchange="setReactorVolumeEval();">
+                    <p style="color:#fff; position: absolute; left: 330px; top: 50px;">° Celsius</p>
                 </p>
-                <p style="position: absolute; top: 100px; color: #fff;">Nominal diameter of the pipe:
-                    <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
-        <option value="0.25">0.25 inch</option>
-        <option value="0.50">0.50 inch</option>
-        <option value="1.00">1.00 inch</option>
-        <option value="1.50">1.50 inch</option>
-      </select>
+                <p style="position: absolute; top: 100px; color: #fff;">Rate Constant(k):
+                    <input style="position: absolute; left: 260px;" type="number" value="" id="rateConstEval" onchange="setRateConstEval();">
+                    <p style="color:#fff; position: absolute; left: 450px; top: 100px;">Litre/gmol.min</p>
                 </p>
-                <p style="position: absolute; top: 150px; color: #fff;">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
-        <option value="Water">Water</option>
-        <option value="Kerosene">Kerosene</option>
-      </select>
+                <p style="position: absolute; top: 150px; color: #fff;">Frequency Factor(k<sub>°</sub>):
+                    <input style="position: absolute; left: 260px;" type="number" value="" id="freqFactor" onchange="setFreqFact();">
+                    <p style="color:#fff; position: absolute; left: 450px; top: 150px;">x10<sup>8</sup> (Litre/gmol.min)</p>
                 </p>
-                <p style="position: absolute; top: 200px; color: #fff;">Manometric fluid:
-                    <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
-        <option value="Carbon tetrachloride">Carbon tetrachloride</option>
-        <option value="Mercury">Mercury</option>
-      </select>
+                <p style="position: absolute; top: 200px; color: #fff;">Activation Energy:
+                    <input style="position: absolute; left: 260px;" type="number" value="" id="activationEnergy" onchange="setActiveEnergy();">
+                    <p style="color:#fff; position: absolute; left: 450px; top: 200px;">J/mol</p>
                 </p>
+                <button id="evaluateButtonFromData" style="position: absolute; top: 280px; left:75%;">EVALUATE</button>
             </div>
 
             <p id="v2" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
@@ -217,37 +195,41 @@
             <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p>
             <!-- EXPERIMENT PART -->
             <div id="experimentSetup" style="visibility: hidden; left: 100px;">
-                <p style="position: absolute; top: 50px; color: #fff;">Length of the pipe:
-                    <input style="position: absolute; left: 218px;" type="number" value="1" id="pipeLength" name="length" min="1" max="100" onchange="setPipeLength();">
+                <p style="position: absolute; top: 50px; color: #fff;">Reactor Volume:
+                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="1" id="reactorVolume" name="Reactor Volume" min="1" max="5" onchange="setReactorVolume();">
                 </p>
-                <p style="position: absolute; top: 100px; color: #fff;">Nominal diameter of the pipe:
-                    <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
-        <option value="0.25">0.25 inch</option>
-        <option value="0.50">0.50 inch</option>
-        <option value="1.00">1.00 inch</option>
-        <option value="1.50">1.50 inch</option>
-      </select>
+                <p style="position: absolute; top: 100px; color: #fff;">Initial Molar Ratio of the Reactants:
+                    <input style="position: absolute; left: 260px;" type="number" step="0.1" value="1" id="reactorVolume" name="Initial Molar Ratio of the Reactants" min="1" max="2" onchange="setReactorVolume();">
                 </p>
-                <p style="position: absolute; top: 150px; color: #fff;">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
-        <option value="Water">Water</option>
-        <option value="Kerosene">Kerosene</option>
-      </select>
+
+                <p style="position: absolute; top: 150px; color: #fff;">Stock Concentration of Ethyl Acetate:</p>
+                <div class="" style="position: absolute; top: 150px; left: 300px; color: #fff;">
+                    <span id="rangeValueEthyl">0.020</span>
+                    <Input class="range" type="range" name= "" step="0.005" value="0.020" min="0.020" max="0.060" onChange="rangeSlideEthyl(this.value)" 
+                    onmousemove="rangeSlideEthyl(this.value)"></Input>
+                </div>
+
+                <p style="position: absolute; top: 200px; color: #fff;">Stock Concentration of NaOH:</p>
+                <div class="" style="position: absolute; top: 200px; left: 300px; color: #fff;">
+                    <span id="rangeValueNaOH">0.020</span>
+                    <Input class="range" type="range" name= "" step="0.005" value="0.020" min="0.020" max="0.060" onChange="rangeSlideNaOH(this.value)" 
+                    onmousemove="rangeSlideNaOH(this.value)"></Input>
+                </div>
+
+                <p style="position: absolute; top: 250px; color: #fff;">Reaction Temperature:
+                    <input style="position: absolute; left: 260px;" type="number" step="1" value="30" id="reactionTemp" name="Reaction Temperature" min="30" max="50" onchange="setReactorVolume();">
+                    <p style="color:#fff; position: absolute; left: 330px; top: 250px;">° Celsius</p>
                 </p>
-                <p style="position: absolute; top: 200px; color: #fff;">Manometric fluid:
-                    <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
-        <option value="Carbon tetrachloride">Carbon tetrachloride</option>
-        <option value="Mercury">Mercury</option>
-      </select>
-                </p>
+                
+                
             </div>
 
             <!-- Evaluation Part -->
             <div id="evaluatePart">
-                <p style="position: absolute; top: 30px; color: #fff;">Number of Observations:
+                <!-- <p style="position: absolute; top: 30px; color: #fff;">Number of Observations:
                     <input type="number" value="0" id="evalSets" name="length" min="1" max="100" onchange="setEvalSets();">
-                </p>
-                <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 450px; top:70px;">
+                </p> -->
+                <table id="configInputTable" style="font-size: 12px;position:absolute; border: 1px solid #fff; width: 770px; top:70px; left:13px;">
                     <tr style="">
                         <!-- <th>Sl no.</th> -->
                         <th>Flowrate(lpm)</th>
@@ -256,16 +238,25 @@
                         <th>Friction factor * 10<sup>4</sup></th>
                     </tr>
                 </table>
-                <table id="configResultTable" style=" font-size: 12px; position:absolute; border: 1px solid #fff; left: 470px; width: 250px; top:70px;">
+                <table id="configSimulatedTable" style="font-size: 12px;position:absolute; border: 1px solid #fff; width: 770px; top:280px; left:13px;">
                     <tr style="">
+                        <!-- <th>Sl no.</th> -->
+                        <th>Flowrate(lpm)</th>
+                        <th>Manometric Pressure drop</th>
                         <th>Reynolds no.</th>
                         <th>Friction factor * 10<sup>4</sup></th>
                     </tr>
                 </table>
+                <!-- <table id="configResultTable" style=" font-size: 12px; position:absolute; border: 1px solid #fff; left: 470px; width: 250px; top:70px;">
+                    <tr style="">
+                        <th>Reynolds no.</th>
+                        <th>Friction factor * 10<sup>4</sup></th>
+                    </tr>
+                </table> -->
                 <p id="showResRey" style="position: absolute; left: 300px; top: 400px;"></p>
                 <p id="showResInFric" style="position: absolute; left: 470px; top: 180px;"></p>
 
-                <button style="position: absolute; left: 600px; top: 40px; width: 100px;" onclick="evaluateConfig();">EVALUATE</button>
+                <!-- <button style="position: absolute; left: 600px; top: 40px; width: 100px;" onclick="evaluateConfig();">EVALUATE</button> -->
             </div>
 
             <p id="can3" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
@@ -278,13 +269,13 @@
             <!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span> -->
             <p id="step4Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Experiment.</p>
             <!-- EXPERIMENT PART -->
-            <div id="experimentID" style="visibility: hidden;">
+            <div id="experimentIDOld" style="visibility: hidden;">
                 <img style="position: absolute; top: 370px; left: 240px; width: 130px; height: 80px;" src="./Images/Flow through pipes_images/motor.png">
                 <img style="position: absolute; top: 283px; left: 87px; width: 290px; height: 214px;" src="./Images/Flow through pipes_images/bricksPipe.png">
                 <img id="gatewayRotate" style="position: absolute; top: 293px; left: 240px; width: 40px; height: 40px;" src="./Images/Flow through pipes_images/gatewall.png">
                 <img style="position: absolute; top: 330px; left: 194px; width: 40px; height: 40px;" src="./Images/Flow through pipes_images/gatewall.png">
                 <img id="redColor" style="visibility: hidden; position: absolute; top: 407px; left: 317px; width: 18px; height: 18px;" src="./Images/Flow through pipes_images/red.png">
-                <img id="greenColor" style="position: absolute; top: 407px; left: 317px; width: 18px; height: 18px;" src="./Images/Flow through pipes_images/green.png">
+                <img id="greenColor" style="position: absolute; top: 407px; left: 317px; width: 18px; height: 18px;" src="./Images/Flow through pipes_images/greefffn.png">
                 <img style="position: absolute; top: 164px; left: 235px; width: 53px; height: 128px; z-index: 1;" src="./Images/Flow through pipes_images/top.png">
                 <img style="position: absolute; top: 130px; left: 244px; width: 49px; height: 38px; z-index: 1;" src="./Images/Flow through pipes_images/leftOne.png">
                 <img style="position: absolute; top: 133px; left: 285px; width: 343px; height: 11px; z-index: 1;" src="./Images/Flow through pipes_images/straightPipe.png">
@@ -308,9 +299,9 @@
                 <img id="rightFluid" style="position: absolute; top: 222px; left: 381px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid initial Pink -->
-                <img id="bottomPinkU" style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkbottomU.png">
-                <img id="leftPinkFluid" style="position: absolute; top: 222px; left: 332px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
-                <img id="rightPinkFluid" style="position: absolute; top: 222px; left: 381px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
+                <img id="bottomPinkU" style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkfffbottomU.png">
+                <img id="leftPinkFluid" style="position: absolute; top: 222px; left: 332px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFffffluid.png">
+                <img id="rightPinkFluid" style="position: absolute; top: 222px; left: 381px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinfffkFluid.png">
 
                 <!-- Fluid Second -->
                 <img id="leftFluidSecond" style="visibility: hidden; position: absolute; top: 215.6px; left: 332px; width: 14px; height: 43.4px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
@@ -356,7 +347,7 @@
                 <img style="position: absolute; top: 375.5px; left: 162.6px; width: 6px; height: 11.8px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/smallPiece.png">
 
                 <!-- Pin initial-->
-                <img id="rotatePin" style="visibility: hidden; position: absolute; top: 259px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through pipes_images/pin.png">
+                <img id="rotatePin" style="visibility: hidden; position: absolute; top: 259px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through pipes_images/piddddn.png">
                 <!-- Pin Second-->
                 <img id="rotatePinSecond" style="visibility: hidden; position: absolute; top: 245px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through pipes_images/pin.png">
                 <!-- Pin Third-->
@@ -370,7 +361,7 @@
                 <img id="rotatePinFinal" style="visibility: hidden; position: absolute; top: 189px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through pipes_images/pin.png">
 
 
-                <img id="waterSteady" style="position: absolute; top: 449px; left: 102px; width: 125px; height: 38px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/waterSteady.png">
+                <img id="waterSteady" style="position: absolute; top: 449px; left: 102px; width: 125px; height: 38px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/wffffaterSteady.png">
                 <img id="waterFlow" style="position: absolute; visibility: hidden; top: 449px; left: 102px; width: 125px; height: 38px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/waterFlow.svg">
                 <!-- Water flowing out of pipe. -->
                 <img id="waterPourFirst" style="visibility: hidden; position: absolute; top: 389px; left: 105px; width: 115px; height: 78px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/waterPng.png">
@@ -393,11 +384,41 @@
                 <p id="rightCm" style="position: absolute; top: 215px; left: 405px; width: 124px; font-size:10px; color: #fff;">35.00</p>
                 <p style="position: absolute; top: 215px; left: 433px; width: 124px; font-size:10px; color: #fff;">cm</p>
             </div>
+            
 
-            <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 425px; left: 485px; width: 194px; font-size:13px;">Add current readings</button>
+            <!-- BATCH PART. -->
+            <div id="experimentID" style="visibility: hidden;">
+                <img style="position: absolute; top:100px; left: 103px; width: 215px; height: 360px; z-index: 2;" src="./Images/fourPipes.png" alt="">
+                <img style="position: absolute; top:90px; left: 37px; width: 313px; height: 350px; z-index: 1;" src="./Images/vessel_pump_combo.png" alt="">
+                <img style="position: absolute; top:160px; left: 109px; width: 6px; height: 70px; z-index: 1;" src="./Images/rodVertical.png" alt="">
+                <img style="position: absolute; top:225px; left: 70px; width: 85px; height: 12px; z-index: 1;" src="./Images/rodHori.png" alt="">
 
-            <button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
-            <button id="obserButton" style="position: absolute; top: 465px; left: 585px; width: 94px; font-size:13px;">Observations</button>
+                <img style="position: absolute; top:20px; left: 487px; width: 293px; height: 170px; z-index: 1;" src="./Images/blackBox.png" alt="">
+                <p style="position: absolute; top:20px; left: 496px;  z-index: 1; color: #64dd17; font-size: 13px;">Set Temperature</p>
+                <p style="position: absolute; top:34px; left: 536px;  z-index: 1; color: #64dd17; font-size: 13px;">(°C)</p>
+                <p style="position: absolute; top:20px; left: 636px;  z-index: 1; color: #64dd17; font-size: 13px;">Current Temperature</p>
+                <p style="position: absolute; top:34px; left: 686px;  z-index: 1; color: #64dd17; font-size: 13px;">(°C)</p>
+                <p style="position: absolute; top:86px; left: 515px;  z-index: 1; color: #64dd17; font-size: 13px;">Conductivity</p>
+                <p style="position: absolute; top:104px; left: 526px;  z-index: 1; color: #64dd17; font-size: 13px;">(mS/cm)</p>
+                <p style="position: absolute; top:134px; left: 526px;  z-index: 1; color: #64dd17; font-size: 13px;">HEATER</p>
+
+                <p style="position: absolute; width:250px; top:190px; left: 486px;  z-index: 1; color: #03a9f4; font-size: 15px;">Calculated Volume of
+                Ethyl Acetate and NaOH:</p>
+                <img style="position: absolute; top:250px; left: 530px; width: 70px; height: 120px; z-index: 1;" src="./Images/hollow.png" alt="">
+                <img style="position: absolute; top:250px; left: 660px; width: 70px; height: 120px; z-index: 1;" src="./Images/hollow.png" alt="">
+                <p style="position: absolute; top:265px; left: 555px;  z-index: 1; color: #6a1b9a; font-size: 25px;"><b>A</b></p>
+                <p style="position: absolute; top:265px; left: 685px;  z-index: 1; color: #6a1b9a; font-size: 25px;"><b>B</b></p>
+
+                <input style="position: absolute; top: 400px; left: 518px;" type="number" value="1" id="firstMLValue" name="length" min="1" max="999" onchange="setMLone();">
+                <p style="position: absolute; top:390px; left: 600px;  z-index: 1; color: #64dd17; font-size: 15px;">ml</p>
+                <input style="position: absolute; top: 400px; left: 658px;" type="number" value="1" id="secondMLValue" name="length" min="1" max="999" onchange="setMLtwo();">
+                <p style="position: absolute; top:390px; left: 740px;  z-index: 1; color: #64dd17; font-size: 15px;">ml</p>
+            </div>
+
+            <button id="addNaOH" style=" position: absolute; top: 440px; left: 525px; width: 194px; font-size:13px;">Add NaOH to Reactor</button>
+
+            <button id="goBackButton" style="position: absolute; top: 475px; left: 525px; width: 94px; font-size:13px;">Try again!</button>
+            <button id="obserButton" style="position: absolute; top: 475px; left: 625px; width: 94px; font-size:13px;">Observations</button>
 
             <!-- Observation table! -->
             <table id="observeTable" style="overflow-y: scroll; font-size: 12px; position:absolute; visibility: hidden; border: 1px solid #fff; width: 700px; top:50px; left: 45px;">
