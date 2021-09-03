@@ -496,7 +496,7 @@ function fluidMoveAndPinMove(angle) {
     valOfRatoNew = 0.00;
     h2Final = 0.00;
 
-    document.getElementById("waterPourSecondLongOne").style.visibility = "visible";
+    document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
     document.getElementById("gatewayRotate").style.cursor = "auto";
 
     document.getElementById("addtoTableButton").style.visibility = "visible";
@@ -661,7 +661,7 @@ function fluidMoveAndPinMove(angle) {
         document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
         document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
         document.getElementById("rightFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
-        document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
+        document.getElementById("rotatePin").style.top = parseInt(240) - parseInt(topPinNew) + "px";
     } else if (processFluid == "Kerosene" && manoFluid == "Mercury") {
         if (chosenPipeDia == 0.25) {
             heightLeft = (356 - angle) * 0.093;
