@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("nextButton").style.visibility = "hidden";
     setTimeout(() => {
         var start = document.getElementById("start");
-        start.innerText = "FLOW THROUGH PIPES";
+        start.innerText = "Reaction Kinetic studies in a batch reactor";
         start.style.fontSize = "xx-large";
         start.classList.add("content-shine");
-        start.style.left = "570px";
+        start.style.left = "420px";
         start.style.top = "170px";
         document.getElementById("landingPageButton").style.visibility = "visible";
         document.getElementById("landingPageButton").style.cursor = "pointer";
@@ -460,6 +460,52 @@ var manoFluid = "Carbon tetrachloride"
 function setManoFluid() {
     manoFluid = document.getElementById("manoFluid").value;
     console.log(manoFluid);
+}
+
+var reactorVolume = 1;
+
+function setReactorVolume(){
+    reactorVolume = document.getElementById("reactorVolume").value;
+    console.log(reactorVolume);
+}
+
+var initialMRR = 1;
+
+function setInitialMRR(){
+    initialMRR = document.getElementById("initialMRR").value;
+    console.log(initialMRR);
+}
+
+var reactionTemp = 30;
+
+function setReactorVolume(){
+    reactionTemp = document.getElementById("reactionTemp").value;
+    console.log(reactionTemp);
+}
+
+// slider
+function rangeSlideEthyl(value) {
+    console.log(document.getElementById('rangeValueEthyl').value);
+    document.getElementById('rangeValueEthyl').innerHTML = value;
+}
+
+function rangeSlideNaOH(value) {
+    document.getElementById('rangeValueNaOH').innerHTML = value;
+}
+
+// Values from experimental page of experiment PART, not the evaluation.:
+var firstML = 1;
+
+function setMLone(){
+    firstML = document.getElementById("firstMLValue").value;
+    console.log(firstML);
+}
+
+var secondML = 1;
+
+function setMLtwo(){
+    firstML = document.getElementById("secondMLValue").value;
+    console.log(firstML);
 }
 
 var x = 0;

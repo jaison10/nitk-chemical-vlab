@@ -503,7 +503,7 @@ th {
 tbody {
     display: block;
     /* height: auto; */
-    max-height: 400px;
+    max-height: 200px;
     overflow: auto;
 }
 thead, tbody tr {
@@ -576,3 +576,44 @@ thead, tbody tr {
 .fontColorChange{
     color: rgb(7, 177, 12);
 }
+
+
+/* BATCH ADDS */
+
+#rangeValueEthyl {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    color: #999;
+    font-weight: 400;
+  }
+  #rangeValueNaOH {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    color: #999;
+    font-weight: 400;
+  }
+  .range {
+    width: 150px;
+    height: 10px;
+    -webkit-appearance: none;
+    background: #111;
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+  }
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00fd0a;
+    cursor: pointer;
+    border: 4px solid #333;
+    box-shadow: -407px 0 0 400px #00fd0a;
+  }
+  
