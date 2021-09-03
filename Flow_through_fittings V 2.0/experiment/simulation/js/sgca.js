@@ -372,6 +372,12 @@ function gotoExp(){
 	simsubscreennum = 4;
 	document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
 	magic();
+	var flag = false;
+	document.getElementById("experiButton").onclick = function(){
+		console.log("Clicking on exp button inside fluidMove");
+		flag = !flag;
+		displayExpValues(flag);
+	}
 
 	document.getElementById("setupButton").onclick = function(){
 		console.log("clicked for setup");
@@ -453,7 +459,7 @@ function selectAction(n)
 var Fittingused = "Elbow";
 
 function setFittingused(){
-	Fittingused = document.getElementById("fituse").value;
+	Fittingused = document.getElementById("fittingType").value;
 	console.log(Fittingused);
 }
 
@@ -472,7 +478,7 @@ function setProcessFluid(){
 	console.log(processFluid);
 }
 var densitypf =1000;
-var viscositypf
+var viscositypf=0.85;
 if(processFluid=="Water"){
 	densitypf=1000;
 	viscositypf=0.85;}
@@ -487,7 +493,7 @@ function setManoFluid(){
 	manoFluid = document.getElementById("manoFluid").value;
 	console.log(manoFluid);
 }
-if(manoFluid="Carbon tetrachloride")
+if(manoFluid=="Carbon tetrachloride")
 	mfdensity=1600;
 else
 	mfdensity=13600;
@@ -497,12 +503,9 @@ var numberOfClicks = 0;
 var h1Val = 35.00
 var h2Val = 35.00
 var valOfRato = 0.00;
-
+// ershe
 function fluidMoveAndPinMove(){
-	document.getElementById("experiButton").onclick = function(){
-		console.log("Clicking on exp button inside fluidMove");
-		displayExpValues();
-	}
+	
 	document.getElementById("waterPourSecondLongOne").style.visibility = "visible";
 	document.getElementById("gatewayRotate").style.cursor = "auto";
 	console.log("clicked");
@@ -1894,7 +1897,7 @@ function fluidMoveAndPinMove(){
 
 // ERIN
 
-function displayExpValues(){
+function displayExpValues(flag){
 	console.log("Clicking on exp button");
 	// for (temp = 0; temp <= 7 ; temp++) 
 	// { 
@@ -1905,8 +1908,12 @@ function displayExpValues(){
 	// simsubscreennum = 8;
 	// document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
 	// magic();
-	
-	document.getElementById("displayExpValues").style.visibility = "visible";
+	if(flag){
+		document.getElementById("displayExpValues").style.visibility = "visible";
+	}
+	else
+		document.getElementById("displayExpValues").style.visibility = "hidden";
+
 	document.getElementById("fituse").innerHTML=Fittingused;
 	document.getElementById("nompidia").innerHTML=chosenPipeDia+"inch";
 	document.getElementById("acpidia").innerHTML=actualPipeDia+"cm";
