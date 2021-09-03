@@ -54,10 +54,10 @@
 
         <!--Title of Simulation		-->
         <div id="titleLarge" class="title" style="visibility: visible;">
-            <h3>Flow through Orifice</h3>
+            <h3>Flow through Fluidised Bed</h3>
         </div>
         <div id="titleSmall" class="title2" style="visibility:hidden">
-            <h3>Flow through Orifice</h3>
+            <h3>Flow through Fluidised Bed</h3>
         </div>
 
         <div id="buttonsList" style="position: absolute; visibility: hidden; top: 20px; left: 400px; color: white; z-index: 1;">
@@ -145,7 +145,7 @@
                         If you get Manometric Overflow Error, go to <span class="fontColorChange">Setup </span>Tab and Change the Manometer.
                       </li>
                       <li>
-                        To Evaluate experiment click on title <span class="fontColorChange">Flow Through Orifice</span>.
+                        To Evaluate experiment click on title <span class="fontColorChange">Flow Through Flow through Fluidised Bed</span>.
                       </li>
                 </ul>
             </div>
@@ -162,7 +162,7 @@
                         Click on <span class="fontColorChange">Evaluate</span> button to see the <span class="fontColorChange">Results</span>.
                     </li>
                     <li>
-                        To perform Experiment again click on title <span class="fontColorChange">Flow Through Orifice</span>.
+                        To perform Experiment again click on title <span class="fontColorChange">Flow Through Fluidised Bed</span>.
                     </li>
                 </ul>
             </div>
@@ -177,30 +177,40 @@
 <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span> -->
             <p id="step2Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Details</p>
             <!-- EXPERIMENT PART -->
-            <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:90px; width: 640px; height: 390px;" src="./Images/Flow through orifice_images/orilabel.png">
+            <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:70px; width: 700px; height: 400px;" src="./Images/Flow through orifice_images/ftfblabel.png">
 
             <!-- Evaluation part -->
             <div id="configExp">
-                <p style="position: absolute; top: 100px; color: #fff;">Orifice Diameter
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.1" id="pipeLengthEval" name="length" min="0.1" max="0.7" onchange="setPipeLengthEval();"> 
-                    <p style="color:#fff; position: absolute; left: 300px; top: 100px;"> cm</p>
-                </p>
-
-                <p style="position: absolute; top: 50px; color: #fff;">Nominal diameter of the pipe:
+                <p style="position: absolute; top: 150px; color: #fff;">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
                     <option value="0.25">0.25 inch</option>
                     <option value="0.50">0.50 inch</option>
                     <option value="1.00">1.00 inch</option>
                     <option value="1.50">1.50 inch</option>
+                    <option value="2.50">2.50 inch</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 150px; color: #fff;">Process fluid:
+
+                <p style="position: absolute; top: 100px; color: #fff;">Length of Fluidised Bed
+                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.5" id="bedHeight" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();"> 
+                    <p style="color:#fff; position: absolute; left: 300px; top: 100px;"> meter</p>
+                </p>
+                
+                <p style="position: absolute; top: 200px; color: #fff;">Packing Material:
+                    <select style="position: absolute; left: 217px;" name="packMaterial" id="packMaterialEval" onchange="setpackMaterialEval();">
+                    <option value="25mm Raschig ring">25mm Raschig ring</option>
+                    <option value="25mm Beri saddle">25mm Beri saddle</option>
+                    <option value="13mm Beri saddle">13mm Beri saddle</option>
+                    <option value="Glass beads of 4mm size">Glass beads of 4mm size</option>
+                </select>
+                </p>
+                <p style="position: absolute; top: 250px; color: #fff;">Process fluid:
                     <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
         <option value="Water">Water</option>
         <option value="Kerosene">Kerosene</option>
       </select>
                 </p>
-                <p style="position: absolute; top: 200px; color: #fff;">Manometric fluid:
+                <p style="position: absolute; top: 300px; color: #fff;">Manometric fluid:
                     <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
         <option value="Mercury">Mercury</option>
@@ -218,33 +228,37 @@
             <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p>
             <!-- EXPERIMENT PART -->
             <div id="experimentSetup" style="visibility: hidden; left: 100px;">
-                <p style="position: absolute; top: 100px; color: #fff;">Select Orifice diameter:
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.1" id="oriDia" name="length" min="0.1" max="0.7" onchange="setoriDia();">
-                    <p style="color:#fff; position: absolute; left: 300px; top: 100px;">cm</p>
+                <p style="position: absolute; top: 50px; color: #fff;">Length of Fluidised Bed:
+                    <p style="color:#fff; position: absolute; left: 200px; top: 50px;">2.5 meter</p>
                 </p>
-                <p style="position: absolute; top: 50px; color: #fff;">Nominal diameter of the pipe:
+
+                <p style="position: absolute; top: 100px; color: #fff;">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
-                     <option value="0.25">0.25 inch</option>
-                     <option value="0.50">0.50 inch</option>
-                     <option value="1.00">1.00 inch</option>
-                     <option value="1.50">1.50 inch</option>
+                    <option value="1.00">1.00 inch</option>
+                    <option value="1.50">1.50 inch</option>
+                    <option value="2.50">2.50 inch</option>
                     </select>
                 </p>
-               
-                    <p style="position: absolute; top: 150px; color: #fff;">Select type of Orifice tappings: 
-                      <select name="fittype" id="fittingType" onchange="setFittingused();">
-                        <option value="Corner Taps">Corner Taps</option>
-                        <option value="D & D/2 taps">D & D/2 taps</option>
-                        <option value=" 1'' Taps">1" Taps</option>
-                      </select> 
-                    </p>
-                    <p style="position: absolute; top: 200px; color: #fff;">Process fluid:  
+
+                <p style="position: absolute; top: 150px; color: #fff;">Static Bed Height
+                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.3" id="bedHeight" name="length" min="0.3" max="1.2" onchange="setbedHeight();"> 
+                    <p style="color:#fff; position: absolute; left: 300px; top: 150px;"> meter</p>
+                </p>
+                
+                <p style="position: absolute; top: 200px; color: #fff;">Packing Material:
+                    <select style="position: absolute; left: 217px;" name="packMaterial" id="packMaterial" onchange="setpackMaterial();">
+                    <option value="Glass beads of 4mm size">Glass beads of 4mm size</option>
+                    <option value="Glass beads of 6mm size">Glass beads of 6mm size</option>
+                </select>
+                </p>
+
+                <p style="position: absolute; top: 250px; color: #fff;">Process fluid:  
                       <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                       </select>
                     </p>
-                    <p style="position: absolute; top: 250px; color: #fff;">Manometric fluid:  
+                    <p style="position: absolute; top: 300px; color: #fff;">Manometric fluid:  
                       <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
                         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                         <option value="Mercury">Mercury</option>
@@ -264,13 +278,13 @@
                         <th>Flowrate(lpm)</th>
                         <th>Manometric Pressure drop</th>
                         <th>Reynolds no.</th>
-                        <th>Co-efficient of Discharge</th>
+                        <th>Friction Factor x 10<sup>4</sup></th>
                     </tr>
                 </table>
                 <table id="configResultTable" style=" font-size: 12px; position:absolute; border: 1px solid #fff; left: 470px; width: 250px; top:70px;">
                     <tr style="">
                         <th>Reynolds no.</th>
-                        <th>Co-efficient of Discharge</th>
+                        <th>Friction Factor x 10<sup>4</sup></th>
                     </tr>
                 </table>
                 <p id="showResRey" style="position: absolute; left: 300px; top: 400px;"></p>
@@ -431,24 +445,30 @@
         </div> 
         <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
             <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
-            <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Orifice Diameter:</p>
-            <p id="oridia" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p>
-            <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Type of Tapping:</p>
-            <p id="fituse" style="position: absolute; top: 90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
-            <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Pipe Diameter:</p>
-            <p id="nompidia" style="position: absolute; top:120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">inch</p>
-            <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Pipe Diameter:</p>
-            <p id="acpidia" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
-            <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
-            <p id="prflu" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
-            <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
-            <p id="dprflu" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
-            <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
-            <p id="vprflu" style="position: absolute; top: 240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">centiPoise</p>
-            <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
-            <p id="mflu" style="position: absolute; top: 270px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
-            <p style="position: absolute; top: 300px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
-            <p id="dmflu" style="position: absolute; top: 300px; left: 405px; width: 324px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
+            <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Length of Fluidised Bed</p>
+            <p id="lenfb" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p>
+            <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Bed Diameter:</p>
+            <p id="nompidia" style="position: absolute; top:90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">inch</p>
+            <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Bed Diameter:</p>
+            <p id="acpidia" style="position: absolute; top: 120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
+            <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Static Bed Height:</p>
+            <p id="statbh" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p> 
+            <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Packing Material:</p>
+            <p id="packmat" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p> 
+            <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Glass Bead:</p>
+            <p id="dglbead" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
+            <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Void Volume</p>
+            <p id="voidvol" style="position: absolute; top: 240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">mL</p>
+            <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
+            <p id="prflu" style="position: absolute; top: 270px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
+            <p style="position: absolute; top: 300px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
+            <p id="dprflu" style="position: absolute; top: 300px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
+            <p style="position: absolute; top: 330px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
+            <p id="vprflu" style="position: absolute; top: 330px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">centiPoise</p>
+            <p style="position: absolute; top: 360px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
+            <p id="mflu" style="position: absolute; top: 360px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
+            <p style="position: absolute; top: 390px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
+            <p id="dmflu" style="position: absolute; top: 390px; left: 405px; width: 324px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
           </div>
               
 
