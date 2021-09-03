@@ -148,7 +148,8 @@ function magic() {
             document.getElementById("rotatePin").style.visibility = "visible";
 
             document.getElementById("obserButton").onclick = "";
-            document.getElementById("experiButton").onclick = "";
+            document.getElementById("goBackButton").onclick = "";
+
             document.getElementById("experimentSetup").style.visibility = "hidden";
             document.getElementById('nextButton').style.visibility = "hidden";
 
@@ -308,6 +309,18 @@ function gotoSetup() {
     simsubscreennum = 3;
     document.getElementById('canvas' + simsubscreennum).style.visibility = "visible";
     magic();
+    document.getElementById('experimentID').style.visibility = "hidden";
+    document.getElementById('greenColor').style.visibility = "hidden";
+    document.getElementById('redColor').style.visibility = "hidden";
+    document.getElementById('waterPourFirst').style.visibility = "hidden";
+    document.getElementById('rotatePin').style.visibility = "hidden";
+    document.getElementById('obserButton').style.visibility = "hidden";
+    document.getElementById('bottomPinkU').style.visibility = "hidden";
+    document.getElementById('rightPinkFluid').style.visibility = "hidden";
+    document.getElementById('leftPinkFluid').style.visibility = "hidden";
+    document.getElementById('waterSteady').style.visibility = "hidden";
+    document.getElementById('overflow').style.visibility = "hidden";
+    document.getElementById('addtoTableButton').style.visibility = "hidden";
 
     document.getElementById("expButton").style.cursor = "pointer";
     document.getElementById("expButton").onclick = function() {
@@ -358,12 +371,12 @@ function gotoExp() {
     document.getElementById('canvas' + simsubscreennum).style.visibility = "visible";
     magic();
 
-// ershe
+    // ershe
     var flag = false;
-	document.getElementById("experiButton").onclick = function(){
-		console.log("Clicking on exp button inside fluidMove");
-		flag = !flag;
-		displayExpValues(flag);
+    document.getElementById("experiButton").onclick = function() {
+        console.log("Clicking on exp button inside fluidMove");
+        flag = !flag;
+        displayExpValues(flag);
     }
     document.getElementById("setupButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
@@ -440,55 +453,61 @@ function selectAction(n) {
     simsubscreennum = 5;
     gotoPage5();
 }
-var lenFb=2.5;
+var lenFb = 2.5;
 
 var chosenPipeDia = 1.0;
-function setPipeDia(){
-	chosenPipeDia = document.getElementById("pipeDiaSelect").value;
-	console.log(chosenPipeDia);
+
+function setPipeDia() {
+    chosenPipeDia = document.getElementById("pipeDiaSelect").value;
+    console.log(chosenPipeDia);
 }
 
-var actualPipeDia= 2.66;
+var actualPipeDia = 2.66;
 
-var bedheight=0.2;
-function setbedHeight(){
-	bedheight = document.getElementById("bedHeight").value;
-	console.log(bedheight);
+var bedheight = 0.2;
+
+function setbedHeight() {
+    bedheight = document.getElementById("bedHeight").value;
+    console.log(bedheight);
 }
 
-var pkmat="Glass beads of 4mm size";
-function setpackMaterial(){
-    pkmat= document.getElementById("packMaterial").value;
-	console.log(pkmat);
+var pkmat = "Glass beads of 4mm size";
+
+function setpackMaterial() {
+    pkmat = document.getElementById("packMaterial").value;
+    console.log(pkmat);
 }
 
-var dGlBead=2500;
-var voidVol=76.69;
+var dGlBead = 2500;
+var voidVol = 76.69;
 
 var processFluid = "Water"
-function setProcessFluid(){
-	processFluid = document.getElementById("processFluid").value;
-	console.log(processFluid);
+
+function setProcessFluid() {
+    processFluid = document.getElementById("processFluid").value;
+    console.log(processFluid);
 }
-var densitypf =1000;
+var densitypf = 1000;
 var viscositypf;
-if(processFluid=="Water"){
-	densitypf=1000;
-	viscositypf=0.85;}
-else{
-	densitypf=820;
-	viscositypf=2.15;}
+if (processFluid == "Water") {
+    densitypf = 1000;
+    viscositypf = 0.85;
+} else {
+    densitypf = 820;
+    viscositypf = 2.15;
+}
 
 var manoFluid = "Carbon tetrachloride"
-var mfdensity=1600;
-function setManoFluid(){
-	manoFluid = document.getElementById("manoFluid").value;
-	console.log(manoFluid);
+var mfdensity = 1600;
+
+function setManoFluid() {
+    manoFluid = document.getElementById("manoFluid").value;
+    console.log(manoFluid);
 }
-if(manoFluid="Carbon tetrachloride")
-	mfdensity=1600;
+if (manoFluid = "Carbon tetrachloride")
+    mfdensity = 1600;
 else
-	mfdensity=13600;
+    mfdensity = 13600;
 
 
 var x = 0;
@@ -525,7 +544,7 @@ function fluidMoveAndPinMove(angle) {
     valOfRatoNew = 0.00;
     h2Final = 0.00;
 
-    document.getElementById("waterPourSecondLongOne").style.visibility = "visible";
+    document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
     document.getElementById("gatewayRotate").style.cursor = "auto";
 
     document.getElementById("addtoTableButton").style.visibility = "visible";
@@ -1199,37 +1218,37 @@ function fluidMoveAndPinMove(angle) {
 
 // ERIN
 
-function displayExpValues(flag){
-	console.log("Clicking on exp button");
-	// for (temp = 0; temp <= 7 ; temp++) 
-	// { 
-	// 	document.getElementById('canvas'+temp).style.visibility="hidden";
-	// }
-	// simsubscreennum = 4;
-	// document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
-	// simsubscreennum = 8;
-	// document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
-	// magic();
-	if(flag){
-		document.getElementById("displayExpValues").style.visibility = "visible";
-	}
-	else
-		document.getElementById("displayExpValues").style.visibility = "hidden";
+function displayExpValues(flag) {
+    console.log("Clicking on exp button");
+    // for (temp = 0; temp <= 7 ; temp++) 
+    // { 
+    // 	document.getElementById('canvas'+temp).style.visibility="hidden";
+    // }
+    // simsubscreennum = 4;
+    // document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+    // simsubscreennum = 8;
+    // document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+    // magic();
+    if (flag) {
+        document.getElementById("displayExpValues").style.visibility = "visible";
+    } else
+        document.getElementById("displayExpValues").style.visibility = "hidden";
 
-    document.getElementById("lenfb").innerHTML=lenFb+"meter(s)";
-	document.getElementById("nompidia").innerHTML=chosenPipeDia+"inch";
-	document.getElementById("acpidia").innerHTML=actualPipeDia+"cm";
-    document.getElementById("statbh").innerHTML=bedheight+"meter(s)";
-    document.getElementById("packmat").innerHTML=pkmat;
-    document.getElementById("dglbead").innerHTML=dGlBead+"Kg per Cubic meter";
-    document.getElementById("voidvol").innerHTML=voidVol+"mL";
-	document.getElementById("prflu").innerHTML=processFluid;
-	document.getElementById("dprflu").innerHTML=densitypf+"Kg per Cubic meter"
-	document.getElementById("vprflu").innerHTML=viscositypf+"centiPoise";
-	document.getElementById("mflu").innerHTML=manoFluid;
-	document.getElementById("dmflu").innerHTML=mfdensity+"Kg per Cubic meter";
+    document.getElementById("lenfb").innerHTML = lenFb + "meter(s)";
+    document.getElementById("nompidia").innerHTML = chosenPipeDia + "inch";
+    document.getElementById("acpidia").innerHTML = actualPipeDia + "cm";
+    document.getElementById("statbh").innerHTML = bedheight + "meter(s)";
+    document.getElementById("packmat").innerHTML = pkmat;
+    document.getElementById("dglbead").innerHTML = dGlBead + "Kg per Cubic meter";
+    document.getElementById("voidvol").innerHTML = voidVol + "mL";
+    document.getElementById("prflu").innerHTML = processFluid;
+    document.getElementById("dprflu").innerHTML = densitypf + "Kg per Cubic meter"
+    document.getElementById("vprflu").innerHTML = viscositypf + "centiPoise";
+    document.getElementById("mflu").innerHTML = manoFluid;
+    document.getElementById("dmflu").innerHTML = mfdensity + "Kg per Cubic meter";
 
 }
+
 function gotoObservation() {
     console.log("go to observ.");
     document.getElementById("waterFlow").style.visibility = "hidden";

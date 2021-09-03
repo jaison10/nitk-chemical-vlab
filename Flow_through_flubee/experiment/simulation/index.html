@@ -113,40 +113,41 @@
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Label</span> Tab to see the Experimental Setup.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Click on <span class="fontColorChange">Setup</span> Tab to Configure Experimental Setup.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Now click on <span class="fontColorChange">Experiment</span> Tab to perform the experiment.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         To start the experiment first <span class="fontColorChange">switch ON</span> the pump by clicking the <span class="fontColorChange">Green</span> button on the pump.
-                      </li>
-                      <li>
-                        Once the pump is turned on <span class="fontColorChange">Setup</span> Tab will be disabled and will be enabled only if pump is OFF. Click on <span class="fontColorChange">Red</span> button on pump to <span class="fontColorChange">Switch off </span>the pump.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
+                        Once the pump is turned on <span class="fontColorChange">Setup</span> Tab will be disabled and will be enabled only if pump is OFF. Click on <span class="fontColorChange">Red</span> button on pump to <span class="fontColorChange">Switch off </span>the
+                        pump.
+                    </li>
+                    <li>
                         To set the required flowrate click on the <span class="fontColorChange">Main valve </span>and drag in AntiClockwise direction for opening Valve and Clockwise direction for closing the Valve.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Note the change in limb level of manometer. <span class="fontColorChange">h1</span> and <span class="fontColorChange">h2</span> are curresponding Manometric Limb heights from reference level.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Click on <span class="fontColorChange">Add current readings</span> button to record the reading in Observation Table.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Click on <span class="fontColorChange">Observations</span> button to see the Observation table. Click again on hide the Table.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Click on <span class="fontColorChange">Experimental Data </span> button to see the Experimental Data's. Click again on hide.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         If you get Manometric Overflow Error, go to <span class="fontColorChange">Setup </span>Tab and Change the Manometer.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         To Evaluate experiment click on title <span class="fontColorChange">Flow Through Flow through Fluidised Bed</span>.
-                      </li>
+                    </li>
                 </ul>
             </div>
 
@@ -177,7 +178,7 @@
 <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span> -->
             <p id="step2Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Details</p>
             <!-- EXPERIMENT PART -->
-            <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:70px; width: 700px; height: 400px;" src="./Images/Flow through orifice_images/ftfblabel.png">
+            <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:70px; width: 700px; height: 400px;" src="./Images/Flow through pipes_images/ftfblabel.png">
 
             <!-- Evaluation part -->
             <div id="configExp">
@@ -192,10 +193,10 @@
                 </p>
 
                 <p style="position: absolute; top: 100px; color: #fff;">Length of Fluidised Bed
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.5" id="bedHeight" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();"> 
+                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.5" id="bedHeight" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();">
                     <p style="color:#fff; position: absolute; left: 300px; top: 100px;"> meter</p>
                 </p>
-                
+
                 <p style="position: absolute; top: 200px; color: #fff;">Packing Material:
                     <select style="position: absolute; left: 217px;" name="packMaterial" id="packMaterialEval" onchange="setpackMaterialEval();">
                     <option value="25mm Raschig ring">25mm Raschig ring</option>
@@ -241,10 +242,10 @@
                 </p>
 
                 <p style="position: absolute; top: 150px; color: #fff;">Static Bed Height
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.3" id="bedHeight" name="length" min="0.3" max="1.2" onchange="setbedHeight();"> 
+                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.3" id="bedHeight" name="length" min="0.3" max="1.2" onchange="setbedHeight();">
                     <p style="color:#fff; position: absolute; left: 300px; top: 150px;"> meter</p>
                 </p>
-                
+
                 <p style="position: absolute; top: 200px; color: #fff;">Packing Material:
                     <select style="position: absolute; left: 217px;" name="packMaterial" id="packMaterial" onchange="setpackMaterial();">
                     <option value="Glass beads of 4mm size">Glass beads of 4mm size</option>
@@ -252,19 +253,19 @@
                 </select>
                 </p>
 
-                <p style="position: absolute; top: 250px; color: #fff;">Process fluid:  
-                      <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
+                <p style="position: absolute; top: 250px; color: #fff;">Process fluid:
+                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                       </select>
-                    </p>
-                    <p style="position: absolute; top: 300px; color: #fff;">Manometric fluid:  
-                      <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
+                </p>
+                <p style="position: absolute; top: 300px; color: #fff;">Manometric fluid:
+                    <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
                         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                         <option value="Mercury">Mercury</option>
                       </select>
-                    </p>
-                 
+                </p>
+
             </div>
 
             <!-- Evaluation Part -->
@@ -304,133 +305,135 @@
             <p id="step4Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Experiment.</p>
             <!-- EXPERIMENT PART -->
             <div id="experimentID" style="visibility: hidden;">
-                <img style="position: absolute; top: 370px; left: 240px; width: 130px; height: 80px;" src="./Images/Flow through orifice_images/motor.png">
-                <img style="position: absolute; top: 283px; left: 87px; width: 290px; height: 214px;" src="./Images/Flow through orifice_images/bricksPipe.png">
-                <img id="gatewayRotate" style="position: absolute; top: 293px; left: 240px; width: 40px; height: 40px;" src="./Images/Flow through orifice_images/gatewall.png">
-                <img style="position: absolute; top: 330px; left: 194px; width: 40px; height: 40px;" src="./Images/Flow through orifice_images/gatewall.png">
-                <img id="redColor" style="visibility: hidden; position: absolute; top: 407px; left: 317px; width: 18px; height: 18px;" src="./Images/Flow through orifice_images/red.png">
-                <img id="greenColor" style="position: absolute; top: 407px; left: 317px; width: 18px; height: 18px;" src="./Images/Flow through orifice_images/green.png">
-                <img style="position: absolute; top: 164px; left: 230px; width: 65px; height: 128px; z-index: 1;" src="./Images/Flow through orifice_images/top.png">
-                <img style="position: absolute; top: 130px; left: 244px; width: 49px; height: 38px; z-index: 1;" src="./Images/Flow through orifice_images/leftOne.png">
-                <img style="position: absolute; top: 133px; left: 285px; width: 357px; height: 11px; z-index: 1;" src="./Images/Flow through orifice_images/straightPipe.png">
+                <img style="position: absolute; top: 50px; left: 90px; width: 650px; height: 450px;" src="./Images/Flow through pipes_images/setup.png">
+                <img style="position: absolute; top: 165px; left: 565px; width: 90px; height: 220px;" src="./Images/Flow through pipes_images/firstWire.png">
+                <img style="position: absolute; top: 98px; left: 455px; width: 200px; height: 105px;" src="./Images/Flow through pipes_images/secondWire.png">
+                <img id="gatewayRotate" style="position: absolute; top: 281px; left: 252px; width: 40px; height: 40px;z-index: 10;" src="./Images/Flow through pipes_images/gatewall.png">
+                <img style="position: absolute; top: 320px; left: 202px; width: 40px; height: 40px;" src="./Images/Flow through pipes_images/gatewall.png">
+                <img id="greenColor" style="position: absolute; top: 405px; left: 329px; width: 18px; height: 18px; cursor: pointer; " src="./Images/Flow through pipes_images/green.png">
+                <img id="redColor" style="position: absolute; top: 405px; left: 329px; width: 18px; height: 18px; cursor: pointer; visibility: hidden;" src="./Images/Flow through pipes_images/red.png">
+                <img style="position: absolute; top: 135px; left: 234px; width: 73px; height: 143px; z-index: 1;" src="./Images/Flow through pipes_images/top.png">
+                <img style="position: absolute; top: 52px; left: 150px; width: 528px; height: 11.5px;" src="./Images/Flow through pipes_images/straightPipe.png">
+                <img style="position: absolute; top: 430.5px; left: 413.8px; width: 262px; height: 12px;" src="./Images/Flow through pipes_images/straightPipe.png">
+                <img style="position: absolute; top: 171px; left: 30px; width: 193.5px; height: 12px; transform: rotate(270deg);" src="./Images/Flow through pipes_images/straightPipe.png">
+                <img style="position: absolute; top: 102px; left: 291px; width: 77.5px; height: 11px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/straightPipe.png">
+                <img style="position: absolute; top: 171px; left: 30px; width: 193.5px; height: 12px; transform: rotate(270deg);" src="./Images/Flow through pipes_images/straightPipe.png">
+
+                <img style="position: absolute; top: 400px; left: 690px; width: 17px; height: 13px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+                <img style="position: absolute; top: 165px; left: 480px; width: 102px; height: 120px;" src="./Images/Flow through pipes_images/fullU.png">
+                <img style="position: absolute; top: 362px; left: 265.5px; width: 13.5px; height:12.5px; transform:rotate(270deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+                <img style="position: absolute; top: 267px; left: 249px; width: 285px; height: 12.5px; transform:rotate(270.5deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+                <img style="position: absolute; top: 206px; left: 460.5px; width: 95px; height: 14px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/blacklong.png">
+                <img style="position: absolute; top: 206px; left: 506px; width: 95px; height: 14px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/blacklong.png">
 
 
-                <img style="position: absolute; top: 105px; left: 641px; width: 40px; height: 50px; z-index: 1;" src="./Images/Flow through orifice_images/pipside.png">
-                <img style="position: absolute; top: 35px; left: 644px; width: 36px; height: 41px;" src="./Images/Flow through orifice_images/topright.png  ">
-                <img style="position: absolute; top: 75px; left: 664px; width: 14px; height: 41px;" src="./Images/Flow through orifice_images/piece.png">
+                <img style="position: absolute; top: 362px; left: 265.5px; width: 13.5px; height:12.5px; transform:rotate(270deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+                <img style="position: absolute; top: 372px; left: 646px; width: 15px; height:5px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+                <img style="position: absolute; top: 109px; left: 652px; width: 10px; height:5px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+                <img style="position: absolute; top: 401px; left: 199px; width: 34px; height:34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/topleft.png">
 
-                <img style="position: absolute; top: 30px; left: 395px; width: 65px; height: 30px; transform: rotate(180deg); z-index: 2;" src="./Images/Flow through orifice_images/orifi.png">
 
-                <img style="position: absolute; top: 39px; left: 164px; width: 480px; height: 12px;" src="./Images/Flow through orifice_images/topPipeLong.png">
-                <img style="position: absolute; top: 36px; left: 118px; width: 46px; height: 35px;" src="./Images/Flow through orifice_images/topleft.png">
-                <img style="position: absolute; top: 190px; left: -2; width: 250px; height: 12px; transform: rotate(270deg);" src="./Images/Flow through orifice_images/topPipeLong.png">
-
-                <img style="position: absolute; top: 44px; left: 377px; width: 202px; height: 238px; z-index: 0;" src="./Images/Flow through orifice_images/oriwire.png">
-                <img style="position: absolute; top: 55px; left: 406px; width: 28px; height: 12px; transform:rotate(90deg);" src="./Images/Flow through orifice_images/smallPiece.png">
-                <img style="position: absolute; top: 55px; left: 423px; width: 28px; height: 12px; transform:rotate(90deg);" src="./Images/Flow through orifice_images/smallPiece.png">
-
-                
-                <img style="position: absolute; top: 260px; left: 435px; width: 102px; height: 120px;" src="./Images/Flow through orifice_images/fullU.png">
-                <img style="position: absolute; top: 271px; left: 428px; width: 28px; height: 10px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/smallPiece.png">
-                <img style="position: absolute; top: 272px; left: 517px; width: 30px; height: 10px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/smallPiece.png">
-        
-            
                 <!-- Fluid initial -->
-                <img id="bottomU" style="position: absolute; top: 352px; left: 455px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/botomU.png">
-                <img id="leftFluid" style="position: absolute; top: 316px; left: 455px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
-                <img id="rightFluid" style="position: absolute; top: 316px; left: 504px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
+                <img id="bottomU" style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/botomU.png">
+                <img id="leftFluid" style="position: absolute; top: 222px; left: 332px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluid" style="position: absolute; top: 222px; left: 381px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid initial Pink -->
-                <img id="bottomPinkU" style="position: absolute; top: 350px; left: 457px; width: 60px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/pinkbottomU.png">
-                <img id="leftPinkFluid" style="position: absolute; top: 309px; left: 457px; width: 14px; height: 44px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
-                <img id="rightPinkFluid" style="position: absolute; top: 320px; left: 503px; width: 14px; height: 30px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
+                <img id="bottomPinkU" style="position: absolute; top: 254px; left: 500px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkbottomU.png">
+                <img id="leftPinkFluid" style="position: absolute; top: 222px; left: 501px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
+                <img id="rightPinkFluid" style="position: absolute; top: 222px; left: 549px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
 
                 <!-- Fluid Second -->
-                <img id="leftFluidSecond" style="visibility: hidden; position: absolute; top: 309.6px; left: 455px; width: 14px; height: 43.4px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
-                <img id="rightFluidSecond" style="visibility: hidden; position: absolute; top: 323.2px; left: 504px; width: 14px; height: 29.6px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
+                <img id="leftFluidSecond" style="visibility: hidden; position: absolute; top: 215.6px; left: 332px; width: 14px; height: 43.4px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluidSecond" style="visibility: hidden; position: absolute; top: 229.2px; left: 381px; width: 14px; height: 29.6px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid Second Pink-->
-                <img id="leftPinkFluidSecond" style="visibility: hidden; position: absolute; top: 309.6px; left: 455px; width: 14px; height: 43.4px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
-                <img id="rightPinkFluidSecond" style="visibility: hidden; position: absolute; top: 323.2px; left: 504px; width: 14px; height: 29.6px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
+                <img id="leftPinkFluidSecond" style="visibility: hidden; position: absolute; top: 215.6px; left: 332px; width: 14px; height: 43.4px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
+                <img id="rightPinkFluidSecond" style="visibility: hidden; position: absolute; top: 229.2px; left: 381px; width: 14px; height: 29.6px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
 
                 <!-- Fluid Third -->
-                <img id="leftFluidThird" style="visibility: hidden; position: absolute; top: 303.2px; left: 455px; width: 14px; height: 49.8px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
-                <img id="rightFluidThird" style="visibility: hidden; position: absolute; top: 329.4px; left: 504px; width: 14px; height: 22.2px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
+                <img id="leftFluidThird" style="visibility: hidden; position: absolute; top: 209.2px; left: 332px; width: 14px; height: 49.8px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluidThird" style="visibility: hidden; position: absolute; top: 236.4px; left: 381px; width: 14px; height: 22.2px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid Third Pink-->
-                <img id="leftPinkFluidThird" style="visibility: hidden; position: absolute; top: 303.2px; left: 455px; width: 14px; height: 49.8px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
-                <img id="rightPinkFluidThird" style="visibility: hidden; position: absolute; top: 329.4px; left: 504px; width: 14px; height: 22.2px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
+                <img id="leftPinkFluidThird" style="visibility: hidden; position: absolute; top: 209.2px; left: 332px; width: 14px; height: 49.8px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
+                <img id="rightPinkFluidThird" style="visibility: hidden; position: absolute; top: 236.4px; left: 381px; width: 14px; height: 22.2px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
 
                 <!-- Fluid Fourth -->
-                <img id="leftFluidForth" style="visibility: hidden; position: absolute; top: 298.8px; left: 455px; width: 14px; height: 56.2px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
-                <img id="rightFluidForth" style="visibility: hidden; position: absolute; top: 338.6px; left: 504px; width: 14px; height: 14.8px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
+                <img id="leftFluidForth" style="visibility: hidden; position: absolute; top: 202.8px; left: 332px; width: 14px; height: 56.2px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluidForth" style="visibility: hidden; position: absolute; top: 243.6px; left: 381px; width: 14px; height: 14.8px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid Fourth Pink-->
-                <img id="leftPinkFluidForth" style="visibility: hidden; position: absolute; top: 298.8px; left: 455px; width: 14px; height: 56.2px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
-                <img id="rightPinkFluidForth" style="visibility: hidden; position: absolute; top: 338.6px; left: 504px; width: 14px; height: 14.8px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
+                <img id="leftPinkFluidForth" style="visibility: hidden; position: absolute; top: 202.8px; left: 332px; width: 14px; height: 56.2px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
+                <img id="rightPinkFluidForth" style="visibility: hidden; position: absolute; top: 243.6px; left: 381px; width: 14px; height: 14.8px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
 
                 <!-- Fluid Fifth -->
-                <img id="leftFluidFifth" style="visibility: hidden; position: absolute; top: 290.4px; left: 455px; width: 14px; height: 62.6px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
-                <img id="rightFluidFifth" style="visibility: hidden; position: absolute; top: 345.8px; left: 504px; width: 14px; height: 7.4px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
+                <img id="leftFluidFifth" style="visibility: hidden; position: absolute; top: 196.4px; left: 332px; width: 14px; height: 62.6px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluidFifth" style="visibility: hidden; position: absolute; top: 250.8px; left: 381px; width: 14px; height: 7.4px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid Fifth Pink-->
-                <img id="leftPinkFluidFifth" style="visibility: hidden; position: absolute; top: 290.4px; left: 455px; width: 14px; height: 62.6px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
-                <img id="rightPinkFluidFifth" style="visibility: hidden; position: absolute; top: 345.8px; left: 504px; width: 14px; height: 7.4px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
+                <img id="leftPinkFluidFifth" style="visibility: hidden; position: absolute; top: 196.4px; left: 332px; width: 14px; height: 62.6px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
+                <img id="rightPinkFluidFifth" style="visibility: hidden; position: absolute; top: 250.8px; left: 381px; width: 14px; height: 7.4px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
 
                 <!-- FLUID FINAL -->
-                <img id="leftFluidFinal" style="visibility: hidden; position: absolute; top: 284px; left: 455px; width: 14px; height: 69px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
-                <img id="rightFluidFinal" style="visibility: hidden; position: absolute; top: 258px; left: 504px; width: 14px; height: 0px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
+                <img id="leftFluidFinal" style="visibility: hidden; position: absolute; top: 190px; left: 332px; width: 14px; height: 69px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluidFinal" style="visibility: hidden; position: absolute; top: 258px; left: 381px; width: 14px; height: 0px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
                 <!-- FLUID PINK FINAL -->
-                <img id="leftPinkFluidFinal" style="visibility: hidden; position: absolute; top: 284px; left: 455px; width: 14px; height: 69px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
-                <img id="rightPinkFluidFinal" style="visibility: hidden; position: absolute; top: 258px; left: 504px; width: 14px; height: 0px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
+                <img id="leftPinkFluidFinal" style="visibility: hidden; position: absolute; top: 190px; left: 332px; width: 14px; height: 69px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
+                <img id="rightPinkFluidFinal" style="visibility: hidden; position: absolute; top: 258px; left: 381px; width: 14px; height: 0px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
 
-                <img style="position: absolute; top: 407.7px; left: 235px; width: 6px; height: 10.2px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/smallPiece.png">
-                <img style="position: absolute; top: 436px; left: 201.5px; width: 7px; height: 11.5px; transform:rotate(90deg);" src="./Images/Flow through orifice_images/smallPiece.png">
-                <img style="position: absolute; top: 375.5px; left: 162.6px; width: 6px; height: 11.8px; transform:rotate(90deg);" src="./Images/Flow through orifice_images/smallPiece.png">
+                <img style="position: absolute; top: 403.8px; left: 233px; width: 21px; height: 11px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+                <img style="position: absolute; top: 446px; left: 187px; width: 35px; height: 11px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+                <img style="position: absolute; top: 375.5px; left: 160.5px; width: 24px; height: 11.5px; transform:rotate(270deg);" src="./Images/Flow through pipes_images/smallPiece.png">
+
+
+                <img style="position: absolute; top: 213px; left: 572px; width:256px; height: 60px; transform:rotate(270deg);opacity: 0.7;" src="./Images/Flow through pipes_images/smallPiece.png">
+                <img style="position: absolute; top: 328.5px; left: 688px; width: 25px; height: 60px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/196.png">
 
                 <!-- Pin initial-->
-                <img id="rotatePin" style="visibility: hidden; position: absolute; top: 259px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through orifice_images/pin.png">
+                <img id="rotatePin" style="visibility: hidden; position: absolute; top: 240px; left: 261px; width: 17px; height: 32px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pin.png">
                 <!-- Pin Second-->
-                <img id="rotatePinSecond" style="visibility: hidden; position: absolute; top: 245px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through orifice_images/pin.png">
+                <img id="rotatePinSecond" style="visibility: hidden; position: absolute; top: 245px; left: 261px; width: 17px; height: 32px; transform:rotate(0deg); " src="./Images/Flow through pipes_images/pin.png">
                 <!-- Pin Third-->
-                <img id="rotatePinThird" style="visibility: hidden; position: absolute; top: 231px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through orifice_images/pin.png">
+                <img id="rotatePinThird" style="visibility: hidden; position: absolute; top: 231px; left: 261px; width: 17px; height: 32px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/pin.png">
                 <!-- Pin Forth-->
-                <img id="rotatePinForth" style="visibility: hidden; position: absolute; top: 217px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through orifice_images/pin.png">
+                <img id="rotatePinForth" style="visibility: hidden; position: absolute; top: 217px; left: 261px; width: 17px; height: 32px; transform:rotate(0deg); " src="./Images/Flow through pipes_images/pin.png">
                 <!-- Pin Fifth-->
-                <img id="rotatePinFifth" style="visibility: hidden; position: absolute; top: 203px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through orifice_images/pin.png">
+                <img id="rotatePinFifth" style="visibility: hidden; position: absolute; top: 203px; left: 261px; width: 17px; height: 32px; transform:rotate(0deg); " src="./Images/Flow through pipes_images/pin.png">
 
                 <!-- Pin final-->
-                <img id="rotatePinFinal" style="visibility: hidden; position: absolute; top: 189px; left: 253px; width: 17px; height: 32px; transform:rotate(0deg); z-index: 0;" src="./Images/Flow through orifice_images/pin.png">
+                <img id="rotatePinFinal" style="visibility: hidden; position: absolute; top: 189px; left: 261px; width: 17px; height: 32px; transform:rotate(0deg); " src="./Images/Flow through pipes_images/pin.png">
 
 
-                <img id="waterSteady" style="position: absolute; top: 449px; left: 102px; width: 125px; height: 38px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/waterSteady.png">
-                <img id="waterFlow" style="position: absolute; visibility: hidden; top: 449px; left: 102px; width: 125px; height: 38px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/waterFlow.svg">
+                <img id="waterSteady" style="position: absolute; top: 450.5px; left: 104.5px; width: 132px; height: 38px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/waterSteady.png">
+                <img id="waterFlow" style="position: absolute; visibility: hidden; top: 452px; left: 105px; width: 132px; height: 38px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/waterFlow.svg">
                 <!-- Water flowing out of pipe. -->
-                <img id="waterPourFirst" style="visibility: hidden; position: absolute; top: 389px; left: 105px; width: 115px; height: 78px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/waterPng.png">
-                <img id="waterPourSecondLongOne" style="visibility: hidden; position: absolute; top: 298px; left: 69px; width: 110px; height: 178px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/waterPng.png">
+                <img id="waterPourFirst" style="visibility: hidden; position: absolute; top: 388px; left: 112px; width: 115px; height: 80px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/waterPng.png">
+                <img id="waterPourSecondLongOne" style="visibility: hidden; position: absolute; top: 258.5px; left: 70px; width: 110px; height: 218px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/waterPng.png">
+
 
                 <!-- INFORMATION -->
-                <p style="position: absolute; top: 375px; left: 441px; width: 300px; font-size:12px;color: #fff;"><b>NOTE:</b></p>
-                <p id="infoAboutWhatToDo" style="position: absolute; top: 390px; left: 441px; width: 300px; font-size:12px;color: #fff;"></p>
+                <p style="position: absolute; top: 495px; left: 401px; width: 300px; font-size:12px; color: #fff;"><b>NOTE:</b></p>
+                <p id="infoAboutWhatToDo" style="position: absolute; top: 495px; left: 451px; width: 300px; font-size: 12px; color: white;"></p>
 
 
-                <p style="position: absolute; top: 195px; left: 141px; width: 124px;color: #fff;">ROTAMETER READING:</p>
-                <p id="ratoReadings" style="position: absolute; top: 235px; left: 141px; width: 124px;color: #fff;">00.00</p>
-                <p style="position: absolute; top: 235px; left: 183px; width: 124px;color: #fff;">LPM</p>
+                <p style="position: absolute; top: 195px; left: 150px; width: 124px; color: #fff;">ROTAMETER READING:</p>
+                <p id="ratoReadings" style="position: absolute; top: 235px; left: 150px; width: 124px; color: #fff;">00.00</p>
+                <p style="position: absolute; top: 235px; left: 189px; width: 124px; color: #fff;">LPM</p>
 
-                <p style="position: absolute; top: 275px; left: 400px; width: 124px; font-size:10px;color: #fff;">h1:</p>
-                <p id="leftCm" style="position: absolute; top: 295px; left: 400px; width: 124px; font-size:10px;color: #fff;">35.00</p>
-                <p style="position: absolute; top: 295px; left: 429px; width: 124px; font-size:10px;color:#fff;">cm</p>
+                <p style="position: absolute; top: 195px; left: 452px; width: 124px; font-size:10px; color: #fff;">h1:</p>
+                <p id="leftCm" style="position: absolute; top: 215px; left: 452px; width: 124px; font-size:10px; color: #fff;">35.00</p>
+                <p style="position: absolute; top: 215px; left: 484px; width: 124px; font-size:10px; color: #fff;">cm</p>
 
-                <p style="position: absolute; top: 275px; left: 530px; width: 124px; font-size:10px;color: #fff;">h2:</p>
-                <p id="rightCm" style="position: absolute; top: 295px; left: 530px; width: 124px; font-size:10px;color: #fff;">35.00</p>
-                <p style="position: absolute; top: 295px; left: 559px; width: 124px; font-size:10px;color: #fff;">cm</p>
+                <p style="position: absolute; top: 195px; left: 572px; width: 124px; font-size:10px; color: #fff;">h2:</p>
+                <p id="rightCm" style="position: absolute; top: 215px; left: 572px; width: 124px; font-size:10px; color: #fff;">35.00</p>
+                <p style="position: absolute; top: 215px; left: 610px; width: 124px; font-size:10px; color: #fff;">cm</p>
             </div>
 
-            <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 425px; left: 485px; width: 194px; font-size:13px;">Add current readings</button>
+            <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 450px; left: 485px; width: 194px; font-size:13px;">Add current readings</button>
 
-            <button onclick="displayExpValues()" id="experiButton" style="position: absolute; top: 465px; left: 455px; width: 160px; font-size:13px;">Experimental Data</button>
-            <button id="obserButton" style="position: absolute; top: 465px; left: 625px; width: 94px; font-size:13px;">Observations</button>
+            <button id="goBackButton" style="position: absolute; top: 475px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
+            <button id="obserButton" style="position: absolute; top: 475px; left: 585px; width: 94px; font-size:13px;">Observations</button>
 
             <!-- Observation table! -->
             <table id="observeTable" style="overflow-y: scroll; font-size: 12px; position:absolute; visibility: hidden; border: 1px solid #fff; width: 700px; top:50px; left: 45px;">
@@ -442,7 +445,7 @@
                     <th>h2(cm of Manometric fluid)</th>
                 </tr>
             </table>
-        </div> 
+        </div>
         <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
             <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
             <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Length of Fluidised Bed</p>
@@ -452,9 +455,9 @@
             <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Bed Diameter:</p>
             <p id="acpidia" style="position: absolute; top: 120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
             <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Static Bed Height:</p>
-            <p id="statbh" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p> 
+            <p id="statbh" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p>
             <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Packing Material:</p>
-            <p id="packmat" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p> 
+            <p id="packmat" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p>
             <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Glass Bead:</p>
             <p id="dglbead" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
             <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Void Volume</p>
@@ -469,44 +472,44 @@
             <p id="mflu" style="position: absolute; top: 360px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
             <p style="position: absolute; top: 390px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
             <p id="dmflu" style="position: absolute; top: 390px; left: 405px; width: 324px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
-          </div>
-              
-
-            <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
-            <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
-
         </div>
 
 
-        <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
+        <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
+        <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
+
+    </div>
+
+
+    <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
 <p id="q"></p><select id="answer" >	
 </select>
 <p id="a"></p>
 </div> -->
 
-        <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
-            <p style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer.</p>
-        </div>
+    <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
+        <p style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer.</p>
+    </div>
 
-        <!--Trial text	-->
-        <div id="">
-            <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; "><strong>Trial = </strong></p>
-        </div>
+    <!--Trial text	-->
+    <div id="">
+        <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; "><strong>Trial = </strong></p>
+    </div>
 
 
-        <!--next  Arrow	-->
-        <div id="nav">
-            <img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
-        </div>
+    <!--next  Arrow	-->
+    <div id="nav">
+        <img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
+    </div>
 
-        <!--Blinking Arrow	-->
-        <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
+    <!--Blinking Arrow	-->
+    <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
 
-        <div id="copyright"> &copy;
-            <script>
-                document.write(new Date().getFullYear());
-            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
-        <script src="https://webisora.com/assets/js/propeller.min.js"></script>
+    <div id="copyright"> &copy;
+        <script>
+            document.write(new Date().getFullYear());
+        </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+    <script src="https://webisora.com/assets/js/propeller.min.js"></script>
 
 </body>
 
