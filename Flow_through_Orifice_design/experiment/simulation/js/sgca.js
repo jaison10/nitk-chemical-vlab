@@ -372,15 +372,23 @@ function gotoExp() {
         document.getElementById("greenColor").style.visibility = "hidden";
         document.getElementById("nextButton").style.visibility = "hidden";
         document.getElementById("nextButton").style.zIndex = -1;
-
+        document.getElementById("displayExpValues").style.visibility = "hidden";
+        flag = false;
+        console.log("The flag value on moving to the Setup is: ", flag);
         goBacktoStep2();
     }
     document.getElementById("labelButton").onclick = function() {
         hideAllExperimentParts();
+        document.getElementById("displayExpValues").style.visibility = "hidden";
+        flag = false;
+        console.log("The flag value on moving to the Setup is: ", flag);
         gotoLabel();
     }
     document.getElementById("demoButton").onclick = function() {
         hideAllExperimentParts();
+        document.getElementById("displayExpValues").style.visibility = "hidden";
+        flag = false;
+        console.log("The flag value on moving to the Setup is: ", flag);
         goto6th();
     }
 }

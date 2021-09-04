@@ -362,6 +362,8 @@ function goBacktoStep2Eval() {
     magic();
 }
 
+var flag = false;
+
 function gotoExp() {
     console.log("Experiment part.");
     for (temp = 0; temp <= 6; temp++) {
@@ -370,13 +372,39 @@ function gotoExp() {
     simsubscreennum = 4;
     document.getElementById('canvas' + simsubscreennum).style.visibility = "visible";
     magic();
+    
+    if(processFluid=="Water"){
+        console.log("The processFluid is: ", processFluid);
+        densitypf=1000;
+        viscositypf=0.85;
+    }
+    else if(processFluid=="Kerosene"){
+        console.log("The processFluid is: ", processFluid);
+        densitypf=820;
+        viscositypf=2.15;
+    }
 
+    if(manoFluid=="Carbon tetrachloride")
+        mfdensity=1600;
+    else if(manoFluid=="Mercury"){
+        console.log("The mano fluid is: ", manoFluid);
+        mfdensity=13600;
+    }
+
+<<<<<<< HEAD
     // ershe
     var flag = false;
     document.getElementById("experiButton").onclick = function() {
         console.log("Clicking on exp button inside fluidMove");
         flag = !flag;
         displayExpValues(flag);
+=======
+// ershe
+	document.getElementById("experiButton").onclick = function(){
+		console.log("Clicking on exp button inside fluidMove");
+		flag = !flag;
+		displayExpValues(flag);
+>>>>>>> 3359f1c98e22ccd8fd90bb8d2d3844f15737462e
     }
     document.getElementById("setupButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
@@ -386,14 +414,23 @@ function gotoExp() {
         document.getElementById("nextButton").style.visibility = "hidden";
         document.getElementById("nextButton").style.zIndex = -1;
 
+        document.getElementById("displayExpValues").style.visibility = "hidden";
+        flag = false;
+        console.log("The flag value on moving to the Setup is: ", flag);
         goBacktoStep2();
     }
     document.getElementById("labelButton").onclick = function() {
         hideAllExperimentParts();
+        document.getElementById("displayExpValues").style.visibility = "hidden";
+        flag = false;
+        console.log("The flag value on moving to the Setup is: ", flag);
         gotoLabel();
     }
     document.getElementById("demoButton").onclick = function() {
         hideAllExperimentParts();
+        document.getElementById("displayExpValues").style.visibility = "hidden";
+        flag = false;
+        console.log("The flag value on moving to the Setup is: ", flag);
         goto6th();
     }
 }
@@ -464,6 +501,7 @@ function setPipeDia() {
 
 var actualPipeDia = 2.66;
 
+<<<<<<< HEAD
 var bedheight = 0.2;
 
 function setbedHeight() {
@@ -476,6 +514,18 @@ var pkmat = "Glass beads of 4mm size";
 function setpackMaterial() {
     pkmat = document.getElementById("packMaterial").value;
     console.log(pkmat);
+=======
+var bedHeight=0.3;
+function setbedHeight(){
+	bedHeight = document.getElementById("bedHeight").value;
+	console.log(bedHeight);
+}
+
+var pkmat="Glass beads of 4mm size";
+function setpackMaterial(){
+    pkmat= document.getElementById("packMat").value;
+	console.log(pkmat);
+>>>>>>> 3359f1c98e22ccd8fd90bb8d2d3844f15737462e
 }
 
 var dGlBead = 2500;
@@ -487,6 +537,7 @@ function setProcessFluid() {
     processFluid = document.getElementById("processFluid").value;
     console.log(processFluid);
 }
+<<<<<<< HEAD
 var densitypf = 1000;
 var viscositypf;
 if (processFluid == "Water") {
@@ -508,6 +559,19 @@ if (manoFluid = "Carbon tetrachloride")
     mfdensity = 1600;
 else
     mfdensity = 13600;
+=======
+var densitypf =1000;
+var viscositypf = 0;
+
+
+var manoFluid = "Carbon tetrachloride";
+var mfdensity=1600;
+
+function setManoFluid(){
+	manoFluid = document.getElementById("manoFluid").value;
+	console.log(manoFluid);
+}
+>>>>>>> 3359f1c98e22ccd8fd90bb8d2d3844f15737462e
 
 
 var x = 0;
@@ -1218,6 +1282,7 @@ function fluidMoveAndPinMove(angle) {
 
 // ERIN
 
+<<<<<<< HEAD
 function displayExpValues(flag) {
     console.log("Clicking on exp button");
     // for (temp = 0; temp <= 7 ; temp++) 
@@ -1246,6 +1311,37 @@ function displayExpValues(flag) {
     document.getElementById("vprflu").innerHTML = viscositypf + "centiPoise";
     document.getElementById("mflu").innerHTML = manoFluid;
     document.getElementById("dmflu").innerHTML = mfdensity + "Kg per Cubic meter";
+=======
+function displayExpValues(flag){
+	console.log("Clicking on exp button");
+	// for (temp = 0; temp <= 7 ; temp++) 
+	// { 
+	// 	document.getElementById('canvas'+temp).style.visibility="hidden";
+	// }
+	// simsubscreennum = 4;
+	// document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+	// simsubscreennum = 8;
+	// document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+	// magic();
+	if(flag){
+		document.getElementById("displayExpValues").style.visibility = "visible";
+	}
+	else
+		document.getElementById("displayExpValues").style.visibility = "hidden";
+
+    document.getElementById("lenfb").innerHTML=lenFb+"meter(s)";
+	document.getElementById("nompidia").innerHTML=chosenPipeDia+"inch";
+	document.getElementById("acpidia").innerHTML=actualPipeDia+"cm";
+    document.getElementById("statbh").innerHTML=bedHeight+"meter(s)";
+    document.getElementById("packmat").innerHTML=pkmat;
+    document.getElementById("dglbead").innerHTML=dGlBead+"Kg per Cubic meter";
+    document.getElementById("voidvol").innerHTML=voidVol+"mL";
+	document.getElementById("prflu").innerHTML=processFluid;
+	document.getElementById("dprflu").innerHTML=densitypf+"Kg per Cubic meter"
+	document.getElementById("vprflu").innerHTML=viscositypf+"centiPoise";
+	document.getElementById("mflu").innerHTML=manoFluid;
+	document.getElementById("dmflu").innerHTML=mfdensity+"Kg per Cubic meter";
+>>>>>>> 3359f1c98e22ccd8fd90bb8d2d3844f15737462e
 
 }
 
