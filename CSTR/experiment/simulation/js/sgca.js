@@ -6,7 +6,7 @@ var a, p, lastp, n, b, q, flag = 0,
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById("nextButton").style.visibility = "hidden";
+    // document.getElementById("nextButton").style.visibility = "hidden";
     setTimeout(() => {
         var start = document.getElementById("start");
         start.innerText = "Reaction Kinetic studies in mixed flow reactor";
@@ -39,7 +39,7 @@ function navNext() {
 
     simsubscreennum += 1;
     document.getElementById('canvas' + (simsubscreennum)).style.visibility = "visible";
-    document.getElementById('nextButton').style.visibility = "hidden";
+    // document.getElementById('nextButton').style.visibility = "hidden";
     magic();
 }
 
@@ -78,13 +78,13 @@ function magic() {
             console.log("One has chosen!");
             document.getElementById("experimentSetup").style.visibility = "hidden";
             document.getElementById("labelImage").style.visibility = "visible";
-            document.getElementById('nextButton').style.visibility = "hidden";
+            // document.getElementById('nextButton').style.visibility = "hidden";
             document.getElementById("configExp").style.visibility = "hidden";
         } else {
             console.log("2 has chosen");
             document.getElementById("step2Heading").innerText = "Choose"
             document.getElementById("configExp").style.visibility = "visible";
-            document.getElementById('nextButton').style.visibility = "hidden";
+            // document.getElementById('nextButton').style.visibility = "hidden";
         }
     } else if (simsubscreennum == 3) {
         document.getElementById("observeTable").style.visibility = "hidden";
@@ -94,13 +94,13 @@ function magic() {
         if (chosenActivity == 1) {
             document.getElementById("labelImage").style.visibility = "hidden";
             document.getElementById("experimentSetup").style.visibility = "visible";
-            document.getElementById('nextButton').style.visibility = "hidden";
+            // document.getElementById('nextButton').style.visibility = "hidden";
             document.getElementById("evaluatePart").style.visibility = "hidden";
         } else {
             console.log("2 has chosen");
             // document.getElementById("step3Heading").innerText = "Evaluation!"
             document.getElementById("configExp").style.visibility = "hidden";
-            document.getElementById('nextButton').style.visibility = "hidden";
+            // document.getElementById('nextButton').style.visibility = "hidden";
 
             document.getElementById("evaluatePart").style.visibility = "visible";
         }
@@ -115,7 +115,7 @@ function magic() {
 
             // document.getElementById("infoAboutWhatToDo").innerText = "Click on Green button to start the motor.";
             // document.getElementById("infoAboutWhatToDo").style.color = "white";
-            document.getElementById('nextButton').style.visibility = "hidden";
+            // document.getElementById('nextButton').style.visibility = "hidden";
 
             document.getElementById("step4Heading").innerText = "Experiment";
             // document.getElementById("ratoReadings").innerText = "0.00";
@@ -163,11 +163,37 @@ function magic() {
 
             }
             document.getElementById("experimentSetup").style.visibility = "hidden";
-            document.getElementById('nextButton').style.visibility = "hidden";
+            // document.getElementById('nextButton').style.visibility = "hidden";
 
             document.getElementById("experimentID").style.visibility = "visible";
             document.getElementById("obserButton").style.visibility = "visible";
+            document.getElementById("infoAboutWhatToDo").innerText = "Rotate the left gatewall to set flowrate of NaOH."
+            var rotateElement = document.getElementById("gatewayRotate1");
+            new Propeller(rotateElement, {
+                inertia: 0,
+                speed: 0,
+                onRotate
+            });
 
+            function onRotate() {
+                console.log(this.angle);
+                fluidMoveAndPinMove(this.angle, 1);
+
+                console.log("deg", this.degree);
+            }
+            var rotateElement2 = document.getElementById("gatewayRotate2");
+            new Propeller(rotateElement2, {
+                inertia: 0,
+                speed: 0,
+                onRotate1
+            });
+
+            function onRotate1() {
+                console.log(this.angle);
+                fluidMoveAndPinMove(this.angle, 2);
+
+                console.log("deg", this.degree);
+            }
             // document.getElementById("greenColor").style.cursor = "pointer";
             // document.getElementById("greenColor").style.visibility = "visible";
 
@@ -216,7 +242,7 @@ function magic() {
             document.getElementById("observeTable").style.visibility = "hidden";
             document.getElementById("experimentSetup").style.visibility = "hidden";
             document.getElementById("labelImage").style.visibility = "hidden";
-            document.getElementById('nextButton').style.visibility = "hidden";
+            // document.getElementById('nextButton').style.visibility = "hidden";
         }
     }
 }
@@ -393,8 +419,8 @@ function gotoExp() {
 
         console.log("clicked for setup");
         // document.getElementById("greenColor").style.visibility = "hidden";
-        document.getElementById("nextButton").style.visibility = "hidden";
-        document.getElementById("nextButton").style.zIndex = -1;
+        // document.getElementById("nextButton").style.visibility = "hidden";
+        // document.getElementById("nextButton").style.zIndex = -1;
 
         goBacktoStep2();
     }
@@ -554,7 +580,6 @@ function setMLtwo() {
     firstML = document.getElementById("secondMLValue").value;
     console.log(firstML);
 }
-
 var x = 0;
 var numberOfClicks = 0;
 var h1Val = 35.00
@@ -581,18 +606,48 @@ var heightPinNew = 0;
 var topPin = 0;
 var topPinNew = 0;
 
-function fluidMoveAndPinMove(angle) {
+function fluidMoveAndPinMove(angle, n) {
     h1Val = 0.00
     h2Val = 0.00
     valOfRato = 0.00;
     h1Final = 0.00;
     valOfRatoNew = 0.00;
     h2Final = 0.00;
+    console.log("Gatewall:  " + n);
+    // document.getElementById("waterPourSecondLongOne").style.visibility = "visible";
+    if (n == 1) {
+        document.getElementById("gatewayRotate1").style.cursor = "auto";
+        valOfRato = (356 - angle) * 0.0983;
+        valOfRatoNew = valOfRato.toFixed(2);
+        console.log("Val of Rato is ", valOfRatoNew);
+        // if (valOfRatoNew >= 39) {
+        //     // h1Final = 38;
+        //     // h2Final = 32;
+        //     valOfRatoNew = 40;
+        //     console.log("Overflow condition");
+        //     document.getElementById('overflow').style.visibility = "visible";
 
-    document.getElementById("waterPourSecondLongOne").style.visibility = "visible";
-    document.getElementById("gatewayRotate").style.cursor = "auto";
+        // }
+        document.getElementById("leftRota").innerText = (valOfRatoNew) + "LPH";
+    }
+    if (n == 2) {
+        // document.getElementById("gatewayRotate2").style.cursor = "auto";
+        valOfRato = (356 - angle) * 0.0983;
+        valOfRatoNew = valOfRato.toFixed(2);
+        console.log("Val of Rato is ", valOfRatoNew);
+        // if (valOfRatoNew >= 39) {
+        //     // h1Final = 38;
+        //     // h2Final = 32;
+        //     valOfRatoNew = 40;
+        //     console.log("Overflow condition");
+        //     document.getElementById('overflow').style.visibility = "visible";
 
-    document.getElementById("addtoTableButton").style.visibility = "visible";
+        // }
+        document.getElementById("rightRota").innerText = (valOfRatoNew) + "LPH";
+    }
+    // document.getElementById("gatewayRotate2").style.cursor = "auto";
+
+    // document.getElementById("addtoTableButton").style.visibility = "visible";
 
 
     if (processFluid == "Water" && manoFluid == "Mercury") {
@@ -625,15 +680,15 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 37.92;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (h1Final >= 69) {
+            //     h1Final = 70;
+            //     h2Final = 0;
+            //     valOfRatoNew = 37.92;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
 
-            }
+            // }
         } else if (chosenPipeDia == 0.50) {
             heightLeft = (356 - angle) * 0.014;
             heightLeftNew = heightLeft.toFixed(0);
@@ -663,14 +718,14 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 38;
-                h2Final = 32;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 38;
+            //     h2Final = 32;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         } else if (chosenPipeDia == 1.00) {
             heightLeft = (356 - angle) * 0;
             heightLeftNew = heightLeft.toFixed(0);
@@ -700,14 +755,14 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 35.2;
-                h2Final = 34.8;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 35.2;
+            //     h2Final = 34.8;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         } else if (chosenPipeDia == 1.50) {
             heightLeft = (356 - angle) * 0;
             heightLeftNew = heightLeft.toFixed(0);
@@ -737,24 +792,25 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 35;
-                h2Final = 35;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 35;
+            //     h2Final = 35;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         }
-        document.getElementById("leftCm").innerText = (h1Final);
-        document.getElementById("rightCm").innerText = h2Final;
-        document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+        // document.getElementById("leftCm").innerText = (h1Final);
+        // document.getElementById("rightCm").innerText = h2Final;
+        document.getElementById("leftRota").innerText = (valOfRatoNew) + "LPH";
+        // document.getElementById("rightRota").innerText = (valOfRatoNew);
 
-        document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-        document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
-        document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-        document.getElementById("rightFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
-        document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
+        // document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
+        // document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
+        // document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
+        // document.getElementById("rightFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
+        // document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
     } else if (processFluid == "Kerosene" && manoFluid == "Mercury") {
         if (chosenPipeDia == 0.25) {
             heightLeft = (356 - angle) * 0.093;
@@ -785,14 +841,14 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 36.42;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (h1Final >= 69) {
+            //     h1Final = 70;
+            //     h2Final = 0;
+            //     valOfRatoNew = 36.42;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         } else if (chosenPipeDia == 0.50) {
             heightLeft = (356 - angle) * 0.04;
             heightLeftNew = heightLeft.toFixed(0);
@@ -822,14 +878,14 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 38.3;
-                h2Final = 31.7;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 38.3;
+            //     h2Final = 31.7;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         } else if (chosenPipeDia == 1.00) {
             heightLeft = (356 - angle) * 0.006;
             heightLeftNew = heightLeft.toFixed(0);
@@ -859,14 +915,14 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 35.3;
-                h2Final = 34.7;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 35.3;
+            //     h2Final = 34.7;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         } else if (chosenPipeDia == 1.50) {
             heightLeft = (356 - angle) * 0;
             heightLeftNew = heightLeft.toFixed(0);
@@ -896,24 +952,25 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 35;
-                h2Final = 35;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 35;
+            //     h2Final = 35;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         }
-        document.getElementById("leftCm").innerText = (h1Final);
-        document.getElementById("rightCm").innerText = h2Final;
-        document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+        // document.getElementById("leftCm").innerText = (h1Final);
+        // document.getElementById("rightCm").innerText = h2Final;
+        document.getElementById("leftRota").innerText = (valOfRatoNew) + "LPH";
+        // document.getElementById("rightRota").innerText = (valOfRatoNew);
 
-        document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-        document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
-        document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-        document.getElementById("rightFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
-        document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
+        // document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
+        // document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
+        // document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
+        // document.getElementById("rightFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
+        // document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
     } else if (processFluid == "Kerosene" && manoFluid == "Carbon tetrachloride") {
         if (chosenPipeDia == 0.25) {
 
@@ -946,14 +1003,14 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 7.42;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (h1Final >= 69) {
+            //     h1Final = 70;
+            //     h2Final = 0;
+            //     valOfRatoNew = 7.42;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         } else if (chosenPipeDia == 0.50) {
 
             heightLeft = (356 - angle) * 0.093;
@@ -985,14 +1042,14 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 31.42;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (h1Final >= 69) {
+            //     h1Final = 70;
+            //     h2Final = 0;
+            //     valOfRatoNew = 31.42;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         } else if (chosenPipeDia == 1.00) {
             heightLeft = (356 - angle) * 0.04;
             heightLeftNew = heightLeft.toFixed(0);
@@ -1022,14 +1079,14 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 39.4;
-                h2Final = 30.6;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 39.4;
+            //     h2Final = 30.6;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         } else if (chosenPipeDia == 1.50) {
 
             heightLeft = (356 - angle) * 0.006;
@@ -1061,24 +1118,25 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 35.6;
-                h2Final = 34.4;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 35.6;
+            //     h2Final = 34.4;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
         }
-        document.getElementById("leftCm").innerText = (h1Final);
-        document.getElementById("rightCm").innerText = h2Final;
-        document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+        // document.getElementById("leftCm").innerText = (h1Final);
+        // document.getElementById("rightCm").innerText = h2Final;
+        document.getElementById("leftRota").innerText = (valOfRatoNew) + "LPH";
+        // document.getElementById("rightRota").innerText = (valOfRatoNew);
 
-        document.getElementById("leftPinkFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-        document.getElementById("leftPinkFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
-        document.getElementById("rightPinkFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-        document.getElementById("rightPinkFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
-        document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
+        // document.getElementById("leftPinkFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
+        // document.getElementById("leftPinkFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
+        // document.getElementById("rightPinkFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
+        // document.getElementById("rightPinkFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
+        // document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
     } else if (processFluid == "Water" && manoFluid == "Carbon tetrachloride") {
         console.log("HERE");
         console.log("Chosen pipe dia is: ", chosenPipeDia);
@@ -1114,14 +1172,14 @@ function fluidMoveAndPinMove(angle) {
             h2Final = h2New.toFixed(2);
             console.log("The h1 final val is: ", h1Final);
 
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 6.67;
-                console.log("Overflow condition");
-                document.getElementById("overflow").style.visibility = "visible";
+            // if (h1Final >= 69) {
+            //     h1Final = 70;
+            //     h2Final = 0;
+            //     valOfRatoNew = 6.67;
+            //     console.log("Overflow condition");
+            //     document.getElementById("overflow").style.visibility = "visible";
 
-            }
+            // }
 
         } else if (chosenPipeDia == 0.50) {
             console.log("Current deg: ", angle);
@@ -1150,14 +1208,14 @@ function fluidMoveAndPinMove(angle) {
             topPin = (356 - angle) * 0.14;
             topPinNew = topPin.toFixed(0);
 
-            if (h1Final >= 68) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 28.42;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (h1Final >= 68) {
+            //     h1Final = 70;
+            //     h2Final = 0;
+            //     valOfRatoNew = 28.42;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
 
         } else if (chosenPipeDia == 1.00) {
             console.log("Current deg: ", angle);
@@ -1185,14 +1243,14 @@ function fluidMoveAndPinMove(angle) {
             topPin = (356 - angle) * 0.21;
             topPinNew = topPin.toFixed(0);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 40.2;
-                h2Final = 29.8;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 40.2;
+            //     h2Final = 29.8;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
 
         } else if (chosenPipeDia == 1.50) {
             console.log("Current deg: ", angle);
@@ -1220,31 +1278,34 @@ function fluidMoveAndPinMove(angle) {
             topPin = (356 - angle) * 0.21;
             topPinNew = topPin.toFixed(0);
 
-            if (valOfRatoNew >= 39) {
-                h1Final = 35.70;
-                h2Final = 34.30;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
+            // if (valOfRatoNew >= 39) {
+            //     h1Final = 35.70;
+            //     h2Final = 34.30;
+            //     valOfRatoNew = 40;
+            //     console.log("Overflow condition");
+            //     document.getElementById('overflow').style.visibility = "visible";
 
-            }
+            // }
 
         }
-        document.getElementById("leftCm").innerText = (h1Final);
-        document.getElementById("rightCm").innerText = h2Final;
-        document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+        // document.getElementById("leftCm").innerText = (h1Final);
+        // document.getElementById("rightCm").innerText = h2Final;
+        document.getElementById("leftRota").innerText = (valOfRatoNew) + "LPH";
+        // document.getElementById("rightRota").innerText = (valOfRatoNew);document.getElementById("ratoReadings").innerText = (valOfRatoNew);
 
-        document.getElementById("leftPinkFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-        document.getElementById("leftPinkFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
-        document.getElementById("rightPinkFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-        document.getElementById("rightPinkFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
-        document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
+        // document.getElementById("leftPinkFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
+        // document.getElementById("leftPinkFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
+        // document.getElementById("rightPinkFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
+        // document.getElementById("rightPinkFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
+        // document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
     }
     document.getElementById("addtoTableButton").onclick = function() {
         document.getElementById("addtoTableButton").style.visibility = "hidden";
         var table = document.getElementById("observeTable");
         table.style.color = "#fff";
+        // var n = 1;
         var row = table.insertRow(1);
+        // row.id="row"+n;n++;
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
@@ -1260,6 +1321,7 @@ function fluidMoveAndPinMove(angle) {
         gotoObservation();
     }
 }
+
 
 
 function gotoObservation() {
@@ -1345,9 +1407,9 @@ function goBacktoStep2() {
     // document.getElementById("rightCm").innerText = h2New;
     // document.getElementById("ratoReadings").innerText = (valOfRatoNew);
 
-    document.getElementById("nextButton").style.visibility = "hidden";
-    document.getElementById("nextButton").style.zIndex = -1;
-    document.getElementById('nextButton').style.visibility = "hidden";
+    // document.getElementById("nextButton").style.visibility = "hidden";
+    // document.getElementById("nextButton").style.zIndex = -1;
+    // document.getElementById('nextButton').style.visibility = "hidden";
 
     // document.getElementById("waterFlow").style.visibility = "hidden";
     // document.getElementById("waterSteady").style.visibility = "hidden";
@@ -1406,7 +1468,7 @@ function goBacktoStep2() {
 
     document.getElementById('canvas' + (simsubscreennum)).style.visibility = "visible";
     document.getElementById("experimentSetup").style.visibility = "visible";
-    document.getElementById('nextButton').style.visibility = "visible";
+    // document.getElementById('nextButton').style.visibility = "visible";
 }
 
 
