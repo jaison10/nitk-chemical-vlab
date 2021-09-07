@@ -56,8 +56,10 @@
         <div id="titleLarge" class="title" style="visibility: visible;">
             <h3>Flow through pipes</h3>
         </div>
-        <div id="titleSmall" class="title2" style="visibility:hidden">
-            <h3>Flow through pipes</h3>
+        <!-- haneena -->
+        <div id="titleSmall" class="title2" style="visibility:hidden" >
+            <h3 id="ftpmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);">Flow through pipes</h3>
+
         </div>
 
         <div id="buttonsList" style="position: absolute; visibility: hidden; top: 20px; left: 400px; color: white; z-index: 1;">
@@ -399,10 +401,15 @@
 
             <button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
             <button onclick="displayExpValues()" id="experiButton" style="position: absolute; top: 465px; left: 455px; width: 160px; font-size:13px;">Experimental Data</button>
-            <button id="obserButton" style="position: absolute; top: 465px; left: 630px; width: 94px; font-size:13px;">Observations</button>
-
+            <!-- erin -->
+            <button onclick="observeTable()" id="obserButton" style="position: absolute; top: 465px; left: 630px; width: 94px; font-size:13px;">Observations</button>
+        </div>
+            <!-- erin -->
+           
+            <div id="obcanvas" style="z-index: 2000;visibility: hidden; position: absolute; top: 50px; left: 15px; width: 760px; height: 430px; border: 2px solid rgb(255, 255, 255); border-radius: 30px;">
+            <p style="z-index: 2000; position: absolute; top: -20px; left: 270px; width: 500px; font-size:30px; color: #fff;">Observations</p>
             <!-- Observation table! -->
-            <table id="observeTable" style="overflow-y: scroll; font-size: 12px; position:absolute; visibility: hidden; border: 1px solid #fff; width: 700px; top:50px; left: 45px;">
+            <table id="observeTable" style="z-index: 2000; overflow-y: scroll; font-size: 12px; position: absolute; visibility: hidden; border: 1px solid rgb(255, 255, 255); width: 700px; top: 50px; left: 27px; color: rgb(255, 255, 255);">
                 <tr style="">
                     <th>Process fluid</th>
                     <th>Manometric fluid</th>
@@ -411,7 +418,13 @@
                     <th>h2(cm of Manometric fluid)</th>
                 </tr>
             </table>
-            </div>
+            <button id="remSelRead" style="visibility: hidden; position: absolute; top: 400px; left: 50px; width: 200px; font-size: 13px;">Remove Selected Readings</button>
+            <button id="remAllRead" style="visibility: hidden; position: absolute; top: 400px; left: 290px; width:200px; font-size: 13px;">Clear All readings</button>
+            <button id="emailTable" style="visibility: hidden; position: absolute; top: 400px; left: 530px; width: 200px; font-size: 13px;">Email This Table</button>
+
+        </div>
+
+            
 
             <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
                 <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
