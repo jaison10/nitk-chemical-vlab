@@ -351,6 +351,8 @@ function gotoLabel() {
         }
         document.getElementById("setupButton").style.cursor = "pointer";
         document.getElementById("setupButton").onclick = function() {
+            // erii
+            document.getElementById("noteremsel").style.visibility = "hidden";
             gotoSetup();
         }
     } else if (chosenActivity == 2) {
@@ -375,6 +377,7 @@ function gotoSetup() {
     h2Val = 35.00
     valOfRato = 0.00;
     console.log("Going to setup");
+    document.getElementById("noteremsel").style.visibility = "hidden";
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
     }
@@ -433,8 +436,13 @@ var flagForObserTable = false;
 var flagForDisplayExpValues = false;
 function gotoExp() {
     console.log("Experiment part.");
-    // erin
+    // erin   
+    document.getElementById("remSelRead").style.visibility = "hidden";
+    document.getElementById("emailTable").style.visibility = "hidden";
+    document.getElementById("remAllRead").style.visibility = "hidden";
     document.getElementById("obcanvas").style.visibility = "hidden";
+    document.getElementById("noteremsel").style.visibility = "hidden";
+    
     document.getElementById("displayExpValues").style.visibility = "hidden";
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
@@ -475,6 +483,7 @@ function gotoExp() {
         document.getElementById("emailTable").style.visibility = "hidden";
     }
     document.getElementById("setupButton").onclick = function() {
+
         document.getElementById('overflow').style.visibility = "hidden";
         
         //eriii
@@ -482,7 +491,8 @@ function gotoExp() {
         document.getElementById("remSelRead").style.visibility = "hidden";
         document.getElementById("remAllRead").style.visibility = "hidden";
         document.getElementById("emailTable").style.visibility = "hidden";
-
+        document.getElementById("noteremsel").style.visibility = "hidden";
+        // eriend
         console.log("clicked for setup");
         document.getElementById("greenColor").style.visibility = "hidden";
         document.getElementById("nextButton").style.visibility = "hidden";
@@ -555,7 +565,9 @@ function hideAllExperimentParts() {
     document.getElementById("remSelRead").style.visibility = "hidden";
     document.getElementById("remAllRead").style.visibility = "hidden";
     document.getElementById("emailTable").style.visibility = "hidden";
+    document.getElementById("noteremsel").style.visibility = "hidden";
     
+
     //erinend
     document.getElementById("rotatePin").style.visibility = "hidden";
     document.getElementById("rotatePinFinal").style.visibility = "hidden";
@@ -1318,6 +1330,10 @@ function fluidMoveAndPinMove(angle) {
         var table = document.getElementById("observeTable");
         table.style.color = "#fff";
         var row = table.insertRow(1);
+        // var n=1;
+        // var id_name="row";
+        // row.id=id_name+(n);n++;
+        // console.log("row id is"+row.id);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
@@ -1335,7 +1351,7 @@ function fluidMoveAndPinMove(angle) {
         console.log("Clicking on observ button ");
             flagForObserTable = !flagForObserTable;
             observeTable(flagForObserTable);
-
+            document.getElementById("displayExpValues").style.visibility = "hidden";
         gotoObservation();
     }
 }
@@ -1347,16 +1363,88 @@ function observeTable(flag){
     if(flag){
 		document.getElementById("obcanvas").style.visibility = "visible";
         document.getElementById("observeTable").style.visibility = "visible";
-
+        document.getElementById("remSelRead").style.visibility = "visible";
+        document.getElementById("remAllRead").style.visibility = "visible";
+        document.getElementById("emailTable").style.visibility = "visible";
 
 	}
 	else{
 		document.getElementById("obcanvas").style.visibility = "hidden";
         document.getElementById("observeTable").style.visibility = "hidden";
+        document.getElementById("remSelRead").style.visibility = "hidden";
+        document.getElementById("remAllRead").style.visibility = "hidden";
+        document.getElementById("emailTable").style.visibility = "hidden";
+        document.getElementById("noteremsel").style.visibility = "hidden";
     }
 
-
 }
+// erin
+function remAllRead(){
+    console.log("remove all selected");
+    
+        if (!document.getElementsByTagName || !document.createTextNode) return;
+        // var table=document.getElementById('observeTable');
+        var rows = document.getElementById('observeTable').getElementsByTagName('thead')[0].getElementsByTagName('tr');
+        var rowsval = document.getElementById('observeTable').getElementsByTagName('thead')[0];
+        var i;
+        for( i=1;i<rows.length;i++){
+            console.log("rows.length"+rows.length);
+            console.log("i value is "+i);
+            $(rowsval.getElementsByTagName('tr')[i--]).remove();
+            console.log("loop works");  
+        }  
+             //$(rows).remove();
+            //removes whole table:---------   
+            //table.remove();
+                console.log("removed");
+}
+function remSelRead(){
+    console.log("remove selected");
+    document.getElementById("noteremsel").style.visibility = "visible";
+    
+    if (!document.getElementsByTagName || !document.createTextNode) return;
+	var table=document.getElementById('observeTable');
+    var idx=0;
+    var rows = document.getElementById('observeTable').getElementsByTagName('thead')[0].getElementsByTagName('tr');
+    for (i = 1; i < rows.length; i++) {
+        rows[i].onclick = function() {
+            //alert(this.rowIndex + 1);
+			idx=this.rowIndex ;
+            console.log(idx);
+			table.deleteRow(idx);
+			
+        }
+    }
+    // document.getElementById('remSelRead').addEventListener('click', function() {
+    //     var tableRef = document.getElementById('observeTable');
+    //     var tableRows = tableRef.rows;
+    
+    //     var checkedRows = [];
+    //     for (var i = 0; i < tableRows.length; i++) {
+    //         if (tableRows[i].querySelector('tr').checked) {
+    //             checkedRows.push(tableRows[i]);
+    //         }
+    //     }
+    
+    //     for (var k = 0; k < checkedRows.length; k++) {
+    //         checkedRows[k].parentNode.removeChild(checkedRows[k]);
+    //     }
+    // });
+
+    // $(document).ready(function () {
+    //     var table = $('#observeTable').DataTable();
+    //     $('#observeTable tbody').on('click', 'tr', function () {
+    //         if ($(this).hasClass('selected')) {
+    //             $(this).removeClass('selected');
+    //         }
+    //         else {
+    //             table.$('tr.selected').removeClass('selected');
+    //             $(this).addClass('selected');
+    //         }
+    //     });
+    // });
+}
+// erin
 function displayExpValues(flag){
 	console.log("Clicking on exp button");
 	// for (temp = 0; temp <= 7 ; temp++) 
@@ -1389,6 +1477,7 @@ function displayExpValues(flag){
 
 function gotoObservation() {
     console.log("go to observ.");
+
 
     document.getElementById("waterFlow").style.visibility = "hidden";
     document.getElementById("waterSteady").style.visibility = "hidden";
@@ -1424,6 +1513,7 @@ function gotoObservation() {
 
     document.getElementById("redColor").style.visibility = "hidden";
     //erin
+    document.getElementById("noteremsel").style.visibility = "hidden";
     document.getElementById("obserButton").style.visibility = "visible";
     // document.getElementById("obcanvas").style.visibility = "visible";
     document.getElementById("greenColor").style.visibility = "hidden";
@@ -1445,9 +1535,22 @@ function gotoObservation() {
     document.getElementById("rightPinkFluidFifth").style.visibility = "hidden";
     document.getElementById("bottomPinkU").style.visibility = "hidden";
 
+    // $(document).ready(function () {
+    //     var table = $('#observeTable').DataTable();
+    //     $('#observeTable tbody').on('click', 'tr', function () {
+    //         if ($(this).hasClass('selected')) {
+    //             $(this).removeClass('selected');
+    //         }
+    //         else {
+    //             table.$('tr.selected').removeClass('selected');
+    //             $(this).addClass('selected');
+    //         }
+    //     });
+    // });
     // document.getElementById("observeTable").style.visibility = "visible";
     document.getElementById("setupButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
+        document.getElementById("noteremsel").style.visibility = "hidden";
         goBacktoStep2();
     }
 }
@@ -1590,6 +1693,11 @@ function setEvalSets() {
 
     for (var i = 1; i <= evalSets; i++) {
         var row = table.insertRow(i);
+        //erinn
+        var n=1;
+        var id_name="row";
+        row.id=id_name+(n++);
+        console.log("row id is"+row.id);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
