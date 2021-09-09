@@ -425,8 +425,20 @@
             <button onclick="remSelRead()" id="remSelRead" style="visibility: hidden; position: absolute; top: 400px; left: 50px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff;">Remove Selected Readings</button>
             <button onclick="remAllRead()" id="remAllRead" style="visibility: hidden; position: absolute; top: 400px; left: 290px; width:200px; font-size: 13px;z-index: 2500; background-color: #fff;">Clear All readings</button>
             <button onclick="emailSend()" id="emailTable" style="visibility: hidden; position: absolute; top: 400px; left: 530px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff; ">Email This Table</button>
+           <!-- erin 08092021 -->
+            <!-- Pop up to input receiver email ID -->
+            <div id="emailSend" style="visibility: hidden; height: 100px; width: 300px; top: 200px; left: 250px; position: absolute; padding: 8px; background-color: rgb(255, 255, 255); color: black; z-index: 5000;border-radius:10px ">
+                Email:
+                <input id="emailR" type="email" onchange="setemail(this.value)"name="Email" size="20" required="true">
+               
+                <!-- <input id="sendEmail" type="submit" name="Send" value=""> -->
+                <button onclick="sendEmail()" id="sendEmail" style=" position: absolute; top: 8px; left: 230px; width: 70px; font-size: 13px;z-index: 5500; background-color: #fff; ">Send</button>
+                <p  id="emailreq" style="z-index: 7500; position: absolute; height: 20px; width: 300px; top: 50px; left: 10px; font-size: 15px; color: black; ">Email is required</p>
+            </div>
+            <!-- info store for mail body -->
+            <p id="info" style="visibility: hidden;"></p>
         </div>
-
+        
         
 
             <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">

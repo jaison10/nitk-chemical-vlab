@@ -437,6 +437,8 @@ var flagForDisplayExpValues = false;
 function gotoExp() {
     console.log("Experiment part.");
     // erin   
+    document.getElementById("emailreq").style.visibility="hidden";
+    document.getElementById("emailSend").style.visibility = "hidden";
     document.getElementById("remSelRead").style.visibility = "hidden";
     document.getElementById("emailTable").style.visibility = "hidden";
     document.getElementById("remAllRead").style.visibility = "hidden";
@@ -476,6 +478,8 @@ function gotoExp() {
 		flagForDisplayExpValues = !flagForDisplayExpValues;
 		displayExpValues(flagForDisplayExpValues);
     // eriii
+        document.getElementById("emailreq").style.visibility="hidden";
+        document.getElementById("emailSend").style.visibility = "hidden";
         document.getElementById("observeTable").style.visibility = "hidden";
         document.getElementById("obcanvas").style.visibility = "hidden";
         document.getElementById("remSelRead").style.visibility = "hidden";
@@ -492,6 +496,8 @@ function gotoExp() {
         document.getElementById("remAllRead").style.visibility = "hidden";
         document.getElementById("emailTable").style.visibility = "hidden";
         document.getElementById("noteremsel").style.visibility = "hidden";
+        document.getElementById("emailSend").style.visibility = "hidden";
+        document.getElementById("emailreq").style.visibility="hidden";
         // eriend
         console.log("clicked for setup");
         document.getElementById("greenColor").style.visibility = "hidden";
@@ -566,6 +572,8 @@ function hideAllExperimentParts() {
     document.getElementById("remAllRead").style.visibility = "hidden";
     document.getElementById("emailTable").style.visibility = "hidden";
     document.getElementById("noteremsel").style.visibility = "hidden";
+    document.getElementById("emailSend").style.visibility = "hidden";
+    document.getElementById("emailreq").style.visibility="visible";
     
 
     //erinend
@@ -1366,9 +1374,12 @@ function observeTable(flag){
         document.getElementById("remSelRead").style.visibility = "visible";
         document.getElementById("remAllRead").style.visibility = "visible";
         document.getElementById("emailTable").style.visibility = "visible";
+        // document.getElementById("emailSend").style.visibility = "visible";
 
 	}
 	else{
+        document.getElementById("emailreq").style.visibility="hidden";
+        document.getElementById("emailSend").style.visibility = "hidden";
 		document.getElementById("obcanvas").style.visibility = "hidden";
         document.getElementById("observeTable").style.visibility = "hidden";
         document.getElementById("remSelRead").style.visibility = "hidden";
@@ -1381,7 +1392,9 @@ function observeTable(flag){
 // erin
 function remAllRead(){
     console.log("remove all selected");
-    
+    document.getElementById("emailreq").style.visibility="hidden";
+    document.getElementById("emailSend").style.visibility = "hidden";
+    document.getElementById("noteremsel").style.visibility = "hidden";
         if (!document.getElementsByTagName || !document.createTextNode) return;
         // var table=document.getElementById('observeTable');
         var rows = document.getElementById('observeTable').getElementsByTagName('thead')[0].getElementsByTagName('tr');
@@ -1398,8 +1411,78 @@ function remAllRead(){
             //table.remove();
                 console.log("removed");
 }
+// erin 08092021 
+    function emailSend(){
+    console.log("email button clicked");
+    document.getElementById("emailSend").style.visibility = "visible";
+    document.getElementById("emailreq").style.visibility="hidden";
+    document.getElementById("noteremsel").style.visibility = "hidden";
+    // document.getElementById("info").innerHTML = "";
+    // var myTab = document.getElementById('observeTable');
+
+    //     // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
+    //     for (i = 1; i < myTab.rows.length; i++) {
+
+    //         // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+    //         var objCells = myTab.rows.item(i).cells;
+
+    //         // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
+    //         for (var j = 0; j < objCells.length; j++) {
+    //             info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
+    //         }
+    //         info.innerHTML = info.innerHTML + '<br />';     // ADD A BREAK (TAG).
+    //     }
+}
+var emid;
+function sendEmail()
+{
+
+    var emid1=document.getElementById('emailR');
+    // console.log(emid1);
+    emidlen=emid1.value.length;
+    console.log("email length is "+emidlen);
+    if(emidlen>0)
+    {
+        console.log("send button clicked");
+
+        console.log(emid);
+        
+        document.getElementById("info").innerHTML = "";
+        var myTab = document.getElementById("observeTable");
+    
+            // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
+            for (i = 0; i < myTab.rows.length; i++) {
+    
+                // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+                var objCells = myTab.rows.item(i).cells;
+    
+                // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
+                for (var j = 0; j < objCells.length; j++) {
+                    info.innerHTML = info.innerHTML + "   "  + objCells.item(j).innerHTML;
+                }
+                info.innerHTML = info.innerHTML + '%0D%0A%0D%0A';     // ADD A BREAK (TAG).
+            }
+            console.log("body is filled"+info);
+        var mailBody=document.getElementById("info").innerHTML;
+    window.location="mailto:"+emid+"?subject=The Observation Data &body="+mailBody;
+
+        console.log("data sent to mail");
+
+    }
+   else {
+       console.log("else is executing");
+       document.getElementById("emailreq").style.visibility="visible";
+   }
+}
+function setemail(val){
+emid=val
+console.log(emid);
+}
+
 function remSelRead(){
     console.log("remove selected");
+    document.getElementById("emailreq").style.visibility="hidden";
+    document.getElementById("emailSend").style.visibility = "hidden";
     document.getElementById("noteremsel").style.visibility = "visible";
     
     if (!document.getElementsByTagName || !document.createTextNode) return;
