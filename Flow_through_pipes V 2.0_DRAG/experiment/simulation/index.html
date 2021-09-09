@@ -57,7 +57,7 @@
             <h3>Flow through pipes</h3>
         </div>
         <!-- haneena -->
-        <div id="titleSmall" class="title2" style="visibility:hidden" >
+        <div id="titleSmall" class="title2" style="visibility:hidden">
             <h3 id="ftpmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);">Flow through pipes</h3>
 
         </div>
@@ -404,70 +404,66 @@
             <!-- erin -->
             <button onclick="observeTable()" id="obserButton" style="position: absolute; top: 465px; left: 630px; width: 94px; font-size:13px;">Observations</button>
         </div>
+        <!-- erin -->
+        <div id="obcanvas" style="z-index: 2000;visibility: hidden; position: absolute; top: 50px; left: 15px; width: 760px; height: 430px;background-color: #3b3b3b; border: 2px solid rgb(255, 255, 255); border-radius: 30px;">
+            <p style="z-index: 2000; position: absolute; top: -20px; left: 270px; width: 500px; font-size:30px; color: #fff;">Observations</p>
             <!-- erin -->
-            <div id="obcanvas" style="z-index: 2000;visibility: hidden; position: absolute; top: 50px; left: 15px; width: 760px; height: 430px;background-color: #3b3b3b; border: 2px solid rgb(255, 255, 255); border-radius: 30px;">
-            <p  style="z-index: 2000; position: absolute; top: -20px; left: 270px; width: 500px; font-size:30px; color: #fff;">Observations</p>
-             <!-- erin -->
-             <p id="noteremsel" style="z-index: 2000; position: absolute; top: 470px; left: 20px; width: 500px; font-size:13px; color: #fff;">Click on the rows which you want to delete </p>
+            <p id="noteremsel" style="z-index: 2000; position: absolute; top: 470px; left: 20px; width: 500px; font-size:13px; color: #fff;">Click on the rows which you want to delete </p>
             <!-- Observation table! -->
             <table id="observeTable" style="z-index: 2000; overflow-y: scroll; font-size: 12px; position: absolute; visibility: hidden; border: 1px solid rgb(255, 255, 255); width: 700px; top: 50px; left: 27px; color: rgb(255, 255, 255);">
                 <!-- erin -->
                 <thead id="head">
-                <tr style="">
-                    <th>Process fluid</th>
-                    <th>Manometric fluid</th>
-                    <th>Flowrate(lpm)</th>
-                    <th>h1(cm of Manometric fluid)</th>
-                    <th>h2(cm of Manometric fluid)</th>
-                </tr>
-            </thead>
+                    <tr style="">
+                        <th>Process fluid</th>
+                        <th>Manometric fluid</th>
+                        <th>Flowrate(lpm)</th>
+                        <th>h1(cm of Manometric fluid)</th>
+                        <th>h2(cm of Manometric fluid)</th>
+                    </tr>
+                </thead>
             </table>
-<<<<<<< HEAD
-        </div>
-=======
             <button onclick="remSelRead()" id="remSelRead" style="visibility: hidden; position: absolute; top: 400px; left: 50px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff;">Remove Selected Readings</button>
             <button onclick="remAllRead()" id="remAllRead" style="visibility: hidden; position: absolute; top: 400px; left: 290px; width:200px; font-size: 13px;z-index: 2500; background-color: #fff;">Clear All readings</button>
             <button onclick="emailSend()" id="emailTable" style="visibility: hidden; position: absolute; top: 400px; left: 530px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff; ">Email This Table</button>
-           <!-- erin 08092021 -->
+            <!-- erin 08092021 -->
             <!-- Pop up to input receiver email ID -->
             <div id="emailSend" style="visibility: hidden; height: 100px; width: 300px; top: 200px; left: 250px; position: absolute; padding: 8px; background-color: rgb(255, 255, 255); color: black; z-index: 5000;border-radius:10px ">
                 Email:
-                <input id="emailR" type="email" onchange="setemail(this.value)"name="Email" size="20" required="true">
-               
+                <input id="emailR" type="email" onchange="setemail(this.value)" name="Email" size="20" required="true">
+
                 <!-- <input id="sendEmail" type="submit" name="Send" value=""> -->
                 <button onclick="sendEmail()" id="sendEmail" style=" position: absolute; top: 8px; left: 230px; width: 70px; font-size: 13px;z-index: 5500; background-color: #fff; ">Send</button>
-                <p  id="emailreq" style="z-index: 7500; position: absolute; height: 20px; width: 300px; top: 50px; left: 10px; font-size: 15px; color: black; ">Email is required</p>
+                <p id="emailreq" style="z-index: 7500; position: absolute; height: 20px; width: 300px; top: 50px; left: 10px; font-size: 15px; color: black; ">Email is required</p>
             </div>
             <!-- info store for mail body -->
             <p id="info" style="visibility: hidden;"></p>
         </div>
-        
-        
 
-            <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
-                <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
-                <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Pipe Length:</p>
-                <p id="pilen" style="position: absolute; top: 60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
-                <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Pipe Diameter:</p>
-                <p id="nompidia" style="position: absolute; top:90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">inch</p>
-                <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Pipe Diameter:</p>
-                <p id="acpidia" style="position: absolute; top: 120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
-                <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
-                <p id="prflu" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
-                <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
-                <p id="dprflu" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
-                <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
-                <p id="vprflu" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">centiPoise</p>
-                <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
-                <p id="mflu" style="position: absolute; top: 240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
-                <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
-                <p id="dmflu" style="position: absolute; top: 270px; left: 405px; width: 324px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
-              </div>
-              
 
-            <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
-            <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
->>>>>>> 74188ec92ea8cb21450ecf1afb0e3a5e6a55c743
+
+        <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
+            <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
+            <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Pipe Length:</p>
+            <p id="pilen" style="position: absolute; top: 60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
+            <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Pipe Diameter:</p>
+            <p id="nompidia" style="position: absolute; top:90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">inch</p>
+            <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Pipe Diameter:</p>
+            <p id="acpidia" style="position: absolute; top: 120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
+            <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
+            <p id="prflu" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
+            <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
+            <p id="dprflu" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
+            <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
+            <p id="vprflu" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">centiPoise</p>
+            <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
+            <p id="mflu" style="position: absolute; top: 240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
+            <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
+            <p id="dmflu" style="position: absolute; top: 270px; left: 405px; width: 324px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
+        </div>
+
+
+        <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
+        <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
 
         <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
             <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
