@@ -146,6 +146,7 @@ function magic() {
             document.getElementById("rotatePinFifth").style.visibility = "hidden";
             document.getElementById("rotatePinFinal").style.visibility = "hidden";
             document.getElementById("rotatePin").style.visibility = "visible";
+            document.getElementById("overflow").style.visibility = "hidden";
 
             document.getElementById("obserButton").onclick = "";
             // document.getElementById("goBackButton").onclick = "";
@@ -163,6 +164,7 @@ function magic() {
             document.getElementById("greenColor").onclick = function() {
                 document.getElementById("greenColor").style.visibility = "hidden";
                 document.getElementById("redColor").style.visibility = "visible";
+                document.getElementById('overflow').style.visibility = "hidden";
 
                 // Change the NOTE content.
                 document.getElementById("infoAboutWhatToDo").innerText = "Click on Gatewall to rotate it."
@@ -352,8 +354,22 @@ function goBacktoStep2Eval() {
 
     magic();
 }
+var numberOfVisit = 0;
 
 function gotoExp() {
+    if (numberOfVisit == 1) {
+        document.getElementById('gatewayRotate').onclick = function() {
+            document.getElementById('overflowMessage').innerText = "Click on the green button to start the experiment.";
+            document.getElementById('okBtn').style.visibility = "visible";
+            document.getElementById('overflow').style.visibility = "visible";
+            document.getElementById('okBtn').onclick = function() {
+                document.getElementById('overflow').style.visibility = "hidden";
+                document.getElementById('okBtn').style.visibility = "hidden";
+
+            }
+        }
+        numberOfVisit = 0;
+    }
     console.log("Experiment part.");
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
@@ -481,25 +497,30 @@ else if (Fittingused == "Elbow")
 console.log("k: " + k);
 
 var chosenPipeDia = 0.25;
+var actualPipeDia = 0.0092;
+var area;
 
 function setPipeDia() {
     chosenPipeDia = document.getElementById("pipeDiaSelect").value;
     console.log(chosenPipeDia);
+
+    if (chosenPipeDia == 0.25)
+        actualPipeDia = 0.0092;
+    else if (chosenPipeDia == 0.50)
+        actualPipeDia = 0.0157;
+    else if (chosenPipeDia == 1.00)
+        actualPipeDia = 0.0266;
+    else if (chosenPipeDia == 1.50)
+        actualPipeDia = 0.0408;
+
+    console.log("ActDia: " + actualPipeDia);
+    area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+    console.log("area1 " + area);
 }
 
-var actualPipeDia = 0.0092;
 
-if (chosenPipeDia == 0.25)
-    actualPipeDia = 0.0092;
-else if (chosenPipeDia == 0.50)
-    actualPipeDia = 0.0157;
-else if (chosenPipeDia == 1.00)
-    actualPipeDia = 0.0266;
-else if (chosenPipeDia == 1.50)
-    actualPipeDia = 0.0408;
-
-var area = (3.14 / 4) * Math.pow(actualPipeDia, 2);
-console.log("area " + area);
+area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+console.log("area1 " + area);
 
 
 var processFluid = "Water";
@@ -584,7 +605,7 @@ function fluidMoveAndPinMove(angle) {
     document.getElementById("addtoTableButton").style.visibility = "visible";
 
     if (manoFluid == "Mercury") {
-        valOfRato = (356 - angle) * 0.0198;
+        valOfRato = (356 - angle) * 0.1158;
         console.log("multiplier: 0.0198"); //prior;0.1066..for mercury maxrota-37.92
 
     } else {
@@ -616,6 +637,7 @@ function fluidMoveAndPinMove(angle) {
 
 
 
+
     var hf = 0.0;
     // var deltaH = 0.0;
     var halfDeltaH = 0.0;
@@ -623,7 +645,6 @@ function fluidMoveAndPinMove(angle) {
     //3- Friction factor
     var frictionFactor = 0.0;
     frictionFactor = 0.079 / (Math.pow(Nre, 0.25));
-
     if (Nre > 4000) {
         document.getElementById('infoAboutWhatToDo').innerText = "Click on the Gatewall to rotate it."
         console.log("ff: " + frictionFactor);
@@ -690,45 +711,25 @@ function fluidMoveAndPinMove(angle) {
     console.log("The h1 new dec fixed is: ", h1New);
     h2New = 35.00 - halfDeltaH;
     console.log("The h2 new dec fixed is: ", h2New);
-
-    // }
-    // h1New = parseFloat(35.00) + parseFloat(halfDeltaH);
-    // console.log("The h1 new dec fixed is: ", h1New);
+    console.log("area: ", area);
+    console.log("area: ", area);
 
 
-
-
-    // h2New = parseFloat(35.00) - parseFloat(halfDeltaH);
-    // console.log("The h2 new dec fixed is: ", h2New);
 
     h1Final = h1New.toFixed(2);
     h2Final = h2New.toFixed(2);
     console.log("The h1 final val is: ", h1Final);
     console.log("The h2 final val is: ", h2Final);
-    // if (h1Final >= 69) {
-    //     console.log("The h1 after overflow is: ", h1Final);
-    //     console.log("The h2 after overflow is: ", h2Final);
-    //     console.log("The valRato is: ", valOfRatoNew + " " + valOfRato);
 
-    //     h1Final = 70;
-    //     h2Final = 0;
-    //     h1New = 0;
-    //     h2New = 0;
-    //     valOfRato = 0;
-    //     valOfRatoNew = 37.88;
-    //     console.log("The h1 after overflow is: ", h1Final);
-    //     console.log("The h2 after overflow is: ", h2Final);
-    //     console.log("Overflow condition");
-    //     document.getElementById('overflow').style.visibility = "visible";
-
-
-    // } else {
-    //     console.log("negative h2 val");
-
-    //}
     if (h1Final >= 69) {
         h1Final = 70;
         h2Final = 0;
+        document.getElementById("leftCm").innerText = (h1Final);
+        document.getElementById("rightCm").innerText = (h2Final);
+        document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+
+        console.log("The h1 after overflow is: ", h1Final);
+        console.log("The h2 after overflow is: ", h2Final);
         //valOfRatoNew = 37.92;
         console.log("Overflow condition");
         document.getElementById('overflow').style.visibility = "visible";
@@ -736,26 +737,31 @@ function fluidMoveAndPinMove(angle) {
 
     }
 
+
+
+    console.log("The h1 now is: ", h1Final);
+    console.log("The h2 now overflow is: ", h2Final);
     document.getElementById("leftCm").innerText = (h1Final);
-    document.getElementById("rightCm").innerText = h2Final;
+    document.getElementById("rightCm").innerText = (h2Final);
     document.getElementById("ratoReadings").innerText = (valOfRatoNew);
 
     document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-    document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
+    document.getElementById("leftFluid").style.top = parseInt(315) - parseInt(topLeftNew) + "px";
     document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-    document.getElementById("rightFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
+    document.getElementById("rightFluid").style.top = parseInt(315) + parseInt(topRightNew) + "px";
     document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
 
 
-
-    document.getElementById("leftCm").innerText = h1Final;
-    document.getElementById("rightCm").innerText = h2Final;
+    document.getElementById("leftCm").innerText = (h1Final);
+    document.getElementById("rightCm").innerText = (h2Final);
     document.getElementById("ratoReadings").innerText = (valOfRatoNew);
 
+    console.log("The h1 after overflow is: ", h1Final);
+    console.log("The h2 after overflow is: ", h2Final);
     document.getElementById("leftPinkFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-    document.getElementById("leftPinkFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
+    document.getElementById("leftPinkFluid").style.top = parseInt(315) - parseInt(topLeftNew) + "px";
     document.getElementById("rightPinkFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-    document.getElementById("rightPinkFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
+    document.getElementById("rightPinkFluid").style.top = parseInt(315) + parseInt(topRightNew) + "px";
     document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
 
     document.getElementById("addtoTableButton").onclick = function() {
@@ -879,15 +885,15 @@ function goBacktoStep2() {
     document.getElementById("displayExpValues").style.visibility = "hidden";
 
     document.getElementById("leftFluid").style.height = "37px";
-    document.getElementById("leftFluid").style.top = "222px";
+    document.getElementById("leftFluid").style.top = "315px";
     document.getElementById("rightFluid").style.height = "37px";
-    document.getElementById("rightFluid").style.top = "222px";
+    document.getElementById("rightFluid").style.top = "315px";
     document.getElementById("rotatePin").style.top = "259px";
 
     document.getElementById("leftPinkFluid").style.height = "37px";
-    document.getElementById("leftPinkFluid").style.top = "222px";
+    document.getElementById("leftPinkFluid").style.top = "315px";
     document.getElementById("rightPinkFluid").style.height = "37px";
-    document.getElementById("rightPinkFluid").style.top = "222px";
+    document.getElementById("rightPinkFluid").style.top = "315px";
     document.getElementById("rotatePin").style.top = "259px";
 
     h1Val = 35.00
