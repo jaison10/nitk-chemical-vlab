@@ -148,7 +148,7 @@ function magic() {
             document.getElementById("evaluatePart").style.visibility = "hidden";
         } else {
             console.log("2 has chosen");
-            document.getElementById("step3Heading").innerText = "Evaluation!"
+            document.getElementById("step3Heading").innerText = "";
             document.getElementById("configExp").style.visibility = "hidden";
             document.getElementById('nextButton').style.visibility = "hidden";
 
@@ -300,6 +300,8 @@ function gotoPage5() {
         document.getElementById("demoButtonEval").style.cursor = "pointer";
         // document.getElementById("labelButton").style.cursor = "pointer";
         document.getElementById("demoButtonEval").onclick = function() {
+            document.getElementById("demoTwo").style.visibility = "visible";
+
             goto6th();
         }
     }
@@ -334,6 +336,8 @@ function goto6th() {
 
         document.getElementById("labelButtonEval").style.cursor = "pointer";
         document.getElementById("labelButtonEval").onclick = function() {
+            document.getElementById("demoTwo").style.visibility = "hidden";
+
             gotoLabel();
         }
     }
@@ -344,6 +348,7 @@ function gotoLabel() {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
     }
     simsubscreennum = 2;
+
     document.getElementById('canvas' + simsubscreennum).style.visibility = "visible";
     magic();
 
@@ -366,7 +371,9 @@ function gotoLabel() {
 
         document.getElementById("demoButtonEval").onclick = function() {
             console.log("Pressed demo");
-            // document.getElementById("configExp").style.visibility = "hidden";
+            document.getElementById("demoTwo").style.visibility = "visible";
+
+            document.getElementById("canvas2").style.visibility = "hidden";
             goto6th();
         }
         document.getElementById("setupButtonEval").style.cursor = "pointer";
@@ -406,9 +413,13 @@ function gotoSetup() {
         // document.getElementById("buttonsList").style.visibility = "hidden";
 
         document.getElementById("labelButtonEval").onclick = function() {
+            document.getElementById("demoTwo").style.visibility = "hidden";
+
             goBacktoStep2Eval();
         }
         document.getElementById("demoButtonEval").onclick = function() {
+            document.getElementById("demoTwo").style.visibility = "visible";
+
             goBacktoStep1Eval();
         }
     }
@@ -1416,7 +1427,7 @@ function evaluateConfig() {
         console.log("Diameter is inch: ", chosenPipeDiaEval);
         console.log("Diameter of the pipe in meter is: ", diaMeter);
         console.log("Radius is: ", (diaMeter / 2));
-        lpmConvVelocity = (lpm * 0.000017) / (3.14 * (diaMeter / 2) * (diaMeter / 2)); // convert lpm to m3/s              V E L O C I T Y
+        lpmConvVelocity = lpm / (60000 * 3.14 * (diaMeter / 2) * (diaMeter / 2)); // convert lpm to m3/s              V E L O C I T Y
         console.log("Velocity value is: ", lpmConvVelocity);
         // if(manoFluidEval == "Carbon tetrachloride"){
         // 	visco = 0.901;
@@ -1428,7 +1439,7 @@ function evaluateConfig() {
         console.log("Density of " + processFluidEval + " fluid is: ", den);
         // Calculate Reynold's
         calculatedReyn = ((den * diaMeter * lpmConvVelocity) / visco);
-        calculatedReyn = calculatedReyn.toFixed(5); // ======    toFixed(5)
+        calculatedReyn = calculatedReyn.toFixed(2); // ======    toFixed(5)
         console.log("Calculated Reynold's value is: ", calculatedReyn);
 
 
@@ -1448,9 +1459,9 @@ function evaluateConfig() {
 
         console.log("Length of pipe is: ", pipeLengthEval);
         // calculate FF
-        calculatedFricFact = ((2 * 9.8 * diaMeter * hf) / (4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
+        calculatedFricFact = ((2 * 9.81 * diaMeter * hf) / (4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
         calculatedFricFact = calculatedFricFact * 10000;
-        calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
+        calculatedFricFact = calculatedFricFact.toFixed(4); //========     toFixed(5)
         console.log("Calculated F F value is: ", calculatedFricFact);
 
         // Compare Reynold's and Friction Factor.
