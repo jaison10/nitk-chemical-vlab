@@ -88,9 +88,9 @@
         <div class="simsubscreen" id="canvas1" style="visibility:hidden">
             <!-- <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span> -->
-            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:14px; color: #fff; top: 50px; left: 50px;">Choose what you want to do.</p>
+            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:24px; color: #fff; top: 30px; left: 230px;">What would you like to do</p>
 
-            <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p>
+            <!-- <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p> -->
 
             <button onclick="selectAction(1)" style="position: absolute; top: 130px; left: 250px; width: 250px; height: 30px;">Perform experiment</button>
             <button onclick="selectAction(2)" style="position: absolute; top: 170px; left: 250px; width: 250px; height: 30px">Evaluate yourself</button>
@@ -111,7 +111,7 @@
 
         <div class="simsubscreen" id="canvas6" style="visibility:hidden">
 
-            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2; font-size: 17px;">
+            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2; font-style: italic; font-size: 17px;">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Label</span> Tab to see the Experimental Setup.
@@ -153,7 +153,7 @@
                 </ul>
             </div>
 
-            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;">
+            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px;font-style: italic; color: #1981e2;">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Data</span> tab to configure Experimental data.
@@ -216,14 +216,14 @@
         <!--Step3	-->
         <div class="simsubscreen" id="canvas3" style="visibility:hidden">
             <!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span> -->
-            <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p>
+            <!-- <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p> -->
             <!-- EXPERIMENT PART -->
-            <div id="experimentSetup" style="visibility: hidden; left: 100px;">
-                <p style="position: absolute; top: 50px; color: #fff;">Length of the pipe:
+            <div id="experimentSetup" style="visibility: hidden; left: 100px; color: #1981e2;font-size: large; font-style: italic;">
+                <p style="position: absolute; top: 50px; ">Length of the pipe:
                     <input style="position: absolute; left: 218px;" type="number" value="1" id="pipeLength" name="length" min="1" max="100" onchange="setPipeLength();">
-                    <p style="position: absolute; top: 50px; left:290px; color: #fff;">meter</p>
+                    <p style="position: absolute; top: 50px; left:300px; ">meter</p>
                 </p>
-                <p style="position: absolute; top: 100px; color: #fff;">Nominal diameter of the pipe:
+                <p style="position: absolute; top: 100px; ">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
                         <option value="0.25">0.25 inch</option>
                         <option value="0.50">0.50 inch</option>
@@ -231,13 +231,13 @@
                         <option value="1.50">1.50 inch</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 150px; color: #fff;">Process fluid:
+                <p style="position: absolute; top: 150px; ">Process fluid:
                     <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 200px; color: #fff;">Manometric fluid:
+                <p style="position: absolute; top: 200px; ">Manometric fluid:
                     <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
                     <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                     <option value="Mercury">Mercury</option>

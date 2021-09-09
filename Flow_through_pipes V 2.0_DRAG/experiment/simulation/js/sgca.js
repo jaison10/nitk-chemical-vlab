@@ -585,8 +585,14 @@ function hideAllExperimentParts() {
     document.getElementById("emailTable").style.visibility = "hidden";
     document.getElementById("noteremsel").style.visibility = "hidden";
     document.getElementById("emailSend").style.visibility = "hidden";
-    document.getElementById("emailreq").style.visibility = "visible";
-
+    document.getElementById("emailreq").style.visibility = "hidden";
+    document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
+    document.getElementById("waterFlow").style.visibility = "hidden";
+    document.getElementById("addtoTableButton").style.visibility = "hidden";
+    document.getElementById("waterPourFirst").style.visibility = "hidden";
+    
+    
+    
 
     //erinend
     document.getElementById("rotatePin").style.visibility = "hidden";
