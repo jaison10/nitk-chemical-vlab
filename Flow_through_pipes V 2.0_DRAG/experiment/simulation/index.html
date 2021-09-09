@@ -183,11 +183,11 @@
             <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:90px; width: 640px; height: 390px;" src="./Images/Flow through pipes_images/labelPng.png">
 
             <!-- Evaluation part -->
-            <div id="configExp">
+            <div id="configExp" style="color: #1981e2; font-style: italic; font-size: large; ">
                 <!-- <p style="position: absolute; top: 50px; color: #fff;">Number of Observations:
                     <input style="position: absolute; left: 218px;" type="number" value="1" id="pipeLengthEval" name="length" min="1" max="100" onchange="setPipeLengthEval();">
                 </p> -->
-                <p style="position: absolute; top:50px; color: #fff;">Nominal diameter of the pipe:
+                <p style="position: absolute; top:50px; left: 30px; ">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
                     <option value="0.25">0.25 inch</option>
                     <option value="0.50">0.50 inch</option>
@@ -195,14 +195,14 @@
                     <option value="1.50">1.50 inch</option>
                 </select>
                 </p>
-                <p style="position: absolute; top: 100px; color: #fff;">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
+                <p style="position: absolute; top: 100px; left: 30px;">Process fluid:
+                    <select style="position: absolute; left: 257px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
                     <option value="Water">Water</option>
                     <option value="Kerosene">Kerosene</option>
                 </select>
                 </p>
-                <p style="position: absolute; top: 150px; color: #fff;">Manometric fluid:
-                    <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
+                <p style="position: absolute; top: 150px; left: 30px;">Manometric fluid:
+                    <select style="position: absolute; left: 257px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
                         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                         <option value="Mercury">Mercury</option>
                     </select>
@@ -219,11 +219,11 @@
             <!-- <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p> -->
             <!-- EXPERIMENT PART -->
             <div id="experimentSetup" style="visibility: hidden; left: 100px; color: #1981e2;font-size: large; font-style: italic;">
-                <p style="position: absolute; top: 50px; ">Length of the pipe:
-                    <input style="position: absolute; left: 218px;" type="number" value="1" id="pipeLength" name="length" min="1" max="100" onchange="setPipeLength();">
-                    <p style="position: absolute; top: 50px; left:300px; ">meter</p>
+                <p style="position: absolute; top: 50px; left: 30px;">Length of the pipe:
+                    <input style="position: absolute; left: 258px;" type="number" value="1" id="pipeLength" name="length" min="1" max="100" onchange="setPipeLength();">
+                    <p style="position: absolute; top: 50px; left:370px; ">meter</p>
                 </p>
-                <p style="position: absolute; top: 100px; ">Nominal diameter of the pipe:
+                <p style="position: absolute; top: 100px; left: 30px;">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
                         <option value="0.25">0.25 inch</option>
                         <option value="0.50">0.50 inch</option>
@@ -231,14 +231,14 @@
                         <option value="1.50">1.50 inch</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 150px; ">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
+                <p style="position: absolute; top: 150px; left: 30px; ">Process fluid:
+                    <select style="position: absolute; left: 267px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 200px; ">Manometric fluid:
-                    <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
+                <p style="position: absolute; top: 200px; left: 30px;">Manometric fluid:
+                    <select style="position: absolute; left: 266px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
                     <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                     <option value="Mercury">Mercury</option>
                 </select>
