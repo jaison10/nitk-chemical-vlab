@@ -601,9 +601,9 @@ function hideAllExperimentParts() {
     document.getElementById("waterFlow").style.visibility = "hidden";
     document.getElementById("addtoTableButton").style.visibility = "hidden";
     document.getElementById("waterPourFirst").style.visibility = "hidden";
-    
-    
-    
+
+
+
 
     //erinend
     document.getElementById("rotatePin").style.visibility = "hidden";
@@ -1373,7 +1373,15 @@ function setEvalSets() {
             table.deleteRow(1);
         }
     }
+    var resTable = document.getElementById("configResultTable");
 
+    var rowCount2 = resTable.rows.length - 1;
+    console.log("Pre count:  ", rowCount2);
+    if (rowCount > 0) {
+        for (var x = 1; x <= rowCount2; x++) {
+            resTable.deleteRow(1);
+        }
+    }
     for (var i = 1; i <= evalSets; i++) {
         var row = table.insertRow(i);
         //erinn
@@ -1463,7 +1471,9 @@ function evaluateConfig() {
         calculatedFricFact = calculatedFricFact * 10000;
         calculatedFricFact = calculatedFricFact.toFixed(4); //========     toFixed(5)
         console.log("Calculated F F value is: ", calculatedFricFact);
-
+        if (isNaN(calculatedFricFact)) {
+            calculatedFricFact = 0;
+        }
         // Compare Reynold's and Friction Factor.
         console.log("The rey value taken in is: ", reyn);
         setTimeout(() => {
@@ -1501,11 +1511,11 @@ function evaluateConfig() {
             var rowCounttt = table.rows.length - 1;
             console.log("Count of rows after showing result is:  ", rowCounttt);
             document.getElementById("evalSets").value = 0;
-            if (rowCounttt > 0) {
-                for (var xx = 1; xx <= rowCounttt; xx++) {
-                    table.deleteRow(1);
-                }
-            }
+            // if (rowCounttt > 0) {
+            //     for (var xx = 1; xx <= rowCounttt; xx++) {
+            //         table.deleteRow(1);
+            //     }
+            // }
             out.innerText = "";
         }, 300);
         setTimeout(() => {

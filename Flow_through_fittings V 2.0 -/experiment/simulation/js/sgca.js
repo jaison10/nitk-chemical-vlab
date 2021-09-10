@@ -981,12 +981,22 @@ function setPipeLengthEval() {
 }
 
 var chosenPipeDiaEval = 0.25;
+var diaMeter = 0.0092;
 
 function setPipeDiaEval() {
     chosenPipeDiaEval = document.getElementById("pipeDiaSelectEval").value;
     console.log(chosenPipeDiaEval);
-}
+    if (chosenPipeDiaEval == 0.25)
+        diaMeter = 0.0092;
+    else if (chosenPipeDiaEval == 0.50)
+        diaMeter = 0.0157;
+    else if (chosenPipeDiaEval == 1.00)
+        diaMeter = 0.0266;
+    else if (chosenPipeDiaEval == 1.50)
+        diaMeter = 0.0408;
+    console.log("actDia " + diaMeter);
 
+}
 var processFluidEval = "Water"
 
 function setProcessFluidEval() {
@@ -1008,6 +1018,7 @@ var evalSets = 1;
 function setEvalSets() {
     evalSets = document.getElementById("evalSets").value;
     console.log(evalSets);
+    document.getElementById('evalBtn').onclick = function() { evaluateConfig(); };
 
     var table = document.getElementById("configInputTable");
 
@@ -1018,25 +1029,35 @@ function setEvalSets() {
             table.deleteRow(1);
         }
     }
+    var resTable = document.getElementById("configResultTable");
+
+    var rowCount2 = resTable.rows.length - 1;
+    console.log("Pre count:  ", rowCount2);
+    if (rowCount > 0) {
+        for (var x = 1; x <= rowCount2; x++) {
+            resTable.deleteRow(1);
+        }
+    }
 
     for (var i = 1; i <= evalSets; i++) {
         var row = table.insertRow(i);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
+        // var cell4 = row.insertCell(3);
         cell1.innerHTML = `<input name="length" id="inputSet${i}0" style="width:90px" type="number">`;
         cell2.innerHTML = `<input name="length" id="inputSet${i}1" style="width:90px" type="number">`;
         cell3.innerHTML = `<input name="length" id="inputSet${i}2" style="width:90px" type="number">`;
-        cell4.innerHTML = `<input name="length" id="inputSet${i}3" style="width:90px" type="number">`;
+        // cell4.innerHTML = `<input name="length" id="inputSet${i}3" style="width:90px" type="number">`;
     }
 
 }
 
-var lpm, pres, reyn, fric;
-var den, diaMeter, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hf, calculatedFricFact;
+var lpm, pres, reyn, fric, area2;
+var den, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hw, calculatedFricFact;
 
 function evaluateConfig() {
+    document.getElementById('evalBtn').onclick = "";
     var table = document.getElementById("configInputTable");
     var resultTable = document.getElementById("configResultTable");
 
@@ -1051,7 +1072,19 @@ function evaluateConfig() {
         lpm = document.getElementById("inputSet" + z + "0").value;
         pres = document.getElementById("inputSet" + z + "1").value;
         reyn = document.getElementById("inputSet" + z + "2").value;
-        fric = document.getElementById("inputSet" + z + "3").value;
+        var lengthEval;
+        console.log("lpm value len" + lpm.length);
+        console.log("pres value len" + pres.length);
+        // if (lpm.length == 0 || pres.length == 0) {
+        //     console.log("isNan");
+        //     hw = 0;
+        //     reyn = 0;
+        //     calculatedFricFact = 0;
+        //     calculatedReyn = 0;
+        //     lpmConvVelocity = 0;
+        //     lengthEval = 0
+        // }
+        // fric = document.getElementById("inputSet" + z + "3").value;
 
         presInMeter = pres / 100;
         if (processFluidEval == "Water") {
@@ -1063,11 +1096,14 @@ function evaluateConfig() {
             // visco = 0.00164;
             visco = 0.00215;
         }
-        diaMeter = chosenPipeDiaEval / 39.37; // convert inch to meter
+        // diaMeter = chosenPipeDiaEval / 39.37; // convert inch to meter
+        area2 = (3.14 * diaMeter * diaMeter) / 4;
+        console.log("Area: ", area2);
+
         console.log("Diameter is inch: ", chosenPipeDiaEval);
         console.log("Diameter of the pipe in meter is: ", diaMeter);
         console.log("Radius is: ", (diaMeter / 2));
-        lpmConvVelocity = (lpm * 0.000017) / (3.14 * (diaMeter / 2) * (diaMeter / 2)); // convert lpm to m3/s              V E L O C I T Y
+        lpmConvVelocity = (lpm) / (60000 * area2); // convert lpm to m3/s              V E L O C I T Y
         console.log("Velocity value is: ", lpmConvVelocity);
         // if(manoFluidEval == "Carbon tetrachloride"){
         // 	visco = 0.901;
@@ -1094,16 +1130,28 @@ function evaluateConfig() {
         console.log("Manometric density value of " + manoFluidEval + " is: ", denMano);
 
         // calculate hf value		
-        hf = (((denMano - den) * presInMeter) / den);
-        console.log("Calculated hf value's: ", hf);
+        hw = ((denMano - den) * presInMeter) / den;;
+        console.log("Calculated hf value's: ", hw);
 
         console.log("Length of pipe is: ", pipeLengthEval);
         // calculate FF
-        calculatedFricFact = ((2 * 9.8 * diaMeter * hf) / (4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
-        calculatedFricFact = calculatedFricFact * 10000;
+        calculatedFricFact = 0.079 / Math.pow(calculatedReyn, 0.25);
+        // calculatedFricFact = calculatedFricFact * 10000;
         calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
+        // calculate hf value		
+        console.log(denMano);
+        console.log(den);
+        console.log(pres);
+        hw = (denMano - den) * pres / den / 100000;
+        console.log("Calculated hf value's: ", hw);
         console.log("Calculated F F value is: ", calculatedFricFact);
 
+
+        lengthEval = ((2 * 9.81 * hw) / (4 * calculatedFricFact * lpmConvVelocity * lpmConvVelocity)).toFixed(3);
+        console.log("The length is: ", lengthEval);
+        if (isNaN(lengthEval)) {
+            lengthEval = 0;
+        }
         // Compare Reynold's and Friction Factor.
         console.log("The rey value taken in is: ", reyn);
         setTimeout(() => {
@@ -1141,11 +1189,11 @@ function evaluateConfig() {
             var rowCounttt = table.rows.length - 1;
             console.log("Count of rows after showing result is:  ", rowCounttt);
             document.getElementById("evalSets").value = 0;
-            if (rowCounttt > 0) {
-                for (var xx = 1; xx <= rowCounttt; xx++) {
-                    table.deleteRow(1);
-                }
-            }
+            // if (rowCounttt > 0) {
+            //     for (var xx = 1; xx <= rowCounttt; xx++) {
+            //         table.deleteRow(1);
+            //     }
+            // }
             out.innerText = "";
         }, 300);
         setTimeout(() => {
@@ -1157,8 +1205,8 @@ function evaluateConfig() {
         var row = resultTable.insertRow(z);
         row.style.color = "#fff";
         var reyCell = row.insertCell(0);
-        var fricCell = row.insertCell(1);
-        reyCell.innerHTML = calculatedReyn;
-        fricCell.innerHTML = calculatedFricFact;
+        // var fricCell = row.insertCell(1);
+        reyCell.innerHTML = lengthEval;
+        // fricCell.innerHTML = calculatedFricFact;
     }
 }
