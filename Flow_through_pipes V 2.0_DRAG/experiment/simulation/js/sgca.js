@@ -148,7 +148,7 @@ function magic() {
             document.getElementById("evaluatePart").style.visibility = "hidden";
         } else {
             console.log("2 has chosen");
-            document.getElementById("step3Heading").innerText = "";
+            // document.getElementById("step3Heading").innerText = "";
             document.getElementById("configExp").style.visibility = "hidden";
             document.getElementById('nextButton').style.visibility = "hidden";
 
@@ -1337,10 +1337,24 @@ function setPipeLengthEval() {
 
 var chosenPipeDiaEval = 0.25;
 
+
+var diaMeter = 0.0092;
+
 function setPipeDiaEval() {
     chosenPipeDiaEval = document.getElementById("pipeDiaSelectEval").value;
     console.log(chosenPipeDiaEval);
+    if (chosenPipeDiaEval == 0.25)
+        diaMeter = 0.0092;
+    else if (chosenPipeDiaEval == 0.50)
+        diaMeter = 0.0157;
+    else if (chosenPipeDiaEval == 1.00)
+        diaMeter = 0.0266;
+    else if (chosenPipeDiaEval == 1.50)
+        diaMeter = 0.0408;
+    console.log("actDia " + diaMeter);
+
 }
+
 
 var processFluidEval = "Water"
 
@@ -1363,7 +1377,8 @@ var evalSets = 1;
 function setEvalSets() {
     evalSets = document.getElementById("evalSets").value;
     console.log(evalSets);
-
+    // document.getElementById('evalBtn').onclick = function() { evaluateConfig(); };
+    evalCount = 0;
     var table = document.getElementById("configInputTable");
 
     var rowCount = table.rows.length - 1;
@@ -1402,9 +1417,12 @@ function setEvalSets() {
 }
 
 var lpm, pres, reyn, fric;
-var den, diaMeter, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hf, calculatedFricFact;
+var den, area2, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hf, calculatedFricFact;
+var evalCount = 0;
 
 function evaluateConfig() {
+    // document.getElementById('evalBtn').onclick = "";
+    evalCount = 1;
     var table = document.getElementById("configInputTable");
     var resultTable = document.getElementById("configResultTable");
 
@@ -1431,11 +1449,13 @@ function evaluateConfig() {
             // visco = 0.00164;
             visco = 0.00215;
         }
-        diaMeter = chosenPipeDiaEval / 39.37; // convert inch to meter
+        area2 = (3.14 * diaMeter * diaMeter) / 4;
+        console.log("Area: ", area2);
+
         console.log("Diameter is inch: ", chosenPipeDiaEval);
         console.log("Diameter of the pipe in meter is: ", diaMeter);
         console.log("Radius is: ", (diaMeter / 2));
-        lpmConvVelocity = lpm / (60000 * 3.14 * (diaMeter / 2) * (diaMeter / 2)); // convert lpm to m3/s              V E L O C I T Y
+        lpmConvVelocity = lpm / (60000 * area2); // convert lpm to m3/s              V E L O C I T Y
         console.log("Velocity value is: ", lpmConvVelocity);
         // if(manoFluidEval == "Carbon tetrachloride"){
         // 	visco = 0.901;
@@ -1460,16 +1480,18 @@ function evaluateConfig() {
             denMano = 13600;
         }
         console.log("Manometric density value of " + manoFluidEval + " is: ", denMano);
-
-        // calculate hf value		
-        hf = (((denMano - den) * presInMeter) / den);
+        console.log("pres " + pres)
+        console.log("denMano " + denMano)
+        console.log("den " + den)
+            // calculate hf value		
+        hf = (((denMano - den) * pres) / den / 100);
         console.log("Calculated hf value's: ", hf);
 
         console.log("Length of pipe is: ", pipeLengthEval);
         // calculate FF
         calculatedFricFact = ((2 * 9.81 * diaMeter * hf) / (4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
-        calculatedFricFact = calculatedFricFact * 10000;
-        calculatedFricFact = calculatedFricFact.toFixed(4); //========     toFixed(5)
+        // calculatedFricFact = calculatedFricFact * 10000;
+        calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
         console.log("Calculated F F value is: ", calculatedFricFact);
         if (isNaN(calculatedFricFact)) {
             calculatedFricFact = 0;
@@ -1507,6 +1529,7 @@ function evaluateConfig() {
 
             //   -----------------------       DELETING ALL ROWS AND CHANGING THE NUMBER OF SETS BACK TO 0.
             var table = document.getElementById("configInputTable");
+            var tabl2 = document.getElementById("configResultTable");
             table.style.color = "#fff";
             var rowCounttt = table.rows.length - 1;
             console.log("Count of rows after showing result is:  ", rowCounttt);
@@ -1522,7 +1545,6 @@ function evaluateConfig() {
             out.innerText = "";
             outFric.innerText = "";
         }, 5000);
-
         // Add to result table.
         var row = resultTable.insertRow(z);
         row.style.color = "#fff";
@@ -1530,5 +1552,7 @@ function evaluateConfig() {
         var fricCell = row.insertCell(1);
         reyCell.innerHTML = calculatedReyn;
         fricCell.innerHTML = calculatedFricFact;
+
+
     }
 }
