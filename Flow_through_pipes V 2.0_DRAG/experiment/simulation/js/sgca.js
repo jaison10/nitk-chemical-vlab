@@ -208,7 +208,7 @@ function magic() {
             document.getElementById("experimentID").style.visibility = "visible";
             document.getElementById("obserButton").style.visibility = "visible";
 
-            document.getElementById('overflow').style.visibility = "hidden";
+            document.getElementById("overflow").style.visibility = "hidden";
 
             document.getElementById("greenColor").style.cursor = "pointer";
             document.getElementById("greenColor").style.visibility = "visible";
@@ -372,7 +372,8 @@ function gotoLabel() {
         document.getElementById("demoButtonEval").onclick = function() {
             console.log("Pressed demo");
             document.getElementById("demoTwo").style.visibility = "visible";
-
+            //erii
+            document.getElementById("configExp").style.visibility = "hidden";
             document.getElementById("canvas2").style.visibility = "hidden";
             goto6th();
         }

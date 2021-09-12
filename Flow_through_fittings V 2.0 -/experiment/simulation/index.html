@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>SOLVE</title>
+    <title>Flow Through Fittings</title>
     <link rel="stylesheet" href="css/sgca.css" />
     <link rel="stylesheet" href="css/mathstyle.css" />
     <script type="text/javascript" src="js/jquerymin.js"></script>
@@ -56,8 +56,10 @@
         <div id="titleLarge" class="title" style="visibility: visible;">
             <h3>Flow through fittings</h3>
         </div>
+        <!-- erinnn -->
         <div id="titleSmall" class="title2" style="visibility:hidden">
-            <h3>Flow through fittings</h3>
+            <!-- <h3 id="ftfmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);">Flow through </h3> -->
+            <h3 id="ftfmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);" style="font-size: 12px;">Flow Through Fittings</h3>
         </div>
 
         <div id="buttonsList" style="position: absolute; visibility: hidden; top: 20px; left: 400px; color: white; z-index: 1;">
@@ -86,9 +88,9 @@
         <div class="simsubscreen" id="canvas1" style="visibility:hidden">
             <!-- <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span> -->
-            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:14px; color: #fff; top: 50px; left: 50px;">Choose what you want to do.</p>
+            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:14px; color: #fff; top: 50px; left: 275px;">What would you like to do?</p>
 
-            <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p>
+            <!-- <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p> -->
 
             <button onclick="selectAction(1)" style="position: absolute; top: 130px; left: 250px; width: 250px; height: 30px;">Perform experiment</button>
             <button onclick="selectAction(2)" style="position: absolute; top: 170px; left: 250px; width: 250px; height: 30px">Evaluate yourself</button>
@@ -410,27 +412,46 @@
             </div>
 
 
-            <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 445px; left: 485px; width: 194px; font-size:13px;">Add current readings</button>
+            <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 430px; left: 500px; width: 194px; font-size:13px;">Add current readings</button>
 
-            <!--<button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>-->
-            <button id="obserButton" style="position: absolute; top: 475px; left: 620px; width: 94px; font-size:13px;">Observations</button>
-            <button onclick="displayExpValues()" id="experiButton" style="position: absolute; top: 475px; left: 455px; width: 160px; font-size:13px;">Experimental Data</button>
-
+            <button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
+            <button onclick="displayExpValues()" id="experiButton" style="position: absolute; top: 465px; left: 455px; width: 160px; font-size:13px;">Experimental Data</button>
+            <!-- erin -->
+            <button onclick="observeTable()" id="obserButton" style="position: absolute; top: 465px; left: 630px; width: 94px; font-size:13px;">Observations</button>
+        </div>
+        <!-- erin -->
+        <div id="obcanvas" style="z-index: 2000;visibility: hidden; position: absolute; top: 50px; left: 15px; width: 760px; height: 430px;background-color: #3b3b3b; border: 2px solid rgb(255, 255, 255); border-radius: 30px;">
+            <p style="z-index: 2000; position: absolute; top: -20px; left: 270px; width: 500px; font-size:30px; color: #fff;">Observations</p>
+            <!-- erin -->
+            <p id="noteremsel" style="z-index: 2000; position: absolute; top: 470px; left: 20px; width: 500px; font-size:13px; color: #fff;">Click on the rows which you want to delete </p>
             <!-- Observation table! -->
-            <table id="observeTable" style="overflow-y: scroll; font-size: 12px; position:absolute; visibility: hidden; border: 1px solid #fff; width: 700px; top:50px; left: 45px;">
-                <tr style="">
-                    <th>Process fluid</th>
-                    <th>Manometric fluid</th>
-                    <th>Flowrate(lpm)</th>
-                    <th>h1(cm of Manometric fluid)</th>
-                    <th>h2(cm of Manometric fluid)</th>
-                </tr>
+            <table id="observeTable" style="z-index: 2000; overflow-y: scroll; font-size: 12px; position: absolute; visibility: hidden; border: 1px solid rgb(255, 255, 255); width: 700px; top: 50px; left: 27px; color: rgb(255, 255, 255);">
+                <!-- erin -->
+                <thead id="head">
+                    <tr style="">
+                        <th>Process fluid</th>
+                        <th>Manometric fluid</th>
+                        <th>Flowrate(lpm)</th>
+                        <th>h1(cm of Manometric fluid)</th>
+                        <th>h2(cm of Manometric fluid)</th>
+                    </tr>
+                </thead>
             </table>
+            <button onclick="remSelRead()" id="remSelRead" style="visibility: hidden; position: absolute; top: 400px; left: 50px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff;">Remove Selected Readings</button>
+            <button onclick="remAllRead()" id="remAllRead" style="visibility: hidden; position: absolute; top: 400px; left: 290px; width:200px; font-size: 13px;z-index: 2500; background-color: #fff;">Clear All readings</button>
+            <button onclick="emailSend()" id="emailTable" style="visibility: hidden; position: absolute; top: 400px; left: 530px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff; ">Email This Table</button>
+            <!-- erin 08092021 -->
+            <!-- Pop up to input receiver email ID -->
+            <div id="emailSend" style="visibility: hidden; height: 100px; width: 300px; top: 200px; left: 250px; position: absolute; padding: 8px; background-color: rgb(255, 255, 255); color: black; z-index: 5000;border-radius:10px ">
+                Email:
+                <input id="emailR" type="email" onchange="setemail(this.value)" name="Email" size="20" required="true"; pattern=".@.">
 
-
-            <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
-            <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
-
+                <!-- <input id="sendEmail" type="submit" name="Send" value=""> -->
+                <button onclick="sendEmail()" id="sendEmail" style=" position: absolute; top: 8px; left: 230px; width: 70px; font-size: 13px;z-index: 5500; background-color: #fff; ">Send</button>
+                <p id="emailreq" style="z-index: 7500; position: absolute; height: 20px; width: 300px; top: 50px; left: 10px; font-size: 15px; color: black; ">Email is required</p>
+            </div>
+            <!-- info store for mail body -->
+            <p id="info" style="visibility: hidden;"></p>
         </div>
 
 
@@ -459,9 +480,31 @@
             <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
             <p id="dmflu" style="position: absolute; top: 270px; left: 405px; width: 324px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
         </div>
-        <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
+        <!-- <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
             <p style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.</p>
-        </div>
+        </div> -->
+
+
+        <!-- erin -->
+        <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
+        <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
+
+       
+
+    </div>
+
+
+    <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
+        <p id="overflowMessage" style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.</p>
+        <button id="okBtn" style="position: absolute; top: 310px; left: 370px; background-color: black; color: white; visibility: hidden;width:100px;height:30px;font-size:15px;">Ok</button>
+    </div>
+
+
+    <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
+<p id="q"></p><select id="answer" >	
+</select>
+<p id="a"></p>
+</div> -->
 
         <!--Trial text	-->
         <div id="">
@@ -480,7 +523,7 @@
         <div id="copyright"> &copy;
             <script>
                 document.write(new Date().getFullYear());
-            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Chemical Engineering</div>
         <script src="https://webisora.com/assets/js/propeller.min.js"></script>
 
 </body>
