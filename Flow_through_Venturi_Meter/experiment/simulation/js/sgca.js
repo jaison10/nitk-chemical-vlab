@@ -703,7 +703,7 @@ function setVenturiDia(){
 // console.log("k: " + k);
 
 var chosenPipeDia = 0.25;
-var actualPipeDia = 0.0092;
+var actualPipeDia = 0.92;
 var area;
 
 function setPipeDia() {
