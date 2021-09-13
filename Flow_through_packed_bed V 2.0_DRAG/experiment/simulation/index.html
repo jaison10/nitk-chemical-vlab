@@ -197,7 +197,7 @@
       </select>
                 </p>
                 <p style="position: absolute; top: 150px; color: #1981e2;font-style: italic;">Select packing material:
-                    <select name="packingMaterial" id="packMatSelectEval" onchange="setPBMaterial();">
+                    <select name="packingMaterial" id="packMatSelectEval" onchange="setPBMaterialEval();">
         <option value="25mm Raschig ring">25mm Raschig ring</option>
         <option value="25mm Berl saddle">25mm Berl saddle</option>
         <option value="13mm berl saddle">13mm berl saddle</option>
@@ -230,10 +230,10 @@
             <div id="experimentSetup" style="visibility: hidden; left: 100px;">
 
                 <p style="position: absolute; top: 50px; color: #1981e2;font-style: italic;">Select length of the packed bed:&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input style="position: absolute; left: 235px;" type="number" value="0.5" id="pbLengthEval" name="length" min="0.5" max="2" step="0.1" onchange="setPBLengthEval();">&emsp; meter
+                    <input style="position: absolute; left: 235px;" type="number" value="0.5" id="pbLength" name="length" min="0.5" max="2" step="0.1" onchange="setPBLength();">&emsp; meter
                 </p>
                 <p style="position: absolute; top: 100px; color: #1981e2;font-style: italic;">Select Nominal diameter of the packed bed:
-                    <select name="pipeDia" id="pbDiaSelectEval" onchange="setPBDiaEval();">
+                    <select name="pipeDia" id="pbDiaSelect" onchange="setPBDia();">
                         <option value="0.25">0.25 inch</option>
                         <option value="0.50">0.50 inch</option>
                         <option value="1.00">1.00 inch</option>
@@ -243,7 +243,7 @@
                     </select>
                 </p>
                 <p style="position: absolute; top: 150px; color: #1981e2;font-style: italic;">Select packing material:
-                    <select name="packingMaterial" id="packMatSelectEval" onchange="setPBMaterial();">
+                    <select name="packingMaterial" id="packMatSelect" onchange="setPBMaterial();">
                         <option value="25mm Raschig ring">25mm Raschig ring</option>
                         <option value="25mm Berl saddle">25mm Berl saddle</option>
                         <option value="13mm berl saddle">13mm berl saddle</option>
@@ -251,13 +251,13 @@
                     </select>
                 </p>
                 <p style="position: absolute; top: 200px; color: #1981e2;font-style: italic;">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
+                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                     </select>
                 </p>
                 <p style="position: absolute; top: 250px; color: #1981e2;font-style: italic;">Manometric fluid:
-                    <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
+                    <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluid();">
                         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                         <option value="Mercury">Mercury</option>
                     </select>
