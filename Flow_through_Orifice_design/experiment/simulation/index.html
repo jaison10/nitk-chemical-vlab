@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>SOLVE</title>
+    <title>Flow through Orifice</title>
     <link rel="stylesheet" href="css/sgca.css" />
     <link rel="stylesheet" href="css/mathstyle.css" />
     <script type="text/javascript" src="js/jquerymin.js"></script>
@@ -56,10 +56,13 @@
         <div id="titleLarge" class="title" style="visibility: visible;">
             <h3>Flow through Orifice</h3>
         </div>
-        <div id="titleSmall" class="title2" style="visibility:hidden">
-            <h3>Flow through Orifice</h3>
-        </div>
 
+         <!-- erinnn -->
+         <div id="titleSmall" class="title2" style="visibility:hidden">
+            <!-- <h3 id="ftfmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);">Flow through </h3> -->
+            <h3 id="ftfmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);" style="font-size: 12px;">Flow through Orifice</h3>
+        </div>
+        <!-- erinend -->
         <div id="buttonsList" style="position: absolute; visibility: hidden; top: 20px; left: 400px; color: white; z-index: 1;">
             <div style="">
                 <button id="demoButton" style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Demo</b></button>
@@ -86,9 +89,9 @@
         <div class="simsubscreen" id="canvas1" style="visibility:hidden">
             <!-- <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span> -->
-            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:14px; color: #fff; top: 50px; left: 50px;">Choose what you want to do.</p>
+            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:14px; color: #fff; top: 50px; left:230px;font-size: 25px;">What would you like to do</p>
 
-            <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p>
+            <!-- <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p> -->
 
             <button onclick="selectAction(1)" style="position: absolute; top: 130px; left: 250px; width: 250px; height: 30px;">Perform experiment</button>
             <button onclick="selectAction(2)" style="position: absolute; top: 170px; left: 250px; width: 250px; height: 30px">Evaluate yourself</button>
@@ -109,7 +112,7 @@
 
         <div class="simsubscreen" id="canvas6" style="visibility:hidden">
 
-            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2; font-size: 17px;">
+            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2; font-size: 17px; font-style: italic;">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Label</span> Tab to see the Experimental Setup.
@@ -150,7 +153,7 @@
                 </ul>
             </div>
 
-            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;">
+            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2; font-style: italic;">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Data</span> tab to configure Experimental Data.
@@ -180,28 +183,28 @@
             <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:90px; width: 640px; height: 390px;" src="./Images/Flow through orifice_images/orilabel.png">
 
             <!-- Evaluation part -->
-            <div id="configExp">
-                <p style="position: absolute; top: 100px; color: #fff;">Orifice Diameter
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.1" id="pipeLengthEval" name="length" min="0.1" max="0.7" onchange="setPipeLengthEval();"> 
-                    <p style="color:#fff; position: absolute; left: 300px; top: 100px;"> cm</p>
+            <div id="configExp" style="visibilty:hidden; font-size: large;">
+                <p style="position: absolute; top: 100px; left:20px; color: #1981e2 ;font-style: italic;">Orifice Diameter
+                    <input style="position: absolute; left: 280px;" type="number" step="0.1" value="0.1" id="pipeLengthEval" name="length" min="0.1" max="0.7" onchange="setPipeLengthEval();"> 
+                    <p style="color: #1981e2 ;font-style: italic; position: absolute; left: 380px; top: 100px;"> cm</p>
                 </p>
 
-                <p style="position: absolute; top: 50px; color: #fff;">Nominal diameter of the pipe:
-                    <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
+                <p style="position: absolute; top: 50px; left:20px; color: #1981e2 ;font-style: italic;">Nominal diameter of the pipe:
+                    <select style="position:absolute; left: 280px;" name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
                     <option value="0.25">0.25 inch</option>
                     <option value="0.50">0.50 inch</option>
                     <option value="1.00">1.00 inch</option>
                     <option value="1.50">1.50 inch</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 150px; color: #fff;">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
+                <p style="position: absolute; top: 150px;left:20px; color: #1981e2 ;font-style: italic;">Process fluid:
+                    <select style="position: absolute; left: 280px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
         <option value="Water">Water</option>
         <option value="Kerosene">Kerosene</option>
       </select>
                 </p>
-                <p style="position: absolute; top: 200px; color: #fff;">Manometric fluid:
-                    <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
+                <p style="position: absolute; top: 200px;color: #1981e2 ;left:20px; font-style: italic;">Manometric fluid:
+                    <select style="position: absolute; left: 280px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
         <option value="Mercury">Mercury</option>
       </select>
@@ -213,17 +216,17 @@
         </div>
 
         <!--Step3	-->
-        <div class="simsubscreen" id="canvas3" style="visibility:hidden">
+        <div class="simsubscreen" id="canvas3" style="visibility:hidden; font-size: large;">
             <!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span> -->
-            <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p>
+            <!-- <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p> -->
             <!-- EXPERIMENT PART -->
             <div id="experimentSetup" style="visibility: hidden; left: 100px;">
-                <p style="position: absolute; top: 100px; color: #fff;">Select Orifice diameter:
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.1" id="oriDia" name="length" min="0.1" max="0.7" onchange="setoriDia();">
-                    <p style="color:#fff; position: absolute; left: 300px; top: 100px;">cm</p>
+                <p style="position: absolute; top: 100px; color: #1981e2 ;left:20px; font-style: italic;">Select Orifice diameter:
+                    <input style="position: absolute; left: 280px;" type="number" step="0.1" value="0.1" id="oriDia" name="length" min="0.1" max="0.7" onchange="setoriDia();">
+                    <p style="color: #1981e2 ;font-style: italic; position: absolute; left: 380px; top: 100px;">cm</p>
                 </p>
-                <p style="position: absolute; top: 50px; color: #fff;">Nominal diameter of the pipe:
-                    <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
+                <p style="position: absolute; top: 50px; left:20px; color: #1981e2 ;font-style: italic;">Nominal diameter of the pipe:
+                    <select style="position:absolute; left: 280px;" name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
                      <option value="0.25">0.25 inch</option>
                      <option value="0.50">0.50 inch</option>
                      <option value="1.00">1.00 inch</option>
@@ -231,21 +234,21 @@
                     </select>
                 </p>
                
-                    <p style="position: absolute; top: 150px; color: #fff;">Select type of Orifice tappings: 
-                      <select name="fittype" id="fittingType" onchange="setFittingused();">
+                    <p style="position: absolute; top: 150px;left: 20px; color: #1981e2 ;font-style: italic;">Select type of Orifice tappings: 
+                      <select style="position:absolute; left: 280px;"name="fittype" id="fittingType" onchange="setFittingused();">
                         <option value="Corner Taps">Corner Taps</option>
                         <option value="D & D/2 taps">D & D/2 taps</option>
                         <option value=" 1'' Taps">1" Taps</option>
                       </select> 
                     </p>
-                    <p style="position: absolute; top: 200px; color: #fff;">Process fluid:  
-                      <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
+                    <p style="position: absolute; top: 200px; color: #1981e2 ; left:20px; font-style: italic;">Process fluid:  
+                      <select style="position: absolute; left: 280px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                       </select>
                     </p>
-                    <p style="position: absolute; top: 250px; color: #fff;">Manometric fluid:  
-                      <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
+                    <p style="position: absolute; top: 250px; color: #1981e2 ;left:20px; font-style: italic;">Manometric fluid:  
+                      <select style="position: absolute; left: 280px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
                         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                         <option value="Mercury">Mercury</option>
                       </select>
@@ -255,7 +258,7 @@
 
             <!-- Evaluation Part -->
             <div id="evaluatePart">
-                <p style="position: absolute; top: 30px; color: #fff;">Number of sets of Readings:
+                <p style="position: absolute; top: 30px;color: #fff;">Number of sets of Readings:
                     <input type="number" value="2" id="evalSets" name="length" min="2" max="100" onchange="setEvalSets();">
                 </p>
                 <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 450px; top:70px;">
@@ -412,23 +415,51 @@
                 <p id="rightCm" style="position: absolute; top: 295px; left: 530px; width: 124px; font-size:10px;color: #fff;">35.00</p>
                 <p style="position: absolute; top: 295px; left: 559px; width: 124px; font-size:10px;color: #fff;">cm</p>
             </div>
+            <!-- erinnn -->
+            <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 430px; left: 500px; width: 194px; font-size:13px;">Add current readings</button>
 
-            <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 425px; left: 485px; width: 194px; font-size:13px;">Add current readings</button>
-
+            <button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
             <button onclick="displayExpValues()" id="experiButton" style="position: absolute; top: 465px; left: 455px; width: 160px; font-size:13px;">Experimental Data</button>
-            <button id="obserButton" style="position: absolute; top: 465px; left: 625px; width: 94px; font-size:13px;">Observations</button>
-
-            <!-- Observation table! -->
-            <table id="observeTable" style="overflow-y: scroll; font-size: 12px; position:absolute; visibility: hidden; border: 1px solid #fff; width: 700px; top:50px; left: 45px;">
-                <tr style="">
-                    <th>Process fluid</th>
-                    <th>Manometric fluid</th>
-                    <th>Flowrate(lpm)</th>
-                    <th>h1(cm of Manometric fluid)</th>
-                    <th>h2(cm of Manometric fluid)</th>
-                </tr>
+            
+             <!-- erin -->
+             <button onclick="observeTable()" id="obserButton" style="position: absolute; top: 465px; left: 630px; width: 94px; font-size:13px;">Observations</button>
+            </div>
+            <!-- erin -->
+            <div id="obcanvas" style="z-index: 2000;visibility: hidden; position: absolute; top: 50px; left: 15px; width: 760px; height: 430px;background-color: #3b3b3b; border: 2px solid rgb(255, 255, 255); border-radius: 30px;">
+                <p style="z-index: 2000; position: absolute; top: -20px; left: 270px; width: 500px; font-size:30px; color: #fff;">Observations</p>
+                <!-- erin -->
+                <p id="noteremsel" style="z-index: 2000; position: absolute; top: 470px; left: 20px; width: 500px; font-size:13px; color: #fff;">Click on the rows which you want to delete </p>
+                <!-- Observation table! -->
+                <table id="observeTable" style="z-index: 2000; overflow-y: scroll; font-size: 12px; position: absolute; visibility: hidden; border: 1px solid rgb(255, 255, 255); width: 700px; top: 50px; left: 27px; color: rgb(255, 255, 255);">
+                <!-- erin -->
+                <thead id="head">
+                    <tr style="">
+                        <th>Process fluid</th>
+                        <th>Manometric fluid</th>
+                        <th>Flowrate(lpm)</th>
+                        <th>h1(cm of Manometric fluid)</th>
+                        <th>h2(cm of Manometric fluid)</th>
+                    </tr>
+                </thead>
             </table>
-        </div> 
+            <button onclick="remSelRead()" id="remSelRead" style="visibility: hidden; position: absolute; top: 400px; left: 50px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff;">Remove Selected Readings</button>
+            <button onclick="remAllRead()" id="remAllRead" style="visibility: hidden; position: absolute; top: 400px; left: 290px; width:200px; font-size: 13px;z-index: 2500; background-color: #fff;">Clear All readings</button>
+            <button onclick="emailSend()" id="emailTable" style="visibility: hidden; position: absolute; top: 400px; left: 530px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff; ">Email This Table</button>
+            <!-- erin 08092021 -->
+            <!-- Pop up to input receiver email ID -->
+            <div id="emailSend" style="visibility: hidden; height: 100px; width: 300px; top: 200px; left: 250px; position: absolute; padding: 8px; background-color: rgb(255, 255, 255); color: black; z-index: 5000;border-radius:10px ">
+                Email:
+                <input id="emailR" type="email" onchange="setemail(this.value)" name="Email" size="20" required="true"; pattern=".@.">
+
+                <!-- <input id="sendEmail" type="submit" name="Send" value=""> -->
+                <button onclick="sendEmail()" id="sendEmail" style=" position: absolute; top: 8px; left: 230px; width: 70px; font-size: 13px;z-index: 5500; background-color: #fff; ">Send</button>
+                <p id="emailreq" style="z-index: 7500; position: absolute; height: 20px; width: 300px; top: 50px; left: 10px; font-size: 15px; color: black; ">Email is required</p>
+            </div>
+            <!-- info store for mail body -->
+            <p id="info" style="visibility: hidden;"></p>
+        </div>
+
+        <!-- erinend -->
         <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
             <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
             <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Orifice Diameter:</p>
@@ -463,11 +494,14 @@
 </select>
 <p id="a"></p>
 </div> -->
+    <!-- erin -->
+            <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
+                <p id="overflowMessage" style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.</p>
+                <button id="okBtn" style="position: absolute; top: 310px; left: 370px; background-color: black; color: white; visibility: hidden;width:100px;height:30px;font-size:15px;">Ok</button>
+            </div>
 
-        <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
-            <p style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer.</p>
-        </div>
 
+<!-- erinend -->
         <!--Trial text	-->
         <div id="">
             <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; "><strong>Trial = </strong></p>
@@ -485,7 +519,7 @@
         <div id="copyright"> &copy;
             <script>
                 document.write(new Date().getFullYear());
-            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Chemical Engineering</div>
         <script src="https://webisora.com/assets/js/propeller.min.js"></script>
 
 </body>

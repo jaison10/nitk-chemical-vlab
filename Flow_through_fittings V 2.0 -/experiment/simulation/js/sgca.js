@@ -210,7 +210,9 @@ function magic() {
             document.getElementById("greenColor").onclick = function() {
                 document.getElementById("greenColor").style.visibility = "hidden";
                 document.getElementById("redColor").style.visibility = "visible";
-                document.getElementById('overflow').style.visibility = "hidden";
+                // document.getElementById('overflow').style.visibility = "hidden";
+                numberOfVisit = 0;
+                document.getElementById("gatewayRotate").onclick = "";
 
                 // Change the NOTE content.
                 document.getElementById("infoAboutWhatToDo").innerText = "Click on Gatewall to rotate it in anticlockwise direction."
