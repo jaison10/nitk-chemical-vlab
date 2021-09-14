@@ -183,7 +183,7 @@
             <!-- Evaluation part -->
             <div id="configExp">
                 <p style="position: absolute; top: 150px; color: #fff;">Nominal diameter of the pipe:
-                    <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
+                    <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPBDiaEval();">
                     <option value="0.25">0.25 inch</option>
                     <option value="0.50">0.50 inch</option>
                     <option value="1.00">1.00 inch</option>
@@ -193,16 +193,12 @@
                 </p>
 
                 <p style="position: absolute; top: 100px; color: #fff;">Length of Fluidised Bed
-<<<<<<< HEAD
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.5" id="bedHeight" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();">
-=======
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.5" id="bedLength" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();"> 
->>>>>>> 3359f1c98e22ccd8fd90bb8d2d3844f15737462e
+                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.5" id="bedLength" name="length" min="0.5" max="2.0" onchange="setPBLengthEval();">
                     <p style="color:#fff; position: absolute; left: 300px; top: 100px;"> meter</p>
                 </p>
 
                 <p style="position: absolute; top: 200px; color: #fff;">Packing Material:
-                    <select style="position: absolute; left: 217px;" name="packMaterial" id="packMaterialEval" onchange="setpackMaterialEval();">
+                    <select style="position: absolute; left: 217px;" name="packMaterial" id="packMaterialEval" onchange="setPBMaterialEval();">
                     <option value="25mm Raschig ring">25mm Raschig ring</option>
                     <option value="25mm Beri saddle">25mm Beri saddle</option>
                     <option value="13mm Beri saddle">13mm Beri saddle</option>
@@ -275,7 +271,7 @@
             <!-- Evaluation Part -->
             <div id="evaluatePart">
                 <p style="position: absolute; top: 30px; color: #fff;">Number of sets of Readings:
-                    <input type="number" value="2" id="evalSets" name="length" min="2" max="100" onchange="setEvalSets();">
+                    <input type="number" value="0" id="evalSets" name="length" min="2" max="100" onchange="setEvalSets();">
                 </p>
                 <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 450px; top:70px;">
                     <tr style="">
@@ -338,9 +334,9 @@
 
 
                 <!-- Fluid initial -->
-                <img id="bottomU" style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/botomU.png">
-                <img id="leftFluid" style="position: absolute; top: 222px; left: 332px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
-                <img id="rightFluid" style="position: absolute; top: 222px; left: 381px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="bottomU" style="position: absolute; top: 255px; left: 500px; width: 63px; height: 34px; transform: rotate(0deg); " src="./Images/Flow through pipes_images/botomU.png">
+                <img id="leftFluid" style="position: absolute; top: 222px; left: 500px; width: 15px; height: 37px; transform: rotate(0deg); " src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluid" style="position: absolute; top: 222px; left: 548px; width: 15px; height: 37px; transform: rotate(0deg); " src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid initial Pink -->
                 <img id="bottomPinkU" style="position: absolute; top: 254px; left: 500px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkbottomU.png">
@@ -392,7 +388,7 @@
 
 
                 <img style="position: absolute; top: 213px; left: 572px; width:256px; height: 60px; transform:rotate(270deg);opacity: 0.7;" src="./Images/Flow through pipes_images/smallPiece.png">
-                <img style="position: absolute; top: 328.5px; left: 688px; width: 25px; height: 60px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/196.png">
+                <img id="fluBed" style="position: absolute; top: 340px; left: 670px; width: 60px; height: 30px;  " src="./Images/Flow through pipes_images/196.png">
 
                 <!-- Pin initial-->
                 <img id="rotatePin" style="visibility: hidden; position: absolute; top: 240px; left: 261px; width: 17px; height: 32px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pin.png">
@@ -432,6 +428,10 @@
                 <p style="position: absolute; top: 195px; left: 572px; width: 124px; font-size:10px; color: #fff;">h2:</p>
                 <p id="rightCm" style="position: absolute; top: 215px; left: 572px; width: 124px; font-size:10px; color: #fff;">35.00</p>
                 <p style="position: absolute; top: 215px; left: 610px; width: 124px; font-size:10px; color: #fff;">cm</p>
+
+                <p style="position: absolute; top: 395px; left: 540px; width: 124px; font-size:14px; color: #fff;">Bed Height:</p>
+                <p id="bedHght" style="position: absolute; top: 400px; left: 630px; width: 124px; font-size:12px; color: #fff;">20.0</p>
+                <p style="position: absolute; top: 401px; left: 667px; width: 124px; font-size:11px; color: #fff;">cm</p>
             </div>
 
             <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 450px; left: 485px; width: 194px; font-size:13px;">Add current readings</button>
@@ -449,13 +449,12 @@
                     <th>h2(cm of Manometric fluid)</th>
                 </tr>
             </table>
-<<<<<<< HEAD
         </div>
         <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
-=======
-        </div> 
+
+        </div>
         <div class="" id="displayExpValues" style="visibility:hidden; height: 430px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
->>>>>>> 3359f1c98e22ccd8fd90bb8d2d3844f15737462e
+
             <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
             <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Length of Fluidised Bed</p>
             <p id="lenfb" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p>
@@ -496,8 +495,10 @@
 <p id="a"></p>
 </div> -->
 
+
     <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
-        <p style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer.</p>
+        <p id="overflowMessage" style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.</p>
+        <button id="okBtn" style="position: absolute; top: 310px; left: 370px; background-color: black; color: white; visibility: hidden;width:100px;height:30px;font-size:15px;">Ok</button>
     </div>
 
     <!--Trial text	-->

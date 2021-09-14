@@ -109,7 +109,7 @@
 
         <div class="simsubscreen" id="canvas6" style="visibility:hidden">
 
-            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2; font-size: 17px;">
+            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2; font-size: 17px;font-style: italic;">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Label</span> Tab to see the Experimental Setup.
@@ -128,8 +128,7 @@
                         pump.
                     </li>
                     <li>
-                        To set the required flowrate click and hold on <span class="fontColorChange">Main valve</span> and drag in AntiClockWise direction for opening Valve and 
-                        ClockWise direction for closing the Valve.
+                        To set the required flowrate click and hold on <span class="fontColorChange">Main valve</span> and drag in AntiClockWise direction for opening Valve and ClockWise direction for closing the Valve.
                     </li>
                     <li>
                         Note the change in limb level of manometer. <span class="fontColorChange">h1</span> and <span class="fontColorChange">h2</span> are curresponding Manometric Limb heights from reference level.
@@ -152,7 +151,7 @@
                 </ul>
             </div>
 
-            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;">
+            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;font-style: italic;">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Data</span> tab to configure Experimental data.
@@ -183,7 +182,7 @@
 
             <!-- Evaluation part -->
             <div id="configExp">
-                <p style="position: absolute; top: 50px; color: #fff;">Nominal diameter of the pipe:
+                <p style="position: absolute; top: 50px; color: #1981e2;font-style: italic;left: 30px;">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
                         <option value="0.25">0.25 inch</option>
                         <option value="0.50">0.50 inch</option>
@@ -191,17 +190,17 @@
                         <option value="1.50">1.50 inch</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 100px; color: #fff;">Select Venturi diameter:
+                <p style="position: absolute; top: 100px; color: #1981e2;font-style: italic;left: 30px;">Select Venturi diameter:
                     <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.3" id="venturiDiaEval" name="length" min="0.3" max="0.7" onchange="setVenturiDiaEval();">
-                    <p style="position: absolute; left: 300px; color: #fff; top: 100px;">cm</p>
+                    <p style="position: absolute; color: #1981e2;font-style: italic;left: 330px; top: 100px;">cm</p>
                 </p>
-                <p style="position: absolute; top: 150px; color: #fff;">Process fluid:
+                <p style="position: absolute; top: 150px;color: #1981e2;font-style: italic;left: 30px;">Process fluid:
                     <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 200px; color: #fff;">Manometric fluid:
+                <p style="position: absolute; top: 200px;color: #1981e2;font-style: italic;left: 30px;">Manometric fluid:
                     <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
                         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                         <option value="Mercury">Mercury</option>
@@ -216,10 +215,10 @@
         <!--Step3	-->
         <div class="simsubscreen" id="canvas3" style="visibility:hidden">
             <!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span> -->
-            <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p>
+            <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #1981e2;font-style: italic;left: 30px;">&nbsp; </p>
             <!-- EXPERIMENT PART -->
-            <div id="experimentSetup" style="visibility: hidden; left: 100px;">
-                <p style="position: absolute; top: 50px; color: #fff;">Nominal diameter of the pipe:
+            <div id="experimentSetup" style="visibility: hidden; left: 100px;color: #1981e2;font-style: italic;">
+                <p style="position: absolute; top: 50px; left: 30px;">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
                         <option value="0.25">0.25 inch</option>
                         <option value="0.50">0.50 inch</option>
@@ -227,24 +226,24 @@
                         <option value="1.50">1.50 inch</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 100px; color: #fff;">Select Venturi diameter:
+                <p style="position: absolute; top: 100px; left: 30px;">Select Venturi diameter:
                     <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.3" id="venturiDia" name="length" min="0.3" max="0.7" onchange="setVenturiDia();">
-                    <p style="position: absolute; left: 300px; color: #fff; top: 100px;">cm</p>
+                    <p style="position: absolute; left: 330px; top: 100px;">cm</p>
                 </p>
-                <p style="position: absolute; top: 150px; color: #fff;">Select type of Venturi Tube:
+                <p style="position: absolute; top: 150px;left: 30px;">Select type of Venturi Tube:
                     <select style="position: absolute; left: 217px;" name="processFluid" id="venturiTube" onchange="setVenturiTube();">
                         <option value="Welded Tube">Welded Tube</option>
                         <option value="Casted Tube">Casted Tube</option>
                         <option value="Machined Tube">Machined Tube</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 200px; color: #fff;">Process fluid:
+                <p style="position: absolute; top: 200px; left: 30px;">Process fluid:
                     <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 250px; color: #fff;">Manometric fluid:
+                <p style="position: absolute; top: 250px; left: 30px;">Manometric fluid:
                     <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
         <option value="Mercury">Mercury</option>
@@ -255,7 +254,7 @@
             <!-- Evaluation Part -->
             <div id="evaluatePart">
                 <p style="position: absolute; top: 30px; color: #fff;">Number of sets of readings:
-                    <input type="number" value="2" id="evalSets" name="length" min="2" max="20" onchange="setEvalSets();">
+                    <input type="number" value="0" id="evalSets" name="length" min="2" max="20" onchange="setEvalSets();">
                 </p>
                 <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 450px; top:70px;">
                     <tr style="">
@@ -307,7 +306,7 @@
                 <img style="position: absolute; top: 89px; left: 560px; width: 26px; height: 8px; transform:rotate(90deg);" src="./Images/Flow through pipes_images/smallPiece.png"> -->
                 <img style="position: absolute; top: 98px; left: 350px; width: 251px; height: 185px; z-index: 0;" src="./Images/Flow through pipes_images/wireVM.png">
                 <img style="position: absolute; top: -5px; left: 358px; width: 251px; height: 252px; z-index: 0;" src="./Images/Flow through pipes_images/connector.png">
-                
+
                 <!-- CHANGE -->
                 <img style="position: absolute; top: 260px; left: 435px; width: 102px; height: 120px;" src="./Images/Flow through pipes_images/fullU.png">
                 <img style="position: absolute; top: 271px; left: 428px; width: 28px; height: 8px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/smallPiece.png">
@@ -317,11 +316,11 @@
 
                 <!-- Fluid initial -->
                 <img id="bottomU" style="position: absolute; top: 352px; left: 455px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/botomU.png">
-                <img id="leftFluid" style="position: absolute; top: 316px; left: 455px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
-                <img id="rightFluid" style="position: absolute; top: 316px; left: 504px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="leftFluid" style="position: absolute; top: 318px; left: 455px; width: 15px; height: 37px; transform: rotate(0deg); " src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluid" style="position: absolute; top: 318px; left: 503px; width: 15px; height: 37px; transform: rotate(0deg); " src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid initial Pink -->
-                <img id="bottomPinkU" style="position: absolute; top: 352px; left: 455px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkbottomU.png">
+                <img id="bottomPinkU" style="position: absolute; top: 349px; left: 455px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkbottomU.png">
                 <img id="leftPinkFluid" style="position: absolute; top: 316px; left: 455px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
                 <img id="rightPinkFluid" style="position: absolute; top: 316px; left: 504px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkFluid.png">
 
@@ -432,7 +431,8 @@
 
 
         <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
-            <p style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer.</p>
+            <p id="overflowMessage" style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.</p>
+            <button id="okBtn" style="position: absolute; top: 310px; left: 370px; background-color: black; color: white; visibility: hidden;width:100px;height:30px;font-size:15px;">Ok</button>
         </div>
 
 
@@ -460,7 +460,7 @@
         <div id="copyright"> &copy;
             <script>
                 document.write(new Date().getFullYear());
-            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Chemical Engineering</div>
         <script src="https://webisora.com/assets/js/propeller.min.js"></script>
 </body>
 

@@ -157,10 +157,12 @@ function magic() {
 
             document.getElementById("greenColor").style.cursor = "pointer";
             document.getElementById("greenColor").style.visibility = "visible";
+            document.getElementById('overflow').style.visibility = "hidden";
 
             document.getElementById("greenColor").onclick = function() {
                 document.getElementById("greenColor").style.visibility = "hidden";
                 document.getElementById("redColor").style.visibility = "visible";
+                document.getElementById('overflow').style.visibility = "hidden";
 
                 // Change the NOTE content.
                 // document.getElementById("infoAboutWhatToDo").innerText = "Click on Gatewall to rotate it."
@@ -348,8 +350,24 @@ function goBacktoStep2Eval() {
 
     magic();
 }
+var flagForObserTable = false;
+var flagForDisplayExpValues = false;
+var numberOfVisit = 0;
 
 function gotoExp() {
+    if (numberOfVisit == 1) {
+        document.getElementById('gatewayRotate').onclick = function() {
+            document.getElementById('overflowMessage').innerText = "Click on the green button to start the experiment.";
+            document.getElementById('okBtn').style.visibility = "visible";
+            document.getElementById('overflow').style.visibility = "visible";
+            document.getElementById('okBtn').onclick = function() {
+                document.getElementById('overflow').style.visibility = "hidden";
+                document.getElementById('okBtn').style.visibility = "hidden";
+
+            }
+        }
+        numberOfVisit = 0;
+    }
     console.log("Experiment part.");
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
@@ -746,7 +764,7 @@ function fluidMoveAndPinMove(angle) {
     console.log("velocity " + velocity);
 
     //find Nre
-    var Nre = (actualPipeDia * velocity * densitypf) / (Viscositypf / 1000);
+    var Nre = (actualPipeDia * velocity * densitypf) / (Viscositypf);
     console.log("Nre " + Nre);
 
     //find friction
@@ -788,11 +806,18 @@ function fluidMoveAndPinMove(angle) {
         // valOfRatoNew = ;
         console.log("Overflow condition");
         document.getElementById('overflow').style.visibility = "visible";
+        document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.";
+
 
 
     }
 
 
+    if (isNaN(h1Final) || isNaN(h2Final)) {
+        h1Final = (0.00).toFixed(2);
+        h2Final = (0.00).toFixed(2);
+
+    }
 
     heightLeft = (356 - angle) * 0.093;
     heightLeftNew = heightLeft.toFixed(0);
@@ -812,6 +837,13 @@ function fluidMoveAndPinMove(angle) {
     document.getElementById("leftCm").innerText = (h1Final);
     document.getElementById("rightCm").innerText = h2Final;
     document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+
+    document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
+    document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
+    document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
+    document.getElementById("rightFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
+    document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
+
 
     document.getElementById("leftPinkFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
     document.getElementById("leftPinkFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
@@ -891,6 +923,7 @@ function gotoObservation() {
     document.getElementById("leftPinkFluidFifth").style.visibility = "hidden";
     document.getElementById("rightPinkFluidFifth").style.visibility = "hidden";
     document.getElementById("bottomPinkU").style.visibility = "hidden";
+    document.getElementById('overflow').style.visibility = "hidden";
 
     document.getElementById("observeTable").style.visibility = "visible";
     document.getElementById("setupButton").onclick = function() {
@@ -1122,7 +1155,7 @@ function evaluateConfig() {
 
         console.log("Length of pipe is: ", pbLengthEval);
         // calculate FF
-        calculatedFricFact = (deltaP / pbLengthEval) * ((edensitypf * speriEval * dp) / Math.pow(G, 2)) * Math.pow((voidfracEval / (1 - voidfracEval)), 3);
+        calculatedFricFact = (deltaP / pbLengthEval) * ((edensitypf * speriEval * dp) / Math.pow(G, 2)) * (Math.pow(voidfracEval, 3) / (1 - voidfracEval));
 
         // calculatedFricFact = (calculatedFricFact * 10000).toFixed(5);
         calculatedFricFact = (calculatedFricFact).toFixed(5);

@@ -1494,7 +1494,7 @@ function evaluateConfig() {
         calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
         console.log("Calculated F F value is: ", calculatedFricFact);
         if (isNaN(calculatedFricFact)) {
-            calculatedFricFact = 0;
+            calculatedFricFact = 0.00;
         }
         // Compare Reynold's and Friction Factor.
         console.log("The rey value taken in is: ", reyn);

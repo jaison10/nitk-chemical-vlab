@@ -97,7 +97,7 @@ function magic() {
             document.getElementById("evaluatePart").style.visibility = "hidden";
         } else {
             console.log("2 has chosen");
-            document.getElementById("step3Heading").innerText = "Evaluation!"
+            document.getElementById("step3Heading").innerText = "";
             document.getElementById("configExp").style.visibility = "hidden";
             document.getElementById('nextButton').style.visibility = "hidden";
 
@@ -154,6 +154,7 @@ function magic() {
 
             document.getElementById("experimentID").style.visibility = "visible";
             document.getElementById("obserButton").style.visibility = "visible";
+            document.getElementById('overflow').style.visibility = "hidden";
 
             document.getElementById("greenColor").style.cursor = "pointer";
             document.getElementById("greenColor").style.visibility = "visible";
@@ -161,6 +162,7 @@ function magic() {
             document.getElementById("greenColor").onclick = function() {
                 document.getElementById("greenColor").style.visibility = "hidden";
                 document.getElementById("redColor").style.visibility = "visible";
+                document.getElementById('overflow').style.visibility = "hidden";
 
                 // Change the NOTE content.
                 document.getElementById("infoAboutWhatToDo").innerText = "Click on Gatewall to rotate it."
@@ -348,8 +350,24 @@ function goBacktoStep2Eval() {
 
     magic();
 }
+var flagForObserTable = false;
+var flagForDisplayExpValues = false;
+var numberOfVisit = 0;
 
 function gotoExp() {
+    if (numberOfVisit == 1) {
+        document.getElementById('gatewayRotate').onclick = function() {
+            document.getElementById('overflowMessage').innerText = "Click on the green button to start the experiment.";
+            document.getElementById('okBtn').style.visibility = "visible";
+            document.getElementById('overflow').style.visibility = "visible";
+            document.getElementById('okBtn').onclick = function() {
+                document.getElementById('overflow').style.visibility = "hidden";
+                document.getElementById('okBtn').style.visibility = "hidden";
+
+            }
+        }
+        numberOfVisit = 0;
+    }
     console.log("Experiment part.");
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
@@ -358,12 +376,13 @@ function gotoExp() {
     document.getElementById('canvas' + simsubscreennum).style.visibility = "visible";
     magic();
 
-// ershe
+    // ershe
     var flag = false;
-	document.getElementById("experiButton").onclick = function(){
-		console.log("Clicking on exp button inside fluidMove");
-		flag = !flag;
-		displayExpValues(flag);
+    document.getElementById("experiButton").onclick = function() {
+
+        console.log("Clicking on exp button inside fluidMove");
+        flag = !flag;
+        displayExpValues(flag);
     }
     document.getElementById("setupButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
@@ -450,52 +469,101 @@ function selectAction(n) {
 }
 
 var Oridia = 0.1;
+
 function setoriDia() {
-    Oridia = document.getElementById("oriDia").value;
+    Oridia = document.getElementById("orificeDia").value;
     console.log(Oridia);
 }
 
 
 var Typetap = "Corner Taps";
+var L1 = 0,
+    L2 = 0;
 
-function setFittingused(){
-	Typetap = document.getElementById("fittingType").value;
-	console.log(Typetap);
+function setFittingused() {
+    Typetap = document.getElementById("fittingType").value;
+    console.log(Typetap);
+    if (Typetap == "Corner Taps") {
+        L1 = 0;
+        L2 = 0;
+    } else if (Typetap == "D & D/2 taps") {
+        L1 = 1;
+        L2 = 0.47;
+    } else if (Typetap == "1'' Taps") {
+        L1 = 0.0254 / actualPipeDia;
+        L2 = 0.0254 / actualPipeDia;
+    }
+    console.log("L1:" + L1);
+    console.log("L2:" + L2);
+
 }
 
 var chosenPipeDia = 0.25;
+var actualPipeDia = 0.0092;
+var area;
 
-function setPipeDia(){
-	chosenPipeDia = document.getElementById("pipeDiaSelect").value;
-	console.log(chosenPipeDia);
+function setPipeDia() {
+    chosenPipeDia = document.getElementById("pipeDiaSelect").value;
+    console.log(chosenPipeDia);
+
+    if (chosenPipeDia == 0.25)
+        actualPipeDia = 0.0092;
+    else if (chosenPipeDia == 0.50)
+        actualPipeDia = 0.0157;
+    else if (chosenPipeDia == 1.00)
+        actualPipeDia = 0.0266;
+    else if (chosenPipeDia == 1.50)
+        actualPipeDia = 0.0408;
+
+    console.log("ActDia: " + actualPipeDia);
+    area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+    console.log("area1 " + area);
 }
 
-var actualPipeDia= 0.92;
-var processFluid = "Water"
 
-function setProcessFluid(){
-	processFluid = document.getElementById("processFluid").value;
-	console.log(processFluid);
-}
-var densitypf =1000;
-var viscositypf
-if(processFluid=="Water"){
-	densitypf=1000;
-	viscositypf=0.85;}
-else{
-	densitypf=820;
-	viscositypf=2.15;}
-
+area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+console.log("area1 " + area);
+var processFluid = "Water";
+var densitypf = 1000;
+var viscositypf = 0.001;
 var manoFluid = "Carbon tetrachloride"
-var mfdensity=1600;
-function setManoFluid(){
-	manoFluid = document.getElementById("manoFluid").value;
-	console.log(manoFluid);
+var mfdensity = 1600;
+
+function setProcessFluid() {
+    processFluid = document.getElementById("processFluid").value;
+    console.log(processFluid);
+
+    if (processFluid == "Water") {
+        densitypf = 1000;
+        viscositypf = 0.001;
+    } else if (processFluid == "Kerosene") {
+        densitypf = 820;
+        viscositypf = 0.00215;
+    }
+    console.log("dpf: " + densitypf);
+    console.log("vpf: " + viscositypf);
+
 }
-if(manoFluid="Carbon tetrachloride")
-	mfdensity=1600;
+
+
+
+
+
+function setManoFluid() {
+    manoFluid = document.getElementById("manoFluid").value;
+    console.log(manoFluid);
+    if (manoFluid == "Carbon tetrachloride") {
+        mfdensity = 1600;
+    } else if (manoFluid == "Mercury") {
+        mfdensity = 13600;
+    }
+    console.log(manoFluid);
+    console.log("dmf: " + mfdensity);
+}
+if (manoFluid = "Carbon tetrachloride")
+    mfdensity = 1600;
 else
-	mfdensity=13600;
+    mfdensity = 13600;
 
 
 var x = 0;
@@ -523,6 +591,7 @@ var heightPin = 0;
 var heightPinNew = 0;
 var topPin = 0;
 var topPinNew = 0;
+var cdeq1, cdeq2, e, c1, c2, c3, c4, c5;
 
 function fluidMoveAndPinMove(angle) {
     h1Val = 0.00
@@ -538,651 +607,180 @@ function fluidMoveAndPinMove(angle) {
     document.getElementById("addtoTableButton").style.visibility = "visible";
 
 
-    if (processFluid == "Water" && manoFluid == "Mercury") {
-        if (chosenPipeDia == 0.25) {
-            heightLeft = (356 - angle) * 0.093;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.096;
-            topLeftNew = topLeft.toFixed(0);
 
-            heightRight = (356 - angle) * 0.104;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.093;
-            topRightNew = topLeft.toFixed(0);
 
-            topPin = (356 - angle) * 0.19;
-            topPinNew = topPin.toFixed(0);
+    console.log("356 - angle:" + (356 - angle));
+    if (manoFluid == "Mercury") {
+        valOfRato = (356 - angle) * 0.1228;
+        console.log("multiplier: 0.0198"); //prior;0.1066..for mercury maxrota-37.92
 
-            h1Val = (356 - angle) * 0.099;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
+    } else {
+        valOfRato = (356 - angle) * 0.0339;
+        console.log("multiplier: 0.3158"); //prior;0.1066..for mercury maxrota-6.53
 
-            valOfRato = (356 - angle) * 0.1066;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.099;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 37.92;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-
-            }
-        } else if (chosenPipeDia == 0.50) {
-            heightLeft = (356 - angle) * 0.014;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.014;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.011;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.011;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-            h1Val = (356 - angle) * 0.0084;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.1124;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.0084;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 38;
-                h2Final = 32;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        } else if (chosenPipeDia == 1.00) {
-            heightLeft = (356 - angle) * 0;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-            h1Val = (356 - angle) * 0.00056;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.1124;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.00056;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 35.2;
-                h2Final = 34.8;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        } else if (chosenPipeDia == 1.50) {
-            heightLeft = (356 - angle) * 0;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-            h1Val = (356 - angle) * 0;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.1124;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 35;
-                h2Final = 35;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        }
-        document.getElementById("leftCm").innerText = (h1Final);
-        document.getElementById("rightCm").innerText = h2Final;
-        document.getElementById("ratoReadings").innerText = (valOfRatoNew);
-
-        document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-        document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
-        document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-        document.getElementById("rightFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
-        document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
-    } else if (processFluid == "Kerosene" && manoFluid == "Mercury") {
-        if (chosenPipeDia == 0.25) {
-            heightLeft = (356 - angle) * 0.093;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.096;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.104;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.093;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.04;
-            topPinNew = topPin.toFixed(0);
-
-            h1Val = (356 - angle) * 0.099;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.1023;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.099;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 36.42;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        } else if (chosenPipeDia == 0.50) {
-            heightLeft = (356 - angle) * 0.04;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.034;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.021;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.022;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-            h1Val = (356 - angle) * 0.0093;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.1124;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.0093;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 38.3;
-                h2Final = 31.7;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        } else if (chosenPipeDia == 1.00) {
-            heightLeft = (356 - angle) * 0.006;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.009;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.006;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.009;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-            h1Val = (356 - angle) * 0.000842;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.1124;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.000842;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 35.3;
-                h2Final = 34.7;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        } else if (chosenPipeDia == 1.50) {
-            heightLeft = (356 - angle) * 0;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-            h1Val = (356 - angle) * 0;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.1124;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 35;
-                h2Final = 35;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        }
-        document.getElementById("leftCm").innerText = (h1Final);
-        document.getElementById("rightCm").innerText = h2Final;
-        document.getElementById("ratoReadings").innerText = (valOfRatoNew);
-
-        document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-        document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
-        document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-        document.getElementById("rightFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
-        document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
-    } else if (processFluid == "Kerosene" && manoFluid == "Carbon tetrachloride") {
-        if (chosenPipeDia == 0.25) {
-
-            heightLeft = (356 - angle) * 0.093;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.096;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.104;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.093;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.04;
-            topPinNew = topPin.toFixed(0);
-
-
-            h1Val = (356 - angle) * 0.099;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.021;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.099;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 7.42;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        } else if (chosenPipeDia == 0.50) {
-
-            heightLeft = (356 - angle) * 0.093;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.096;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.104;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.093;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.14;
-            topPinNew = topPin.toFixed(0);
-
-
-            h1Val = (356 - angle) * 0.099;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.089;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.099;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 31.42;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        } else if (chosenPipeDia == 1.00) {
-            heightLeft = (356 - angle) * 0.04;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.034;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.02;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.022;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-            h1Val = (356 - angle) * 0.0124;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.1124;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.0124;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 39.4;
-                h2Final = 30.6;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        } else if (chosenPipeDia == 1.50) {
-
-            heightLeft = (356 - angle) * 0.006;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.009;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.006;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.009;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-
-            h1Val = (356 - angle) * 0.0017;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.1124;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.0017;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 35.6;
-                h2Final = 34.4;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-        }
-        document.getElementById("leftCm").innerText = (h1Final);
-        document.getElementById("rightCm").innerText = h2Final;
-        document.getElementById("ratoReadings").innerText = (valOfRatoNew);
-
-        document.getElementById("leftPinkFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-        document.getElementById("leftPinkFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
-        document.getElementById("rightPinkFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-        document.getElementById("rightPinkFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
-        document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
-    } else if (processFluid == "Water" && manoFluid == "Carbon tetrachloride") {
-        console.log("HERE");
-        console.log("Chosen pipe dia is: ", chosenPipeDia);
-        if (chosenPipeDia == 0.25) {
-            console.log("Current deg: ", angle);
-
-            heightLeft = (356 - angle) * 0.093;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.096;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.104;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.093;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.04;
-            topPinNew = topPin.toFixed(0);
-
-
-            h1Val = (356 - angle) * 0.099;
-            h1New = parseFloat(35) + parseFloat(h1Val);
-            console.log("The h1 new dec fixed is: ", h1New);
-
-            valOfRato = (356 - angle) * 0.019;
-            valOfRatoNew = valOfRato.toFixed(2);
-            console.log("Val of Rato is ", valOfRatoNew);
-
-            h2Val = (356 - angle) * 0.099;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("The h1 final val is: ", h1Final);
-
-            if (h1Final >= 69) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 6.67;
-                console.log("Overflow condition");
-                document.getElementById("overflow").style.visibility = "visible";
-
-            }
-
-        } else if (chosenPipeDia == 0.50) {
-            console.log("Current deg: ", angle);
-
-            h1Val = (356 - angle) * 0.098;
-            valOfRato = (356 - angle) * 0.0798;
-            valOfRatoNew = valOfRato.toFixed(2);
-            h1New = parseFloat(35) + parseFloat(h1Val);
-
-            h2Val = (356 - angle) * 0.098;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-            console.log("H1 value is: ", h1Final);
-
-            heightLeft = (356 - angle) * 0.093;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.096;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.104;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.093;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.14;
-            topPinNew = topPin.toFixed(0);
-
-            if (h1Final >= 68) {
-                h1Final = 70;
-                h2Final = 0;
-                valOfRatoNew = 28.42;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-
-        } else if (chosenPipeDia == 1.00) {
-            console.log("Current deg: ", angle);
-
-            h1Val = (356 - angle) * 0.0146;
-            valOfRato = (356 - angle) * 0.11236;
-            valOfRatoNew = valOfRato.toFixed(2);
-            h1New = parseFloat(35) + parseFloat(h1Val);
-
-            h2Val = (356 - angle) * 0.0146;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-
-            heightLeft = (356 - angle) * 0.04;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.034;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.02;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.022;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 40.2;
-                h2Final = 29.8;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-
-        } else if (chosenPipeDia == 1.50) {
-            console.log("Current deg: ", angle);
-
-            h1Val = (356 - angle) * 0.00196;
-            valOfRato = (356 - angle) * 0.11236;
-            valOfRatoNew = valOfRato.toFixed(2);
-            h1New = parseFloat(35) + parseFloat(h1Val);
-
-            h2Val = (356 - angle) * 0.00196;
-            h2New = parseFloat(35) - parseFloat(h2Val);
-            h1Final = h1New.toFixed(2);
-            h2Final = h2New.toFixed(2);
-
-            heightLeft = (356 - angle) * 0.006;
-            heightLeftNew = heightLeft.toFixed(0);
-            topLeft = (356 - angle) * 0.009;
-            topLeftNew = topLeft.toFixed(0);
-
-            heightRight = (356 - angle) * 0.006;
-            heightRightNew = heightLeft.toFixed(0);
-            topRight = (356 - angle) * 0.009;
-            topRightNew = topLeft.toFixed(0);
-
-            topPin = (356 - angle) * 0.21;
-            topPinNew = topPin.toFixed(0);
-
-            if (valOfRatoNew >= 39) {
-                h1Final = 35.70;
-                h2Final = 34.30;
-                valOfRatoNew = 40;
-                console.log("Overflow condition");
-                document.getElementById('overflow').style.visibility = "visible";
-
-            }
-
-        }
-        document.getElementById("leftCm").innerText = (h1Final);
-        document.getElementById("rightCm").innerText = h2Final;
-        document.getElementById("ratoReadings").innerText = (valOfRatoNew);
-
-        document.getElementById("leftPinkFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
-        document.getElementById("leftPinkFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
-        document.getElementById("rightPinkFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
-        document.getElementById("rightPinkFluid").style.top = parseInt(222) + parseInt(topRightNew) + "px";
-        document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
     }
+    console.log("Val of Rato is ", valOfRato);
+
+    if (valOfRato < 0) {
+        valOfRato = 0;
+        h1New = 35.00;
+        h2New = 35.00;
+    }
+    // valOfRato = (356 - angle) * 0.1066;
+    valOfRatoNew = valOfRato.toFixed(2);
+    console.log("Val of Rato is ", valOfRatoNew);
+
+
+
+    //Added by Haneena 
+
+
+    area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+    console.log("area1 " + area);
+    //first step of Calculation: Velocity
+    var velocity = 0.0;
+
+    velocity = valOfRatoNew / (60000 * area);
+    console.log("velocity: " + velocity);
+    console.log("densitypf: " + densitypf);
+    console.log("viscositypf: " + viscositypf);
+
+    //2- Reynold's number
+    var Nre = 0.0;
+    Nre = (actualPipeDia * velocity * densitypf) / viscositypf;
+    console.log("Nre: " + Nre);
+    lnNre = Math.log(Nre);
+    console.log("eq1: " + lnNre);
+
+
+
+    console.log("Oridia:before: " + Oridia);
+    console.log("actualPipeDia:before: " + actualPipeDia);
+    betaExp = Oridia / 100 / actualPipeDia;
+    console.log("betaExp: after:" + betaExp);
+
+    console.log("L1:" + L1);
+    console.log("L2:" + L2);
+
+    cdeq1 = -10 * L1;
+    cdeq2 = -7 * L1;
+    e = 2.7182;
+    c1 = 0.5961 + (0.0261 * Math.pow(betaExp, 2)) - (0.216 * Math.pow(betaExp, 8)) + (0.000521 * Math.pow((1000000 * betaExp / Nre), 0.7));
+    c2 = (0.0188 + (0.0063 * Math.pow((19000 * betaExp / Nre), 0.8))) * (Math.pow((1000000 / Nre), 0.3) * Math.pow(betaExp, 3.5));
+    c3 = (0.043 + 0.08 * Math.pow(e, cdeq1) - 0.123 * Math.pow(e, cdeq2));
+    c4 = (1 - 0.11 * Math.pow((19000 * betaExp / Nre), 0.8)) * (Math.pow(betaExp, 4) / (1 - Math.pow(betaExp, 4)));
+    c5 = (0.031 * ((2 * L2 / (1 - betaExp)) - (0.8 * Math.pow((2 * L2 / (1 - betaExp)), 1.1)) * Math.pow(betaExp, 3)));
+    codExp = c1 + c2 + c3 * c4 - c5;
+    console.log("codExp1: " + c1);
+    console.log("codExp2: " + c2);
+    console.log("codExp3: " + c3);
+    console.log("codExp4: " + c4);
+    console.log("codExp5: " + c5);
+
+    console.log("cod final: " + codExp);
+
+
+    var hf = 0.0;
+    // var deltaH = 0.0;
+    var halfDeltaH = 0.0;
+
+    // console.log("betaExp: before:" + betaExp);
+
+    // console.log("chosenVenturiDia:before: " + chosenVenturiDia);
+    // console.log("actualPipeDia:before: " + actualPipeDia);
+    //4- Pressure drop,  hw
+    eq2 = Math.pow((codExp / velocity), 2);
+    console.log("codExp / velocity: " + codExp / velocity);
+
+    console.log("eq2: " + eq2);
+    hf = (1 - Math.pow(betaExp, 4)) / (2 * 9.81 * eq2);
+    console.log("divided by  " + 2 * 9.81 * eq2);
+    console.log("hfpart2  " + (Math.pow(betaExp, 4) / (2 * 9.81 * eq2)));
+
+    console.log("hf: " + hf);
+
+
+    //5- Difference in manometer readings, delta H=h1-h2
+    console.log("dpf: " + densitypf);
+    console.log("dmf: " + mfdensity);
+    console.log("vpf: " + viscositypf);
+    // hf = -hf;
+    // console.log("hf: " + hf);
+
+    var dh = 0;
+    dh = (hf * densitypf) / (mfdensity - densitypf) * 100;
+    console.log("dh: " + dh);
+    // deltaH = (hf * densitypf * 100) / (mfdensity - densitypf);
+    // console.log("deltaH: " + dh);
+    console.log("halfdeltaH: " + dh / 2);
+
+
+
+    //value to be added and subtracted from 35 to get h1 and h2
+    halfDeltaH = dh / 2;
+    console.log("halfDeltaH " + halfDeltaH);
+
+
+    console.log("h= " + halfDeltaH);
+    console.log("h1= " + h1New);
+    console.log("h2= " + h2New);
+    h1New = 35.00 + halfDeltaH;
+    console.log("The h1 new dec fixed is: ", h1New);
+    h2New = 35.00 - halfDeltaH;
+    console.log("The h2 new dec fixed is: ", h2New);
+
+    h1Final = h1New.toFixed(2);
+    h2Final = h2New.toFixed(2);
+    console.log("The h1 final val is: ", h1Final);
+
+    if (h1Final >= 69) {
+        h1Final = 70.00;
+        h2Final = 0.00;
+        // valOfRatoNew = 37.92;
+        console.log("Overflow condition");
+        document.getElementById('overflow').style.visibility = "visible";
+        document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.";
+
+
+    }
+
+    if (isNaN(h1Final) || isNaN(h2Final)) {
+        h1Final = (0.00).toFixed(2);
+        h2Final = (0.00).toFixed(2);
+
+    }
+
+    heightLeft = (356 - angle) * 0.093;
+    heightLeftNew = heightLeft.toFixed(0);
+    topLeft = (356 - angle) * 0.096;
+    topLeftNew = topLeft.toFixed(0);
+
+    heightRight = (356 - angle) * 0.104;
+    heightRightNew = heightLeft.toFixed(0);
+    topRight = (356 - angle) * 0.093;
+    topRightNew = topLeft.toFixed(0);
+
+    topPin = (356 - angle) * 0.19;
+    topPinNew = topPin.toFixed(0);
+
+    document.getElementById("leftCm").innerText = (h1Final);
+    document.getElementById("rightCm").innerText = h2Final;
+    document.getElementById("ratoReadings").innerText = (valOfRatoNew);
+
+    document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
+    document.getElementById("leftFluid").style.top = parseInt(318) - parseInt(topLeftNew) + "px";
+    document.getElementById("rightFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
+    document.getElementById("rightFluid").style.top = parseInt(318) + parseInt(topRightNew) + "px";
+    document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
+
+
+
+    document.getElementById("leftPinkFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
+    document.getElementById("leftPinkFluid").style.top = parseInt(315) - parseInt(topLeftNew) + "px";
+    document.getElementById("rightPinkFluid").style.height = parseInt(37) - parseInt(heightRightNew) + "px";
+    document.getElementById("rightPinkFluid").style.top = parseInt(315) + parseInt(topRightNew) + "px";
+    document.getElementById("rotatePin").style.top = parseInt(259) - parseInt(topPinNew) + "px";
+
     document.getElementById("addtoTableButton").onclick = function() {
         document.getElementById("addtoTableButton").style.visibility = "hidden";
         var table = document.getElementById("observeTable");
@@ -1206,34 +804,34 @@ function fluidMoveAndPinMove(angle) {
 
 // ERIN
 
-function displayExpValues(flag){
-	console.log("Clicking on exp button");
-	// for (temp = 0; temp <= 7 ; temp++) 
-	// { 
-	// 	document.getElementById('canvas'+temp).style.visibility="hidden";
-	// }
-	// simsubscreennum = 4;
-	// document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
-	// simsubscreennum = 8;
-	// document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
-	// magic();
-	if(flag){
-		document.getElementById("displayExpValues").style.visibility = "visible";
-	}
-	else
-		document.getElementById("displayExpValues").style.visibility = "hidden";
-    console.log("Oridia value is: ", Oridia, "and in terms of m is: ", (Oridia/100));
-    document.getElementById("oridia").innerHTML=((Oridia/100).toFixed(3))+"meter(s)";
-	document.getElementById("fituse").innerHTML=Typetap;
-	document.getElementById("nompidia").innerHTML=chosenPipeDia+"inch";
-	document.getElementById("acpidia").innerHTML=actualPipeDia+"cm";
-	document.getElementById("prflu").innerHTML=processFluid;
-	document.getElementById("dprflu").innerHTML=densitypf+"Kg per Cubic meter"
-	document.getElementById("vprflu").innerHTML=viscositypf+"centiPoise";
-	document.getElementById("mflu").innerHTML=manoFluid;
-	document.getElementById("dmflu").innerHTML=mfdensity+"Kg per Cubic meter";
+function displayExpValues(flag) {
+    console.log("Clicking on exp button");
+    // for (temp = 0; temp <= 7 ; temp++) 
+    // { 
+    // 	document.getElementById('canvas'+temp).style.visibility="hidden";
+    // }
+    // simsubscreennum = 4;
+    // document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+    // simsubscreennum = 8;
+    // document.getElementById('canvas'+simsubscreennum).style.visibility="visible";
+    // magic();
+    if (flag) {
+        document.getElementById("displayExpValues").style.visibility = "visible";
+    } else
+        document.getElementById("displayExpValues").style.visibility = "hidden";
+    console.log("Oridia value is: ", Oridia, "and in terms of m is: ", (Oridia / 100));
+    document.getElementById("oridia").innerHTML = ((Oridia / 100).toFixed(3)) + "meter(s)";
+    document.getElementById("fituse").innerHTML = Typetap;
+    document.getElementById("nompidia").innerHTML = chosenPipeDia + "inch";
+    document.getElementById("acpidia").innerHTML = actualPipeDia + "cm";
+    document.getElementById("prflu").innerHTML = processFluid;
+    document.getElementById("dprflu").innerHTML = densitypf + "Kg per Cubic meter"
+    document.getElementById("vprflu").innerHTML = viscositypf + "centiPoise";
+    document.getElementById("mflu").innerHTML = manoFluid;
+    document.getElementById("dmflu").innerHTML = mfdensity + "Kg per Cubic meter";
 
 }
+
 function gotoObservation() {
     console.log("go to observ.");
     document.getElementById("waterFlow").style.visibility = "hidden";
@@ -1294,15 +892,15 @@ function gotoObservation() {
 
 function goBacktoStep2() {
     document.getElementById("leftFluid").style.height = "37px";
-    document.getElementById("leftFluid").style.top = "222px";
+    document.getElementById("leftFluid").style.top = "318px";
     document.getElementById("rightFluid").style.height = "37px";
-    document.getElementById("rightFluid").style.top = "222px";
+    document.getElementById("rightFluid").style.top = "318px";
     document.getElementById("rotatePin").style.top = "259px";
 
     document.getElementById("leftPinkFluid").style.height = "37px";
-    document.getElementById("leftPinkFluid").style.top = "222px";
+    document.getElementById("leftPinkFluid").style.top = "318px";
     document.getElementById("rightPinkFluid").style.height = "37px";
-    document.getElementById("rightPinkFluid").style.top = "222px";
+    document.getElementById("rightPinkFluid").style.top = "318px";
     document.getElementById("rotatePin").style.top = "259px";
 
     h1Val = 35.00
@@ -1419,12 +1017,19 @@ function setEvalSets() {
     console.log(evalSets);
 
     var table = document.getElementById("configInputTable");
+    var table2 = document.getElementById("configResultTable");
 
     var rowCount = table.rows.length - 1;
+    var rowCount2 = table2.rows.length - 1;
     console.log("Pre count:  ", rowCount);
     if (rowCount > 0) {
         for (var x = 1; x <= rowCount; x++) {
             table.deleteRow(1);
+        }
+    }
+    if (rowCount2 > 0) {
+        for (var x = 1; x <= rowCount2; x++) {
+            table2.deleteRow(1);
         }
     }
 
@@ -1442,8 +1047,8 @@ function setEvalSets() {
 
 }
 
-var lpm, pres, reyn, fric;
-var den, diaMeter, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hf, calculatedFricFact;
+var lpm, pres, reyn, fric, cod, sideEq1, sideEq2, sideEq1final, sideEq2final;
+var den, area2, diaMeter, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hf, calculatedFricFact, beta;
 
 function evaluateConfig() {
     var table = document.getElementById("configInputTable");
@@ -1473,10 +1078,13 @@ function evaluateConfig() {
             visco = 0.00215;
         }
         diaMeter = chosenPipeDiaEval / 39.37; // convert inch to meter
+
+        area2 = (3.14 * diaMeter * diaMeter) / 4;
+        console.log("Area: ", area2);
         console.log("Diameter is inch: ", chosenPipeDiaEval);
         console.log("Diameter of the pipe in meter is: ", diaMeter);
         console.log("Radius is: ", (diaMeter / 2));
-        lpmConvVelocity = (lpm * 0.000017) / (3.14 * (diaMeter / 2) * (diaMeter / 2)); // convert lpm to m3/s              V E L O C I T Y
+        lpmConvVelocity = lpm / (60000 * area2); // convert lpm to m3/s              V E L O C I T Y
         console.log("Velocity value is: ", lpmConvVelocity);
         // if(manoFluidEval == "Carbon tetrachloride"){
         // 	visco = 0.901;
@@ -1502,17 +1110,42 @@ function evaluateConfig() {
         }
         console.log("Manometric density value of " + manoFluidEval + " is: ", denMano);
 
-        // calculate hf value		
-        hf = (((denMano - den) * presInMeter) / den);
+        //calculate hf value		
+        hf = (((denMano - den) * presInMeter) / den / 100);
         console.log("Calculated hf value's: ", hf);
 
+        //beta=Orifice diameter/Actual Dia
+        beta = Oridia / diaMeter;
+        console.log(beta);
+        sideEq1 = Math.pow(beta, 4) - 1;
+        console.log("sideEq1: " + sideEq1);
+        sideEq2 = 2 * 9.81 * hf;
+        console.log("sideEq2: " + sideEq2);
+
+        sideEq1final = Math.sqrt(sideEq1);
+        console.log("sideEq1final: " + sideEq1final);
+
+        sideEq2final = Math.sqrt(sideEq2);
+        console.log("sideEq2final: " + sideEq2final);
+
+        //cod-coefficient of discharge
+        cod = ((lpm / area2) * sideEq1final / sideEq2final / 60000).toFixed(4);
+        console.log("lpm" + lpm);
+        console.log("area2" + area2);
+
+        console.log("cod" + cod);
         console.log("Length of pipe is: ", pipeLengthEval);
         // calculate FF
-        calculatedFricFact = ((2 * 9.8 * diaMeter * hf) / (4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
-        calculatedFricFact = calculatedFricFact * 10000;
-        calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
-        console.log("Calculated F F value is: ", calculatedFricFact);
-
+        // calculatedFricFact = ((2 * 9.8 * diaMeter * hf) / (4 * pipeLengthEval * lpmConvVelocity * lpmConvVelocity));
+        // calculatedFricFact = calculatedFricFact * 10000;
+        // calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
+        // console.log("Calculated F F value is: ", calculatedFricFact);
+        if (isNaN(calculatedReyn)) {
+            calculatedReyn = 0.00;
+        }
+        if (isNaN(cod)) {
+            cod = 0.000;
+        }
         // Compare Reynold's and Friction Factor.
         console.log("The rey value taken in is: ", reyn);
         setTimeout(() => {
@@ -1550,11 +1183,11 @@ function evaluateConfig() {
             var rowCounttt = table.rows.length - 1;
             console.log("Count of rows after showing result is:  ", rowCounttt);
             document.getElementById("evalSets").value = 0;
-            if (rowCounttt > 0) {
-                for (var xx = 1; xx <= rowCounttt; xx++) {
-                    table.deleteRow(1);
-                }
-            }
+            // if (rowCounttt > 0) {
+            //     for (var xx = 1; xx <= rowCounttt; xx++) {
+            //         table.deleteRow(1);
+            //     }
+            // }
             out.innerText = "";
         }, 300);
         setTimeout(() => {
@@ -1568,6 +1201,6 @@ function evaluateConfig() {
         var reyCell = row.insertCell(0);
         var fricCell = row.insertCell(1);
         reyCell.innerHTML = calculatedReyn;
-        fricCell.innerHTML = calculatedFricFact;
+        fricCell.innerHTML = cod;
     }
 }

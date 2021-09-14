@@ -109,48 +109,49 @@
 
         <div class="simsubscreen" id="canvas6" style="visibility:hidden">
 
-            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2; font-size: 17px;">
+            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2;font-style: italic; font-size: 17px;">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Label</span> Tab to see the Experimental Setup.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Click on <span class="fontColorChange">Setup</span> Tab to Configure Experimental Setup.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Now click on <span class="fontColorChange">Experiment</span> Tab to perform the experiment.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         To start the experiment first <span class="fontColorChange">switch ON</span> the pump by clicking the <span class="fontColorChange">Green</span> button on the pump.
-                      </li>
-                      <li>
-                        Once the pump is turned on <span class="fontColorChange">Setup</span> Tab will be disabled and will be enabled only if pump is OFF. Click on <span class="fontColorChange">Red</span> button on pump to <span class="fontColorChange">Switch off </span>the pump.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
+                        Once the pump is turned on <span class="fontColorChange">Setup</span> Tab will be disabled and will be enabled only if pump is OFF. Click on <span class="fontColorChange">Red</span> button on pump to <span class="fontColorChange">Switch off </span>the
+                        pump.
+                    </li>
+                    <li>
                         To set the required flowrate click on the <span class="fontColorChange">Main valve </span>and drag in AntiClockwise direction for opening Valve and Clockwise direction for closing the Valve.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Note the change in limb level of manometer. <span class="fontColorChange">h1</span> and <span class="fontColorChange">h2</span> are curresponding Manometric Limb heights from reference level.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Click on <span class="fontColorChange">Add current readings</span> button to record the reading in Observation Table.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Click on <span class="fontColorChange">Observations</span> button to see the Observation table. Click again on hide the Table.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         Click on <span class="fontColorChange">Experimental Data </span> button to see the Experimental Data's. Click again on hide.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         If you get Manometric Overflow Error, go to <span class="fontColorChange">Setup </span>Tab and Change the Manometer.
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         To Evaluate experiment click on title <span class="fontColorChange">Flow Through Orifice</span>.
-                      </li>
+                    </li>
                 </ul>
             </div>
 
-            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;">
+            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;font-style: italic;">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Data</span> tab to configure Experimental Data.
@@ -181,12 +182,12 @@
 
             <!-- Evaluation part -->
             <div id="configExp">
-                <p style="position: absolute; top: 100px; color: #fff;">Orifice Diameter
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.1" id="pipeLengthEval" name="length" min="0.1" max="0.7" onchange="setPipeLengthEval();"> 
-                    <p style="color:#fff; position: absolute; left: 300px; top: 100px;"> cm</p>
+                <p style="position: absolute; top: 100px; color: #1981e2;left: 30px;font-style: italic;">Orifice Diameter
+                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.1" id="orificeDia" name="oriDia" min="0.1" max="0.7" onchange="setoriDia();">
+                    <p style="color:#fff; position: absolute;  top: 100px;color: #1981e2;left: 330px;"> cm</p>
                 </p>
 
-                <p style="position: absolute; top: 50px; color: #fff;">Nominal diameter of the pipe:
+                <p style="position: absolute; top: 50px; color: #1981e2;left: 30px;font-style: italic;">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
                     <option value="0.25">0.25 inch</option>
                     <option value="0.50">0.50 inch</option>
@@ -194,13 +195,13 @@
                     <option value="1.50">1.50 inch</option>
                     </select>
                 </p>
-                <p style="position: absolute; top: 150px; color: #fff;">Process fluid:
+                <p style="position: absolute; top: 150px; color: #1981e2;left: 30px;font-style: italic;">Process fluid:
                     <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
         <option value="Water">Water</option>
         <option value="Kerosene">Kerosene</option>
       </select>
                 </p>
-                <p style="position: absolute; top: 200px; color: #fff;">Manometric fluid:
+                <p style="position: absolute; top: 200px; color: #1981e2;left: 30px;font-style: italic;">Manometric fluid:
                     <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
         <option value="Mercury">Mercury</option>
@@ -215,14 +216,14 @@
         <!--Step3	-->
         <div class="simsubscreen" id="canvas3" style="visibility:hidden">
             <!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span> -->
-            <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p>
+            <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp; </p>
             <!-- EXPERIMENT PART -->
-            <div id="experimentSetup" style="visibility: hidden; left: 100px;">
-                <p style="position: absolute; top: 100px; color: #fff;">Select Orifice diameter:
+            <div id="experimentSetup" style="visibility: hidden; left: 100px;font-style: italic;color: #1981e2;left: 30px;">
+                <p style="position: absolute; top: 100px; ;left: 30px;">Select Orifice diameter:
                     <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.1" id="oriDia" name="length" min="0.1" max="0.7" onchange="setoriDia();">
-                    <p style="color:#fff; position: absolute; left: 300px; top: 100px;">cm</p>
+                    <p style=" position: absolute; left: 340px; top: 100px;">cm</p>
                 </p>
-                <p style="position: absolute; top: 50px; color: #fff;">Nominal diameter of the pipe:
+                <p style="position: absolute; top: 50px; left: 30px;">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
                      <option value="0.25">0.25 inch</option>
                      <option value="0.50">0.50 inch</option>
@@ -230,33 +231,33 @@
                      <option value="1.50">1.50 inch</option>
                     </select>
                 </p>
-               
-                    <p style="position: absolute; top: 150px; color: #fff;">Select type of Orifice tappings: 
-                      <select name="fittype" id="fittingType" onchange="setFittingused();">
+
+                <p style="position: absolute; top: 150px; left: 30px;">Select type of Orifice tappings:
+                    <select name="fittype" id="fittingType" onchange="setFittingused();">
                         <option value="Corner Taps">Corner Taps</option>
                         <option value="D & D/2 taps">D & D/2 taps</option>
-                        <option value=" 1'' Taps">1" Taps</option>
-                      </select> 
-                    </p>
-                    <p style="position: absolute; top: 200px; color: #fff;">Process fluid:  
-                      <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
+                        <option value="1'' Taps">1" Taps</option>
+                      </select>
+                </p>
+                <p style="position: absolute; top: 200px; left: 30px;">Process fluid:
+                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                       </select>
-                    </p>
-                    <p style="position: absolute; top: 250px; color: #fff;">Manometric fluid:  
-                      <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
+                </p>
+                <p style="position: absolute; top: 250px; left: 30px;">Manometric fluid:
+                    <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
                         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                         <option value="Mercury">Mercury</option>
                       </select>
-                    </p>
-                 
+                </p>
+
             </div>
 
             <!-- Evaluation Part -->
             <div id="evaluatePart">
                 <p style="position: absolute; top: 30px; color: #fff;">Number of sets of Readings:
-                    <input type="number" value="2" id="evalSets" name="length" min="2" max="100" onchange="setEvalSets();">
+                    <input type="number" value="0" id="evalSets" name="length" min="2" max="100" onchange="setEvalSets();">
                 </p>
                 <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 450px; top:70px;">
                     <tr style="">
@@ -315,21 +316,21 @@
                 <img style="position: absolute; top: 55px; left: 406px; width: 28px; height: 12px; transform:rotate(90deg);" src="./Images/Flow through orifice_images/smallPiece.png">
                 <img style="position: absolute; top: 55px; left: 423px; width: 28px; height: 12px; transform:rotate(90deg);" src="./Images/Flow through orifice_images/smallPiece.png">
 
-                
+
                 <img style="position: absolute; top: 260px; left: 435px; width: 102px; height: 120px;" src="./Images/Flow through orifice_images/fullU.png">
                 <img style="position: absolute; top: 271px; left: 428px; width: 28px; height: 10px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/smallPiece.png">
                 <img style="position: absolute; top: 272px; left: 517px; width: 30px; height: 10px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/smallPiece.png">
-        
-            
+
+
                 <!-- Fluid initial -->
                 <img id="bottomU" style="position: absolute; top: 352px; left: 455px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/botomU.png">
-                <img id="leftFluid" style="position: absolute; top: 316px; left: 455px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
-                <img id="rightFluid" style="position: absolute; top: 316px; left: 504px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
+                <img id="leftFluid" style="position: absolute; top: 318px; left: 455px; width: 15px; height: 37px; transform: rotate(0deg); " src="./Images/Flow through orifice_images/aboveU.png">
+                <img id="rightFluid" style="position: absolute; top: 318px; left: 503px; width: 15px; height: 37px; transform: rotate(0deg); " src="./Images/Flow through orifice_images/aboveU.png">
 
                 <!-- Fluid initial Pink -->
                 <img id="bottomPinkU" style="position: absolute; top: 350px; left: 457px; width: 60px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/pinkbottomU.png">
-                <img id="leftPinkFluid" style="position: absolute; top: 309px; left: 457px; width: 14px; height: 44px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
-                <img id="rightPinkFluid" style="position: absolute; top: 320px; left: 503px; width: 14px; height: 30px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
+                <img id="leftPinkFluid" style="position: absolute; top: 315px; left: 457px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
+                <img id="rightPinkFluid" style="position: absolute; top: 315px; left: 503px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/pinkFluid.png">
 
                 <!-- Fluid Second -->
                 <img id="leftFluidSecond" style="visibility: hidden; position: absolute; top: 309.6px; left: 455px; width: 14px; height: 43.4px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/aboveU.png">
@@ -393,7 +394,7 @@
                 <img id="waterFlow" style="position: absolute; visibility: hidden; top: 449px; left: 102px; width: 125px; height: 38px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/waterFlow.svg">
                 <!-- Water flowing out of pipe. -->
                 <img id="waterPourFirst" style="visibility: hidden; position: absolute; top: 389px; left: 105px; width: 115px; height: 78px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/waterPng.png">
-                <img id="waterPourSecondLongOne" style="visibility: hidden; position: absolute; top: 298px; left: 69px; width: 110px; height: 178px; transform:rotate(0deg);" src="./Images/Flow through orifice_images/waterPng.png">
+                <img id="waterPourSecondLongOne" style="visibility: hidden; position: absolute; top: 309px; left: 68px; width: 110px; height: 169px; transform: rotate(0deg);" src="./Images/Flow through orifice_images/waterPng.png">
 
                 <!-- INFORMATION -->
                 <p style="position: absolute; top: 375px; left: 441px; width: 300px; font-size:12px;color: #fff;"><b>NOTE:</b></p>
@@ -428,7 +429,7 @@
                     <th>h2(cm of Manometric fluid)</th>
                 </tr>
             </table>
-        </div> 
+        </div>
         <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
             <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
             <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Orifice Diameter:</p>
@@ -449,44 +450,45 @@
             <p id="mflu" style="position: absolute; top: 270px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
             <p style="position: absolute; top: 300px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
             <p id="dmflu" style="position: absolute; top: 300px; left: 405px; width: 324px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
-          </div>
-              
-
-            <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
-            <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
-
         </div>
 
 
-        <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
+        <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
+        <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
+
+    </div>
+
+
+    <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
 <p id="q"></p><select id="answer" >	
 </select>
 <p id="a"></p>
 </div> -->
 
-        <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
-            <p style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer.</p>
-        </div>
+    <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
+        <p id="overflowMessage" style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.</p>
+        <button id="okBtn" style="position: absolute; top: 310px; left: 370px; background-color: black; color: white; visibility: hidden;width:100px;height:30px;font-size:15px;">Ok</button>
+    </div>
 
-        <!--Trial text	-->
-        <div id="">
-            <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; "><strong>Trial = </strong></p>
-        </div>
+    <!--Trial text	-->
+    <div id="">
+        <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; "><strong>Trial = </strong></p>
+    </div>
 
 
-        <!--next  Arrow	-->
-        <div id="nav">
-            <img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
-        </div>
+    <!--next  Arrow	-->
+    <div id="nav">
+        <img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
+    </div>
 
-        <!--Blinking Arrow	-->
-        <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
+    <!--Blinking Arrow	-->
+    <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
 
-        <div id="copyright"> &copy;
-            <script>
-                document.write(new Date().getFullYear());
-            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
-        <script src="https://webisora.com/assets/js/propeller.min.js"></script>
+    <div id="copyright"> &copy;
+        <script>
+            document.write(new Date().getFullYear());
+        </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+    <script src="https://webisora.com/assets/js/propeller.min.js"></script>
 
 </body>
 
