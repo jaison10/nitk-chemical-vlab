@@ -210,7 +210,7 @@ function magic() {
                 document.getElementById("redColor").style.visibility = "visible";
                 document.getElementById('overflow').style.visibility = "hidden";
 
-               
+
                 numberOfVisit = 0;
                 document.getElementById("gatewayRotate").onclick = "";
                 // Change the NOTE content.
@@ -685,8 +685,10 @@ function setPBMaterial() {
 }
 var pipeLength = 1;
 var pbDia = 0.25;
-var actualPipeDia = 0.0092,   area;
-console.log("actual dia value"+actualPipeDia);
+var actualPipeDia = 0.0092,
+    area;
+console.log("actual dia value" + actualPipeDia);
+
 function setPBDia() {
     pbDia = document.getElementById("pbDiaSelect").value;
     console.log(pbDia);
@@ -938,16 +940,24 @@ function fluidMoveAndPinMove(angle) {
     // valOfRato = (356 - angle) * 0.1066;
     // valOfRatoNew = valOfRato.toFixed(2);
     console.log("Val of Rato is ", valOfRatoNew);
-
     if (manoFluid == "Mercury") {
-        valOfRato = (356 - angle) * 0.0198;
+        valOfRato = (356 - angle) * 0.1228;
         console.log("multiplier: 0.0198"); //prior;0.1066..for mercury maxrota-37.92
 
     } else {
-        valOfRato = (356 - angle) * 0.1020;
-        console.log("multiplier: 0.1020"); //prior;0.1066..for mercury maxrota-6.53
-
+        valOfRato = (356 - angle) * 0.1998;
+        console.log("multiplier: 0.3158"); //prior;0.1066..for mercury maxrota-6.53
     }
+    console.log("Val of Rato is ", valOfRato);
+    // if (manoFluid == "Mercury") {
+    //     valOfRato = (356 - angle) * 0.0198;
+    //     console.log("multiplier: 0.0198"); //prior;0.1066..for mercury maxrota-37.92
+
+    // } else {
+    //     valOfRato = (356 - angle) * 0.1020;
+    //     console.log("multiplier: 0.1020"); //prior;0.1066..for mercury maxrota-6.53
+
+    // }
     console.log("Val of Rato is ", valOfRato);
 
     if (valOfRato < 0) {
@@ -980,6 +990,12 @@ function fluidMoveAndPinMove(angle) {
     var velocity = valOfRatoNew / (60000 * area);
     console.log("velocity " + velocity);
 
+    console.log("densitypf " + densitypf);
+    console.log("Viscositypf " + Viscositypf);
+    console.log("densitymf " + densitymf);
+
+
+
     //find Nre
     var Nre = (actualPipeDia * velocity * densitypf) / (Viscositypf);
     console.log("Nre " + Nre);
@@ -990,24 +1006,24 @@ function fluidMoveAndPinMove(angle) {
 
     //find pressure drop
     console.log("pbLength " + pbLength);
-    var hw = (friction * pbLength * Math.pow((velocity * 1000), 2) * (1 - voidfrac) / (Math.pow(voidfrac, 3) * 1000 * speri * Dp * 1000 * 9.8));
+    var hw = 0;
+    hw = friction * pbLength * Math.pow(velocity * 1000, 2) * (1 - voidfrac) / Math.pow(voidfrac, 3) / 1000 / speri / Dp / (1000 * 9.8);
     console.log("hw " + hw);
-
 
     //find deltaH
     var deltaH = hw * densitypf / (densitymf - densitypf);
     console.log("deltaH " + deltaH);
 
     //half value to be added
-    var halfDh = deltaH / 2;
+    // var halfDh = deltaH / 2;
 
 
-    console.log("halfDh= " + halfDh);
+    // console.log("halfDh= " + halfDh);
     console.log("h1= " + h1New);
     console.log("h2= " + h2New);
-    h1New = 35.00 + halfDh;
+    h1New = 35.00 + deltaH * 0.5;
     console.log("The h1 new dec fixed is: ", h1New);
-    h2New = 35.00 - halfDh;
+    h2New = 35.00 - deltaH * 0.5;
     console.log("The h2 new dec fixed is: ", h2New);
     console.log("The h1 val is: ", h1New);
     console.log("The h2  val is: ", h2New);
@@ -1017,24 +1033,6 @@ function fluidMoveAndPinMove(angle) {
     console.log("The h1 final val is: ", h1Final);
     console.log("The h2 final val is: ", h2Final);
 
-    if (h1Final >= 69) {
-        h1Final = 70;
-        h2Final = 0;
-        // valOfRatoNew = ;
-        console.log("Overflow condition");
-        document.getElementById('overflow').style.visibility = "visible";
-        document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.";
-
-
-
-    }
-
-
-    if (isNaN(h1Final) || isNaN(h2Final)) {
-        h1Final = (0.00).toFixed(2);
-        h2Final = (0.00).toFixed(2);
-
-    }
 
     heightLeft = (356 - angle) * 0.093;
     heightLeftNew = heightLeft.toFixed(0);
@@ -1050,9 +1048,32 @@ function fluidMoveAndPinMove(angle) {
     topPinNew = topPin.toFixed(0);
 
 
+    if (isNaN(h1Final) || isNaN(h2Final)) {
+        h1Final = (0.00).toFixed(2);
+        h2Final = (0.00).toFixed(2);
+
+    }
+    if (h1Final >= 69) {
+        h1Final = (70.00).toFixed(2);
+        h2Final = (0.00).toFixed(2);
+        console.log("The h1 final val is: ", h1Final);
+        console.log("The h2 final val is: ", h2Final);
+
+        // valOfRatoNew = 37.92;
+        console.log("Overflow condition");
+        document.getElementById('overflow').style.visibility = "visible";
+        if (manoFluid == "Mercury") {
+            document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer.";
+            console.log("Overflow mercury");
+
+        } else
+            document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.";
+
+
+    }
 
     document.getElementById("leftCm").innerText = (h1Final);
-    document.getElementById("rightCm").innerText = h2Final;
+    document.getElementById("rightCm").innerText = (h2Final);
     document.getElementById("ratoReadings").innerText = (valOfRatoNew);
 
     document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
@@ -1262,7 +1283,7 @@ function displayExpValues(flag) {
     } else
         document.getElementById("displayExpValues").style.visibility = "hidden";
 
-    document.getElementById("oridia").innerHTML = pbLength+" meter(s)";
+    document.getElementById("oridia").innerHTML = pbLength + " meter(s)";
     document.getElementById("nompidia").innerHTML = pbDia + " inch";
     document.getElementById("acpidia").innerHTML = actualPipeDia + " m";
     document.getElementById("pbmat").innerHTML = pBMaterial;
@@ -1502,7 +1523,7 @@ function setEvalSets() {
 
 }
 
-var lpm, pres, reyn, fric, deltaP;
+var lpm, pres, reyn, fric, deltaP = 0.0;
 var den, diaMeter, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hf, calculatedFricFact;
 
 function evaluateConfig() {
@@ -1555,7 +1576,7 @@ function evaluateConfig() {
         console.log("deltaP" + deltaP);
 
         //value of G
-        var G = (lpm * edensitypf) / areaEval / 60000;
+        var G = ((lpm / 60000) * edensitypf) / areaEval;
         console.log("G " + G);
         console.log("G2 " + Math.pow(G, 2));
 
