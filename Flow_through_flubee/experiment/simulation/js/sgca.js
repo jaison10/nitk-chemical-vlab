@@ -1004,7 +1004,17 @@ function fluidMoveAndPinMove(angle) {
         console.log("_loc3_: " + _loc3_);
         console.log("_loc4_: " + _loc4_);
 
+        if (reynolds <= 1) {
+            voidflu = cubic(1, 0, _loc4_, -_loc4_);
+            console.log("voidflu1: " + voidflu);
 
+        } else {
+            voidflu = cubic(_loc1_, 0, _loc2_, -_loc3_);
+            console.log("voidflu2: " + voidflu);
+
+        }
+        flulen = staticBed * (1 - voidfrac) / (1 - voidflu);
+        console.log("flulen: " + flulen);
 
         // flulen_txt.text = "Bed Height : " + (flulen * 100).toFixed(1) + " cm";
         // this.bg_mc.fluid_mc.height = 325 - 325 / this.bedlength * this.flulen;
@@ -1013,21 +1023,10 @@ function fluidMoveAndPinMove(angle) {
         console.log("hw2: " + hw);
 
     }
-    if (reynolds <= 1) {
-        voidflu = cubic(1, 0, _loc4_, -_loc4_);
-        console.log("voidflu1: " + voidflu);
-
-    } else {
-        voidflu = cubic(_loc1_, 0, _loc2_, -_loc3_);
-        console.log("voidflu2: " + voidflu);
-
-    }
-    flulen = staticBed * (1 - voidfrac) / (1 - voidflu);
-    console.log("flulen: " + flulen);
     if (manoFluid == "Mercury") {
-        hf = hw * densitypf / (densitymf - densitypf);
+        hf = hw * densitypf / (densitymf - densitypf) * 1000000;
     } else
-        hf = hw * densitypf / (densitymf - densitypf);
+        hf = hw * densitypf / (densitymf - densitypf) * 10000;
     console.log("hf: " + hf);
 
 
@@ -1047,8 +1046,8 @@ function fluidMoveAndPinMove(angle) {
     // console.log("deltaH " + deltaH);
 
     //half value to be added
-    // var halfDh = hf / 2;
-    // console.log("halfDh= " + halfDh);
+    var halfDh = hf / 2;
+    console.log("halfDh= " + halfDh);
 
     // console.log("pBMaterial: " + pBMaterial);
 
@@ -1090,9 +1089,9 @@ function fluidMoveAndPinMove(angle) {
 
     console.log("h1= " + h1New);
     console.log("h2= " + h2New);
-    h1New = 35.00 + hf * 50;
+    h1New = 35.00 + halfDh;
     console.log("The h1 new dec fixed is: ", h1New);
-    h2New = 35.00 - hf * 50;
+    h2New = 35.00 - halfDh;
     console.log("The h2 new dec fixed is: ", h2New);
     console.log("The h1 val is: ", h1New);
     console.log("The h2  val is: ", h2New);
