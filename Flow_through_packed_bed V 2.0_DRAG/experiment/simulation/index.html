@@ -189,7 +189,7 @@
                     <p style="position: absolute; left: 350px;  color: #1981e2; font-style: italic; top: 100px;">meter</p>
                 </p>
                 <p style="position: absolute; top: 100px;left: 20px; color: #1981e2;font-style: italic;">Select Nominal diameter of the packed bed:
-                    <select name="pipeDia" style="left: 280px;"id="pbDiaSelectEval" onchange="setPBDiaEval();">
+                    <select name="pipeDia" style="left: 280px;" id="pbDiaSelectEval" onchange="setPBDiaEval();">
         <option value="0.25">0.25 inch</option>
         <option value="0.50">0.50 inch</option>
         <option value="1.00">1.00 inch</option>
@@ -428,17 +428,17 @@
 
             <button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
             <button onclick="displayExpValues()" id="experiButton" style="position: absolute; top: 465px; left: 455px; width: 160px; font-size:13px;">Experimental Data</button>
-            
-             <!-- erin -->
-             <button onclick="observeTable()" id="obserButton" style="position: absolute; top: 465px; left: 630px; width: 94px; font-size:13px;">Observations</button>
-            </div>
+
             <!-- erin -->
-            <div id="obcanvas" style="z-index: 2000;visibility: hidden; position: absolute; top: 50px; left: 15px; width: 760px; height: 430px;background-color: #3b3b3b; border: 2px solid rgb(255, 255, 255); border-radius: 30px;">
-                <p style="z-index: 2000; position: absolute; top: -20px; left: 270px; width: 500px; font-size:30px; color: #fff;">Observations</p>
-                <!-- erin -->
-                <p id="noteremsel" style="z-index: 2000; position: absolute; top: 470px; left: 20px; width: 500px; font-size:13px; color: #fff;">Click on the rows which you want to delete </p>
-                <!-- Observation table! -->
-                <table id="observeTable" style="z-index: 2000; overflow-y: scroll; font-size: 12px; position: absolute; visibility: hidden; border: 1px solid rgb(255, 255, 255); width: 700px; top: 50px; left: 27px; color: rgb(255, 255, 255);">
+            <button onclick="observeTable()" id="obserButton" style="position: absolute; top: 465px; left: 630px; width: 94px; font-size:13px;">Observations</button>
+        </div>
+        <!-- erin -->
+        <div id="obcanvas" style="z-index: 2000;visibility: hidden; position: absolute; top: 50px; left: 15px; width: 760px; height: 430px;background-color: #3b3b3b; border: 2px solid rgb(255, 255, 255); border-radius: 30px;">
+            <p style="z-index: 2000; position: absolute; top: -20px; left: 270px; width: 500px; font-size:30px; color: #fff;">Observations</p>
+            <!-- erin -->
+            <p id="noteremsel" style="z-index: 2000; position: absolute; top: 470px; left: 20px; width: 500px; font-size:13px; color: #fff;">Click on the rows which you want to delete </p>
+            <!-- Observation table! -->
+            <table id="observeTable" style="z-index: 2000; overflow-y: scroll; font-size: 12px; position: absolute; visibility: hidden; border: 1px solid rgb(255, 255, 255); width: 700px; top: 50px; left: 27px; color: rgb(255, 255, 255);">
                 <!-- erin -->
                 <thead id="head">
                     <tr style="">
@@ -457,7 +457,7 @@
             <!-- Pop up to input receiver email ID -->
             <div id="emailSend" style="visibility: hidden; height: 100px; width: 300px; top: 200px; left: 250px; position: absolute; padding: 8px; background-color: rgb(255, 255, 255); color: black; z-index: 5000;border-radius:10px ">
                 Email:
-                <input id="emailR" type="email" onchange="setemail(this.value)" name="Email" size="20" required="true"; pattern=".@.">
+                <input id="emailR" type="email" onchange="setemail(this.value)" name="Email" size="20" required="true" ; pattern=".@.">
 
                 <!-- <input id="sendEmail" type="submit" name="Send" value=""> -->
                 <button onclick="sendEmail()" id="sendEmail" style=" position: absolute; top: 8px; left: 230px; width: 70px; font-size: 13px;z-index: 5500; background-color: #fff; ">Send</button>
@@ -497,47 +497,47 @@
             <p id="mflu" style="position: absolute; top: 360px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
             <p style="position: absolute; top: 390px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
             <p id="dmflu" style="position: absolute; top: 390px; left: 405px; width: 324px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
-          </div>
+        </div>
 
 
-          <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
-          <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
+        <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
+        <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
 
-      </div>
+    </div>
 
 
-      <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
+    <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
 <p id="q"></p><select id="answer" >	
 </select>
 <p id="a"></p>
 </div> -->
-  <!-- erin -->
-          <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
-              <p id="overflowMessage" style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.</p>
-              <button id="okBtn" style="position: absolute; top: 310px; left: 370px; background-color: black; color: white; visibility: hidden;width:100px;height:30px;font-size:15px;">Ok</button>
-          </div>
+    <!-- erin -->
+    <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
+        <p id="overflowMessage" style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.</p>
+        <button id="okBtn" style="position: absolute; top: 310px; left: 370px; background-color: black; color: white; visibility: hidden;width:100px;height:30px;font-size:15px;">Ok</button>
+    </div>
 
 
 
-        <!--Trial text	-->
-        <div id="">
-            <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; "><strong>Trial = </strong></p>
-        </div>
+    <!--Trial text	-->
+    <div id="">
+        <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; "><strong>Trial = </strong></p>
+    </div>
 
 
-        <!--next  Arrow	-->
-        <div id="nav">
-            <img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
-        </div>
+    <!--next  Arrow	-->
+    <div id="nav">
+        <img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
+    </div>
 
-        <!--Blinking Arrow	-->
-        <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
+    <!--Blinking Arrow	-->
+    <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
 
-        <div id="copyright"> &copy;
-            <script>
-                document.write(new Date().getFullYear());
-            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Chemical Engineering</div>
-        <script src="https://webisora.com/assets/js/propeller.min.js"></script>
+    <div id="copyright"> &copy;
+        <script>
+            document.write(new Date().getFullYear());
+        </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Chemical Engineering</div>
+    <script src="https://webisora.com/assets/js/propeller.min.js"></script>
 </body>
 
 </html>

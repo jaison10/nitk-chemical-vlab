@@ -129,7 +129,7 @@ function magic() {
             document.getElementById("configExp").style.visibility = "hidden";
         } else {
             console.log("2 has chosen");
-            document.getElementById("step2Heading").innerText = "Choose"
+            // document.getElementById("step2Heading").innerText = "Choose"
             document.getElementById("configExp").style.visibility = "visible";
             document.getElementById('nextButton').style.visibility = "hidden";
         }
@@ -466,7 +466,7 @@ function gotoExp() {
                 document.getElementById('okBtn').style.visibility = "hidden";
 
             }
-        }
+        };console.log("numberOfVisit"+numberOfVisit);
         numberOfVisit = 0;
     }
     console.log("Experiment part.");
@@ -510,6 +510,7 @@ function gotoExp() {
         document.getElementById("remSelRead").style.visibility = "hidden";
         document.getElementById("remAllRead").style.visibility = "hidden";
         document.getElementById("emailTable").style.visibility = "hidden";
+        document.getElementById("noteremsel").style.visibility = "hidden";
     }
     document.getElementById("setupButton").onclick = function() {
 
@@ -1143,12 +1144,12 @@ function displayExpValues(flag) {
     } else
         document.getElementById("displayExpValues").style.visibility = "hidden";
 
-    document.getElementById("pilen").innerHTML = pipeLength + "meter(s)";
-    document.getElementById("nompidia").innerHTML = chosenPipeDia + "inch";
-    document.getElementById("acpidia").innerHTML = actualPipeDia + " cm";
+    document.getElementById("pilen").innerHTML = pipeLength + " meter(s)";
+    document.getElementById("nompidia").innerHTML = chosenPipeDia + " inch";
+    document.getElementById("acpidia").innerHTML = actualPipeDia + " m";
     document.getElementById("prflu").innerHTML = processFluid;
     document.getElementById("dprflu").innerHTML = densitypf + " Kg per Cubic meter"
-    document.getElementById("vprflu").innerHTML = viscositypf + " centiPoise";
+    document.getElementById("vprflu").innerHTML = viscositypf + " Kg/ms";
     document.getElementById("mflu").innerHTML = manoFluid;
     document.getElementById("dmflu").innerHTML = mfdensity + " Kg per Cubic meter";
 
@@ -1232,6 +1233,12 @@ function gotoObservation() {
     document.getElementById("setupButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
         document.getElementById("noteremsel").style.visibility = "hidden";
+        document.getElementById("emailreq").style.visibility = "hidden";
+        document.getElementById("emailSend").style.visibility = "hidden";
+        document.getElementById("remSelRead").style.visibility = "hidden";
+        document.getElementById("emailTable").style.visibility = "hidden";
+        document.getElementById("remAllRead").style.visibility = "hidden";
+        document.getElementById("obcanvas").style.visibility = "hidden";
         goBacktoStep2();
     }
 }
@@ -1496,7 +1503,7 @@ function evaluateConfig() {
         calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
         console.log("Calculated F F value is: ", calculatedFricFact);
         if (isNaN(calculatedFricFact)) {
-            calculatedFricFact = 0;
+            calculatedFricFact = 0.00;
         }
         // Compare Reynold's and Friction Factor.
         console.log("The rey value taken in is: ", reyn);

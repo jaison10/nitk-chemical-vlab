@@ -454,7 +454,7 @@ function gotoExp() {
     document.getElementById("remAllRead").style.visibility = "hidden";
     document.getElementById("obcanvas").style.visibility = "hidden";
     document.getElementById("noteremsel").style.visibility = "hidden";
-
+    
     document.getElementById("displayExpValues").style.visibility = "hidden";
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
@@ -487,6 +487,8 @@ function gotoExp() {
         document.getElementById("remSelRead").style.visibility = "hidden";
         document.getElementById("remAllRead").style.visibility = "hidden";
         document.getElementById("emailTable").style.visibility = "hidden";
+        document.getElementById("noteremsel").style.visibility = "hidden";
+
     // document.getElementById('canvas' + simsubscreennum).style.visibility = "visible";
     // magic();
     // var flag = false;
@@ -1149,13 +1151,13 @@ function displayExpValues(flag) {
         document.getElementById("displayExpValues").style.visibility = "hidden";
 
     document.getElementById("fituse").innerHTML = Fittingused;
-    document.getElementById("nompidia").innerHTML = chosenPipeDia + "inch";
-    document.getElementById("acpidia").innerHTML = actualPipeDia + "cm";
+    document.getElementById("nompidia").innerHTML = chosenPipeDia + " inch";
+    document.getElementById("acpidia").innerHTML = actualPipeDia + " m";
     document.getElementById("prflu").innerHTML = processFluid;
-    document.getElementById("dprflu").innerHTML = densitypf + "Kg per Cubic meter"
-    document.getElementById("vprflu").innerHTML = viscositypf + "centiPoise";
+    document.getElementById("dprflu").innerHTML = densitypf + " Kg per Cubic meter"
+    document.getElementById("vprflu").innerHTML = viscositypf + " Kg/ms";
     document.getElementById("mflu").innerHTML = manoFluid;
-    document.getElementById("dmflu").innerHTML = mfdensity + "Kg per Cubic meter";
+    document.getElementById("dmflu").innerHTML = mfdensity + " Kg per Cubic meter";
 
 }
 
@@ -1210,9 +1212,16 @@ function gotoObservation() {
     document.getElementById("rightPinkFluidFifth").style.visibility = "hidden";
     document.getElementById("bottomPinkU").style.visibility = "hidden";
 
-    document.getElementById("observeTable").style.visibility = "visible";
+    // document.getElementById("observeTable").style.visibility = "hidden";
     document.getElementById("setupButton").onclick = function() {
     document.getElementById('overflow').style.visibility = "hidden";
+    document.getElementById('obcanvas').style.visibility = "hidden";
+    document.getElementById("remSelRead").style.visibility = "hidden";
+    document.getElementById("remAllRead").style.visibility = "hidden";
+    document.getElementById("emailTable").style.visibility = "hidden";
+    document.getElementById("noteremsel").style.visibility = "hidden";
+    document.getElementById("emailreq").style.visibility = "hidden";
+    document.getElementById("emailSend").style.visibility = "hidden";
         goBacktoStep2();
     }
 }
