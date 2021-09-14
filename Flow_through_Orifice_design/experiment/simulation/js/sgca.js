@@ -987,8 +987,8 @@ function fluidMoveAndPinMove(angle) {
     topPin = (356 - angle) * 0.19;
     topPinNew = topPin.toFixed(0);
     if (h1Final >= 69) {
-        h1Final = 70.00;
-        h2Final = 0.00;
+        h1Final = (70.00).toFixed(2);
+        h2Final = (0.00).toFixed(2);
         console.log("The h1 final val is: ", h1Final);
         console.log("The h2 final val is: ", h2Final);
 
@@ -1388,10 +1388,25 @@ function setPipeLengthEval() {
 }
 
 var chosenPipeDiaEval = 0.25;
+var actDiaEval = 0.0092;
+
+var areaEval;
 
 function setPipeDiaEval() {
     chosenPipeDiaEval = document.getElementById("pipeDiaSelectEval").value;
     console.log(chosenPipeDiaEval);
+    if (chosenPipeDiaEval == 0.25)
+        actDiaEval = 0.0092;
+    else if (chosenPipeDiaEval == 0.50)
+        actDiaEval = 0.0157;
+    else if (chosenPipeDiaEval == 1.00)
+        actDiaEval = 0.0266;
+    else if (chosenPipeDiaEval == 1.50)
+        actDiaEval = 0.0408;
+
+    console.log("ActDia: " + actDiaEval);
+    areaEval = (3.14 * Math.pow(actDiaEval, 2)) / 4;
+    console.log("area1 " + area);
 }
 
 var processFluidEval = "Water"
@@ -1477,14 +1492,15 @@ function evaluateConfig() {
             // visco = 0.00164;
             visco = 0.00215;
         }
-        diaMeter = chosenPipeDiaEval / 39.37; // convert inch to meter
+        diaMeter = actDiaEval; // convert inch to meter
+        console.log("diaMeter: ", diaMeter);
 
-        area2 = (3.14 * diaMeter * diaMeter) / 4;
-        console.log("Area: ", area2);
+        areaEval = (3.14 * diaMeter * diaMeter) / 4;
+        console.log("Area: ", areaEval);
         console.log("Diameter is inch: ", chosenPipeDiaEval);
         console.log("Diameter of the pipe in meter is: ", diaMeter);
         console.log("Radius is: ", (diaMeter / 2));
-        lpmConvVelocity = lpm / (60000 * area2); // convert lpm to m3/s              V E L O C I T Y
+        lpmConvVelocity = lpm / (60000 * areaEval); // convert lpm to m3/s              V E L O C I T Y
         console.log("Velocity value is: ", lpmConvVelocity);
         // if(manoFluidEval == "Carbon tetrachloride"){
         // 	visco = 0.901;
@@ -1511,13 +1527,13 @@ function evaluateConfig() {
         console.log("Manometric density value of " + manoFluidEval + " is: ", denMano);
 
         //calculate hf value		
-        hf = (((denMano - den) * presInMeter) / den / 100);
+        hf = (((denMano - den) * presInMeter) / den);
         console.log("Calculated hf value's: ", hf);
 
         //beta=Orifice diameter/Actual Dia
-        beta = Oridia / diaMeter;
+        beta = Oridia / 100 / diaMeter;
         console.log(beta);
-        sideEq1 = Math.pow(beta, 4) - 1;
+        sideEq1 = 1 - Math.pow(beta, 4);
         console.log("sideEq1: " + sideEq1);
         sideEq2 = 2 * 9.81 * hf;
         console.log("sideEq2: " + sideEq2);
@@ -1529,7 +1545,7 @@ function evaluateConfig() {
         console.log("sideEq2final: " + sideEq2final);
 
         //cod-coefficient of discharge
-        cod = ((lpm / area2) * sideEq1final / sideEq2final / 60000).toFixed(4);
+        cod = ((lpm / 60000 / areaEval) * (sideEq1final / sideEq2final)).toFixed(4);
         console.log("lpm" + lpm);
         console.log("area2" + area2);
 
@@ -1541,10 +1557,10 @@ function evaluateConfig() {
         // calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
         // console.log("Calculated F F value is: ", calculatedFricFact);
         if (isNaN(calculatedReyn)) {
-            calculatedReyn = 0.00;
+            calculatedReyn = (0.00).toFixed(4);
         }
         if (isNaN(cod)) {
-            cod = 0.000;
+            cod = (0.00).toFixed(4);
         }
         // Compare Reynold's and Friction Factor.
         console.log("The rey value taken in is: ", reyn);
