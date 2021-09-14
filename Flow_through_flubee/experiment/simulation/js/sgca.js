@@ -468,9 +468,9 @@ function gotoExp() {
     magic();
 
     if (manoFluid == "Carbon tetrachloride")
-        mfdensity = 1600;
+    densitymf = 1600;
     else
-        mfdensity = 13600;
+    densitymf = 13600;
     // eriii
     document.getElementById("obserButton").onclick = function() {
         console.log("Clicking on observation button ");
@@ -881,7 +881,7 @@ function setManoFluidEval() {
 }
 
 console.log("dpf: " + densitypf);
-console.log("dmf: " + mfdensity);
+console.log("dmf: " + densitymf);
 console.log("vpf: " + viscositypf);
 
 // erinnnnnnnend
@@ -1508,15 +1508,15 @@ function displayExpValues(flag) {
     document.getElementById("oridia").innerHTML = lenFb + " meter(s)";
     document.getElementById("nompidia").innerHTML = chosenPipeDia + " inch";
     document.getElementById("acpidia").innerHTML = actualPipeDia + " m";
-    document.getElementById("statbh").innerHTML = bedHeight + " meter(s)";
+    document.getElementById("statbh").innerHTML = staticBed + " meter(s)";
     document.getElementById("packmat").innerHTML = pkmat;
-    document.getElementById("dglbead").innerHTML = dGlBead + " Kg per Cubic meter";
-    document.getElementById("voidvol").innerHTML = voidVol + " mL";
+    document.getElementById("dglbead").innerHTML = Dp + " Kg per Cubic meter";
+    document.getElementById("voidvol").innerHTML = voidfrac + " mL";
     document.getElementById("prflu").innerHTML = processFluid;
     document.getElementById("dprflu").innerHTML = densitypf + " Kg per Cubic meter"
     document.getElementById("vprflu").innerHTML = viscositypf + " Kg/ms";
     document.getElementById("mflu").innerHTML = manoFluid;
-    document.getElementById("dmflu").innerHTML = mfdensity + " Kg per Cubic meter";
+    document.getElementById("dmflu").innerHTML = densitymf + " Kg per Cubic meter";
 
 }
 
