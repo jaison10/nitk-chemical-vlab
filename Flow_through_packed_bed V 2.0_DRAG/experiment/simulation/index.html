@@ -231,10 +231,10 @@
             <!-- EXPERIMENT PART -->
             <div id="experimentSetup" style="visibility: hidden; left: 100px;font-size:17px;">
 
-                <p style="position: absolute; top: 50px;left: 20px; color: #1981e2;font-style: italic;">Select length of the packed bed:&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input style="position: absolute; left: 290px;" type="number" value="0.5" id="pbLength" name="length" min="0.5" max="2" step="0.1" onchange="setPBLength();">meter
+                <p style="position: absolute; top: 50px;left: 20px; color: #1981e2;font-style: italic;">Length of the Packed Bed:&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <input style="position: absolute; left: 230px;" type="number" value="0.5" id="pbLength" name="length" min="0.5" max="2" step="0.1" onchange="setPBLength();">meter
                 </p>
-                <p style="position: absolute; top: 100px;left: 20px; color: #1981e2;font-style: italic;">Select Nominal diameter of the packed bed:
+                <p style="position: absolute; top: 100px;left: 20px; color: #1981e2;font-style: italic;">Nominal diameter of the Packed Bed:
                     <select name="pipeDia" id="pbDiaSelect" style="left: 280px;" onchange="setPBDia();">
                         <option value="0.25">0.25 inch</option>
                         <option value="0.50">0.50 inch</option>
@@ -332,9 +332,9 @@
 
 
                 <!-- Fluid initial -->
-                <img id="bottomU" style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/botomU.png">
-                <img id="leftFluid" style="position: absolute; top: 222px; left: 332px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
-                <img id="rightFluid" style="position: absolute; top: 222px; left: 381px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="bottomU" style="position: absolute; top: 255px; left: 500px; width: 63px; height: 34px; transform: rotate(0deg); " src="./Images/Flow through pipes_images/botomU.png">
+                <img id="leftFluid" style="position: absolute; top: 221px; left: 500px; width: 14px; height: 37px; transform: rotate(0deg); " src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluid" style="position: absolute; top: 221px; left: 548px; width: 14px; height: 37px; transform: rotate(0deg); " src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid initial Pink -->
                 <img id="bottomPinkU" style="position: absolute; top: 254px; left: 500px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkbottomU.png">
@@ -472,31 +472,31 @@
             <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
             <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Length of Packed Bed:</p>
             <p id="oridia" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> meter(s)</p>
-            <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Packing Material:</p>
-            <p id="pbmat" style="position: absolute; top: 90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
             <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Pipe Diameter:</p>
             <p id="nompidia" style="position: absolute; top:120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">inch</p>
             <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Pipe Diameter:</p>
             <p id="acpidia" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
 
-            <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Sphericity:</p>
-            <p id="sphere" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
-            <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Specific Surface Area:</p>
-            <p id="specisurarea" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">  m<sub>2</sub>/m<sub>3</sub> </p>
-            <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Void Volume:</p>
-            <p id="voidvolume" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> mL</p>
+            <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Packing Material:</p>
+            <p id="pbmat" style="position: absolute; top: 90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
+            <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Static Bed Height:</p>
+            <p id="sphere" style="position: absolute; top:180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> meter(s)</p>
+            <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Glass Bead</p>
+            <p id="specisurarea" style="position: absolute; top:210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
+            <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Void Volume:</p>
+            <p id="voidvolume" style="position: absolute; top:240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> mL</p>
 
 
-            <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
-            <p id="prflu" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
-            <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
-            <p id="dprflu" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
-            <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
-            <p id="vprflu" style="position: absolute; top: 240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> centiPoise</p>
-            <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
-            <p id="mflu" style="position: absolute; top: 270px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
-            <p style="position: absolute; top: 300px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
-            <p id="dmflu" style="position: absolute; top: 300px; left: 405px; width: 324px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
+            <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
+            <p id="prflu" style="position: absolute; top: 270px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
+            <p style="position: absolute; top: 300px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
+            <p id="dprflu" style="position: absolute; top: 300px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
+            <p style="position: absolute; top: 330px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
+            <p id="vprflu" style="position: absolute; top: 330px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> centiPoise</p>
+            <p style="position: absolute; top: 360px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
+            <p id="mflu" style="position: absolute; top: 360px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
+            <p style="position: absolute; top: 390px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
+            <p id="dmflu" style="position: absolute; top: 390px; left: 405px; width: 324px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
           </div>
 
 

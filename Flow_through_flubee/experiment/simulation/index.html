@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>SOLVE</title>
+    <title>Flow through Fluidised Bed</title>
     <link rel="stylesheet" href="css/sgca.css" />
     <link rel="stylesheet" href="css/mathstyle.css" />
     <script type="text/javascript" src="js/jquerymin.js"></script>
@@ -56,10 +56,13 @@
         <div id="titleLarge" class="title" style="visibility: visible;">
             <h3>Flow through Fluidised Bed</h3>
         </div>
+        <!-- erinnn -->
         <div id="titleSmall" class="title2" style="visibility:hidden">
-            <h3>Flow through Fluidised Bed</h3>
+            <!-- <h3 id="ftfmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);">Flow through </h3> -->
+            <h3 id="ftfmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);" style="font-size: 12px;">Flow through Fluidised Bed</h3>
         </div>
-
+        <!-- erinend -->
+        
         <div id="buttonsList" style="position: absolute; visibility: hidden; top: 20px; left: 400px; color: white; z-index: 1;">
             <div style="">
                 <button id="demoButton" style="width: 90px; height: 25px; border-radius: 5px; border: solid 2px #fff; background-color: black; color: white;"><b>Demo</b></button>
@@ -86,7 +89,7 @@
         <div class="simsubscreen" id="canvas1" style="visibility:hidden">
             <!-- <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span> -->
-            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:14px; color: #fff; top: 50px; left: 50px;">Choose what you want to do.</p>
+            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:17px; color: #fff; top: 50px; left: 250px;">What would you like to do.</p>
 
             <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p>
 
@@ -109,7 +112,7 @@
 
         <div class="simsubscreen" id="canvas6" style="visibility:hidden">
 
-            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2; font-size: 17px;">
+            <div id="demoOne" style="position: absolute; visibility: hidden; top: 50px; left: 20px; width: 700px; color: #1981e2; font-size: 17px;font-style: italic;">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Label</span> Tab to see the Experimental Setup.
@@ -151,7 +154,7 @@
                 </ul>
             </div>
 
-            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;">
+            <div id="demoTwo" style="position: absolute; visibility: hidden; top: 70px; left: 20px; width: 700px; color: #1981e2;font-style: italic">
                 <ul>
                     <li>
                         Click on <span class="fontColorChange">Data</span> tab to configure Experimental Data.
@@ -176,47 +179,39 @@
 
             <!-- <strong id="titlestep" class="incanvas">STEP &nbsp;</strong>
 <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span> -->
-            <p id="step2Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Details</p>
+            <!-- <p id="step2Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Details</p> -->
             <!-- EXPERIMENT PART -->
             <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:70px; width: 700px; height: 400px;" src="./Images/Flow through pipes_images/ftfblabel.png">
 
             <!-- Evaluation part -->
             <div id="configExp">
-                <p style="position: absolute; top: 150px; color: #fff;">Nominal diameter of the pipe:
+                <p style="position: absolute; top: 150px; color: #1981e2;font-style: italic">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
-                    <option value="0.25">0.25 inch</option>
-                    <option value="0.50">0.50 inch</option>
                     <option value="1.00">1.00 inch</option>
                     <option value="1.50">1.50 inch</option>
                     <option value="2.50">2.50 inch</option>
                     </select>
                 </p>
 
-                <p style="position: absolute; top: 100px; color: #fff;">Length of Fluidised Bed
-<<<<<<< HEAD
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.5" id="bedHeight" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();">
-=======
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.5" id="bedLength" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();"> 
->>>>>>> 3359f1c98e22ccd8fd90bb8d2d3844f15737462e
-                    <p style="color:#fff; position: absolute; left: 300px; top: 100px;"> meter</p>
+                <p style="position: absolute; top: 100px;color: #1981e2;font-style: italic">Length of Fluidised Bed
+                    <input style="position: absolute; left: 218px;font-style: italic" type="number" step="0.1" value="0.5" id="bedLengthEval" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();"> 
+                    <p style="color: #1981e2;font-style: italic; position: absolute; left: 400px; top: 100px;"> meter</p>
                 </p>
 
-                <p style="position: absolute; top: 200px; color: #fff;">Packing Material:
-                    <select style="position: absolute; left: 217px;" name="packMaterial" id="packMaterialEval" onchange="setpackMaterialEval();">
-                    <option value="25mm Raschig ring">25mm Raschig ring</option>
-                    <option value="25mm Beri saddle">25mm Beri saddle</option>
-                    <option value="13mm Beri saddle">13mm Beri saddle</option>
+                <p style="position: absolute; top: 200px;color: #1981e2;font-style: italic">Packing Material:
+                    <select style="position: absolute; left: 217px;font-style: italic" name="packMaterial" id="packMaterialEval" onchange="setpackMaterialEval();">
                     <option value="Glass beads of 4mm size">Glass beads of 4mm size</option>
+                    <option value="Glass beads of 6mm size">Glass beads of 6mm size</option>
                 </select>
                 </p>
-                <p style="position: absolute; top: 250px; color: #fff;">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
+                <p style="position: absolute; top: 250px; color: #1981e2;font-style: italic">Process fluid:
+                    <select style="position: absolute; left: 217px;font-style: italic" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
         <option value="Water">Water</option>
         <option value="Kerosene">Kerosene</option>
       </select>
                 </p>
-                <p style="position: absolute; top: 300px; color: #fff;">Manometric fluid:
-                    <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
+                <p style="position: absolute; top: 300px;color: #1981e2;font-style: italic">Manometric fluid:
+                    <select style="position: absolute; left: 217px;font-style: italic" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
         <option value="Mercury">Mercury</option>
       </select>
@@ -230,14 +225,15 @@
         <!--Step3	-->
         <div class="simsubscreen" id="canvas3" style="visibility:hidden">
             <!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span> -->
-            <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p>
+            <!-- <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp;Choose </p> -->
             <!-- EXPERIMENT PART -->
-            <div id="experimentSetup" style="visibility: hidden; left: 100px;">
-                <p style="position: absolute; top: 50px; color: #fff;">Length of Fluidised Bed:
-                    <p style="color:#fff; position: absolute; left: 200px; top: 50px;">2.5 meter</p>
+            <div id="experimentSetup" style="visibility: hidden; left: 100px;font-size: large;">
+                <p style="position: absolute; top: 50px;color: #1981e2;font-style: italic">Length of Fluidised Bed:
+                    <p id="pbLength" style="color: #1981e2;font-style: italic; position: absolute; left: 300px; top: 50px;">2.5 meter</p>
+                    <!-- <input style="position: absolute; left: 290px;" type="number" value="0.5"  name="length" min="0.5" max="2" step="0.1" onchange="setPBLength();">meter -->
                 </p>
 
-                <p style="position: absolute; top: 100px; color: #fff;">Nominal diameter of the pipe:
+                <p style="position: absolute; top: 100px; color: #1981e2;font-style: italic">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
                     <option value="1.00">1.00 inch</option>
                     <option value="1.50">1.50 inch</option>
@@ -245,26 +241,26 @@
                     </select>
                 </p>
 
-                <p style="position: absolute; top: 150px; color: #fff;">Static Bed Height
-                    <input style="position: absolute; left: 218px;" type="number" step="0.1" value="0.3" id="bedHeight" name="length" min="0.3" max="1.2" onchange="setbedHeight();">
-                    <p style="color:#fff; position: absolute; left: 300px; top: 150px;"> meter</p>
+                <p style="position: absolute; top: 150px; color: #1981e2;font-style: italic">Static Bed Height:
+                    <input style="position: absolute; left: 300px;" type="number" step="0.1" value="0.3" id="bedHeight" name="length" min="0.3" max="1.2" onchange="setbedHeight();">
+                    <p style="color:#1981e2;font-style: italic; position: absolute; left: 400px; top: 150px;"> meter</p>
                 </p>
 
-                <p style="position: absolute; top: 200px; color: #fff;">Packing Material:
-                    <select style="position: absolute; left: 217px;" name="packMaterial" id="packMat" onchange="setpackMaterial();">
+                <p style="position: absolute; top: 200px;color: #1981e2;font-style: italic">Packing Material:
+                    <select style="position: absolute; left: 300px;" name="packMaterial" id="packMat" onchange="setpackMaterial();">
                     <option value="Glass beads of 4mm size">Glass beads of 4mm size</option>
                     <option value="Glass beads of 6mm size">Glass beads of 6mm size</option>
                 </select>
                 </p>
 
-                <p style="position: absolute; top: 250px; color: #fff;">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
+                <p style="position: absolute; top: 250px;color: #1981e2;font-style: italic">Process fluid:
+                    <select style="position: absolute; left: 300px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                       </select>
                 </p>
-                <p style="position: absolute; top: 300px; color: #fff;">Manometric fluid:
-                    <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
+                <p style="position: absolute; top: 300px;color: #1981e2;font-style: italic">Manometric fluid:
+                    <select style="position: absolute; left: 300px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
                         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                         <option value="Mercury">Mercury</option>
                       </select>
@@ -338,9 +334,9 @@
 
 
                 <!-- Fluid initial -->
-                <img id="bottomU" style="position: absolute; top: 255px; left: 332px; width: 63px; height: 34px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/botomU.png">
-                <img id="leftFluid" style="position: absolute; top: 222px; left: 332px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
-                <img id="rightFluid" style="position: absolute; top: 222px; left: 381px; width: 14px; height: 37px; transform:rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="bottomU" style="position: absolute; top: 255px; left: 500px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/botomU.png">
+                <img id="leftFluid" style="position: absolute; top: 222px; left: 500px; width: 14px; height: 37px; transform: rotate(0deg); " src="./Images/Flow through pipes_images/aboveU.png">
+                <img id="rightFluid" style="position: absolute; top: 222px; left: 548px; width: 14px; height: 37px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/aboveU.png">
 
                 <!-- Fluid initial Pink -->
                 <img id="bottomPinkU" style="position: absolute; top: 254px; left: 500px; width: 63px; height: 34px; transform: rotate(0deg);" src="./Images/Flow through pipes_images/pinkbottomU.png">
@@ -434,71 +430,100 @@
                 <p style="position: absolute; top: 215px; left: 610px; width: 124px; font-size:10px; color: #fff;">cm</p>
             </div>
 
-            <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 450px; left: 485px; width: 194px; font-size:13px;">Add current readings</button>
+           <!-- erinnn -->
+           <button id="addtoTableButton" style="visibility: hidden; position: absolute; top: 430px; left: 500px; width: 194px; font-size:13px;">Add current readings</button>
 
-            <button id="goBackButton" style="position: absolute; top: 475px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
-            <button id="obserButton" style="position: absolute; top: 475px; left: 585px; width: 94px; font-size:13px;">Observations</button>
+           <button id="goBackButton" style="position: absolute; top: 465px; left: 485px; width: 94px; font-size:13px;">Try again!</button>
+           <button onclick="displayExpValues()" id="experiButton" style="position: absolute; top: 465px; left: 455px; width: 160px; font-size:13px;">Experimental Data</button>
+           
+            <!-- erin -->
+            <button onclick="observeTable()" id="obserButton" style="position: absolute; top: 465px; left: 630px; width: 94px; font-size:13px;">Observations</button>
+           </div>
+           <!-- erin -->
+           <div id="obcanvas" style="z-index: 2000;visibility: hidden; position: absolute; top: 50px; left: 15px; width: 760px; height: 430px;background-color: #3b3b3b; border: 2px solid rgb(255, 255, 255); border-radius: 30px;">
+               <p style="z-index: 2000; position: absolute; top: -20px; left: 270px; width: 500px; font-size:30px; color: #fff;">Observations</p>
+               <!-- erin -->
+               <p id="noteremsel" style="z-index: 2000; position: absolute; top: 470px; left: 20px; width: 500px; font-size:13px; color: #fff;">Click on the rows which you want to delete </p>
+               <!-- Observation table! -->
+               <table id="observeTable" style="z-index: 2000; overflow-y: scroll; font-size: 12px; position: absolute; visibility: hidden; border: 1px solid rgb(255, 255, 255); width: 700px; top: 50px; left: 27px; color: rgb(255, 255, 255);">
+               <!-- erin -->
+               <thead id="head">
+                   <tr style="">
+                       <th>Process fluid</th>
+                       <th>Manometric fluid</th>
+                       <th>Flowrate(lpm)</th>
+                       <th>h1(cm of Manometric fluid)</th>
+                       <th>h2(cm of Manometric fluid)</th>
+                       <th>Bed Height(cm)</th>
+                   </tr>
+               </thead>
+           </table>
+           <button onclick="remSelRead()" id="remSelRead" style="visibility: hidden; position: absolute; top: 400px; left: 50px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff;">Remove Selected Readings</button>
+           <button onclick="remAllRead()" id="remAllRead" style="visibility: hidden; position: absolute; top: 400px; left: 290px; width:200px; font-size: 13px;z-index: 2500; background-color: #fff;">Clear All readings</button>
+           <button onclick="emailSend()" id="emailTable" style="visibility: hidden; position: absolute; top: 400px; left: 530px; width: 200px; font-size: 13px; z-index: 2500; background-color: #fff; ">Email This Table</button>
+           <!-- erin 08092021 -->
+           <!-- Pop up to input receiver email ID -->
+           <div id="emailSend" style="visibility: hidden; height: 100px; width: 300px; top: 200px; left: 250px; position: absolute; padding: 8px; background-color: rgb(255, 255, 255); color: black; z-index: 5000;border-radius:10px ">
+               Email:
+               <input id="emailR" type="email" onchange="setemail(this.value)" name="Email" size="20" required="true"; pattern=".@.">
 
-            <!-- Observation table! -->
-            <table id="observeTable" style="overflow-y: scroll; font-size: 12px; position:absolute; visibility: hidden; border: 1px solid #fff; width: 700px; top:50px; left: 45px;">
-                <tr style="">
-                    <th>Process fluid</th>
-                    <th>Manometric fluid</th>
-                    <th>Flowrate(lpm)</th>
-                    <th>h1(cm of Manometric fluid)</th>
-                    <th>h2(cm of Manometric fluid)</th>
-                </tr>
-            </table>
-<<<<<<< HEAD
-        </div>
-        <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
-=======
-        </div> 
-        <div class="" id="displayExpValues" style="visibility:hidden; height: 430px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
->>>>>>> 3359f1c98e22ccd8fd90bb8d2d3844f15737462e
-            <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
-            <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Length of Fluidised Bed</p>
-            <p id="lenfb" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p>
-            <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Bed Diameter:</p>
-            <p id="nompidia" style="position: absolute; top:90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">inch</p>
-            <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Bed Diameter:</p>
-            <p id="acpidia" style="position: absolute; top: 120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
-            <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Static Bed Height:</p>
-            <p id="statbh" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p>
-            <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Packing Material:</p>
-            <p id="packmat" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p>
-            <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Glass Bead:</p>
-            <p id="dglbead" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
-            <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Void Volume</p>
-            <p id="voidvol" style="position: absolute; top: 240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">mL</p>
-            <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
-            <p id="prflu" style="position: absolute; top: 270px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
-            <p style="position: absolute; top: 300px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
-            <p id="dprflu" style="position: absolute; top: 300px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
-            <p style="position: absolute; top: 330px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
-            <p id="vprflu" style="position: absolute; top: 330px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">centiPoise</p>
-            <p style="position: absolute; top: 360px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
-            <p id="mflu" style="position: absolute; top: 360px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
-            <p style="position: absolute; top: 390px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
-            <p id="dmflu" style="position: absolute; top: 390px; left: 405px; width: 324px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
-        </div>
+               <!-- <input id="sendEmail" type="submit" name="Send" value=""> -->
+               <button onclick="sendEmail()" id="sendEmail" style=" position: absolute; top: 8px; left: 230px; width: 70px; font-size: 13px;z-index: 5500; background-color: #fff; ">Send</button>
+               <p id="emailreq" style="z-index: 7500; position: absolute; height: 20px; width: 300px; top: 50px; left: 10px; font-size: 15px; color: black; ">Email is required</p>
+           </div>
+           <!-- info store for mail body -->
+           <p id="info" style="visibility: hidden;"></p>
+       </div>
+
+       <!-- erinend -->
+       <div class="" id="displayExpValues" style="visibility:hidden; height: 430px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
+           <p style="position: absolute; top: -15px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
+           <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Length of Packed Bed:</p>
+           <p id="oridia" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> meter(s)</p>
+           <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Packing Material:</p>
+           <p id="packmat" style="position: absolute; top: 90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
+           <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Pipe Diameter:</p>
+           <p id="nompidia" style="position: absolute; top:120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> inch</p>
+           <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Pipe Diameter:</p>
+           <p id="acpidia" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> cm</p>
+
+           <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Static Bed Height:</p>
+           <p id="statbh" style="position: absolute; top:180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
+           <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Glass Bead:</p>
+           <p id="dglbead" style="position: absolute; top:210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
+           <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Void Volume:</p>
+           <p id="voidvol" style="position: absolute; top:240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> mL</p>
 
 
-        <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
-        <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
+           <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
+           <p id="prflu" style="position: absolute; top: 270px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
+           <p style="position: absolute; top: 300px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
+           <p id="dprflu" style="position: absolute; top: 300px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
+           <p style="position: absolute; top: 330px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
+           <p id="vprflu" style="position: absolute; top: 330px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> centiPoise</p>
+           <p style="position: absolute; top: 360px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
+           <p id="mflu" style="position: absolute; top: 360px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
+           <p style="position: absolute; top: 390px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
+           <p id="dmflu" style="position: absolute; top: 390px; left: 405px; width: 324px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
+         </div>
 
-    </div>
+
+         <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
+         <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
+
+     </div>
 
 
-    <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
+     <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
 <p id="q"></p><select id="answer" >	
 </select>
 <p id="a"></p>
 </div> -->
-
-    <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
-        <p style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer.</p>
-    </div>
+ <!-- erin -->
+         <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
+             <p id="overflowMessage" style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.</p>
+             <button id="okBtn" style="position: absolute; top: 310px; left: 370px; background-color: black; color: white; visibility: hidden;width:100px;height:30px;font-size:15px;">Ok</button>
+         </div>
 
     <!--Trial text	-->
     <div id="">
@@ -517,7 +542,7 @@
     <div id="copyright"> &copy;
         <script>
             document.write(new Date().getFullYear());
-        </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+        </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Chemical Engineering</div>
     <script src="https://webisora.com/assets/js/propeller.min.js"></script>
 
 </body>

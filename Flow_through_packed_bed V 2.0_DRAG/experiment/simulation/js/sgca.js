@@ -455,6 +455,7 @@ function gotoExp() {
         flagForObserTable = !flagForObserTable;
         observeTable(flagForObserTable);
         document.getElementById("displayExpValues").style.visibility = "hidden";
+
     }
     document.getElementById("experiButton").onclick = function() {
         console.log("Clicking on exp button inside fluidMove");
@@ -1624,7 +1625,7 @@ document.getElementById("acpidia").innerHTML=actualPipeDia+" cm";
 document.getElementById("pbmat").innerHTML=packMaterial;
 
 document.getElementById("sphere").innerHTML=sphericity;
-document.getElementById("specisurarea").innerHTML=specsurarea+"m<sub>2</sub>/m<sub>3</sub>";
+document.getElementById("specisurarea").innerHTML=specsurarea+"m<sup>2</sup>/m<sup>3</sup>";
 document.getElementById("voidvolume").innerHTML=voidVolume+" mL";
 
 document.getElementById("prflu").innerHTML=processFluid;
@@ -1690,7 +1691,7 @@ function gotoObservation() {
     document.getElementById("rightPinkFluidFifth").style.visibility = "hidden";
     document.getElementById("bottomPinkU").style.visibility = "hidden";
 
-    document.getElementById("observeTable").style.visibility = "visible";
+    // document.getElementById("observeTable").style.visibility = "visible";
     document.getElementById("setupButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
         // erin
