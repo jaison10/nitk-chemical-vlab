@@ -186,32 +186,32 @@
             <!-- Evaluation part -->
             <div id="configExp" style="color: #1981e2; font-style: italic; font-size: 16px;">
                 <p style="position: absolute; top: 50px;left: 20px; color: #1981e2;font-style: italic">Nominal diameter of the pipe:
-                    <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
+                    <select name="pipeDia" style="position: absolute; left: 300px;" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
                     <option value="1.00">1.00 inch</option>
                     <option value="1.50">1.50 inch</option>
                     <option value="2.50">2.50 inch</option>
                     </select>
                 </p>
 
-                <p style="position: absolute; top: 100px;color: #1981e2;font-style: italic">Length of Fluidised Bed
-                    <input style="position: absolute; left: 218px;font-style: italic" type="number" step="0.1" value="0.5" id="bedLengthEval" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();">
+                <p style="position: absolute; top: 100px;color: #1981e2;font-style: italic;left: 20px;">Length of Fluidised Bed:
+                    <input style="position: absolute; left: 300px;font-style: italic" type="number" step="0.1" value="0.5" id="bedLengthEval" name="length" min="0.5" max="2.0" onchange="setbedHeightEval();">
                     <p style="color: #1981e2;font-style: italic; position: absolute; left: 400px; top: 100px;"> meter</p>
                 </p>
 
-                <p style="position: absolute;left: 20px; top: 150px;color: #1981e2;font-style: italic">Packing Material:
-                    <select style="position: absolute; left: 280px;font-style: italic" name="packMaterial" id="packMaterialEval" onchange="setpackMaterialEval();">
+                <p style="position: absolute;left: 20px; top: 150px;color: #1981e2;font-style: italic;left: 20px;">Packing Material:
+                    <select style="position: absolute; left: 300px;font-style: italic" name="packMaterial" id="packMaterialEval" onchange="setpackMaterialEval();">
                     <option value="Glass beads of 4mm size">Glass beads of 4mm size</option>
                     <option value="Glass beads of 6mm size">Glass beads of 6mm size</option>
                 </select>
                 </p>
-                <p style="position: absolute;left: 20px; top: 200px; color: #1981e2;font-style: italic">Process fluid:
-                    <select style="position: absolute; left: 280px;font-style: italic" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
+                <p style="position: absolute;left: 20px; top: 200px; color: #1981e2;font-style: italic;left: 20px;">Process fluid:
+                    <select style="position: absolute; left: 300px;font-style: italic" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
         <option value="Water">Water</option>
         <option value="Kerosene">Kerosene</option>
       </select>
                 </p>
-                <p style="position: absolute;left: 20px; top: 250px;color: #1981e2;font-style: italic">Manometric fluid:
-                    <select style="position: absolute; left: 280px;font-style: italic" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
+                <p style="position: absolute;left: 20px; top: 250px;color: #1981e2;font-style: italic;left: 20px;">Manometric fluid:
+                    <select style="position: absolute; left: 300px;font-style: italic" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
         <option value="Mercury">Mercury</option>
       </select>
@@ -270,7 +270,7 @@
 
             <!-- Evaluation Part -->
             <div id="evaluatePart">
-                <p style="position: absolute; top: 30px; color: #fff;">Number of sets of Readings:
+                <p style="position: absolute; top: 20px; color: #fff;">Number of sets of Readings:
                     <input type="number" value="0" id="evalSets" name="length" min="2" max="100" onchange="setEvalSets();">
                 </p>
                 <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 450px; top:70px;">

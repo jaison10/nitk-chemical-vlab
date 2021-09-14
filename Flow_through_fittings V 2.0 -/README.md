@@ -33,3 +33,4 @@ Sr No | Name | Faculty or Student | Department| Institute | Email id
 4 | Jaison DSouza B | Student | Applied Mechanics and Hydraulics | National Institute of Technology Karnataka, Surathkal |jaisonj1010@gmail.com
 5 | Haneena | Student | Applied Mechanics and Hydraulics | National Institute of Technology Karnataka, Surathkal |haneenaatheeq@gmail.com
 6 | Erin Sheryl Pereira | Student | Applied Mechanics and Hydraulics | National Institute of Technology Karnataka, Surathkal |rinipereira2000@gmail.com
+7 | Amogha V Somayaji | Student | Chemical Engineering | National Institute of Technology Karnataka, Surathkal |amogha.v.somayaji2000@gmail.com
