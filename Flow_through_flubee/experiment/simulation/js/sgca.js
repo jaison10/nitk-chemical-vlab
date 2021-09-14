@@ -211,7 +211,7 @@ function magic() {
                 document.getElementById("redColor").style.visibility = "visible";
                 document.getElementById('overflow').style.visibility = "hidden";
 
-                  
+
                 numberOfVisit = 0;
                 document.getElementById("gatewayRotate").onclick = "";
 
@@ -468,9 +468,9 @@ function gotoExp() {
     magic();
 
     if (manoFluid == "Carbon tetrachloride")
-    densitymf = 1600;
+        densitymf = 1600;
     else
-    densitymf = 13600;
+        densitymf = 13600;
     // eriii
     document.getElementById("obserButton").onclick = function() {
         console.log("Clicking on observation button ");
@@ -928,7 +928,7 @@ function fluidMoveAndPinMove(angle) {
     document.getElementById("addtoTableButton").style.visibility = "visible";
 
     if (manoFluid == "Mercury") {
-        valOfRato = (356 - angle) * 0.0198;
+        valOfRato = (356 - angle) * 0.1228;
         console.log("multiplier: 0.0198"); //prior;0.0198..for mercury maxrota-37.92
 
     } else {
@@ -985,6 +985,8 @@ function fluidMoveAndPinMove(angle) {
 
     var reynolds = densitypf * Dp * velocity / (viscositypf);
     console.log("reynolds: " + reynolds);
+    console.log("staticBed: " + staticBed);
+    // console.log("reynolds: " + reynolds);
 
     if (velocity <= minV) {
         friction = 150 * (1 - voidfrac) / speri / reynolds + 1.75;
@@ -1002,17 +1004,7 @@ function fluidMoveAndPinMove(angle) {
         console.log("_loc3_: " + _loc3_);
         console.log("_loc4_: " + _loc4_);
 
-        if (reynolds <= 1) {
-            voidflu = cubic(1, 0, _loc4_, -_loc4_);
-            console.log("voidflu1: " + voidflu);
 
-        } else {
-            voidflu = cubic(_loc1_, 0, _loc2_, -_loc3_);
-            console.log("voidflu2: " + voidflu);
-
-        }
-        flulen = staticBed * (1 - voidfrac) / (1 - voidflu);
-        console.log("flulen: " + flulen);
 
         // flulen_txt.text = "Bed Height : " + (flulen * 100).toFixed(1) + " cm";
         // this.bg_mc.fluid_mc.height = 325 - 325 / this.bedlength * this.flulen;
@@ -1021,10 +1013,21 @@ function fluidMoveAndPinMove(angle) {
         console.log("hw2: " + hw);
 
     }
+    if (reynolds <= 1) {
+        voidflu = cubic(1, 0, _loc4_, -_loc4_);
+        console.log("voidflu1: " + voidflu);
+
+    } else {
+        voidflu = cubic(_loc1_, 0, _loc2_, -_loc3_);
+        console.log("voidflu2: " + voidflu);
+
+    }
+    flulen = staticBed * (1 - voidfrac) / (1 - voidflu);
+    console.log("flulen: " + flulen);
     if (manoFluid == "Mercury") {
-        hf = hw * densitypf / (densitymf - densitypf) * 1000000;
+        hf = hw * densitypf / (densitymf - densitypf);
     } else
-        hf = hw * densitypf / (densitymf - densitypf) * 10000;
+        hf = hw * densitypf / (densitymf - densitypf);
     console.log("hf: " + hf);
 
 
@@ -1044,8 +1047,8 @@ function fluidMoveAndPinMove(angle) {
     // console.log("deltaH " + deltaH);
 
     //half value to be added
-    var halfDh = hf / 2;
-    console.log("halfDh= " + halfDh);
+    // var halfDh = hf / 2;
+    // console.log("halfDh= " + halfDh);
 
     // console.log("pBMaterial: " + pBMaterial);
 
@@ -1087,9 +1090,9 @@ function fluidMoveAndPinMove(angle) {
 
     console.log("h1= " + h1New);
     console.log("h2= " + h2New);
-    h1New = 35.00 + halfDh;
+    h1New = 35.00 + hf * 50;
     console.log("The h1 new dec fixed is: ", h1New);
-    h2New = 35.00 - halfDh;
+    h2New = 35.00 - hf * 50;
     console.log("The h2 new dec fixed is: ", h2New);
     console.log("The h1 val is: ", h1New);
     console.log("The h2  val is: ", h2New);
