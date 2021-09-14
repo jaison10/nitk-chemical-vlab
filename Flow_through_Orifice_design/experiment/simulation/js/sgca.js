@@ -391,6 +391,8 @@ function gotoSetup() {
     document.getElementById("expButton").style.cursor = "pointer";
     document.getElementById("expButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
+        numberOfVisit = 1;
+
         gotoExp();
     }
     if (chosenActivity == 2) {
@@ -454,6 +456,8 @@ function gotoExp() {
         }
         numberOfVisit = 0;
     }
+    console.log("numberOfVisit. " + numberOfVisit);
+
     console.log("Experiment part.");
 
     // erin   
@@ -802,7 +806,9 @@ var heightPin = 0;
 var heightPinNew = 0;
 var topPin = 0;
 var topPinNew = 0;
-var cdeq1, cdeq2, e, c1, c2, c3, c4, c5;
+var cdeq1, cdeq2, e, c1, c2, c3, c4, c5, halfDeltaH = 0,
+    dh = 0;
+hf = 0;
 
 function fluidMoveAndPinMove(angle) {
     h1Val = 0.00
@@ -811,7 +817,8 @@ function fluidMoveAndPinMove(angle) {
     h1Final = 0.00;
     valOfRatoNew = 0.00;
     h2Final = 0.00;
-
+    h1New = 0.00;
+    h2New = 0.00;
     document.getElementById("waterPourSecondLongOne").style.visibility = "visible";
     document.getElementById("gatewayRotate").style.cursor = "auto";
 
@@ -822,7 +829,7 @@ function fluidMoveAndPinMove(angle) {
 
     console.log("356 - angle:" + (356 - angle));
     if (manoFluid == "Mercury") {
-        valOfRato = (356 - angle) * 0.1228;
+        valOfRato = (356 - angle) * 0.1088;
         console.log("multiplier: 0.0198"); //prior;0.1066..for mercury maxrota-37.92
 
     } else {
@@ -858,6 +865,7 @@ function fluidMoveAndPinMove(angle) {
 
     //2- Reynold's number
     var Nre = 0.0;
+    // this.rho * this.pipedia * this.velocity / (this.visco 
     Nre = (actualPipeDia * velocity * densitypf) / viscositypf;
     console.log("Nre: " + Nre);
     lnNre = Math.log(Nre);
@@ -870,43 +878,51 @@ function fluidMoveAndPinMove(angle) {
     betaExp = Oridia / 100 / actualPipeDia;
     console.log("betaExp: after:" + betaExp);
 
+    codExp = 0.00;
+    hf = 0.00;
+    dh = 0.00;
     console.log("L1:" + L1);
     console.log("L2:" + L2);
-
-    cdeq1 = -10 * L1;
-    cdeq2 = -7 * L1;
+    codExp = 0.5961 + 0.0261 * betaExp * betaExp - 0.216 * Math.pow(betaExp, 8) + 0.000521 * Math.pow(1000000 * betaExp / Nre, 0.7) + (0.0188 + 0.0063 * Math.pow(19000 * betaExp / Nre, 0.8)) * Math.pow(1000000 / Nre, 0.3) * Math.pow(betaExp, 3.5) + (0.043 + 0.08 * Math.exp(-10 * L1) - 0.123 * Math.exp(-7 * L1)) * (1 - 0.11 * Math.pow(19000 * betaExp / Nre, 0.8)) * (Math.pow(betaExp, 4) / (1 - Math.pow(betaExp, 4))) - 0.031 * (2 * L2 / (1 - betaExp) - 0.8 * Math.pow(2 * L2 / (1 - betaExp), 1.1)) * Math.pow(betaExp, 1.3);
+    hf = (1 - Math.pow(betaExp, 4)) / 2 / 9.8 / Math.pow(codExp / velocity, 2);
+    dh = hf * densitypf / (mfdensity - densitypf);
+    // cdeq1 = -10 * L1;
+    // cdeq2 = -7 * L1;
+    // console.log("cdeq1:" + cdeq1);
+    // console.log("cdeq2:" + cdeq2);
     e = 2.7182;
-    c1 = 0.5961 + (0.0261 * Math.pow(betaExp, 2)) - (0.216 * Math.pow(betaExp, 8)) + (0.000521 * Math.pow((1000000 * betaExp / Nre), 0.7));
-    c2 = (0.0188 + (0.0063 * Math.pow((19000 * betaExp / Nre), 0.8))) * (Math.pow((1000000 / Nre), 0.3) * Math.pow(betaExp, 3.5));
-    c3 = (0.043 + 0.08 * Math.pow(e, cdeq1) - 0.123 * Math.pow(e, cdeq2));
-    c4 = (1 - 0.11 * Math.pow((19000 * betaExp / Nre), 0.8)) * (Math.pow(betaExp, 4) / (1 - Math.pow(betaExp, 4)));
-    c5 = (0.031 * ((2 * L2 / (1 - betaExp)) - (0.8 * Math.pow((2 * L2 / (1 - betaExp)), 1.1)) * Math.pow(betaExp, 3)));
-    codExp = c1 + c2 + c3 * c4 - c5;
-    console.log("codExp1: " + c1);
-    console.log("codExp2: " + c2);
-    console.log("codExp3: " + c3);
-    console.log("codExp4: " + c4);
-    console.log("codExp5: " + c5);
+    // c1 = 0.5961 + (0.0261 * Math.pow(betaExp, 2)) - (0.216 * Math.pow(betaExp, 8)) + (0.000521 * Math.pow((1000000 * betaExp / Nre), 0.7));
+    // c2 = (0.0188 + (0.0063 * Math.pow((19000 * betaExp / Nre), 0.8))) * (Math.pow((1000000 / Nre), 0.3) * Math.pow(betaExp, 3.5));
+    // c3 = (0.043 + 0.08 * Math.pow(e, cdeq1) - 0.123 * Math.pow(e, cdeq2));
+    // c4 = (1 - 0.11 * Math.pow((19000 * betaExp / Nre), 0.8)) * (Math.pow(betaExp, 4) / (1 - Math.pow(betaExp, 4)));
+    // c5 = (0.031 * ((2 * L2 / (1 - betaExp)) - (0.8 * Math.pow((2 * L2 / (1 - betaExp)), 1.1)) * Math.pow(betaExp, 3)));
+    // codExp = c1 + c2 + c3 * c4 - c5;
+    // console.log("codExp1: " + c1);
+    // console.log("codExp2: " + c2);
+    // console.log("codExp3: " + c3);
+    // console.log("codExp4: " + c4);
+    // console.log("codExp5: " + c5);
 
     console.log("cod final: " + codExp);
 
 
-    var hf = 0.0;
+
     // var deltaH = 0.0;
-    var halfDeltaH = 0.0;
+    // var
+    // halfDeltaH = 0.0;
 
     // console.log("betaExp: before:" + betaExp);
 
     // console.log("chosenVenturiDia:before: " + chosenVenturiDia);
     // console.log("actualPipeDia:before: " + actualPipeDia);
     //4- Pressure drop,  hw
-    eq2 = Math.pow((codExp / velocity), 2);
-    console.log("codExp / velocity: " + codExp / velocity);
+    // eq2 = Math.pow((codExp / velocity), 2);
+    // console.log("codExp / velocity: " + codExp / velocity);
 
-    console.log("eq2: " + eq2);
-    hf = (1 - Math.pow(betaExp, 4)) / (2 * 9.81 * eq2);
-    console.log("divided by  " + 2 * 9.81 * eq2);
-    console.log("hfpart2  " + (Math.pow(betaExp, 4) / (2 * 9.81 * eq2)));
+    // console.log("eq2: " + eq2);
+    // hf = (1 - Math.pow(betaExp, 4)) / (2 * 9.81 * eq2);
+    // console.log("divided by  " + 2 * 9.81 * eq2);
+    // console.log("hfpart2  " + (Math.pow(betaExp, 4) / (2 * 9.81 * eq2)));
 
     console.log("hf: " + hf);
 
@@ -918,42 +934,38 @@ function fluidMoveAndPinMove(angle) {
     // hf = -hf;
     // console.log("hf: " + hf);
 
-    var dh = 0;
-    dh = (hf * densitypf) / (mfdensity - densitypf) * 100;
+    // dh = (hf * densitypf) / (mfdensity - densitypf) * 100;
+
+
     console.log("dh: " + dh);
     // deltaH = (hf * densitypf * 100) / (mfdensity - densitypf);
     // console.log("deltaH: " + dh);
-    console.log("halfdeltaH: " + dh / 2);
+    // console.log("halfdeltaH: " + halfDeltaH);
 
 
 
     //value to be added and subtracted from 35 to get h1 and h2
-    halfDeltaH = dh / 2;
-    console.log("halfDeltaH " + halfDeltaH);
+    // halfDeltaH = dh / 2;
+    // console.log("halfDeltaH " + halfDeltaH);
 
 
-    console.log("h= " + halfDeltaH);
+    // console.log("h= " + halfDeltaH);
     console.log("h1= " + h1New);
     console.log("h2= " + h2New);
-    h1New = 35.00 + halfDeltaH;
+    h1New = 35.00 + dh * 50;
     console.log("The h1 new dec fixed is: ", h1New);
-    h2New = 35.00 - halfDeltaH;
+    h2New = 35.00 - dh * 50;
     console.log("The h2 new dec fixed is: ", h2New);
 
     h1Final = h1New.toFixed(2);
     h2Final = h2New.toFixed(2);
     console.log("The h1 final val is: ", h1Final);
-
-    if (h1Final >= 69) {
-        h1Final = 70.00;
-        h2Final = 0.00;
-        // valOfRatoNew = 37.92;
-        console.log("Overflow condition");
-        document.getElementById('overflow').style.visibility = "visible";
-        document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.";
-
+    console.log("The h2 final val is: ", h2Final);
+    if (h1Final < 70) {
+        document.getElementById('overflow').style.visibility = "hidden";
 
     }
+
 
     if (isNaN(h1Final) || isNaN(h2Final)) {
         h1Final = (0.00).toFixed(2);
@@ -973,9 +985,26 @@ function fluidMoveAndPinMove(angle) {
 
     topPin = (356 - angle) * 0.19;
     topPinNew = topPin.toFixed(0);
+    if (h1Final >= 69) {
+        h1Final = 70.00;
+        h2Final = 0.00;
+        console.log("The h1 final val is: ", h1Final);
+        console.log("The h2 final val is: ", h2Final);
 
+        // valOfRatoNew = 37.92;
+        console.log("Overflow condition");
+        document.getElementById('overflow').style.visibility = "visible";
+        if (manoFluid == "Mercury") {
+            document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer.";
+            console.log("Overflow mercury");
+
+        } else
+            document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.";
+
+
+    }
     document.getElementById("leftCm").innerText = (h1Final);
-    document.getElementById("rightCm").innerText = h2Final;
+    document.getElementById("rightCm").innerText = (h2Final);
     document.getElementById("ratoReadings").innerText = (valOfRatoNew);
 
     document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";

@@ -335,7 +335,7 @@ function gotoLabel() {
             document.getElementById("noteremsel").style.visibility = "hidden";
             document.getElementById("obcanvas").style.visibility = "hidden";
 
-            gotoSetup();
+            // gotoSetup();
             gotoSetup();
         }
     } else if (chosenActivity == 2) {
@@ -386,6 +386,8 @@ function gotoSetup() {
     document.getElementById("expButton").style.cursor = "pointer";
     document.getElementById("expButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
+        numberOfVisit = 1;
+
         gotoExp();
     }
     if (chosenActivity == 2) {

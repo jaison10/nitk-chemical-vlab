@@ -368,6 +368,8 @@ function gotoSetup() {
     document.getElementById("expButton").style.cursor = "pointer";
     document.getElementById("expButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
+        numberOfVisit = 1;
+
         gotoExp();
     }
     if (chosenActivity == 2) {
