@@ -127,7 +127,7 @@ function magic() {
             document.getElementById("configExp").style.visibility = "hidden";
         } else {
             console.log("2 has chosen");
-            document.getElementById("step2Heading").innerText = "Choose"
+            // document.getElementById("step2Heading").innerText = "Choose"
             document.getElementById("configExp").style.visibility = "visible";
             document.getElementById('nextButton').style.visibility = "hidden";
         }
@@ -143,7 +143,7 @@ function magic() {
             document.getElementById("evaluatePart").style.visibility = "hidden";
         } else {
             console.log("2 has chosen");
-            document.getElementById("step3Heading").innerText = "Evaluation!"
+            // document.getElementById("step3Heading").innerText = "Evaluation!"
             document.getElementById("configExp").style.visibility = "hidden";
             document.getElementById('nextButton').style.visibility = "hidden";
 
@@ -210,8 +210,12 @@ function magic() {
                 document.getElementById("redColor").style.visibility = "visible";
                 document.getElementById('overflow').style.visibility = "hidden";
 
+               
+                numberOfVisit = 0;
+                document.getElementById("gatewayRotate").onclick = "";
                 // Change the NOTE content.
-                // document.getElementById("infoAboutWhatToDo").innerText = "Click on Gatewall to rotate it."
+                document.getElementById("infoAboutWhatToDo").innerText = "Click on Gatewall to rotate it."
+
 
                 // water starts flowing.
                 document.getElementById("waterPourFirst").style.visibility = "visible";
@@ -476,6 +480,7 @@ function gotoExp() {
         document.getElementById("remSelRead").style.visibility = "hidden";
         document.getElementById("remAllRead").style.visibility = "hidden";
         document.getElementById("emailTable").style.visibility = "hidden";
+        document.getElementById("noteremsel").style.visibility = "hidden";
         // function gotoExp() {
         //     console.log("Experiment part.");
         //     for (temp = 0; temp <= 6; temp++) {
@@ -680,9 +685,8 @@ function setPBMaterial() {
 }
 var pipeLength = 1;
 var pbDia = 0.25;
-var actualPipeDia = 0.0092,
-    area;
-
+var actualPipeDia = 0.0092,   area;
+console.log("actual dia value"+actualPipeDia);
 function setPBDia() {
     pbDia = document.getElementById("pbDiaSelect").value;
     console.log(pbDia);
@@ -712,29 +716,27 @@ function setPBLength() {
     bedLength = document.getElementById("pbLength").value;
     console.log(bedLength);
 }
-var chosenPipeDia = 0.25;
-var actualPipeDia = 0.92;
-var area;
 
-function setPBDia() {
-    chosenPipeDia = document.getElementById("pbDiaSelect").value;
-    console.log(chosenPipeDia);
 
-    if (chosenPipeDia == 0.25)
-        actualPipeDia = 0.92;
-    else if (chosenPipeDia == 0.50)
-        actualPipeDia = 1.57;
-    else if (chosenPipeDia == 1.00)
-        actualPipeDia = 2.66;
-    else if (chosenPipeDia == 1.50)
-        actualPipeDia = 4.08;
-    else if (chosenPipeDia == 2.50)
-        actualPipeDia = 6.27;
+// function setPBDia() {
+//     chosenPipeDia = document.getElementById("pbDiaSelect").value;
+//     console.log(chosenPipeDia);
 
-    console.log("ActDia: " + actualPipeDia);
-    area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
-    console.log("area1 " + area);
-}
+//     if (chosenPipeDia == 0.25)
+//         actualPipeDia = 0.92;
+//     else if (chosenPipeDia == 0.50)
+//         actualPipeDia = 1.57;
+//     else if (chosenPipeDia == 1.00)
+//         actualPipeDia = 2.66;
+//     else if (chosenPipeDia == 1.50)
+//         actualPipeDia = 4.08;
+//     else if (chosenPipeDia == 2.50)
+//         actualPipeDia = 6.27;
+
+//     console.log("ActDia: " + actualPipeDia);
+//     area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+//     console.log("area1 " + area);
+// }
 
 
 area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
@@ -742,34 +744,7 @@ console.log("area1 " + area);
 
 
 
-var packMaterial = "25mm Raschig ring";
 
-function setPBMaterial() {
-    packMaterial = document.getElementById("packMatSelect").value;
-    console.log(packMaterial);
-}
-var sphericity = 0.33;
-var specsurarea = 190;
-var voidVolume = 811.35;
-
-if (packMaterial == "25mm Raschig ring") {
-    sphericity = 0.33;
-    specsurarea = 190;
-    voidVolume = 811.35;
-} else if (packMaterial == "25mm Berl saddle") {
-    sphericity = 0.3;
-    specsurarea = 249;
-    voidVolume = 755.77;
-} else if (packMaterial == "13mm Berl saddle") {
-    sphericity = 0.3;
-    specsurarea = 249;
-    voidVolume = 755.77;
-} else if (packMaterial == "Glass beads of 4mm size") {
-    sphericity = 1;
-    specsurarea = 810;
-    voidVolume = 511.26;
-
-}
 
 var processFluid = "Water";
 var densitypf = 1000;
@@ -922,8 +897,8 @@ function setManoFluidEval() {
 
 
 console.log("dpf: " + densitypf);
-console.log("dmf: " + mfdensity);
-console.log("vpf: " + viscositypf);
+console.log("dmf: " + densitymf);
+console.log("vpf: " + Viscositypf);
 
 // erinnnnnnnend
 var x = 0;
@@ -1287,20 +1262,21 @@ function displayExpValues(flag) {
     } else
         document.getElementById("displayExpValues").style.visibility = "hidden";
 
-    document.getElementById("oridia").innerHTML = bedLength;
-    document.getElementById("nompidia").innerHTML = chosenPipeDia + " inch";
-    document.getElementById("acpidia").innerHTML = actualPipeDia + " cm";
-    document.getElementById("pbmat").innerHTML = packMaterial;
+    document.getElementById("oridia").innerHTML = pbLength+" meter(s)";
+    document.getElementById("nompidia").innerHTML = pbDia + " inch";
+    document.getElementById("acpidia").innerHTML = actualPipeDia + " m";
+    document.getElementById("pbmat").innerHTML = pBMaterial;
 
-    document.getElementById("sphere").innerHTML = sphericity;
-    document.getElementById("specisurarea").innerHTML = specsurarea + "m<sup>2</sup>/m<sup>3</sup>";
-    document.getElementById("voidvolume").innerHTML = voidVolume + " mL";
+
+    document.getElementById("sphere").innerHTML = speri;
+    document.getElementById("specisurarea").innerHTML = spsurfarea + " m<sup>2</sup>/m<sup>3</sup>";
+    document.getElementById("voidvolume").innerHTML = voidfrac + " mL";
 
     document.getElementById("prflu").innerHTML = processFluid;
     document.getElementById("dprflu").innerHTML = densitypf + "Kg per Cubic meter"
-    document.getElementById("vprflu").innerHTML = viscositypf + "centiPoise";
+    document.getElementById("vprflu").innerHTML = Viscositypf + " Kg/ms";
     document.getElementById("mflu").innerHTML = manoFluid;
-    document.getElementById("dmflu").innerHTML = mfdensity + "Kg per Cubic meter";
+    document.getElementById("dmflu").innerHTML = densitymf + " Kg per Cubic meter";
 
 }
 

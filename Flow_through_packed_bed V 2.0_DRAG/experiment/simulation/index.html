@@ -182,14 +182,14 @@
             <img id="labelImage" style="visibility: hidden; position: absolute; left:70px; top:90px; width: 640px; height: 390px;" src="./Images/Flow through pipes_images/PB_Label.png">
 
             <!-- Evaluation part -->
-            <div id="configExp">
+            <div id="configExp"  style="color: #1981e2; font-style: italic; font-size: 16px;">
 
-                <p style="position: absolute; top: 50px; left: 20px ;color: #1981e2;font-style: italic;">Select length of the packed bed:&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input style="position: absolute; left: 280px;" type="number" value="0.5" id="pbLengthEval" name="length" min="0.5" max="2" step="0.1" onchange="setPBLengthEval();">
-                    <p style="position: absolute; left: 350px;  color: #1981e2; font-style: italic; top: 100px;">meter</p>
+                <p style="position: absolute; top: 50px; left: 20px ;color: #1981e2;font-style: italic;">Length of the Packed Bed:
+                    <input style="position: absolute; left: 300px;" type="number" value="0.5" id="pbLengthEval" name="length" min="0.5" max="2" step="0.1" onchange="setPBLengthEval();">
+                    <p style="position: absolute; left: 400px;  color: #1981e2; font-style: italic; top: 50px;">meter</p>
                 </p>
-                <p style="position: absolute; top: 100px;left: 20px; color: #1981e2;font-style: italic;">Select Nominal diameter of the packed bed:
-                    <select name="pipeDia" style="left: 280px;" id="pbDiaSelectEval" onchange="setPBDiaEval();">
+                <p style="position: absolute; top: 100px;left: 20px; color: #1981e2;font-style: italic;">Nominal diameter of the Packed Bed:
+                    <select name="pipeDia" style="position: absolute; left: 300px;" id="pbDiaSelectEval" onchange="setPBDiaEval();">
         <option value="0.25">0.25 inch</option>
         <option value="0.50">0.50 inch</option>
         <option value="1.00">1.00 inch</option>
@@ -198,8 +198,8 @@
 
       </select>
                 </p>
-                <p style="position: absolute; top: 150px; color: #1981e2;font-style: italic;left: 20px;">Select packing material:
-                    <select name="packingMaterial" style="left: 20px;" id="packMatSelectEval" onchange="setPBMaterialEval();">
+                <p style="position: absolute; top: 150px; color: #1981e2;font-style: italic;left: 20px;">Packing material:
+                    <select name="packingMaterial" style="position: absolute; left: 300px;" id="packMatSelectEval" onchange="setPBMaterialEval();">
         <option value="25mm Raschig ring">25mm Raschig ring</option>
         <option value="25mm Berl saddle">25mm Berl saddle</option>
         <option value="13mm berl saddle">13mm berl saddle</option>
@@ -207,13 +207,13 @@
       </select>
                 </p>
                 <p style="position: absolute; top: 200px; color: #1981e2;font-style: italic;left: 20px;">Process fluid:
-                    <select style="position: absolute; left: 280px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
+                    <select style="position: absolute; left: 300px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
         <option value="Water">Water</option>
         <option value="Kerosene">Kerosene</option>
       </select>
                 </p>
                 <p style="position: absolute; top: 250px;left: 20px; color: #1981e2;font-style: italic;">Manometric fluid:
-                    <select style="position: absolute; left: 280px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
+                    <select style="position: absolute; left: 300px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
         <option value="Mercury">Mercury</option>
       </select>
@@ -227,15 +227,14 @@
         <!--Step3	-->
         <div class="simsubscreen" id="canvas3" style="visibility:hidden">
             <!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span> -->
-            <p id="step3Heading" class="steptext" style="font-family:verdana;  color: #fff;">&nbsp;</p>
+            <!-- <p id="step3Heading" class="steptext" style="font-family:verdana;  color: #fff;">&nbsp;</p> -->
             <!-- EXPERIMENT PART -->
-            <div id="experimentSetup" style="visibility: hidden; left: 100px;font-size:17px;">
+            <div id="experimentSetup" style="visibility: hidden; left: 100px;font-size:16px;">
 
                 <p style="position: absolute; top: 50px;left: 20px; color: #1981e2;font-style: italic;">Length of the Packed Bed:&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input style="position: absolute; left: 230px;" type="number" value="0.5" id="pbLength" name="length" min="0.5" max="2" step="0.1" onchange="setPBLength();">meter
-                </p>
+                    <input style="position: absolute; left: 300px;" type="number" value="0.5" id="pbLength" name="length" min="0.5" max="2" step="0.1" onchange="setPBLength();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; meter</p>
                 <p style="position: absolute; top: 100px;left: 20px; color: #1981e2;font-style: italic;">Nominal diameter of the Packed Bed:
-                    <select name="pipeDia" id="pbDiaSelect" style="left: 280px;" onchange="setPBDia();">
+                    <select name="pipeDia" id="pbDiaSelect" style="position: absolute; left: 300px;" onchange="setPBDia();">
                         <option value="0.25">0.25 inch</option>
                         <option value="0.50">0.50 inch</option>
                         <option value="1.00">1.00 inch</option>
@@ -245,7 +244,7 @@
                     </select>
                 </p>
                 <p style="position: absolute; top: 150px;left: 20px; color: #1981e2;font-style: italic;">Select packing material:
-                    <select name="packingMaterial" id="packMatSelect" style="left: 280px" onchange="setPBMaterial();">
+                    <select name="packingMaterial" id="packMatSelect" style="position: absolute; left: 300px" onchange="setPBMaterial();">
                         <option value="25mm Raschig ring">25mm Raschig ring</option>
                         <option value="25mm Berl saddle">25mm Berl saddle</option>
                         <option value="13mm Berl saddle">13mm Berl saddle</option>
@@ -253,13 +252,13 @@
                     </select>
                 </p>
                 <p style="position: absolute; top: 200px; color: #1981e2;font-style: italic;left: 20px;">Process fluid:
-                    <select style="position: absolute; left: 280px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
+                    <select style="position: absolute; left: 300px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
                         <option value="Water">Water</option>
                         <option value="Kerosene">Kerosene</option>
                     </select>
                 </p>
                 <p style="position: absolute; top: 250px; color: #1981e2;font-style: italic;left: 20px">Manometric fluid:
-                    <select style="position: absolute; left: 280px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
+                    <select style="position: absolute; left: 300px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
                         <option value="Carbon tetrachloride">Carbon tetrachloride</option>
                         <option value="Mercury">Mercury</option>
                     </select>
@@ -268,7 +267,7 @@
 
             <!-- Evaluation Part -->
             <div id="evaluatePart">
-                <p style="position: absolute; top: 30px; color: #fff;">Number of sets of readings:
+                <p style="position: absolute; top: 20px; color: #fff;">Number of sets of readings:
                     <input type="number" value="0" id="evalSets" name="length" min="2" max="25" onchange="setEvalSets();">
                 </p>
                 <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 450px; top:70px;">
@@ -468,21 +467,21 @@
         </div>
 
         <!-- erinend -->
-        <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
-            <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
+        <div class="" id="displayExpValues" style="visibility:hidden; height: 430px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
+            <p style="position: absolute; top: -10px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
             <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Length of Packed Bed:</p>
             <p id="oridia" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> meter(s)</p>
             <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Pipe Diameter:</p>
             <p id="nompidia" style="position: absolute; top:120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">inch</p>
             <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Pipe Diameter:</p>
-            <p id="acpidia" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
+            <p id="acpidia" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> m</p>
 
             <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Packing Material:</p>
             <p id="pbmat" style="position: absolute; top: 90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
-            <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Static Bed Height:</p>
-            <p id="sphere" style="position: absolute; top:180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> meter(s)</p>
-            <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Glass Bead</p>
-            <p id="specisurarea" style="position: absolute; top:210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
+            <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Sphericity:</p>
+            <p id="sphere" style="position: absolute; top:180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
+            <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Specific Surface Area</p>
+            <p id="specisurarea" style="position: absolute; top:210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">m<sup>2</sup>/m<sup>3</sup></p>
             <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Void Volume:</p>
             <p id="voidvolume" style="position: absolute; top:240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> mL</p>
 

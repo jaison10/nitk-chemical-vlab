@@ -31,3 +31,5 @@ Sr No | Name | Faculty or Student | Department| Institute | Email id
 2 | Aishwarya Shetty | Student | Applied Mechanics and Hydraulics | National Institute of Technology Karnataka, Surathkal |aishwarya.shetty1995@gmail.com
 3 | Shreyas Sabare | Student | Chemical Engineering | National Institute of Technology Karnataka, Surathkal |shreyash.171ch045@nitk.edu.in
 4 | Jaison DSouza B | Student | Applied Mechanics and Hydraulics | National Institute of Technology Karnataka, Surathkal |jaisonj1010@gmail.com
+5 | Haneena | Student | Applied Mechanics and Hydraulics | National Institute of Technology Karnataka, Surathkal |haneenaatheeq@gmail.com
+6 | Erin Sheryl Pereira | Student | Applied Mechanics and Hydraulics | National Institute of Technology Karnataka, Surathkal |rinipereira2000@gmail.com

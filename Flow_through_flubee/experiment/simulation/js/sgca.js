@@ -211,6 +211,10 @@ function magic() {
                 document.getElementById("redColor").style.visibility = "visible";
                 document.getElementById('overflow').style.visibility = "hidden";
 
+                  
+                numberOfVisit = 0;
+                document.getElementById("gatewayRotate").onclick = "";
+
                 // Change the NOTE content.
                 document.getElementById("infoAboutWhatToDo").innerText = "Click on Gatewall to rotate it."
 
@@ -487,6 +491,7 @@ function gotoExp() {
         document.getElementById("remSelRead").style.visibility = "hidden";
         document.getElementById("remAllRead").style.visibility = "hidden";
         document.getElementById("emailTable").style.visibility = "hidden";
+        document.getElementById("noteremsel").style.visibility = "hidden";
         // function gotoExp() {
         //     console.log("Experiment part.");
         //     for (temp = 0; temp <= 6; temp++) {

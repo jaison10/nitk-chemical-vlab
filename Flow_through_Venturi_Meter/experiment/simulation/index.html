@@ -89,7 +89,7 @@
         <div class="simsubscreen" id="canvas1" style="visibility:hidden">
             <!-- <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span> -->
-            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:20px; color: #fff; top: 50px; left: 250px;">What would you like to do</p>
+            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:20px; color: #fff; top: 50px; left: 250px;">What would you like to do.</p>
 
             <!-- <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p> -->
 
@@ -195,7 +195,7 @@
                 </p>
                 <p style="position: absolute; top: 100px;left:20px; color: #1981e2; font-style: italic;">Select Venturi diameter:
                     <input style="position: absolute; left: 280px;" type="number" step="0.1" value="0.3" id="venturiDiaEval" name="length" min="0.3" max="0.7" onchange="setVenturiDiaEval();">
-                    <p style="position: absolute; left: 350px;  color: #1981e2; font-style: italic; top: 100px;">cm</p>
+                    <p style="position: absolute; left: 400px;  color: #1981e2; font-style: italic; top: 100px;">cm</p>
                 </p>
                 <p style="position: absolute; top: 150px;left:20px;  color: #1981e2; font-style: italic;">Process fluid:
                     <select style="position: absolute; left: 280px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
@@ -256,7 +256,7 @@
 
             <!-- Evaluation Part -->
             <div id="evaluatePart">
-                <p style="position: absolute; top: 30px; color: #fff;">Number of sets of readings:
+                <p style="position: absolute; top: 20px; color: #fff;">Number of sets of readings:
                     <input type="number" value="0" id="evalSets" name="length" min="2" max="20" onchange="setEvalSets();">
                 </p>
                 <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 450px; top:70px;">
@@ -458,23 +458,23 @@
         <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
             <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
             <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Venturi Diameter:</p>
-            <p id="oridia" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">meter(s)</p>
+            <p id="oridia" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> meter(s)</p>
             <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Type of Venturi Tube:</p>
             <p id="fituse" style="position: absolute; top: 90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> </p>
             <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Pipe Diameter:</p>
-            <p id="nompidia" style="position: absolute; top:120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">inch</p>
+            <p id="nompidia" style="position: absolute; top:120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> inch</p>
             <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Pipe Diameter:</p>
-            <p id="acpidia" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
+            <p id="acpidia" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> m</p>
             <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
             <p id="prflu" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
             <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
-            <p id="dprflu" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
+            <p id="dprflu" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
             <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
-            <p id="vprflu" style="position: absolute; top: 240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">centiPoise</p>
+            <p id="vprflu" style="position: absolute; top: 240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"> Kg/ms</p>
             <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
             <p id="mflu" style="position: absolute; top: 270px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
             <p style="position: absolute; top: 300px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>
-            <p id="dmflu" style="position: absolute; top: 300px; left: 405px; width: 324px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
+            <p id="dmflu" style="position: absolute; top: 300px; left: 405px; width: 324px; font-size:15px; color:#39FF14;"> Kg per Cubic meter</p>
         </div>
 
 
