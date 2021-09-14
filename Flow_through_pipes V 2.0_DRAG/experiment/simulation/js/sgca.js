@@ -208,7 +208,7 @@ function magic() {
             document.getElementById("experimentID").style.visibility = "visible";
             document.getElementById("obserButton").style.visibility = "visible";
 
-            document.getElementById('overflow').style.visibility = "hidden";
+            document.getElementById("overflow").style.visibility = "hidden";
 
             document.getElementById("greenColor").style.cursor = "pointer";
             document.getElementById("greenColor").style.visibility = "visible";
@@ -216,7 +216,7 @@ function magic() {
             document.getElementById("greenColor").onclick = function() {
                 document.getElementById("greenColor").style.visibility = "hidden";
                 document.getElementById("redColor").style.visibility = "visible";
-                document.getElementById('overflow').style.visibility = "hidden";
+                // document.getElementById('overflow').style.visibility = "hidden";
                 numberOfVisit = 0;
                 document.getElementById("gatewayRotate").onclick = "";
                 // Change the NOTE content.
@@ -362,6 +362,7 @@ function gotoLabel() {
         document.getElementById("setupButton").style.cursor = "pointer";
         document.getElementById("setupButton").onclick = function() {
             // erii
+            document.getElementById("obcanvas").style.visibility = "hidden";
             document.getElementById("noteremsel").style.visibility = "hidden";
             gotoSetup();
         }
@@ -372,7 +373,8 @@ function gotoLabel() {
         document.getElementById("demoButtonEval").onclick = function() {
             console.log("Pressed demo");
             document.getElementById("demoTwo").style.visibility = "visible";
-
+            //erii
+            document.getElementById("configExp").style.visibility = "hidden";
             document.getElementById("canvas2").style.visibility = "hidden";
             goto6th();
         }
