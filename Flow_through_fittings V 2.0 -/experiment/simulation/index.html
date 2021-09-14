@@ -88,7 +88,7 @@
         <div class="simsubscreen" id="canvas1" style="visibility:hidden">
             <!-- <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span> -->
-            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:14px; color: #fff; top: 50px; left: 275px;">What would you like to do?</p>
+<p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:24px; color: #fff; top: 30px; left: 230px;">What would you like to do.</p>
 
             <!-- <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p> -->
 
@@ -181,7 +181,7 @@
             <img id="labelImage" style="visibility: hidden; position: absolute; left: 70px; top: 20px; width: 700px; height: 500px;" src="./Images/Flow through pipes_images/label2.png">
 
             <!-- Evaluation part -->
-            <div id="configExp">
+            <div id="configExp" style="visibility: hidden;color: #1981e2; font-style: italic; font-size: large; left: 100px;" >
                 <p style="position: absolute; top: 50px; color: #1981e2;left: 20px;font-style: italic;">Nominal diameter of the pipe:
                     <select name="pipeDia" id="pipeDiaSelectEval" onchange="setPipeDiaEval();">
             <option value="0.25">0.25 inch</option>
@@ -191,13 +191,13 @@
           </select>
                 </p>
                 <p style="position: absolute; top: 100px; color: #1981e2;left: 20px;font-style: italic;">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
+                    <select style="position: absolute; left: 280px;" name="processFluid" id="processFluidEval" onchange="setProcessFluidEval();">
             <option value="Water">Water</option>
             <option value="Kerosene">Kerosene</option>
           </select>
                 </p>
                 <p style="position: absolute; top: 150px; color: #1981e2;left: 20px;font-style: italic;">Manometric fluid:
-                    <select style="position: absolute; left: 217px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
+                    <select style="position: absolute; left: 280px;" name="manoFluid" id="manoFluidEval" onchange="setManoFluidEval();">
             <option value="Carbon tetrachloride">Carbon tetrachloride</option>
             <option value="Mercury">Mercury</option>
           </select>
@@ -213,9 +213,9 @@
             <!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span> -->
             <!-- <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp; </p> -->
             <!-- EXPERIMENT PART ershe -->
-            <div id="experimentSetup" style="visibility: hidden; left: 100px;">
+            <div id="experimentSetup" style="visibility: hidden;color: #1981e2; font-style: italic; font-size: large; left: 100px;">
                 <p style="position: absolute; top: 100px; color: #1981e2;left: 20px;font-style: italic;">Select type of Fitting: &emsp;
-                    <select name="fittype" id="fittingType" onchange="setFittingused();">
+                    <select name="fittype" style="position: absolute; left: 280px;" id="fittingType" onchange="setFittingused();">
             <option value="Elbow">Elbow</option>
             <option value="Tee-Line Flow">Tee-Line Flow</option>
             <option value="Tee-Branch Flow">Tee-Branch Flow</option>
@@ -226,7 +226,7 @@
           </select>
                 </p>
                 <p style="position: absolute; top: 50px; color: #1981e2;left: 20px;font-style: italic;">Nominal diameter of the pipe:
-                    <select name="pipeDia" id="pipeDiaSelect" onchange="setPipeDia();">
+                    <select name="pipeDia" style="position: absolute; left: 280px;" id="pipeDiaSelect" onchange="setPipeDia();">
             <option value="0.25">0.25 inch</option>
             <option value="0.50">0.50 inch</option>
             <option value="1.00">1.00 inch</option>
@@ -234,13 +234,13 @@
           </select>
                 </p>
                 <p style="position: absolute; top: 150px; color: #1981e2;left: 20px;font-style: italic;">Process fluid:
-                    <select style="position: absolute; left: 217px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
+                    <select style="position: absolute; left: 280px;" name="processFluid" id="processFluid" onchange="setProcessFluid();">
             <option value="Water">Water</option>
             <option value="Kerosene">Kerosene</option>
           </select>
                 </p>
                 <p style="position: absolute; top: 200px; color: #1981e2;left: 20px;font-style: italic;">Manometric fluid:
-                    <select style="position: absolute; left: 216px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
+                    <select style="position: absolute; left: 280px;" name="manoFluid" id="manoFluid" onchange="setManoFluid();">
             <option value="Carbon tetrachloride">Carbon tetrachloride</option>
             <option value="Mercury">Mercury</option>
           </select>
@@ -468,13 +468,13 @@
             <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Nominal Pipe Diameter:</p>
             <p id="nompidia" style="position: absolute; top:90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">inch</p>
             <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Actual Pipe Diameter:</p>
-            <p id="acpidia" style="position: absolute; top: 120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">cm</p>
+            <p id="acpidia" style="position: absolute; top: 120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">m</p>
             <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Process Fluid:</p>
             <p id="prflu" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
             <p style="position: absolute; top: 180px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density of Process Fluid:</p>
             <p id="dprflu" style="position: absolute; top: 180px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg per Cubic meter</p>
             <p style="position: absolute; top: 210px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Viscoscity of Process Fluid:</p>
-            <p id="vprflu" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">centiPoise</p>
+            <p id="vprflu" style="position: absolute; top: 210px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">Kg/ms</p>
             <p style="position: absolute; top: 240px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Manometric Fluid:</p>
             <p id="mflu" style="position: absolute; top: 240px; left: 405px; width: 224px; font-size:15px; color:#39FF14;"></p>
             <p style="position: absolute; top: 270px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Density Manometric Fluid:</p>

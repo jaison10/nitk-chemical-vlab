@@ -1502,14 +1502,14 @@ function displayExpValues(flag) {
 
     document.getElementById("oridia").innerHTML = lenFb + " meter(s)";
     document.getElementById("nompidia").innerHTML = chosenPipeDia + " inch";
-    document.getElementById("acpidia").innerHTML = actualPipeDia + " cm";
+    document.getElementById("acpidia").innerHTML = actualPipeDia + " m";
     document.getElementById("statbh").innerHTML = bedHeight + " meter(s)";
     document.getElementById("packmat").innerHTML = pkmat;
     document.getElementById("dglbead").innerHTML = dGlBead + " Kg per Cubic meter";
     document.getElementById("voidvol").innerHTML = voidVol + " mL";
     document.getElementById("prflu").innerHTML = processFluid;
     document.getElementById("dprflu").innerHTML = densitypf + " Kg per Cubic meter"
-    document.getElementById("vprflu").innerHTML = viscositypf + " centiPoise";
+    document.getElementById("vprflu").innerHTML = viscositypf + " Kg/ms";
     document.getElementById("mflu").innerHTML = manoFluid;
     document.getElementById("dmflu").innerHTML = mfdensity + " Kg per Cubic meter";
 
