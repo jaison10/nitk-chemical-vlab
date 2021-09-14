@@ -126,7 +126,7 @@ function magic() {
             document.getElementById("configExp").style.visibility = "hidden";
         } else {
             console.log("2 has chosen");
-            document.getElementById("step2Heading").innerText = "Choose"
+            // document.getElementById("step2Heading").innerText = "Choose"
             document.getElementById("configExp").style.visibility = "visible";
             document.getElementById('nextButton').style.visibility = "hidden";
         }
@@ -501,6 +501,7 @@ function gotoExp() {
         document.getElementById("remSelRead").style.visibility = "hidden";
         document.getElementById("remAllRead").style.visibility = "hidden";
         document.getElementById("emailTable").style.visibility = "hidden";
+        document.getElementById("noteremsel").style.visibility = "hidden";
         // function gotoExp() {
         //     console.log("Experiment part.");
         //     for (temp = 0; temp <= 6; temp++) {
@@ -1211,10 +1212,10 @@ function displayExpValues(flag) {
     document.getElementById("oridia").innerHTML = ((Oridia / 100).toFixed(3)) + " meter(s)";
     document.getElementById("fituse").innerHTML = Typetap;
     document.getElementById("nompidia").innerHTML = chosenPipeDia + " inch";
-    document.getElementById("acpidia").innerHTML = actualPipeDia + " cm";
+    document.getElementById("acpidia").innerHTML = actualPipeDia + " m";
     document.getElementById("prflu").innerHTML = processFluid;
     document.getElementById("dprflu").innerHTML = densitypf + " Kg per Cubic meter"
-    document.getElementById("vprflu").innerHTML = viscositypf + " centiPoise";
+    document.getElementById("vprflu").innerHTML = viscositypf + " Kg/ms";
     document.getElementById("mflu").innerHTML = manoFluid;
     document.getElementById("dmflu").innerHTML = mfdensity + " Kg per Cubic meter";
 
@@ -1257,7 +1258,6 @@ function gotoObservation() {
     document.getElementById("redColor").style.visibility = "hidden";
     // erin
     document.getElementById("obserButton").style.visibility = "visible";
-    document.getElementById("observeTable").style.visibility = "hidden";
     // erin end
 
     document.getElementById("leftPinkFluidFinal").style.visibility = "hidden";
@@ -1274,7 +1274,6 @@ function gotoObservation() {
     document.getElementById("rightPinkFluidFifth").style.visibility = "hidden";
     document.getElementById("bottomPinkU").style.visibility = "hidden";
 
-    document.getElementById("observeTable").style.visibility = "visible";
     document.getElementById("setupButton").onclick = function() {
         document.getElementById('overflow').style.visibility = "hidden";
         // erin
