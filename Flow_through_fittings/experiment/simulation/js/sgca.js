@@ -59,13 +59,13 @@ function magic()
 	else if (simsubscreennum==2)
 	{
 		if(chosenActivity == 1){
-			console.log("One has chosen!");
+			// console.log("One has chosen!");
 			document.getElementById("labelImage").style.visibility = "visible";
 			document.getElementById('nextButton').style.visibility="visible";
 			document.getElementById("configExp").style.visibility = "hidden";
 		}
 		else{
-			console.log("2 has chosen");
+			// console.log("2 has chosen");
 			document.getElementById("step2Heading").innerText = "Choose"
 			document.getElementById("configExp").style.visibility = "visible";
 			document.getElementById('nextButton').style.visibility="visible";
@@ -81,7 +81,7 @@ function magic()
 			document.getElementById("evaluatePart").style.visibility = "hidden";
 		}
 		else{
-			console.log("2 has chosen");
+			// console.log("2 has chosen");
 			document.getElementById("step3Heading").innerText = "Evaluation!"
 			document.getElementById("configExp").style.visibility = "hidden";
 			document.getElementById('nextButton').style.visibility="hidden";
@@ -163,7 +163,7 @@ function magic()
 			
 		}
 		else{
-			console.log("2 has chosen");
+			// console.log("2 has chosen");
 		}
 		
 	}
@@ -175,7 +175,7 @@ var chosenActivity
 function selectAction(n)
 {	
 	chosenActivity = n
-	console.log(chosenActivity);
+	// console.log(chosenActivity);
 	navNext();
 }
 
