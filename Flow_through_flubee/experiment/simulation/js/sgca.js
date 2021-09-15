@@ -1168,7 +1168,7 @@ function fluidMoveAndPinMove(angle) {
 
 
     document.getElementById("leftCm").innerText = (h1Final);
-    document.getElementById("rightCm").innerText = h2Final;
+    document.getElementById("rightCm").innerText = (h2Final);
     document.getElementById("ratoReadings").innerText = (valOfRatoNew);
     document.getElementById("leftFluid").style.height = parseInt(37) + parseInt(heightLeftNew) + "px";
     document.getElementById("leftFluid").style.top = parseInt(222) - parseInt(topLeftNew) + "px";
@@ -1203,12 +1203,14 @@ function fluidMoveAndPinMove(angle) {
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
             var cell5 = row.insertCell(4);
-            var cell6 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
             cell1.innerHTML = processFluid;
             cell2.innerHTML = manoFluid;
             cell3.innerHTML = valOfRatoNew;
             cell4.innerHTML = h1Final;
             cell5.innerHTML = h2Final;
+            console.log("The h2 final val is: ", h2Final);
+
             cell6.innerHTML = (flulen * 100).toFixed(1);
         }
         // erinend
