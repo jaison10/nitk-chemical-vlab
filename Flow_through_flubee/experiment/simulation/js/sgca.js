@@ -42,7 +42,7 @@ function goToStart(id) {
             document.getElementById("buttonsListEval").style.visibility = "hidden";
 
             hideAllExperimentParts();
-            console.log("hideworked");
+            // console.log("hideworked");
         }
         // s.style.paddingTop="2px";
     s.style.fontSize = "12px";
@@ -120,13 +120,13 @@ function magic() {
         document.getElementById("waterPourFirst").style.visibility = "hidden";
         document.getElementById("waterFlow").style.visibility = "hidden";
         if (chosenActivity == 1) {
-            console.log("One has chosen!");
+            // console.log("One has chosen!");
             document.getElementById("experimentSetup").style.visibility = "hidden";
             document.getElementById("labelImage").style.visibility = "visible";
             document.getElementById('nextButton').style.visibility = "hidden";
             document.getElementById("configExp").style.visibility = "hidden";
         } else {
-            console.log("2 has chosen");
+            // console.log("2 has chosen");
             // document.getElementById("step2Heading").innerText = "Choose"
             document.getElementById("configExp").style.visibility = "visible";
             document.getElementById('nextButton').style.visibility = "hidden";
@@ -142,7 +142,7 @@ function magic() {
             document.getElementById('nextButton').style.visibility = "hidden";
             document.getElementById("evaluatePart").style.visibility = "hidden";
         } else {
-            console.log("2 has chosen");
+            // console.log("2 has chosen");
             // document.getElementById("step3Heading").innerText = "Evaluation!"
             document.getElementById("configExp").style.visibility = "hidden";
             document.getElementById('nextButton').style.visibility = "hidden";
@@ -237,7 +237,7 @@ function magic() {
                 });
 
                 function onRotate() {
-                    console.log(this.angle);
+                    // console.log(this.angle);
                     fluidMoveAndPinMove(this.angle);
 
                     // console.log("deg", this.degree);
@@ -246,7 +246,7 @@ function magic() {
             }
 
         } else {
-            console.log("2 has chosen");
+            // console.log("2 has chosen");
         }
 
     } else if (simsubscreennum == 6) {
@@ -297,7 +297,7 @@ function gotoPage5() {
 }
 
 function goto6th() {
-    console.log("At 6th canvas");
+    // console.log("At 6th canvas");
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
     }
@@ -344,7 +344,7 @@ function gotoLabel() {
         }
     } else if (chosenActivity == 2) {
         document.getElementById("demoButtonEval").onclick = function() {
-            console.log("Pressed demo");
+            // console.log("Pressed demo");
             //erin
             document.getElementById("demoTwo").style.visibility = "visible";
             document.getElementById("canvas2").style.visibility = "hidden";
@@ -367,7 +367,7 @@ function gotoSetup() {
     h1Val = 35.00
     h2Val = 35.00
     valOfRato = 0.00;
-    console.log("Going to setup");
+    // console.log("Going to setup");
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
     }
@@ -406,7 +406,7 @@ function gotoSetup() {
 }
 
 function goBacktoStep1Eval() {
-    console.log("Going to 6th one");
+    // console.log("Going to 6th one");
     document.getElementById("configExp").style.visibility = "hidden";
     document.getElementById("evaluatePart").style.visibility = "hidden";
     for (temp = 0; temp <= 6; temp++) {
@@ -418,7 +418,7 @@ function goBacktoStep1Eval() {
 }
 
 function goBacktoStep2Eval() {
-    console.log("Going to second");
+    // console.log("Going to second");
     document.getElementById("evaluatePart").style.visibility = "hidden";
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
@@ -447,7 +447,7 @@ function gotoExp() {
         }
         numberOfVisit = 0;
     }
-    console.log("Experiment part.");
+    // console.log("Experiment part.");
 
     // erin   
     document.getElementById("emailreq").style.visibility = "hidden";
@@ -473,14 +473,14 @@ function gotoExp() {
         densitymf = 13600;
     // eriii
     document.getElementById("obserButton").onclick = function() {
-        console.log("Clicking on observation button ");
+        // console.log("Clicking on observation button ");
         flagForObserTable = !flagForObserTable;
         observeTable(flagForObserTable);
         document.getElementById("displayExpValues").style.visibility = "hidden";
 
     }
     document.getElementById("experiButton").onclick = function() {
-        console.log("Clicking on exp button inside fluidMove");
+        // console.log("Clicking on exp button inside fluidMove");
         flagForDisplayExpValues = !flagForDisplayExpValues;
         displayExpValues(flagForDisplayExpValues);
         // eriii
@@ -527,16 +527,16 @@ function gotoExp() {
         document.getElementById("emailreq").style.visibility = "hidden";
         // eriend
 
-        console.log("clicked for setup");
+        // console.log("clicked for setup");
         document.getElementById("greenColor").style.visibility = "hidden";
         document.getElementById("nextButton").style.visibility = "hidden";
         document.getElementById("nextButton").style.zIndex = -1;
         document.getElementById("displayExpValues").style.visibility = "hidden";
         //erinnn
         flagForDisplayExpValues = false;
-        console.log("The flag value on moving to the Setup is: ", flagForDisplayExpValues);
+        // console.log("The flag value on moving to the Setup is: ", flagForDisplayExpValues);
         flagForObserTable = false;
-        console.log("The flag value on moving to the Setup is: ", flagForObserTable);
+        // console.log("The flag value on moving to the Setup is: ", flagForObserTable);
         goBacktoStep2();
     }
     document.getElementById("labelButton").onclick = function() {
@@ -550,9 +550,9 @@ function gotoExp() {
         document.getElementById("emailTable").style.visibility = "hidden";
         document.getElementById("displayExpValues").style.visibility = "hidden";
         flagForDisplayExpValues = false;
-        console.log("The flag value on moving to the Setup is: ", flagForDisplayExpValues);
+        // console.log("The flag value on moving to the Setup is: ", flagForDisplayExpValues);
         flagForObserTable = false;
-        console.log("The flag value on moving to the Setup is: ", flagForObserTable);
+        // console.log("The flag value on moving to the Setup is: ", flagForObserTable);
         gotoLabel();
         // hideAllExperimentParts();
         // document.getElementById("displayExpValues").style.visibility = "hidden";
@@ -570,9 +570,9 @@ function gotoExp() {
 
         document.getElementById("displayExpValues").style.visibility = "hidden";
         flagForDisplayExpValues = false;
-        console.log("The flag value on moving to the Setup is: ", flagForDisplayExpValues);
+        // console.log("The flag value on moving to the Setup is: ", flagForDisplayExpValues);
         flagForObserTable = false;
-        console.log("The flag value on moving to the Setup is: ", flagForObserTable);
+        // console.log("The flag value on moving to the Setup is: ", flagForObserTable);
         goto6th();
 
     }
@@ -654,7 +654,7 @@ var chosenActivity;
 
 function selectAction(n) {
     chosenActivity = n
-    console.log(chosenActivity);
+        // console.log(chosenActivity);
     simsubscreennum = 5;
     gotoPage5();
 }
@@ -666,7 +666,7 @@ var area;
 
 function setPipeDia() {
     chosenPipeDia = document.getElementById("pipeDiaSelect").value;
-    console.log(chosenPipeDia);
+    // console.log(chosenPipeDia);
 
     if (chosenPipeDia == 1.00)
         actualPipeDia = 0.0266;
@@ -677,17 +677,17 @@ function setPipeDia() {
 
 
     area = (3.14 / 4) * Math.pow(actualPipeDia, 2);
-    console.log("area " + area);
-    console.log("actualPipeDia " + actualPipeDia);
+    // console.log("area " + area);
+    // console.log("actualPipeDia " + actualPipeDia);
 }
 area = (3.14 / 4) * Math.pow(actualPipeDia, 2);
-console.log("area " + area);
+// console.log("area " + area);
 
 var staticBed = 0.3;
 
 function setbedHeight() {
     staticBed = document.getElementById("bedHeight").value;
-    console.log(staticBed);
+    // console.log(staticBed);
 }
 
 var pkmat = "Glass beads of 4mm size";
@@ -699,7 +699,7 @@ var vmf = 0.05172342;
 
 function setpackMaterial() {
     pkmat = document.getElementById("packMat").value;
-    console.log(pkmat);
+    // console.log(pkmat);
 
     if (pkmat == "Glass beads of 4mm size") {
         speri = 1;
@@ -722,17 +722,17 @@ function setpackMaterial() {
             vmf = 0.075238;
         }
     }
-    console.log("vmf: " + vmf);
-    console.log("Dp: " + Dp);
-    console.log("speri: " + speri);
-    console.log("spsurfarea: " + spsurfarea);
-    console.log("voidfrac: " + voidfrac);
+    // console.log("vmf: " + vmf);
+    // console.log("Dp: " + Dp);
+    // console.log("speri: " + speri);
+    // console.log("spsurfarea: " + spsurfarea);
+    // console.log("voidfrac: " + voidfrac);
 }
-console.log("vmf: " + vmf);
-console.log("Dp: " + Dp);
-console.log("speri: " + speri);
-console.log("spsurfarea: " + spsurfarea);
-console.log("voidfrac: " + voidfrac);
+// console.log("vmf: " + vmf);
+// console.log("Dp: " + Dp);
+// console.log("speri: " + speri);
+// console.log("spsurfarea: " + spsurfarea);
+// console.log("voidfrac: " + voidfrac);
 var dGlBead = 2500;
 var voidVol = 153.38;
 if (pkmat == "Glass beads of 4mm size") {
@@ -752,7 +752,7 @@ var densitymf = 1600;
 
 function setProcessFluid() {
     processFluid = document.getElementById("processFluid").value;
-    console.log(processFluid);
+    // console.log(processFluid);
     if (processFluid == "Water") {
         densitypf = 1000;
         viscositypf = 0.001;
@@ -760,8 +760,8 @@ function setProcessFluid() {
         densitypf = 820;
         viscositypf = 0.00215;
     }
-    console.log("dpf: " + densitypf);
-    console.log("vpf: " + viscositypf);
+    // console.log("dpf: " + densitypf);
+    // console.log("vpf: " + viscositypf);
 }
 
 
@@ -771,14 +771,14 @@ var manoFluid = "Carbon tetrachloride";
 
 function setManoFluid() {
     manoFluid = document.getElementById("manoFluid").value;
-    console.log(manoFluid);
+    // console.log(manoFluid);
     if (manoFluid == "Carbon tetrachloride") {
         densitymf = 1600;
     } else if (manoFluid == "Mercury") {
         densitymf = 13600;
     }
-    console.log(manoFluid);
-    console.log("dmf: " + densitymf);
+    // console.log(manoFluid);
+    // console.log("dmf: " + densitymf);
 }
 
 ////////////        For evaluation values       ////////////
@@ -786,7 +786,7 @@ var pbLengthEval = 0.5;
 
 function setPBLengthEval() {
     pbLengthEval = document.getElementById('bedLength').value;
-    console.log("pbLength " + pbLengthEval);
+    // console.log("pbLength " + pbLengthEval);
 
 }
 var pBMaterialEval = "25mm Raschig ring";
@@ -796,7 +796,7 @@ var voidfracEval = 0.73;
 
 function setPBMaterialEval() {
     pBMaterialEval = document.getElementById('packMaterialEval').value;
-    console.log(pBMaterial);
+    // console.log(pBMaterial);
 
 
     if (pBMaterialEval == "25mm Raschig ring") {
@@ -816,10 +816,10 @@ function setPBMaterialEval() {
         spsurfareaEval = 810;
         voidfracEval = 0.46;
     }
-    console.log("pBMaterial: " + pBMaterialEval);
-    console.log("speri: " + speriEval);
-    console.log("spsurfarea: " + spsurfareaEval);
-    console.log("voidfrac: " + voidfracEval);
+    // console.log("pBMaterial: " + pBMaterialEval);
+    // console.log("speri: " + speriEval);
+    // console.log("spsurfarea: " + spsurfareaEval);
+    // console.log("voidfrac: " + voidfracEval);
 }
 var pipeLength = 1;
 var pbDiaEval = 0.25;
@@ -828,7 +828,7 @@ var actualPipeDiaEval = 0.0092,
 
 function setPBDiaEval() {
     pbDiaEval = document.getElementById("pbDiaSelectEval").value;
-    console.log(pbDiaEval);
+    // console.log(pbDiaEval);
 
 
     if (pbDiaEval == 0.25)
@@ -846,9 +846,9 @@ function setPBDiaEval() {
 
 
     areaEval = (3.14 / 4) * Math.pow(actualPipeDiaEval, 2);
-    console.log("area " + areaEval);
-    console.log("actualPipeDia " + actualPipeDiaEval);
-    console.log("pbDia " + pbDiaEval);
+    // console.log("area " + areaEval);
+    // console.log("actualPipeDia " + actualPipeDiaEval);
+    // console.log("pbDia " + pbDiaEval);
 }
 
 // function setPipeLength() {
@@ -870,7 +870,7 @@ var edensitymf = 1600;
 
 function setProcessFluidEval() {
     processFluidEval = document.getElementById("processFluidEval").value;
-    console.log(processFluidEval);
+    // console.log(processFluidEval);
     if (processFluidEval == "Water") {
         edensitypf = 1000;
         eViscositypf = 0.001;
@@ -878,27 +878,27 @@ function setProcessFluidEval() {
         edensitypf = 820;
         eViscositypf = 0.00215;
     }
-    console.log("dpf: " + edensitypf);
-    console.log("vpf: " + eViscositypf);
+    // console.log("dpf: " + edensitypf);
+    // console.log("vpf: " + eViscositypf);
 }
 
 var manoFluidEval = "Carbon tetrachloride";
 
 function setManoFluidEval() {
     manoFluidEval = document.getElementById("manoFluidEval").value;
-    console.log(manoFluidEval);
+    // console.log(manoFluidEval);
     if (manoFluidEval == "Carbon tetrachloride") {
         edensitymf = 1600;
     } else if (manoFluidEval == "Mercury") {
         edensitymf = 13600;
     }
-    console.log(manoFluidEval);
-    console.log("dmf: " + edensitymf);
+    // console.log(manoFluidEval);
+    // console.log("dmf: " + edensitymf);
 }
 
-console.log("dpf: " + densitypf);
-console.log("dmf: " + densitymf);
-console.log("vpf: " + viscositypf);
+// console.log("dpf: " + densitypf);
+// console.log("dmf: " + densitymf);
+// console.log("vpf: " + viscositypf);
 
 // erinnnnnnnend
 
@@ -938,6 +938,7 @@ function fluidMoveAndPinMove(angle) {
     valOfRato = 0.00;
     h1Final = 0.00;
     valOfRatoNew = 0.00;
+    bheigh = (20.0).toFixed(1);
     h2Final = 0.00;
     flulen = 0.0;
     bh = 0.0;
@@ -950,14 +951,14 @@ function fluidMoveAndPinMove(angle) {
 
     if (manoFluid == "Mercury") {
         valOfRato = (356 - angle) * 0.1228;
-        console.log("multiplier: 0.0198"); //prior;0.0198..for mercury maxrota-37.92
+        // console.log("multiplier: 0.0198"); //prior;0.0198..for mercury maxrota-37.92
 
     } else {
         valOfRato = (356 - angle) * 0.0198;
-        console.log("multiplier: 0.1020"); //prior;0.1066..for mercury maxrota-6.53
+        // console.log("multiplier: 0.1020"); //prior;0.1066..for mercury maxrota-6.53
 
     }
-    console.log("Val of Rato is ", valOfRato);
+    // console.log("Val of Rato is ", valOfRato);
 
     if (valOfRato < 0) {
         valOfRato = 0;
@@ -965,37 +966,37 @@ function fluidMoveAndPinMove(angle) {
         h2New = 35.00;
     }
     valOfRatoNew = valOfRato.toFixed(2);
-    console.log("Val of Rato is ", valOfRatoNew);
+    // console.log("Val of Rato is ", valOfRatoNew);
 
-    console.log("speri: " + speri);
-    console.log("spsurfarea: " + spsurfarea);
-    console.log("voidfrac: " + voidfrac);
-    console.log("Dp: " + Dp);
+    // console.log("speri: " + speri);
+    // console.log("spsurfarea: " + spsurfarea);
+    // console.log("voidfrac: " + voidfrac);
+    // console.log("Dp: " + Dp);
 
-    console.log("dpf: " + densitypf);
-    console.log("vpf: " + viscositypf);
-    console.log("dmf: " + densitymf);
+    // console.log("dpf: " + densitypf);
+    // console.log("vpf: " + viscositypf);
+    // console.log("dmf: " + densitymf);
 
     var friction, hw, hf, voidflu, _loc1_, _loc2_, _loc3_, _loc4_;
     // var minV = roots((1.75 * densitypf / Dp / Math.pow(voidfrac, 3)), (150 * (1 - voidfrac) * viscositypf / Dp / Dp / Math.pow(voidfrac, 3)), (-9.8 * (2500 - densitypf)));
     // var flowrate = Number(((335 - this.rotameter_mc.float_mc.y) / 6).toFixed(2)) / 60000;
-    console.log("Vmf: " + vmf);
-    console.log("actualPipeDia: " + actualPipeDia);
+    // console.log("Vmf: " + vmf);
+    // console.log("actualPipeDia: " + actualPipeDia);
 
     var velocity = valOfRatoNew / (60000 * area);
-    console.log("velocity: " + velocity);
+    // console.log("velocity: " + velocity);
 
     var reynolds = densitypf * Dp * velocity / (viscositypf);
-    console.log("reynolds: " + reynolds);
-    console.log("staticBed: " + staticBed);
+    // console.log("reynolds: " + reynolds);
+    // console.log("staticBed: " + staticBed);
     // console.log("reynolds: " + reynolds);
 
     if (velocity <= vmf) {
         functionNo = 0;
         friction = 150 * (1 - voidfrac) / speri / reynolds + 1.75;
         hw = (friction * staticBed * Math.pow(velocity * densitypf, 2) * (1 - voidfrac)) / (Math.pow(voidfrac, 3) * densitypf * speri * Dp * densitypf * 9.8);
-        console.log("friction1: " + friction);
-        console.log("hw1: " + hw);
+        // console.log("friction1: " + friction);
+        // console.log("hw1: " + hw);
 
     } else {
         functionNo = 1;
@@ -1003,18 +1004,18 @@ function fluidMoveAndPinMove(angle) {
         _loc2_ = 150 * velocity * viscositypf / 9.8 / (2500 - densitypf) / Dp;
         _loc3_ = _loc2_ + 1.75 * densitypf * velocity * velocity;
         _loc4_ = 150 * viscositypf * (velocity - vmf) / 9.8 / (2500 - densitypf) / Dp / Dp + Math.pow(voidfrac, 3) / (1 - voidfrac);
-        console.log("_loc1_: " + _loc1_);
-        console.log("_loc2_: " + _loc2_);
-        console.log("_loc3_: " + _loc3_);
-        console.log("_loc4_: " + _loc4_);
+        // console.log("_loc1_: " + _loc1_);
+        // console.log("_loc2_: " + _loc2_);
+        // console.log("_loc3_: " + _loc3_);
+        // console.log("_loc4_: " + _loc4_);
 
         if (reynolds <= 1) {
             voidflu = cubic(1, 0, _loc4_, -_loc4_);
-            console.log("voidflu1: " + voidflu);
+            // console.log("voidflu1: " + voidflu);
 
         } else {
             voidflu = cubic(_loc1_, 0, _loc2_, -_loc3_);
-            console.log("voidflu2: " + voidflu);
+            // console.log("voidflu2: " + voidflu);
 
         }
         flulen = 0.0;
@@ -1028,21 +1029,24 @@ function fluidMoveAndPinMove(angle) {
         fluidHeight = 325 - 325 / 2.5 * flulen;
         // var fh = document.getElementById('bedHght').innerText;
         // fluidHeight = 20.0;
-        console.log("fluidHeight: " + fluidHeight);
+        // console.log("fluidHeight: " + fluidHeight);
 
         // if (valOfRato > 1.75) {
         //     fluidHeight = parseFloat(fh) + parseFloat(0.6);
         document.getElementById('bedHght').innerText = bh;
         console.log("Bed height increase!");
         var tp = parseFloat(340) - parseFloat(flulen * 2);
-        console.log("tp: " + tp);
+        // console.log("tp: " + tp);
 
         var ht = parseFloat(30) + parseFloat(flulen * 2);
-        console.log("ht: " + ht);
+        // console.log("ht: " + ht);
 
         document.getElementById('fluBed').style.top = tp + "px";
 
         document.getElementById('fluBed').style.height = ht + "px";
+        bheigh = 0.0;
+        bheigh = (flulen * 100).toFixed(1);
+
         if ((flulen * 100) >= 250) {
             // fluidHeight = 70;
             document.getElementById('fluBed').style.top = "171px";
@@ -1054,10 +1058,10 @@ function fluidMoveAndPinMove(angle) {
         }
 
         // }
-        console.log("fluidHeight: " + fluidHeight);
+        // console.log("fluidHeight: " + fluidHeight);
         // Object(this.bg_mc).speed = 50;
         hw = (2500 - densitypf) * (1 - voidfrac) * staticBed / densitypf;
-        console.log("hw2: " + hw);
+        // console.log("hw2: " + hw);
 
     }
     // if (manoFluid == "Mercury") {
@@ -1067,7 +1071,7 @@ function fluidMoveAndPinMove(angle) {
 
     hf = hw * densitypf / (densitymf - densitypf);
 
-    console.log("hf: " + hf);
+    // console.log("hf: " + hf);
 
 
     // this.h1_txt.text = "h1 : " + String((35 + this.hf * 50).toFixed(1)) + " cm";
@@ -1076,9 +1080,9 @@ function fluidMoveAndPinMove(angle) {
 
         // this.h1_txt.text = "h1 : 70 cm";
         // this.h2_txt.text = "h2 : 0 cm";
-        console.log("hf>70");
+        // console.log("hf>70");
     }
-    console.log("Val of Rato is ", valOfRatoNew);
+    // console.log("Val of Rato is ", valOfRatoNew);
 
 
     //find deltaH
@@ -1091,7 +1095,7 @@ function fluidMoveAndPinMove(angle) {
 
     // console.log("pBMaterial: " + pBMaterial);
 
-    console.log("actualPipeDia " + actualPipeDia);
+    // console.log("actualPipeDia " + actualPipeDia);
     // console.log("pbDia " + pbDia);
     // //find area
     // area = (3.14 / 4) * Math.pow(actualPipeDia, 2);
@@ -1127,27 +1131,27 @@ function fluidMoveAndPinMove(angle) {
     // var halfDh = deltaH / 2;
 
 
-    console.log("h1= " + h1New);
-    console.log("h2= " + h2New);
+    // console.log("h1= " + h1New);
+    // console.log("h2= " + h2New);
     h1New = 35.00 + hf * 50;
-    console.log("The h1 new dec fixed is: ", h1New);
+    // console.log("The h1 new dec fixed is: ", h1New);
     h2New = 35.00 - hf * 50;
-    console.log("The h2 new dec fixed is: ", h2New);
-    console.log("The h1 val is: ", h1New);
-    console.log("The h2  val is: ", h2New);
+    // console.log("The h2 new dec fixed is: ", h2New);
+    // console.log("The h1 val is: ", h1New);
+    // console.log("The h2  val is: ", h2New);
 
     h1Final = h1New.toFixed(2);
     h2Final = h2New.toFixed(2);
-    console.log("The h1 final val is: ", h1Final);
-    console.log("The h2 final val is: ", h2Final);
+    // console.log("The h1 final val is: ", h1Final);
+    // console.log("The h2 final val is: ", h2Final);
 
     if (h1Final >= 69) {
         h1Final = 70;
         h2Final = 0;
         // valOfRatoNew = ;
-        console.log("Overflow condition");
+        // console.log("Overflow condition");
         document.getElementById('overflow').style.visibility = "visible";
-        console.log("Overflow condition");
+        // console.log("Overflow condition");
         document.getElementById('overflow').style.visibility = "visible";
         document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer to Mercury.";
 
@@ -1232,7 +1236,7 @@ function fluidMoveAndPinMove(angle) {
     document.getElementById("obserButton").onclick = function() {
         // erin
         document.getElementById("obserButton").style.visibility = "visible";
-        console.log("Clicking on observ button ");
+        // console.log("Clicking on observ button ");
         flagForObserTable = !flagForObserTable;
         observeTable(flagForObserTable);
         document.getElementById("displayExpValues").style.visibility = "hidden";
@@ -1243,9 +1247,9 @@ function fluidMoveAndPinMove(angle) {
 
 // ERIN
 function observeTable(flag) {
-    console.log("Clicking on observe button");
+    // console.log("Clicking on observe button");
 
-    console.log("the flag value is" + flag);
+    // console.log("the flag value is" + flag);
     if (flag) {
         document.getElementById("obcanvas").style.visibility = "visible";
         document.getElementById("observeTable").style.visibility = "visible";
@@ -1268,7 +1272,7 @@ function observeTable(flag) {
 }
 // erin
 function remAllRead() {
-    console.log("remove all selected");
+    // console.log("remove all selected");
     document.getElementById("emailreq").style.visibility = "hidden";
     document.getElementById("emailSend").style.visibility = "hidden";
     document.getElementById("noteremsel").style.visibility = "hidden";
@@ -1278,19 +1282,19 @@ function remAllRead() {
     var rowsval = document.getElementById('observeTable').getElementsByTagName('thead')[0];
     var i;
     for (i = 1; i < rows.length; i++) {
-        console.log("rows.length" + rows.length);
-        console.log("i value is " + i);
+        // console.log("rows.length" + rows.length);
+        // console.log("i value is " + i);
         $(rowsval.getElementsByTagName('tr')[i--]).remove();
-        console.log("loop works");
+        // console.log("loop works");
     }
     //$(rows).remove();
     //removes whole table:---------   
     //table.remove();
-    console.log("removed");
+    // console.log("removed");
 }
 // erin 08092021 
 function emailSend() {
-    console.log("email button clicked");
+    // console.log("email button clicked");
     document.getElementById("emailSend").style.visibility = "visible";
     document.getElementById("emailreq").style.visibility = "hidden";
     document.getElementById("noteremsel").style.visibility = "hidden";
@@ -1317,11 +1321,11 @@ function sendEmail() {
     var emid1 = document.getElementById('emailR');
     // console.log(emid1);
     emidlen = emid1.value.length;
-    console.log("email length is " + emidlen);
+    // console.log("email length is " + emidlen);
     if (emidlen > 0) {
-        console.log("send button clicked");
+        // console.log("send button clicked");
 
-        console.log(emid);
+        // console.log(emid);
 
         document.getElementById("info").innerHTML = "";
         var myTab = document.getElementById("observeTable");
@@ -1338,25 +1342,25 @@ function sendEmail() {
             }
             info.innerHTML = info.innerHTML + '%0D%0A%0D%0A'; // ADD A BREAK (TAG).
         }
-        console.log("body is filled" + info);
+        // console.log("body is filled" + info);
         var mailBody = document.getElementById("info").innerHTML;
         window.location = "mailto:" + emid + "?subject=The Observation Data &body=" + mailBody;
 
-        console.log("data sent to mail");
+        // console.log("data sent to mail");
 
     } else {
-        console.log("else is executing");
+        // console.log("else is executing");
         document.getElementById("emailreq").style.visibility = "visible";
     }
 }
 
 function setemail(val) {
     emid = val
-    console.log(emid);
+        // console.log(emid);
 }
 
 function remSelRead() {
-    console.log("remove selected");
+    // console.log("remove selected");
     document.getElementById("emailreq").style.visibility = "hidden";
     document.getElementById("emailSend").style.visibility = "hidden";
     document.getElementById("noteremsel").style.visibility = "visible";
@@ -1369,7 +1373,7 @@ function remSelRead() {
         rows[i].onclick = function() {
             //alert(this.rowIndex + 1);
             idx = this.rowIndex;
-            console.log(idx);
+            // console.log(idx);
             table.deleteRow(idx);
 
         }
@@ -1380,19 +1384,19 @@ function remSelRead() {
 
 function roots(param1, param2, param3) {
     var _loc4_ = [];
-    console.log("_loc4_:" + _loc4_);
+    // console.log("_loc4_:" + _loc4_);
 
     if ((_loc4_ = getQuadraticRoots(param1, param2, param3))[0] > 0) {
-        console.log("_loc4_[0] sent:" + _loc4_[0]);
+        // console.log("_loc4_[0] sent:" + _loc4_[0]);
         return _loc4_[0];
     }
     if (_loc4_[1] > 0) {
-        console.log("_loc4_[1] sent:" + _loc4_[1]);
+        // console.log("_loc4_[1] sent:" + _loc4_[1]);
         return _loc4_[1];
     }
-    console.log("_loc4_:" + _loc4_);
-    console.log("_loc4_[0]:" + _loc4_[0]);
-    console.log("_loc4_[1]:" + _loc4_[1]);
+    // console.log("_loc4_:" + _loc4_);
+    // console.log("_loc4_[0]:" + _loc4_[0]);
+    // console.log("_loc4_[1]:" + _loc4_[1]);
     return 0;
 }
 
@@ -1412,16 +1416,16 @@ function getQuadraticRoots(param1, param2, param3) {
     if (discriminant > 0) {
         root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
         r = [root2];
-        console.log("root1: " + root1);
+        // console.log("root1: " + root1);
         root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-        console.log("root2: " + root2);
+        // console.log("root2: " + root2);
         r = [root1];
         if (root1 > 0)
             r = [root1];
         if (root2 > 0)
             r = [root2];
         // result
-        console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+        // console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
     }
 
     // condition for real and equal roots
@@ -1431,7 +1435,7 @@ function getQuadraticRoots(param1, param2, param3) {
         r = [root1];
 
         // result
-        console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+        // console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
     }
 
     // if roots are not real
@@ -1440,11 +1444,11 @@ function getQuadraticRoots(param1, param2, param3) {
         let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
 
         // result
-        console.log(
-            `The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
-        );
+        // console.log(
+        //     `The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
+        // );
     }
-    console.log("r:" + r);
+    // console.log("r:" + r);
 
     return r;
 }
@@ -1453,22 +1457,22 @@ function cubic(param1, param2, param3, param4) {
     var _loc5_ = [];
 
     if ((_loc5_ = getCubicRoots(param1, param2, param3, param4))[0] > 0 && _loc5_[0] <= 1) {
-        console.log("_loc5_ sent :" + _loc5_);
+        // console.log("_loc5_ sent :" + _loc5_);
         return _loc5_[0];
 
     }
     if (_loc5_[1] > 0 && _loc5_[1] <= 1) {
-        console.log("_loc5_ sent :" + _loc5_);
+        // console.log("_loc5_ sent :" + _loc5_);
         return _loc5_[1];
     }
     if (_loc5_[2] > 0 && _loc5_[2] <= 1) {
-        console.log("_loc5_ sent :" + _loc5_);
+        // console.log("_loc5_ sent :" + _loc5_);
         return _loc5_[2];
     }
-    console.log("_loc5_:" + _loc5_);
-    console.log("_loc5_[0]:" + _loc5_[0]);
-    console.log("_loc5_[1]:" + _loc5_[1]);
-    console.log("_loc5_[2]:" + _loc5_[2]);
+    // console.log("_loc5_:" + _loc5_);
+    // console.log("_loc5_[0]:" + _loc5_[0]);
+    // console.log("_loc5_[1]:" + _loc5_[1]);
+    // console.log("_loc5_[2]:" + _loc5_[2]);
 
     return 0;
 
@@ -1504,8 +1508,8 @@ function getCubicRoots(param1, param2, param3, param4) {
     // Convert to depressed cubic t^3+pt+q = 0 (subst x = t - b/3a)
     var p = (3 * a * c - b * b) / (3 * a * a);
     var q = (2 * b * b * b - 9 * a * b * c + 27 * a * a * d) / (27 * a * a * a);
-    console.log("p: " + p);
-    console.log("q: " + q);
+    // console.log("p: " + p);
+    // console.log("q: " + q);
 
     var roots = [];
 
@@ -1515,9 +1519,9 @@ function getCubicRoots(param1, param2, param3, param4) {
         roots = [0].concat(p < 0 ? [Math.sqrt(-p), -Math.sqrt(-p)] : []);
     } else {
         var D = q * q / 4 + p * p * p / 27;
-        console.log("D: " + D);
+        // console.log("D: " + D);
         if (Math.abs(D) < 1e-8) { // D = 0 -> two roots
-            console.log("Was inside d=0");
+            // console.log("Was inside d=0");
             if ((-1.5 * q) > 0) {
                 roots = [-1.5 * q];
             } else if ((3 * q / p) > 0) {
@@ -1525,16 +1529,16 @@ function getCubicRoots(param1, param2, param3, param4) {
             }
             // roots = [-1.5 * q / p, 3 * q / p];
         } else if (D > 0) { // Only one real root
-            console.log("Was inside d>0");
+            // console.log("Was inside d>0");
 
             var u = cuberoot(-q / 2 - Math.sqrt(D));
-            console.log("u: " + u);
+            // console.log("u: " + u);
 
             roots = [u - p / (3 * u)];
-            console.log("roots: " + roots);
+            // console.log("roots: " + roots);
 
         } else { // D < 0, three roots, but needs to use complex numbers/trigonometric solution
-            console.log("Was inside d<0");
+            // console.log("Was inside d<0");
 
             var u = 2 * Math.sqrt(-p / 3);
             var t = Math.acos(3 * q / p / u) / 3; // D < 0 implies p < 0 and acos argument in [-1..1]
@@ -1549,20 +1553,20 @@ function getCubicRoots(param1, param2, param3, param4) {
     }
 
 
-    console.log("roots:" + roots);
+    // console.log("roots:" + roots);
 
     return roots;
 }
 
 function cuberoot(x) {
     var y = Math.pow(Math.abs(x), 1 / 3);
-    console.log("y: " + y);
+    // console.log("y: " + y);
     return x < 0 ? -y : y;
 }
 // ERIN
 
 function displayExpValues(flag) {
-    console.log("Clicking on exp button");
+    // console.log("Clicking on exp button");
     // for (temp = 0; temp <= 7 ; temp++) 
     // { 
     // 	document.getElementById('canvas'+temp).style.visibility="hidden";
@@ -1593,7 +1597,7 @@ function displayExpValues(flag) {
 }
 
 function gotoObservation() {
-    console.log("go to observ.");
+    // console.log("go to observ.");
     document.getElementById("waterFlow").style.visibility = "hidden";
     document.getElementById("waterSteady").style.visibility = "hidden";
     document.getElementById("addtoTableButton").style.visibility = "hidden";
@@ -1759,14 +1763,14 @@ var pipeLengthEval = 1;
 
 function setPipeLengthEval() {
     pipeLengthEval = document.getElementById("pipeLengthEval").value;
-    console.log(pipeLengthEval);
+    // console.log(pipeLengthEval);
 }
 
 var chosenPipeDiaEval = 1.00;
 
 function setPipeDiaEval() {
     chosenPipeDiaEval = document.getElementById("pipeDiaSelectEval").value;
-    console.log(chosenPipeDiaEval);
+    // console.log(chosenPipeDiaEval);
 
     // if (chosenPipeDiaEval == 1.00)
     //     actualPipeDia = 0.0266;
@@ -1778,7 +1782,7 @@ function setPipeDiaEval() {
 
     // area = (3.14 / 4) * Math.pow(actualPipeDia, 2);
     // console.log("area " + area);
-    console.log("actualPipeDia " + actualPipeDia);
+    // console.log("actualPipeDia " + actualPipeDia);
     // console.log("pbDia " + pbDia);
 }
 
@@ -1787,14 +1791,14 @@ var processFluidEval = "Water"
 
 function setProcessFluidEval() {
     processFluidEval = document.getElementById("processFluidEval").value;
-    console.log(processFluidEval);
+    // console.log(processFluidEval);
 }
 
 var manoFluidEval = "Carbon tetrachloride"
 
 function setManoFluidEval() {
     manoFluidEval = document.getElementById("manoFluidEval").value;
-    console.log(manoFluidEval);
+    // console.log(manoFluidEval);
 }
 
 // Step 3
@@ -1803,12 +1807,12 @@ var evalSets = 1;
 
 function setEvalSets() {
     evalSets = document.getElementById("evalSets").value;
-    console.log(evalSets);
+    // console.log(evalSets);
 
     var table = document.getElementById("configInputTable");
 
     var rowCount = table.rows.length - 1;
-    console.log("Pre count:  ", rowCount);
+    // console.log("Pre count:  ", rowCount);
     if (rowCount > 0) {
         for (var x = 1; x <= rowCount; x++) {
             table.deleteRow(1);
@@ -1838,7 +1842,7 @@ function evaluateConfig() {
 
     var rowCountPost = table.rows.length - 1;
 
-    console.log("Total rows: ", rowCountPost);
+    // console.log("Total rows: ", rowCountPost);
     for (var z = 1; z <= rowCountPost; z++) {
         var out = document.getElementById("showResRey");
         out.innerText = "Calculating...";
@@ -1851,68 +1855,68 @@ function evaluateConfig() {
 
         presInMeter = pres / 100;
 
-        console.log("Diameter is inch: ", pbDiaEval);
-        console.log("Diameter of the pipe in meter is: ", actualPipeDiaEval);
-        console.log("Radius is: ", (actualPipeDiaEval / 2));
+        // console.log("Diameter is inch: ", pbDiaEval);
+        // console.log("Diameter of the pipe in meter is: ", actualPipeDiaEval);
+        // console.log("Radius is: ", (actualPipeDiaEval / 2));
 
         //area 
         areaEval = (3.14 / 4) * Math.pow(actualPipeDiaEval, 2);
-        console.log("area " + areaEval);
+        // console.log("area " + areaEval);
 
         //velocity
         lpmConvVelocity = lpm / (60000 * areaEval); // convert lpm to m3/s              V E L O C I T Y
-        console.log("Velocity value is: ", lpmConvVelocity);
+        // console.log("Velocity value is: ", lpmConvVelocity);
 
-        console.log("Viscosity value of " + processFluid + " at 20 deg C is: ", eViscositypf);
-        console.log("Density of " + processFluidEval + " fluid is: ", edensitypf);
+        // console.log("Viscosity value of " + processFluid + " at 20 deg C is: ", eViscositypf);
+        // console.log("Density of " + processFluidEval + " fluid is: ", edensitypf);
 
         // Calculate Reynold's
         calculatedReyn = ((edensitypf * actualPipeDiaEval * lpmConvVelocity) / eViscositypf);
         calculatedReyn = calculatedReyn.toFixed(5); // ======    toFixed(5)
-        console.log("Calculated Reynold's value is: ", calculatedReyn);
+        // console.log("Calculated Reynold's value is: ", calculatedReyn);
 
         // // // calculate hf value		
         // hf = (((denMano - den) * presInMeter) / den);
         // console.log("Calculated hf value's: ", hf);
 
         //deltaP
-        console.log("presInMeter" + presInMeter);
+        // console.log("presInMeter" + presInMeter);
 
         deltaP = presInMeter * edensitypf * 9.81;
-        console.log("deltaP" + deltaP);
+        // console.log("deltaP" + deltaP);
 
         //value of G
         var G = (lpm * edensitypf) / areaEval / 60000;
-        console.log("G " + G);
-        console.log("G2 " + Math.pow(G, 2));
+        // console.log("G " + G);
+        // console.log("G2 " + Math.pow(G, 2));
 
 
         //dp value
         var dp = 6 * (1 - voidfracEval) / (speriEval * spsurfareaEval);
-        console.log("dp " + dp);
+        // console.log("dp " + dp);
 
         var outFric = document.getElementById("showResInFric");
 
         // ========================================================= Friction Factor calculation.
 
-        console.log("Manometric density value of " + manoFluidEval + " is: ", edensitymf);
-        console.log("speriEval: " + speriEval);
-        console.log("spsurfareaEval: " + spsurfareaEval);
-        console.log("voidfracEval: " + voidfracEval);
+        // console.log("Manometric density value of " + manoFluidEval + " is: ", edensitymf);
+        // console.log("speriEval: " + speriEval);
+        // console.log("spsurfareaEval: " + spsurfareaEval);
+        // console.log("voidfracEval: " + voidfracEval);
 
-        console.log("Length of pipe is: ", pbLengthEval);
+        // console.log("Length of pipe is: ", pbLengthEval);
         // calculate FF
         calculatedFricFact = (deltaP / pbLengthEval) * ((edensitypf * speriEval * dp) / Math.pow(G, 2)) * (Math.pow(voidfracEval, 3) / (1 - voidfracEval));
 
         // calculatedFricFact = (calculatedFricFact * 10000).toFixed(5);
         calculatedFricFact = (calculatedFricFact).toFixed(5);
-        console.log("Calculated F F value is: ", (calculatedFricFact));
+        // console.log("Calculated F F value is: ", (calculatedFricFact));
         if (isNaN(calculatedFricFact)) {
             calculatedFricFact = (0.000).toFixed(5);
 
         }
         // Compare Reynold's and Friction Factor.
-        console.log("The rey value taken in is: ", reyn);
+        // console.log("The rey value taken in is: ", reyn);
         setTimeout(() => {
             // if the count of rows in result table is more than 3, increase the top of both of the result showing paragraph.
             var resultTable = document.getElementById("configResultTable");
@@ -1946,7 +1950,7 @@ function evaluateConfig() {
             var table = document.getElementById("configInputTable");
             table.style.color = "#fff";
             var rowCounttt = table.rows.length - 1;
-            console.log("Count of rows after showing result is:  ", rowCounttt);
+            // console.log("Count of rows after showing result is:  ", rowCounttt);
             document.getElementById("evalSets").value = 0;
             // if (rowCounttt > 0) {
             //     for (var xx = 1; xx <= rowCounttt; xx++) {
