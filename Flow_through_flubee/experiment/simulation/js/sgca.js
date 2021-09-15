@@ -694,29 +694,45 @@ var pkmat = "Glass beads of 4mm size";
 var speri = 0.33;
 var spsurfarea = 190;
 var voidfrac = 0.73;
-var Dp = 004;
+var Dp = 0.004;
+var vmf = 0.05172342;
 
 function setpackMaterial() {
     pkmat = document.getElementById("packMat").value;
     console.log(pkmat);
 
-    if (pkmat == "25mm Raschig ring") {
+    if (pkmat == "Glass beads of 4mm size") {
         speri = 1;
         spsurfarea = 190;
         voidfrac = 0.46;
         Dp = 0.004;
-    } else if (pkmat == "25mm Berl saddle") {
+        if (processFluid == "Water") {
+            vmf = 0.05172342;
+        } else {
+            vmf = 0.053399;
+        }
+    } else if (pkmat == "Glass beads of 6mm size") {
         speri = 1;
         spsurfarea = 249;
         voidfrac = 0.47;
         Dp = 0.006;
+        if (processFluid == "Water") {
+            vmf = 0.068687;
+        } else {
+            vmf = 0.075238;
+        }
     }
+    console.log("vmf: " + vmf);
     console.log("Dp: " + Dp);
     console.log("speri: " + speri);
     console.log("spsurfarea: " + spsurfarea);
     console.log("voidfrac: " + voidfrac);
 }
-
+console.log("vmf: " + vmf);
+console.log("Dp: " + Dp);
+console.log("speri: " + speri);
+console.log("spsurfarea: " + spsurfarea);
+console.log("voidfrac: " + voidfrac);
 var dGlBead = 2500;
 var voidVol = 153.38;
 if (pkmat == "Glass beads of 4mm size") {
@@ -932,31 +948,12 @@ function fluidMoveAndPinMove(angle) {
         console.log("multiplier: 0.0198"); //prior;0.0198..for mercury maxrota-37.92
 
     } else {
-        valOfRato = (356 - angle) * 0.0398;
+        valOfRato = (356 - angle) * 0.0198;
         console.log("multiplier: 0.1020"); //prior;0.1066..for mercury maxrota-6.53
 
     }
     console.log("Val of Rato is ", valOfRato);
-    var fh = document.getElementById('bedHght').innerText;
-    fluidHeight = 20.0;
-    console.log("fluidHeight: " + fluidHeight);
 
-    if (valOfRato > 1.75) {
-        fluidHeight = parseFloat(fh) + parseFloat(0.6);
-        document.getElementById('bedHght').innerText = fluidHeight.toFixed(1);
-        console.log("Bed height increase!");
-        document.getElementById('fluBed').style.top = parseFloat(340) - parseFloat(fluidHeight * 2.5) + "px";
-        document.getElementById('fluBed').style.height = parseFloat(30) + parseFloat(fluidHeight * 2.5) + "px";
-        if (fluidHeight > 70) {
-            fluidHeight = 70;
-            document.getElementById('fluBed').style.top = "171px";
-            document.getElementById('fluBed').style.height = "200px";
-            document.getElementById('bedHght').innerText = fluidHeight.toFixed(1);
-            document.getElementById('overflow').style.visibility = "visible";
-        }
-
-    }
-    console.log("fluidHeight: " + fluidHeight);
     if (valOfRato < 0) {
         valOfRato = 0;
         h1New = 35.00;
@@ -975,9 +972,9 @@ function fluidMoveAndPinMove(angle) {
     console.log("dmf: " + densitymf);
 
     var friction, hw, hf, voidflu, flulen, _loc1_, _loc2_, _loc3_, _loc4_;
-    var minV = roots((1.75 * densitypf / Dp / Math.pow(voidfrac, 3)), (150 * (1 - voidfrac) * viscositypf / Dp / Dp / Math.pow(voidfrac, 3)), (-9.8 * (2500 - densitypf)));
+    // var minV = roots((1.75 * densitypf / Dp / Math.pow(voidfrac, 3)), (150 * (1 - voidfrac) * viscositypf / Dp / Dp / Math.pow(voidfrac, 3)), (-9.8 * (2500 - densitypf)));
     // var flowrate = Number(((335 - this.rotameter_mc.float_mc.y) / 6).toFixed(2)) / 60000;
-    console.log("minV: " + minV);
+    console.log("Vmf: " + vmf);
     console.log("actualPipeDia: " + actualPipeDia);
 
     var velocity = valOfRatoNew / (60000 * area);
@@ -988,17 +985,17 @@ function fluidMoveAndPinMove(angle) {
     console.log("staticBed: " + staticBed);
     // console.log("reynolds: " + reynolds);
 
-    if (velocity <= minV) {
+    if (velocity <= vmf) {
         friction = 150 * (1 - voidfrac) / speri / reynolds + 1.75;
         hw = (friction * staticBed * Math.pow(velocity * densitypf, 2) * (1 - voidfrac)) / (Math.pow(voidfrac, 3) * densitypf * speri * Dp * densitypf * 9.8);
         console.log("friction1: " + friction);
         console.log("hw1: " + hw);
 
     } else {
-        _loc1_ = 150 * minV * viscositypf * (1 - voidfrac) / 9.8 / (2500 - densitypf) / Dp / Math.pow(voidfrac, 3) + 1.75 * densitypf * minV * minV / Math.pow(voidfrac, 3);
+        _loc1_ = 150 * vmf * viscositypf * (1 - voidfrac) / 9.8 / (2500 - densitypf) / Dp / Math.pow(voidfrac, 3) + 1.75 * densitypf * vmf * vmf / Math.pow(voidfrac, 3);
         _loc2_ = 150 * velocity * viscositypf / 9.8 / (2500 - densitypf) / Dp;
         _loc3_ = _loc2_ + 1.75 * densitypf * velocity * velocity;
-        _loc4_ = 150 * viscositypf * (velocity - minV) / 9.8 / (2500 - densitypf) / Dp / Dp + Math.pow(voidfrac, 3) / (1 - voidfrac);
+        _loc4_ = 150 * viscositypf * (velocity - vmf) / 9.8 / (2500 - densitypf) / Dp / Dp + Math.pow(voidfrac, 3) / (1 - voidfrac);
         console.log("_loc1_: " + _loc1_);
         console.log("_loc2_: " + _loc2_);
         console.log("_loc3_: " + _loc3_);
@@ -1013,20 +1010,54 @@ function fluidMoveAndPinMove(angle) {
             console.log("voidflu2: " + voidflu);
 
         }
+        flulen = 0.0;
         flulen = staticBed * (1 - voidfrac) / (1 - voidflu);
         console.log("flulen: " + flulen);
-
+        console.log("Bed Height : " + (flulen * 100).toFixed(1));
+        fluidHeight = 0.0;
         // flulen_txt.text = "Bed Height : " + (flulen * 100).toFixed(1) + " cm";
-        // this.bg_mc.fluid_mc.height = 325 - 325 / this.bedlength * this.flulen;
+        fluidHeight = 325 - 325 / 2.5 * flulen;
+        // var fh = document.getElementById('bedHght').innerText;
+        // fluidHeight = 20.0;
+        console.log("fluidHeight: " + fluidHeight);
+
+        // if (valOfRato > 1.75) {
+        //     fluidHeight = parseFloat(fh) + parseFloat(0.6);
+        document.getElementById('bedHght').innerText = (flulen * 100).toFixed(1);
+        console.log("Bed height increase!");
+        var tp = parseFloat(340) - parseFloat(flulen * 2);
+        console.log("tp: " + tp);
+
+        var ht = parseFloat(30) + parseFloat(flulen * 2);
+        console.log("ht: " + ht);
+
+        document.getElementById('fluBed').style.top = tp + "px";
+
+        document.getElementById('fluBed').style.height = ht + "px";
+        if ((flulen * 100) >= 250) {
+            // fluidHeight = 70;
+            document.getElementById('fluBed').style.top = "171px";
+            document.getElementById('fluBed').style.height = "200px";
+            document.getElementById('bedHght').innerText = (250).toFixed(1);
+            document.getElementById('overflow').style.visibility = "visible";
+            document.getElementById('overflowMessage').innerHTML = "Manometric Fluid or Glass beads are about to Overflow.<br> Change the Manometer.";
+
+        }
+
+        // }
+        console.log("fluidHeight: " + fluidHeight);
         // Object(this.bg_mc).speed = 50;
         hw = (2500 - densitypf) * (1 - voidfrac) * staticBed / densitypf;
         console.log("hw2: " + hw);
 
     }
-    if (manoFluid == "Mercury") {
-        hf = hw * densitypf / (densitymf - densitypf) * 1000000;
-    } else
-        hf = hw * densitypf / (densitymf - densitypf) * 10000;
+    // if (manoFluid == "Mercury") {
+    //     hf = hw * densitypf / (densitymf - densitypf) * 1000000;
+    // } else
+    //     hf = hw * densitypf / (densitymf - densitypf) * 10000;
+
+    hf = hw * densitypf / (densitymf - densitypf);
+
     console.log("hf: " + hf);
 
 
@@ -1046,8 +1077,8 @@ function fluidMoveAndPinMove(angle) {
     // console.log("deltaH " + deltaH);
 
     //half value to be added
-    var halfDh = hf / 2;
-    console.log("halfDh= " + halfDh);
+    // var halfDh = hf / 2;
+    // console.log("halfDh= " + halfDh);
 
     // console.log("pBMaterial: " + pBMaterial);
 
@@ -1089,9 +1120,9 @@ function fluidMoveAndPinMove(angle) {
 
     console.log("h1= " + h1New);
     console.log("h2= " + h2New);
-    h1New = 35.00 + halfDh;
+    h1New = 35.00 + hf * 50;
     console.log("The h1 new dec fixed is: ", h1New);
-    h2New = 35.00 - halfDh;
+    h2New = 35.00 - hf * 50;
     console.log("The h2 new dec fixed is: ", h2New);
     console.log("The h1 val is: ", h1New);
     console.log("The h2  val is: ", h2New);
@@ -1178,7 +1209,7 @@ function fluidMoveAndPinMove(angle) {
             cell3.innerHTML = valOfRatoNew;
             cell4.innerHTML = h1Final;
             cell5.innerHTML = h2Final;
-            cell6.innerHTML = bedHeight;
+            cell6.innerHTML = (flulen * 100).toFixed(1);
         }
         // erinend
     document.getElementById("obserButton").onclick = function() {
@@ -1403,15 +1434,18 @@ function getQuadraticRoots(param1, param2, param3) {
 
 function cubic(param1, param2, param3, param4) {
     var _loc5_ = [];
-    console.log("_loc5_:" + _loc5_);
 
     if ((_loc5_ = getCubicRoots(param1, param2, param3, param4))[0] > 0 && _loc5_[0] <= 1) {
+        console.log("_loc5_ sent :" + _loc5_);
         return _loc5_[0];
+
     }
     if (_loc5_[1] > 0 && _loc5_[1] <= 1) {
+        console.log("_loc5_ sent :" + _loc5_);
         return _loc5_[1];
     }
     if (_loc5_[2] > 0 && _loc5_[2] <= 1) {
+        console.log("_loc5_ sent :" + _loc5_);
         return _loc5_[2];
     }
     console.log("_loc5_:" + _loc5_);
@@ -1453,6 +1487,9 @@ function getCubicRoots(param1, param2, param3, param4) {
     // Convert to depressed cubic t^3+pt+q = 0 (subst x = t - b/3a)
     var p = (3 * a * c - b * b) / (3 * a * a);
     var q = (2 * b * b * b - 9 * a * b * c + 27 * a * a * d) / (27 * a * a * a);
+    console.log("p: " + p);
+    console.log("q: " + q);
+
     var roots = [];
 
     if (Math.abs(p) < 1e-8) { // p = 0 -> t^3 = -q -> t = -q^1/3
@@ -1461,16 +1498,31 @@ function getCubicRoots(param1, param2, param3, param4) {
         roots = [0].concat(p < 0 ? [Math.sqrt(-p), -Math.sqrt(-p)] : []);
     } else {
         var D = q * q / 4 + p * p * p / 27;
+        console.log("D: " + D);
         if (Math.abs(D) < 1e-8) { // D = 0 -> two roots
-            roots = [-1.5 * q / p, 3 * q / p];
+            console.log("Was inside d=0");
+            if ((-1.5 * q) > 0) {
+                roots = [-1.5 * q];
+            } else if ((3 * q / p) > 0) {
+                roots = [3 * q / p];
+            }
+            // roots = [-1.5 * q / p, 3 * q / p];
         } else if (D > 0) { // Only one real root
+            console.log("Was inside d>0");
+
             var u = cuberoot(-q / 2 - Math.sqrt(D));
+            console.log("u: " + u);
+
             roots = [u - p / (3 * u)];
+            console.log("roots: " + roots);
+
         } else { // D < 0, three roots, but needs to use complex numbers/trigonometric solution
+            console.log("Was inside d<0");
+
             var u = 2 * Math.sqrt(-p / 3);
             var t = Math.acos(3 * q / p / u) / 3; // D < 0 implies p < 0 and acos argument in [-1..1]
             var k = 2 * Math.PI / 3;
-            roots = [u * Math.cos(t), u * Math.cos(t - k), u * Math.cos(t - 2 * k)];
+            // roots = [u * Math.cos(t), u * Math.cos(t - k), u * Math.cos(t - 2 * k)];
         }
     }
 
@@ -1487,6 +1539,7 @@ function getCubicRoots(param1, param2, param3, param4) {
 
 function cuberoot(x) {
     var y = Math.pow(Math.abs(x), 1 / 3);
+    console.log("y: " + y);
     return x < 0 ? -y : y;
 }
 // ERIN
