@@ -928,6 +928,9 @@ var heightPinNew = 0;
 var topPin = 0;
 var topPinNew = 0;
 var fluidHeight = 20.0;
+var functionNo = 0;
+var flulen = 0.0,
+    bh = 0.0;
 
 function fluidMoveAndPinMove(angle) {
     h1Val = 0.00
@@ -936,6 +939,8 @@ function fluidMoveAndPinMove(angle) {
     h1Final = 0.00;
     valOfRatoNew = 0.00;
     h2Final = 0.00;
+    flulen = 0.0;
+    bh = 0.0;
     document.getElementById("fluBed").style.height = "30px";
     document.getElementById("fluBed").style.top = "340px";
     document.getElementById("waterPourSecondLongOne").style.visibility = "hidden";
@@ -971,7 +976,7 @@ function fluidMoveAndPinMove(angle) {
     console.log("vpf: " + viscositypf);
     console.log("dmf: " + densitymf);
 
-    var friction, hw, hf, voidflu, flulen, _loc1_, _loc2_, _loc3_, _loc4_;
+    var friction, hw, hf, voidflu, _loc1_, _loc2_, _loc3_, _loc4_;
     // var minV = roots((1.75 * densitypf / Dp / Math.pow(voidfrac, 3)), (150 * (1 - voidfrac) * viscositypf / Dp / Dp / Math.pow(voidfrac, 3)), (-9.8 * (2500 - densitypf)));
     // var flowrate = Number(((335 - this.rotameter_mc.float_mc.y) / 6).toFixed(2)) / 60000;
     console.log("Vmf: " + vmf);
@@ -986,12 +991,14 @@ function fluidMoveAndPinMove(angle) {
     // console.log("reynolds: " + reynolds);
 
     if (velocity <= vmf) {
+        functionNo = 0;
         friction = 150 * (1 - voidfrac) / speri / reynolds + 1.75;
         hw = (friction * staticBed * Math.pow(velocity * densitypf, 2) * (1 - voidfrac)) / (Math.pow(voidfrac, 3) * densitypf * speri * Dp * densitypf * 9.8);
         console.log("friction1: " + friction);
         console.log("hw1: " + hw);
 
     } else {
+        functionNo = 1;
         _loc1_ = 150 * vmf * viscositypf * (1 - voidfrac) / 9.8 / (2500 - densitypf) / Dp / Math.pow(voidfrac, 3) + 1.75 * densitypf * vmf * vmf / Math.pow(voidfrac, 3);
         _loc2_ = 150 * velocity * viscositypf / 9.8 / (2500 - densitypf) / Dp;
         _loc3_ = _loc2_ + 1.75 * densitypf * velocity * velocity;
@@ -1013,7 +1020,9 @@ function fluidMoveAndPinMove(angle) {
         flulen = 0.0;
         flulen = staticBed * (1 - voidfrac) / (1 - voidflu);
         console.log("flulen: " + flulen);
-        console.log("Bed Height : " + (flulen * 100).toFixed(1));
+        bh = 0.0;
+        bh = (flulen * 100).toFixed(1);
+        console.log("Bed Height : " + bh);
         fluidHeight = 0.0;
         // flulen_txt.text = "Bed Height : " + (flulen * 100).toFixed(1) + " cm";
         fluidHeight = 325 - 325 / 2.5 * flulen;
@@ -1023,7 +1032,7 @@ function fluidMoveAndPinMove(angle) {
 
         // if (valOfRato > 1.75) {
         //     fluidHeight = parseFloat(fh) + parseFloat(0.6);
-        document.getElementById('bedHght').innerText = (flulen * 100).toFixed(1);
+        document.getElementById('bedHght').innerText = bh;
         console.log("Bed height increase!");
         var tp = parseFloat(340) - parseFloat(flulen * 2);
         console.log("tp: " + tp);
@@ -1209,9 +1218,15 @@ function fluidMoveAndPinMove(angle) {
             cell3.innerHTML = valOfRatoNew;
             cell4.innerHTML = h1Final;
             cell5.innerHTML = h2Final;
+            if (functionNo == 1) {
+                cell6.innerHTML = bh;
+                functionNo = 0;
+            } else if (functionNo == 0) {
+                cell6.innerHTML = (20).toFixed(1);
+            }
             console.log("The h2 final val is: ", h2Final);
 
-            cell6.innerHTML = (flulen * 100).toFixed(1);
+
         }
         // erinend
     document.getElementById("obserButton").onclick = function() {
