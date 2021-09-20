@@ -1228,7 +1228,7 @@ function fluidMoveAndPinMove(angle) {
             } else if (functionNo == 0) {
                 cell6.innerHTML = (20).toFixed(1);
             }
-            console.log("The h2 final val is: ", h2Final);
+            // console.log("The h2 final val is: ", h2Final);
 
 
         }
