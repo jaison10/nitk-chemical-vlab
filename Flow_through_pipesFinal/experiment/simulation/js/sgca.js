@@ -1090,6 +1090,7 @@ function remSelRead() {
     var table = document.getElementById('observeTable');
     var idx = 0;
     var rows = document.getElementById('observeTable').getElementsByTagName('thead')[0].getElementsByTagName('tr');
+    console.log("rows ",rows);
     for (i = 1; i < rows.length; i++) {
         rows[i].onclick = function() {
             //alert(this.rowIndex + 1);
