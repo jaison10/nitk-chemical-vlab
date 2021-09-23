@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Reaction Kinetic Studies in Mixed Flow Reactor</title>
+    <title>Reaction Kinetic Studies in Plug Flow Reactor</title>
     <link rel="stylesheet" href="css/sgca.css" />
     <link rel="stylesheet" href="css/mathstyle.css" />
     <script type="text/javascript" src="js/jquerymin.js"></script>
@@ -15,8 +15,9 @@
         var temp = 0;
         var lnt = 0;
         var n;
-        new Propeller(document.getElementById("rot1"), { inertia: 0 });
-
+        new Propeller(document.getElementById("rot1"), {
+            inertia: 0
+        });
     </script>
     <style>
         .popup {
@@ -51,16 +52,17 @@
 
 </head>
 
-<body style="margin:0; font-family:verdana; font-size:14px;">
+<body style="margin:0; font-family:verdana; font-size:14px; ">
     <!--Simulation Screen start		-->
     <div id="simscreen">
 
         <!--Title of Simulation		-->
         <div id="titleLarge" class="title" style="visibility: visible;font-size:20px;">
-            <h3>Reaction Kinetic Studies in Mixed Flow Reactor</h3>
+            <h3>Reaction Kinetic Studies in Plug Flow Reactor</h3>
         </div>
+        &nbsp;
         <div id="titleSmall" class="title2" style="visibility:hidden;">
-            <h3 id="ftpmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);" style="font-size: 11px;">Reaction Kinetic Studies in Mixed Flow Reactor</h3>
+            <h3 id="ftpmotion" onmouseenter="goToStart(this.id);" onmouseleave="changeOriginal(this.id);" style="font-size: 12px;">Reaction Kinetic Studies in Plug Flow Reactor</h3>
 
         </div>
 
@@ -90,9 +92,9 @@
         <div class="simsubscreen" id="canvas1" style="visibility:hidden">
             <!-- <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span> -->
-<p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:24px; color: #fff; top: 30px; left: 230px;">What would you like to do.</p>
+            <p id="pumptext" class="steptext" style="position: absolute; font-family:verdana; font-size:24px; color: #fff; top: 30px; left: 230px;">What would you like to do.</p>
 
-            <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p>
+            <!-- <p style="position: absolute; top:60px; left: 170px; font-size:20px;"><b>What would you like to do?</b></p> -->
 
             <button onclick="selectAction(1)" style="position: absolute; top: 130px; left: 250px; width: 250px; height: 30px;">Perform experiment</button>
             <button onclick="selectAction(2)" style="position: absolute; top: 170px; left: 250px; width: 250px; height: 30px">Evaluate yourself</button>
@@ -161,30 +163,29 @@
 <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span> -->
             <p id="step2Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Details</p>
             <!-- EXPERIMENT PART -->
-            <img id="labelImage" style="visibility: hidden; position: absolute; left: 70px; top: 20px; width: 700px; height: 480px;" src="./Images/label.png">
+            <img id="labelImage" style="visibility: hidden; position: absolute; left: 50px; top: 20px; width: 700px; height: 480px;" src="./Images/label.png">
 
             <!-- Evaluation part -->
-            <div id="configExp">
-                <p style="position: absolute; top: 50px; color: #1981e2;font-style: italic;">Reaction Temperature:
-                    <input style="position: absolute; left: 260px;" type="number" step="1" value="30" id="reactionTempEval" name="Reaction Temperature" min="30" max="50" >
-                    <p style="color:#1981e2; position: absolute; left: 330px; top: 50px;font-style: italic;">° Celsius</p>
+            <div id="configExp" style="font-weight:bold;">
+                <p style="position: absolute; left:30px; top: 50px; color: #1981e2;font-style: italic;">Reaction Temperature :
+                    <input style="position: absolute; left: 260px;" type="number" step="1" value="30" id="reactionTempEval" name="Reaction Temperature" min="30" max="50">
+                    <p style="color:#1981e2; position: absolute; left: 440px; top: 50px;font-style: italic;">° Celsius</p>
                 </p>
-                <p style="position: absolute; top: 100px; color: rgb(131, 117, 117);font-style: italic;">Rate Constant(k):
-                    <input style="position: absolute; left: 260px;" type="number" value="" id="rateConstEval" >
-                    <p style="color:rgb(131, 117, 117); position: absolute; left: 450px; top: 100px;font-style: italic;">Litre/gmol.min</p>
+                <p style="position: absolute; left:30px; top: 100px; color: rgb(131, 117, 117);font-style: italic;">Rate Constant(k) :
+                    <input style="position: absolute; left: 260px;" type="number" value="" id="rateConstEval">
+                    <p style="color:rgb(131, 117, 117); position: absolute; left: 475px; top: 100px;font-style: italic;">Litre/gmol.min</p>
                 </p>
-                <p style="position: absolute; top: 150px; color:rgb(131, 117, 117);font-style: italic;">Frequency Factor(k<sub>°</sub>):
-                    <input style="position: absolute; left: 260px;" type="number" value="" id="freqFactor" >
-                    <p style="color:rgb(131, 117, 117); position: absolute; left: 450px; top: 150px;font-style: italic;">x10<sup>8</sup> (Litre/gmol.min)</p>
+                <p style="position: absolute; left:30px; top: 150px; color:rgb(131, 117, 117);font-style: italic;">Frequency Factor(k<sub>0</sub>) :
+                    <input style="position: absolute; left: 260px;" type="number" value="" id="freqFactor">
+                    <p style="color:rgb(131, 117, 117); position: absolute; left: 475px; top: 150px;font-style: italic;">x10<sup>8</sup> (Litre/gmol.min)</p>
                 </p>
-                <p style="position: absolute; top: 200px; color: rgb(131, 117, 117);font-style: italic;">Activation Energy:
-                    <input style="position: absolute; left: 260px;" type="number" value="" id="activationEnergy" >
-                    <p style="color:rgb(131, 117, 117); position: absolute; left: 450px; top: 200px;font-style: italic;">J/mol</p>
+                <p style="position: absolute;  left:30px; top: 200px; color: rgb(131, 117, 117);font-style: italic;">Activation Energy :
+                    <input style="position: absolute; left: 260px;" type="number" value="" id="activationEnergy">
+                    <p style="color:rgb(131, 117, 117); position: absolute; left: 475px; top: 200px;font-style: italic;">J/mol</p>
                 </p>
-                <button id="evaluateButtonFromData" style="position: absolute; top: 280px; left:75%;" onclick="evaluateEntries()">EVALUATE</button>
-                <div id="highlightEvaluation"
-                    style="position: absolute; top: -27.5px; left:655px; width: 92px; height:30px; border:4px solid yellow; border-radius:3px; visibility:hidden;">
-                </div>
+                <button id="evaluateButtonFromData" style="position: absolute; top: 280px; left:75%; padding:15px; font-weight:bold;">EVALUATE</button>
+                <div id="highlightEvaluation" style="position: absolute; top: -27.5px; left:655px; width: 92px; height:30px; border:4px solid yellow; border-radius:3px; visibility:hidden;"></div>
+
             </div>
 
             <p id="v2" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
@@ -197,27 +198,22 @@
             <p id="step3Heading" class="steptext" style="font-family:verdana; font-size:14px; color: #fff;">&nbsp; </p>
             <!-- EXPERIMENT PART -->
             <div id="experimentSetup" style="visibility: hidden; left: 100px;">
-                <p style="position: absolute; top: 50px; color: #1981e2;">Reactor Volume:
-                    <input style="position: absolute; left: 300px;" type="number" step="0.1" value="1" id="reactorVolume" name="Reactor Volume" min="1" max="5" onchange="setReactorVolume();">
-                    <p style="color:#1981e2; position: absolute; left: 380px; top: 50px;">Litre</p>
 
-                </p>
-
-                <p style="position: absolute; top: 100px; color: #1981e2;">Stock Concentration of Ethyl Acetate:</p>
-                <div class="" style="position: absolute; top: 100px; left: 300px; color: #39ff14;">
+                <p style="position: absolute; left:50px; top: 50px; color: #1981e2;">Stock Concentration of Ethyl Acetate:</p>
+                <div class="" style="position: absolute; top: 50px; left: 330px; color: #39ff14;">
                     <span id="rangeValueEthyl" style="color:#0dd635">0.020 M</span>
                     <Input class="range" type="range" name="" step="0.005" value="0.020" min="0.020" max="0.060" id="acConc" onChange="rangeSlideEthyl(this.value)" onmousemove="rangeSlideEthyl(this.value)"></Input>
                 </div>
 
-                <p style="position: absolute; top: 150px; color: #1981e2;">Stock Concentration of NaOH:</p>
-                <div class="" style="position: absolute; top: 150px; left: 300px; color: #39ff14;">
+                <p style="position: absolute; left:50px; top: 100px; color: #1981e2;">Stock Concentration of NaOH:</p>
+                <div class="" style="position: absolute; top: 100px; left: 330px; color: #39ff14;">
                     <span id="rangeValueNaOH" style="color:#0dd635">0.020 M</span>
                     <Input class="range" type="range" name="" step="0.005" value="0.020" min="0.020" max="0.060" id="ohConc" onChange="rangeSlideNaOH(this.value)" onmousemove="rangeSlideNaOH(this.value)"></Input>
                 </div>
 
-                <p style="position: absolute; top: 200px; color: #1981e2;">Reaction Temperature:
-                    <input style="position: absolute; left: 300px;" type="number" step="1" value="30" id="reactionTemp" name="Reaction Temperature" min="30" max="50" onchange="setReactorTemp();">
-                    <p style="color:#1981e2; position: absolute; left: 370px; top: 200px;">° Celsius</p>
+                <p style="position: absolute; left:50px; top: 150px; color: #1981e2;">Reaction Temperature:
+                    <input style="position: absolute; left: 282.5px; width:60px;" type="number" step="1" value="30" id="reactionTemp" name="Reaction Temperature" min="30" max="50" onchange="setReactorTemp();">
+                    <p style="color:#1981e2; position: absolute; left: 402.5px; top: 150px;">° Celsius</p>
                 </p>
 
 
@@ -228,25 +224,25 @@
                 <!-- <p style="position: absolute; top: 30px; color: #fff;">Number of Observations:
                     <input type="number" value="0" id="evalSets" name="length" min="1" max="100" onchange="setEvalSets();">
                 </p> -->
-                <div style="position: absolute; border:  1px solid #fff; width: 790px; height: 210px;">
-                    <h3 style="position: absolute; width:auto; top: -10px; color:#fff; left:330px;">User values</h3>
-                    <table id="configInputTable" style="font-size: 12px;position:absolute; border: 1px solid #fff; width: 770px; top:30px; left:13px;">
-                        <tr style="">
-                            <th>Temperature(Celsius)</th>
-                            <th>Rate constant (litre/gmol.min)</th>
-                            <th>Frequency Factor x10<sup>(-8)</sup>(litre/gmol.min)</th>
-                            <th>Activation Energy(J/mol)</th>
+                <div style="position: absolute;  width: 790px; height: 200px;">
+                    <h3 style="position: absolute; width:auto; top: -20px; color:#fff; left:330px;">User values</h3>
+                    <table id="configInputTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 770px; top:15px; left:12px;">
+                        <tr style="background-color:lightgrey;">
+                            <th style="background-color:lightgrey;">Temperature(Celsius)</th>
+                            <th style="background-color:lightgrey;">Rate constant (litre/gmol.min)</th>
+                            <th style="background-color:lightgrey;">Frequency Factor x10<sup>(-8)</sup>(litre/gmol.min)</th>
+                            <th style="background-color:lightgrey;">Activation Energy(J/mol)</th>
                         </tr>
                     </table>
                 </div>
-                <div style="position: absolute; top:250px; border: 1px solid #fff; width: 790px; height: 240px;">
-                    <h3 style="position: absolute; width:auto; top: -6px; color:#fff; left:330px;">Simulated values</h3>
-                    <table id="configSimulatedTable" style="font-size: 12px;position:absolute; border: 1px solid #fff; width: 770px; top:40px; left:13px;">
-                        <tr style="">
-                            <th>Temperature(Celsius)</th>
-                            <th>Rate constant (litre/gmol.min)</th>
-                            <th>Frequency Factor x10<sup>(-8)</sup>(litre/gmol.min)</th>
-                            <th>Activation Energy(J/mol)</th>
+                <div style="position: absolute; top:250px; width: 790px; height: 230px;">
+                    <h3 style="position: absolute; width:auto; top: 0px; color:#fff; left:330px;">Simulated values</h3>
+                    <table id="configSimulatedTable" style="font-size: 12px; position:absolute; border: 1px solid #fff; width: 770px; top:40px; left:13px; ">
+                        <tr style="background-color:lightgrey;">
+                            <th style="background-color:lightgrey;">Temperature(Celsius)</th>
+                            <th style="background-color:lightgrey;">Rate constant (litre/gmol.min)</th>
+                            <th style="background-color:lightgrey;">Frequency Factor x10<sup>(-8)</sup>(litre/gmol.min)</th>
+                            <th style="background-color:lightgrey;">Activation Energy(J/mol)</th>
                         </tr>
                     </table>
                 </div>
@@ -258,8 +254,7 @@
                 </table> -->
                 <p id="showResRey" style="position: absolute; left: 300px; top: 400px;"></p>
                 <p id="showResInFric" style="position: absolute; left: 470px; top: 180px;"></p>
-                <button id="clearEvaluationReadings"
-                    style="position: absolute; left: 350px; top: 500px; padding:5px; font-weight:bold;" onclick="clearEvalReadings()">Clear All Readings</button>
+                <button id="clearEvaluationReadings" style="position: absolute; left: 350px; top: 500px; padding:5px; font-weight:bold;">Clear All Readings</button>
                 <!-- <button style="position: absolute; left: 600px; top: 40px; width: 100px;" onclick="evaluateConfig();">EVALUATE</button> -->
             </div>
 
@@ -273,30 +268,33 @@
             <!-- <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span> -->
             <p id="step4Heading" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Experiment.</p>
             <!-- EXPERIMENT PART -->
-            
+
             <div id="experimentID" style="visibility: hidden;">
                 <img id="leftMotor" style="position: absolute; top:220px; left: 102px; width:21px; height: 30px; z-index: 2;" src="./Images/202.svg" alt="">
                 <img id="rightMotor" style="position: absolute; top:220px; left: 676px; width:21px; height: 30px; z-index: 2;" src="./Images/202.svg" alt="">
                 <img style="position: absolute; top:49px; left: 103px; width: 595px; height: 435px; z-index: 1;" src="./Images/pipes.png" alt="">
                 <img style="position: absolute; top:89px; left: 35px; width: 736px; height: 398px; z-index: 2;" src="./Images/vessel_pump_combo.png" alt="">
-                <img id="liquidLid" style="position: absolute; top:235px; left: 360px; width:0px; height: 10px; z-index: 2;" src="./Images/192.svg" alt="">
-                <img style="position: absolute; top:146px; left: 409px; width: 6px; height: 70px; z-index: 2;" src="./Images/rodVertical.png" alt="">
-                <img class="rodHori " style="position: absolute; top:210px; left: 370px; width: 85px; height: 12px; z-index: 2;" src="./Images/rodHori.png" alt="">
+                <img style="position: absolute; top:33px; left: 246.5px;  z-index: 2;" src="./Images/hotPump.png" alt="">
+                <img style="position: absolute; top:114.5px; left:341.5px; width:110px; z-index: 2;" src="./Images/hotPipe.png" alt="">
+                <img id="liquidLid" style="position: absolute; top: 124px; left: 344px; width: 105px; height: 100px; z-index: 2;" src="./Images/192.svg" alt="">
                 <img style="position: absolute; top:108px; left: 74px; width: 80px; height: 152px; z-index: 2;" src="./Images/top.png" alt="">
                 <img style="position: absolute; top:108px; left: 646px; width: 80px; height: 152px; z-index: 2;" src="./Images/top.png" alt="">
                 <img id="rot2" style="position: absolute; top:264px; left: 662px; width: 50px; height: 50px; z-index: 2;" src="./Images/gatewall.png" alt="">
                 <img id="rot1" style="position: absolute; top:264px; left: 88px; width: 50px; height: 50px; z-index: 2;" src="./Images/gatewall.png" alt="">
-                <img id="w1" style="position: absolute; top:432px; left: 330px; width: 112px; height: 34px; z-index: 2;visibility: hidden;" src="./Images/w1.png" alt="">
-                <img id="w2" style="position: absolute; top:432px; left: 330px; width: 112px; height: 34px; z-index: 2;visibility: hidden;" src="./Images/w2.png" alt="">
-                <img id="w3" style="position: absolute; top:432px; left: 330px; width: 112px; height: 34px; z-index: 2;visibility: hidden;" src="./Images/w3.png" alt="">
+
+                <!-- <div class="rain"></div> -->
+                <div class="rainWater" id="rain" style="position: absolute;  left: 358px; top: 350px; width: 13px; height:0; background-image: url('./Images/rain.png'); z-index: 2;"></div>
+                <div class="tank" id="waterTank" style="background-image:url('./Images/w3.png')"></div>
+
+                <!-- <img id="w1" style="position: absolute; top:432px; left: 330px; width: 112px; height: 34px; z-index: 2;" src="./Images/w1.png" alt=""> -->
+                <!-- <img id="w2" style="position: absolute; top:432px; left: 330px; width: 112px; height: 34px; z-index: 2;" src="./Images/w2.png" alt=""> -->
+                <!-- <img id="w3" style="position: absolute; top:432px; left: 330px; width: 112px; height: 34px; z-index: 2; " src="./Images/w3.png" alt=""> -->
 
                 <p style="position: absolute; top:130px; left: 166px; width: 40px;  z-index: 1; color: #64dd17; font-size: 15px;">Rotameter Reading:</p>
                 <p id="lR" style="position: absolute; top:170px; left: 166px; width: 70px;  z-index: 1; color: #0dd635; font-size: 15px;">0.00 LPH</p>
                 <p style="position: absolute; top:130px; left: 555px; width: 40px;  z-index: 1; color: #64dd17; font-size: 15px;">Rotameter Reading:</p>
                 <p id="rR" style="position: absolute; top:170px; left: 555px; width: 70px;  z-index: 1; color: #0dd635; font-size: 15px;">0.00 LPH</p>
 
-                <p style="position: absolute; top:70px; left: 230px; width: 110px;  z-index: 1; color: #ff0000; font-size: 15px;"> <b> Hot water IN </b> </p>
-                <p style="position: absolute; top:250px; left: 220px; width: 140px;  z-index: 1; color: #ff0000; font-size: 15px;"> <b> Hot water OUT</b></p>
 
                 <p style="position: absolute; top:385px; left: 180px; width: 70px;  z-index: 2; color: #0a17ca; font-size: 15px;"><b>ETHYL ACETATE</b></p>
                 <p style="position: absolute; top:395px; left: 580px; width: 70px;  z-index: 2; color: #0a17ca; font-size: 15px;"><b>NaOH</b></p>
@@ -321,11 +319,12 @@
                 <p style="position: absolute; top:390px; left: 600px;  z-index: 1; color: #64dd17; font-size: 15px;">ml</p>
                 <input style="position: absolute; top: 400px; left: 658px;" type="number" value="1" id="secondMLValue" name="length" min="1" max="999" onchange="setMLtwo();">
                 <p style="position: absolute; top:390px; left: 740px;  z-index: 1; color: #64dd17; font-size: 15px;">ml</p> -->
+            </div>
+            <div id="highlight" style="position: absolute; top: 481px; left: 649px; width: 126px; height:30px; border:5px solid yellow; border-radius:3px; visibility:hidden;"></div>
+            <button id="restart" style="position: absolute; top: 490px; left: 318px; width: 144px; font-size:13px;">Restart Experiment</button>
 
-            <button id="restartExpt" style="position: absolute; top: 490px; left: 318px; width: 144px; font-size:13px;" onclick="restartExperiment()">Restart Experiment</button>
-
-            <button id="goBackButton" style="position: absolute; top: 490px; left: 525px; width: 124px; font-size:13px;" >Experimental Data</button>
-            <button id="obserButton" style="position: absolute; top: 490px; left: 655px; width: 124px; font-size: 13px; " onclick="showObservation()">Observations</button>
+            <button id="goBackButton" style="position: absolute; top: 490px; left: 525px; width: 124px; font-size:13px;">Experimental Data</button>
+            <button id="obserButton" style="position: absolute; top: 490px; left: 655px; width: 124px; font-size: 13px; ">Observations</button>
 
             <!-- Observation table! -->
             <table id="observeTable" style="overflow-y: scroll; font-size: 12px; position:absolute; visibility: hidden; border: 1px solid #fff; width: 700px; top:50px; left: 45px;">
@@ -341,54 +340,52 @@
 
             <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
             <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
-            <img id="msg" style="position: absolute; top:145px; left: 250px; z-index:2; visibility:hidden;" src="./Images/msg.png"
-                alt="">
-            
+
+            <img id="msg" style="position: absolute; top:145px; left: 250px; z-index:2; visibility:hidden;" src="./Images/msg.png" alt="">
+
             <div id="condDiv" style="position: absolute; top:265px; left: 380px; z-index:2; visibility:hidden;">
-                <img id="conduct" src="./Images/conduct2.png" alt="">
+                <img id="conduct" src="./Images/conduct.png" alt="">
                 <p id="condVal" style="position: absolute; left:50px; top:-1px; font-size:20px; color:red; z-index:2; "></p>
-                <button id="addReading"
-                    style="position:absolute;  left:5px; top:50px; background-image: linear-gradient(to down, #FFEB99, #FED430, #E1B400, #C79F00, #a98700); width:auto; height:20px; border-radius:5px; cursor:pointer; border-color:darkgrey; z-index:2;text-align: left;color:rgb(128, 125, 125); font-size: 12.5px;">Add Current Readings</button>
+                <button id="addReading" style="position:absolute;  left:5px; top:50px; background-image: linear-gradient(to down, #FFEB99, #FED430, #E1B400, #C79F00, #a98700); width:auto; height:20px; border-radius:5px; cursor:pointer; border-color:darkgrey; z-index:2;font-size:12.5px;background-color:#d3d3d3;">Add Current Readings</button>
             </div>
-            <div id="highlight"
-                style="position: absolute; top: 481px; left: 649px; width: 126px; height:30px; border:5px solid yellow; border-radius:3px; visibility:hidden;">
-            </div>
+
         </div>
 
 
         <div id="overflow" style="visibility: hidden; position: absolute; width: 800px; height: 530px; z-index: 1000; left: 00px; top: 50px;  text-align: center; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); opacity: 0.8;">
             <p style="position: absolute;top: 180px;left:100px;font-weight: bold;font-size: 30px;">Manometric Fluid is about to Overflow.<br> Change the Manometer.</p>
         </div>
-        <div class="" id="displayExpValues" style="visibility:hidden; height: 400px; width: 700px; top: 60px; left: 70px; position: absolute; background-color: #3d3d3d; opacity: 0.8; z-index: 1000;">
-            <p style="position: absolute; top: 0px; left: 150px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
-            <p style="position: absolute; top: 60px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Reactor Volume:</p>
-            <p id="reactVol" style="position: absolute; top:60px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">1000 Liter(s)</p>
-            <p style="position: absolute; top: 90px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Stock Concentration of Ethyl Acetate:</p>
-            <p id="acetConc" style="position: absolute; top: 90px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">0.020 M</p>
-            <p style="position: absolute; top: 120px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Stock Concentration of NaOH:</p>
-            <p id="ohConce" style="position: absolute; top: 120px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">0.020 M</p>
-            <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Reaction Temperature:</p>
-            <p id="reactTemp" style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">30 degree Celsius</p>
+        <div class="" id="displayExpValues" style="visibility:hidden; height: 465px; width: 760px; top: 50px; left: 15px; position: absolute; background-color: #000; z-index: 1000; border:5px solid darkblue; border-radius:7.5px; font-weight:bold;">
+            <p style="position: absolute; top: 0px; left: 175px; width: 450px; font-size:30px; color: #fff;">Experimental Data</p>
+            <p style="position: absolute; top: 100px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Diameter of Reactor Coil :</p>
+            <p style="position: absolute; top: 100px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">33 cm</p>
+            <p style="position: absolute; top: 150px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Number of turns in the Coil :</p>
+            <p style="position: absolute; top: 150px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">5</p>
+            <p style="position: absolute; top: 200px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Diameter of Reactor tube :</p>
+            <p style="position: absolute; top: 200px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">1.1 cm</p>
+            <p style="position: absolute; top: 250px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Stock Concentration of Ethyl Acetate:</p>
+            <p id="acetConc" style="position: absolute; top: 250px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">0.020 M</p>
+            <p style="position: absolute; top: 300px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Stock Concentration of NaOH:</p>
+            <p id="ohConce" style="position: absolute; top: 300px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">0.020 M</p>
+            <p style="position: absolute; top: 350px; left: 50px; width: 350px; font-size:15px; color:#FFFF00;">Reaction Temperature:</p>
+            <p id="reactTemp" style="position: absolute; top:350px; left: 405px; width: 224px; font-size:15px; color:#39FF14;">30 degree Celsius</p>
 
         </div>
 
-        <div class="" id="observations"
-            style="visibility:hidden; height: 465px; width: 760px; top:10px; left: 15px; position: absolute; background-color: #000; z-index: 1000; border:5px solid darkblue; border-radius:7.5px;">
+        <div class="" id="observations" style="visibility:hidden; height: 465px; width: 760px; top: 50px; left: 15px; position: absolute; background-color: #000; z-index: 1000; border:5px solid darkblue; border-radius:7.5px;">
             <h1 style="position: absolute; top: -10px; left: 215px; color: #fff;">Observations</h1>
              <!-- erin -->
-             <p id="noteremsel" style="z-index: 2000; position: absolute; top: 470px; left: 20px; width: 500px; font-size:13px; color: #fff;">Click on the rows which you want to delete </p>
+             <p id="noteremsel" style="z-index: 2000; position: absolute; top: 470px; left: 15px; width: 500px; font-size:13px; color: #fff;">Click on the rows which you want to delete </p>
             <table id="observTable" style="position:absolute; left:10px; top:50px; height: 400px; width: 737.5px; background-color:lightgrey;">
-                <thead id="head">                
+                <thead id="head"></thead>
                 <tr style="background-color:grey;">
                     <th style="background-color:lightgrey;">Ethyle Acetate Flowrate <br>(Litre per Hour)
-                    <th style="background-color:lightgrey;">NaOH Flowrate <br>(Litre per Hour)
-                    <th style="background-color:lightgrey;">Conductivity <br>(milliSiemens/cm)
+                        <th style="background-color:lightgrey;">NaOH Flowrate <br>(Litre per Hour)
+                            <th style="background-color:lightgrey;">Conductivity <br>(milliSiemens/cm)
                 </tr>
             </thead>
             </table>
-        <button id="clearTable"
-            style="position:absolute;  left:300px; top: 400px; padding:10px; background-image: linear-gradient(to down, #FFEB99, #FED430, #E1B400, #C79F00, #a98700); width:auto; height:auto; border-radius:5px; cursor:pointer; border-color:darkgrey; z-index:2;" onclick="clearTable()">Clear
-            all Readings</button>
+            <button id="clearTable" style="position:absolute;  left:300px; top: 400px; padding:10px; background-image: linear-gradient(to down, #FFEB99, #FED430, #E1B400, #C79F00, #a98700); width:auto; height:auto; border-radius:5px; cursor:pointer; border-color:darkgrey; z-index:2;">Clear all Readings</button>
             <button onclick="remSelRead()" id="remSelRead" style="position:absolute;  left:50px; top:400px; padding:10px; background-image: linear-gradient(to down, #FFEB99, #FED430, #E1B400, #C79F00, #a98700); width:auto; height:auto; border-radius:5px; cursor:pointer; border-color:darkgrey; z-index:2;">Remove Selected Readings</button>
             <!-- <button onclick="remAllRead()" id="remAllRead" style="visibility: hidden; position: absolute; top: 400px; left: 290px; width:200px; font-size: 13px;z-index: 2500; background-color: #fff;">Clear All readings</button> -->
             <button onclick="emailSend()" id="emailTable" style="position:absolute;  left:500px; top:400px; padding:10px; background-image: linear-gradient(to down, #FFEB99, #FED430, #E1B400, #C79F00, #a98700); width:auto; height:auto; border-radius:5px; cursor:pointer; border-color:darkgrey; z-index:2;">Email This Table</button>
@@ -406,8 +403,14 @@
             <!-- info store for mail body -->
             <p id="info" style="visibility: hidden;"></p>
         </div>
-            </div>
-            <!-- canvas 4 end  -->
+        
+
+        <!-- <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
+<p id="q"></p><select id="answer" >	
+</select>
+<p id="a"></p>
+</div> -->
+
 
         <!--Trial text	-->
         <div id="">
@@ -427,8 +430,7 @@
             <!-- <script> -->
             <!-- document.write(new Date().getFullYear()); -->
             <!-- </script>  -->
-            SOLVE - The Virtual Lab @ NITK Surathkal
-        </div>
+            SOLVE - The Virtual Lab @ NITK Surathkal</div>
 </body>
 
 </html>
