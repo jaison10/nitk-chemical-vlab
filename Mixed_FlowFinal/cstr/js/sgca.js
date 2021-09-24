@@ -185,6 +185,10 @@ function magic() {
             document.getElementById("step4Heading").innerText = "Experiment";
             // document.getElementById("obserButton").onclick = "";
             document.getElementById("goBackButton").onclick = function() {
+                document.getElementById("emailSend").style.visibility = "hidden";
+                document.getElementById("noteremsel").style.visibility = "hidden";
+                
+                
                 if (dataOn == 0) {
                     document.getElementById("displayExpValues").style.visibility ="visible";
                     document.getElementById("observations").style.visibility = "hidden";

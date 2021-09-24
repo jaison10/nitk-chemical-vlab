@@ -78,7 +78,7 @@ function goToStart(id) {
 
 function changeOriginal(id) {
     var r = document.getElementById(id);
-    r.innerText = "Reaction Kinetic Studies in Mixed Flow Reactor";
+    r.innerText = "Reaction Kinetic Studies in Plug Flow Reactor";
     //xx-large
     // r.style.fontSize = "20px";
     // r.style.paddingTop="2px";
@@ -187,6 +187,10 @@ function magic() {
             document.getElementById("step4Heading").innerText = "Experiment";
             document.getElementById("obserButton").onclick = "";
             document.getElementById("goBackButton").onclick = function() {
+                document.getElementById("emailSend").style.visibility = "hidden";
+                document.getElementById("noteremsel").style.visibility = "hidden";
+                
+                
                 // erin
                 if (dataOn == 0) {
                     document.getElementById("displayExpValues").style.visibility ="visible";
