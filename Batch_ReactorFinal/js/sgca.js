@@ -1075,7 +1075,7 @@ function addReadingsToTable()
 	document.getElementById("highlight").style.visibility="visible";
 	$("#observTable").queue(function (generate_table) 
 	{
-        $(this).append("<tr style='text-align:center;'><td>"+minToSec+"</td><td>"+actCond.toFixed(2)+"</td></tr>");
-		generate_table(); 
+		$(this).append("<thead><tr style='text-align:center;'><td>" + eaLPH + "</td><td>" + shLPH + "</td><td>" + conductivity + "</td></tr></thead>");
+		generate_table();
     });
 }
