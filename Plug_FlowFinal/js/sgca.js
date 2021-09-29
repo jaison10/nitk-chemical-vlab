@@ -249,7 +249,8 @@ function magic() {
 
             document.getElementById("experimentID").style.visibility = "visible";
             document.getElementById("obserButton").style.visibility = "visible";
-        } else {
+        } 
+        else {
             console.log("2 has chosen");
         }
         document.getElementById("restart").onclick = function() {
@@ -1082,7 +1083,7 @@ function addReadingsToTable(eaLPH, shLPH, conductivity) {
     document.getElementById("highlight").style.visibility = "visible";
     $("#observTable").delay(900)
         .queue(function(generate_table) {
-            $(this).append("<tr style='text-align:center;'><td>" + eaLPH + "</td><td>" + shLPH + "</td><td>" + conductivity + "</td></tr>");
+            $(this).append("<thead><tr style='text-align:center;'><td>" + eaLPH + "</td><td>" + shLPH + "</td><td>" + conductivity + "</td></tr></thead>");
             generate_table();
         });
 }
