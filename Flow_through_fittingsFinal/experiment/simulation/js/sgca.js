@@ -350,10 +350,10 @@ function gotoLabel() {
         document.getElementById("setupButton").style.cursor = "pointer";
         document.getElementById("setupButton").onclick = function() {
             // erii
-             document.getElementById("noteremsel").style.visibility = "hidden";
+            document.getElementById("noteremsel").style.visibility = "hidden";
             gotoSetup();
         }
-    
+
     } else if (chosenActivity == 2) {
         document.getElementById("demoButtonEval").onclick = function() {
             // console.log("Pressed demo");
@@ -385,7 +385,10 @@ function gotoSetup() {
 
     document.getElementById("expButton").style.cursor = "pointer";
     document.getElementById("expButton").onclick = function() {
+        numberOfVisit = 1;
+
         document.getElementById('overflow').style.visibility = "hidden";
+
         gotoExp();
     }
     if (chosenActivity == 2) {
@@ -445,7 +448,7 @@ function gotoExp() {
         numberOfVisit = 0;
     }
     // console.log("Experiment part.");
-    
+
     // erin   
     document.getElementById("emailreq").style.visibility = "hidden";
     document.getElementById("emailSend").style.visibility = "hidden";
@@ -454,13 +457,13 @@ function gotoExp() {
     document.getElementById("remAllRead").style.visibility = "hidden";
     document.getElementById("obcanvas").style.visibility = "hidden";
     document.getElementById("noteremsel").style.visibility = "hidden";
-    
+
     document.getElementById("displayExpValues").style.visibility = "hidden";
     for (temp = 0; temp <= 6; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
     }
     simsubscreennum = 4;
-//erinn
+    //erinn
     document.getElementById('canvas' + simsubscreennum).style.visibility = "visible";
     magic();
 
@@ -489,13 +492,13 @@ function gotoExp() {
         document.getElementById("emailTable").style.visibility = "hidden";
         document.getElementById("noteremsel").style.visibility = "hidden";
 
-    // document.getElementById('canvas' + simsubscreennum).style.visibility = "visible";
-    // magic();
-    // var flag = false;
-    // document.getElementById("experiButton").onclick = function() {
-    //     console.log("Clicking on exp button inside fluidMove");
-    //     flag = !flag;
-    //     displayExpValues(flag);
+        // document.getElementById('canvas' + simsubscreennum).style.visibility = "visible";
+        // magic();
+        // var flag = false;
+        // document.getElementById("experiButton").onclick = function() {
+        //     console.log("Clicking on exp button inside fluidMove");
+        //     flag = !flag;
+        //     displayExpValues(flag);
     }
 
     document.getElementById("setupButton").onclick = function() {
@@ -642,32 +645,34 @@ var chosenActivity
 
 function selectAction(n) {
     chosenActivity = n
-    // console.log(chosenActivity);
+        // console.log(chosenActivity);
     simsubscreennum = 5;
     gotoPage5();
 }
 
 var Fittingused = "Elbow";
+var k = 0.4;
 
 function setFittingused() {
     Fittingused = document.getElementById("fittingType").value;
     // console.log(Fittingused);
+
+    if (Fittingused == "Elbow")
+        k = 0.4;
+    else if (Fittingused == "Tee-Line Flow")
+        k = 0.4;
+    else if (Fittingused == "Tee-Branch Flow")
+        k = 1;
+    else if (Fittingused == "Half Opened Globe Valve")
+        k = 9.5;
+    else if (Fittingused == "Fully Opened Globe Valve")
+        k = 6;
+    else if (Fittingused == "Gate Valve")
+        k = 0.17;
+    else if (Fittingused == "Swing Check Valve")
+        k = 2;
+
 }
-var k;
-if (Fittingused == "Elbow")
-    k = 0.4;
-else if (Fittingused == "Elbow")
-    k = 0.4;
-else if (Fittingused == "Elbow")
-    k = 1;
-else if (Fittingused == "Elbow")
-    k = 9.5;
-else if (Fittingused == "Elbow")
-    k = 6;
-else if (Fittingused == "Elbow")
-    k = 0.17;
-else if (Fittingused == "Elbow")
-    k = 2;
 
 // console.log("k: " + k);
 
@@ -700,7 +705,7 @@ area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
 
 var processFluid = "Water";
 var densitypf = 1000;
-var viscositypf = 0.001;
+var viscositypf = 0.00085;
 var manoFluid = "Carbon tetrachloride"
 var mfdensity = 1600;
 
@@ -710,7 +715,7 @@ function setProcessFluid() {
 
     if (processFluid == "Water") {
         densitypf = 1000;
-        viscositypf = 0.001;
+        viscositypf = 0.00085;
     } else if (processFluid == "Kerosene") {
         densitypf = 820;
         viscositypf = 0.00215;
@@ -822,7 +827,7 @@ function fluidMoveAndPinMove(angle) {
     frictionFactor = 0.079 / (Math.pow(Nre, 0.25));
     if (Nre > 4000) {
         document.getElementById('infoAboutWhatToDo').innerText = "Click on the Gatewall to rotate it in anticlockwise direction."
-        // console.log("ff: " + frictionFactor);
+            // console.log("ff: " + frictionFactor);
 
 
 
@@ -896,8 +901,8 @@ function fluidMoveAndPinMove(angle) {
     // console.log("The h2 final val is: ", h2Final);
 
     if (h1Final >= 69) {
-        h1Final = 70;
-        h2Final = 0;
+        h1Final = (70).toFixed(2);
+        h2Final = (0).toFixed(2);
         document.getElementById("leftCm").innerText = (h1Final);
         document.getElementById("rightCm").innerText = (h2Final);
         document.getElementById("ratoReadings").innerText = (valOfRatoNew);
@@ -1079,7 +1084,7 @@ function sendEmail() {
 
 function setemail(val) {
     emid = val
-    // console.log(emid);
+        // console.log(emid);
 }
 
 function remSelRead() {
@@ -1213,14 +1218,14 @@ function gotoObservation() {
 
     // document.getElementById("observeTable").style.visibility = "hidden";
     document.getElementById("setupButton").onclick = function() {
-    document.getElementById('overflow').style.visibility = "hidden";
-    document.getElementById('obcanvas').style.visibility = "hidden";
-    document.getElementById("remSelRead").style.visibility = "hidden";
-    document.getElementById("remAllRead").style.visibility = "hidden";
-    document.getElementById("emailTable").style.visibility = "hidden";
-    document.getElementById("noteremsel").style.visibility = "hidden";
-    document.getElementById("emailreq").style.visibility = "hidden";
-    document.getElementById("emailSend").style.visibility = "hidden";
+        document.getElementById('overflow').style.visibility = "hidden";
+        document.getElementById('obcanvas').style.visibility = "hidden";
+        document.getElementById("remSelRead").style.visibility = "hidden";
+        document.getElementById("remAllRead").style.visibility = "hidden";
+        document.getElementById("emailTable").style.visibility = "hidden";
+        document.getElementById("noteremsel").style.visibility = "hidden";
+        document.getElementById("emailreq").style.visibility = "hidden";
+        document.getElementById("emailSend").style.visibility = "hidden";
         goBacktoStep2();
     }
 }
@@ -1398,7 +1403,8 @@ function setEvalSets() {
 }
 
 var lpm, pres, reyn, fric, area2;
-var den, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hw, calculatedFricFact;
+var den, lpmConvVelocity, visco = 0.00085,
+    calculatedReyn, denMano, presInMeter, hw, calculatedFricFact;
 
 function evaluateConfig() {
     document.getElementById('evalBtn').onclick = "";
@@ -1434,29 +1440,34 @@ function evaluateConfig() {
         if (processFluidEval == "Water") {
             den = 1000;
             // visco = 0.89;
-            visco = 0.001;
+            visco = 0.00085;
         } else if (processFluidEval == "Kerosene") {
             den = 820;
             // visco = 0.00164;
             visco = 0.00215;
         }
         // diaMeter = chosenPipeDiaEval / 39.37; // convert inch to meter
-        area2 = (3.14 * diaMeter * diaMeter) / 4;
+        area2 = (Math.PI * diaMeter * diaMeter) / 4;
         // console.log("Area: ", area2);
+        // this.flowrate = Number(((335 - this.rotameter_mc.float_mc.y) / 6).toFixed(2)) / 60000;
+        // this.velocity = this.flowrate / (Math.PI * this.pipedia * this.pipedia / 4);
+        // this.reynolds = this.rho * this.pipedia * this.velocity / (this.visco / 1000);
+        // this.hw = this.k * this.velocity * this.velocity / (2 * 9.8);
+        // this.hf = this.hw * this.rho / (this.rhom - this.rho);
+        // this.h1_txt.text = "h1 : " + String((35 + this.hf * 50).toFixed(1)) + " cm";
+        // this.h2_txt.text = "h2 : " + String((35 - this.hf * 50).toFixed(1)) + " cm";
+        // if(Number((this.hf * 100).toFixed(2)) > 70)
+        // {
+        //    this.popup_mc.visible = true;
+        //    this.h1_txt.text = "h1 : 70 cm";
+        //    this.h2_txt.text = "h2 : 0 cm";
+        //    Object(parent).tabSetup_btn.enabled = true;
+        //    Object(parent).tabSetup_btn.addEventListener(MouseEvent.CLICK,Object(parent).zIndex);
+        //    this.start_btn.visible = true;
+        // }
 
-        // console.log("Diameter is inch: ", chosenPipeDiaEval);
-        // console.log("Diameter of the pipe in meter is: ", diaMeter);
-        // console.log("Radius is: ", (diaMeter / 2));
         lpmConvVelocity = (lpm) / (60000 * area2); // convert lpm to m3/s              V E L O C I T Y
-        // console.log("Velocity value is: ", lpmConvVelocity);
-        // if(manoFluidEval == "Carbon tetrachloride"){
-        // 	visco = 0.901;
-        // }
-        // else if(manoFluidEval == "Mercury"){
-        // 	visco = 1.55;
-        // }
-        // console.log("Viscosity value of " + processFluid + " at 20 deg C is: ", visco);
-        // console.log("Density of " + processFluidEval + " fluid is: ", den);
+
         // Calculate Reynold's
         calculatedReyn = ((den * diaMeter * lpmConvVelocity) / visco);
         calculatedReyn = calculatedReyn.toFixed(5); // ======    toFixed(5)
@@ -1472,6 +1483,7 @@ function evaluateConfig() {
             denMano = 13600;
         }
         // console.log("Manometric density value of " + manoFluidEval + " is: ", denMano);
+        // this.hw = this.k * this.velocity * this.velocity / (2 * 9.8);
 
         // calculate hf value		
         hw = ((denMano - den) * presInMeter) / den;;
@@ -1481,15 +1493,14 @@ function evaluateConfig() {
         // calculate FF
         calculatedFricFact = 0.079 / Math.pow(calculatedReyn, 0.25);
         // calculatedFricFact = calculatedFricFact * 10000;
-        calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
+        // calculatedFricFact = calculatedFricFact.toFixed(5); //========     toFixed(5)
         // calculate hf value		
         // console.log(denMano);
         // console.log(den);
         // console.log(pres);
-        hw = (denMano - den) * pres / den / 100000;
+        // hw = (denMano - den) * pres / den / 100000;
         // console.log("Calculated hf value's: ", hw);
         // console.log("Calculated F F value is: ", calculatedFricFact);
-
 
         lengthEval = ((2 * 9.81 * hw) / (4 * calculatedFricFact * lpmConvVelocity * lpmConvVelocity)).toFixed(3);
         // console.log("The length is: ", lengthEval);
