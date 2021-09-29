@@ -1449,22 +1449,6 @@ function evaluateConfig() {
         // diaMeter = chosenPipeDiaEval / 39.37; // convert inch to meter
         area2 = (Math.PI * diaMeter * diaMeter) / 4;
         // console.log("Area: ", area2);
-        // this.flowrate = Number(((335 - this.rotameter_mc.float_mc.y) / 6).toFixed(2)) / 60000;
-        // this.velocity = this.flowrate / (Math.PI * this.pipedia * this.pipedia / 4);
-        // this.reynolds = this.rho * this.pipedia * this.velocity / (this.visco / 1000);
-        // this.hw = this.k * this.velocity * this.velocity / (2 * 9.8);
-        // this.hf = this.hw * this.rho / (this.rhom - this.rho);
-        // this.h1_txt.text = "h1 : " + String((35 + this.hf * 50).toFixed(1)) + " cm";
-        // this.h2_txt.text = "h2 : " + String((35 - this.hf * 50).toFixed(1)) + " cm";
-        // if(Number((this.hf * 100).toFixed(2)) > 70)
-        // {
-        //    this.popup_mc.visible = true;
-        //    this.h1_txt.text = "h1 : 70 cm";
-        //    this.h2_txt.text = "h2 : 0 cm";
-        //    Object(parent).tabSetup_btn.enabled = true;
-        //    Object(parent).tabSetup_btn.addEventListener(MouseEvent.CLICK,Object(parent).zIndex);
-        //    this.start_btn.visible = true;
-        // }
 
         lpmConvVelocity = (lpm) / (60000 * area2); // convert lpm to m3/s              V E L O C I T Y
 
