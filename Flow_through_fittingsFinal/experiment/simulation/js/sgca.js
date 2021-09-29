@@ -1403,7 +1403,7 @@ function setEvalSets() {
 }
 
 var lpm, pres, reyn, fric, area2;
-var den, lpmConvVelocity, visco = 0.00085,
+var den, lpmConvVelocity, visco = 0.001,
     calculatedReyn, denMano, presInMeter, hw, calculatedFricFact;
 
 function evaluateConfig() {
@@ -1440,7 +1440,7 @@ function evaluateConfig() {
         if (processFluidEval == "Water") {
             den = 1000;
             // visco = 0.89;
-            visco = 0.00085;
+            visco = 0.001;
         } else if (processFluidEval == "Kerosene") {
             den = 820;
             // visco = 0.00164;
@@ -1470,8 +1470,8 @@ function evaluateConfig() {
         // this.hw = this.k * this.velocity * this.velocity / (2 * 9.8);
 
         // calculate hf value		
-        hw = ((denMano - den) * presInMeter) / den;;
-        // console.log("Calculated hf value's: ", hw);
+        hw = ((denMano - den) * presInMeter) / den;
+        console.log("Calculated hf value's: ", hw);
 
         // console.log("Length of pipe is: ", pipeLengthEval);
         // calculate FF
@@ -1484,10 +1484,10 @@ function evaluateConfig() {
         // console.log(pres);
         // hw = (denMano - den) * pres / den / 100000;
         // console.log("Calculated hf value's: ", hw);
-        // console.log("Calculated F F value is: ", calculatedFricFact);
+        console.log("Calculated F F value is: ", calculatedFricFact);
 
-        lengthEval = ((2 * 9.81 * hw) / (4 * calculatedFricFact * lpmConvVelocity * lpmConvVelocity)).toFixed(3);
-        // console.log("The length is: ", lengthEval);
+        lengthEval = ((2 * 9.81 * hw) / (4 * calculatedFricFact * lpmConvVelocity * lpmConvVelocity)).toFixed(2);
+        console.log("The length is: ", lengthEval);
         if (isNaN(lengthEval)) {
             lengthEval = 0;
         }
