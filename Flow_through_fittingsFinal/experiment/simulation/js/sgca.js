@@ -705,7 +705,7 @@ area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
 
 var processFluid = "Water";
 var densitypf = 1000;
-var viscositypf = 0.00085;
+var viscositypf = 0.001;
 var manoFluid = "Carbon tetrachloride"
 var mfdensity = 1600;
 
@@ -715,7 +715,7 @@ function setProcessFluid() {
 
     if (processFluid == "Water") {
         densitypf = 1000;
-        viscositypf = 0.00085;
+        viscositypf = 0.001;
     } else if (processFluid == "Kerosene") {
         densitypf = 820;
         viscositypf = 0.00215;
