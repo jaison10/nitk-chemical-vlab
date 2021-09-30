@@ -664,26 +664,7 @@ var chosenPipeDia = 0.25;
 var actualPipeDia = 0.0092;
 var area;
 
-function setPipeDia() {
-    chosenPipeDia = document.getElementById("pipeDiaSelect").value;
-    // console.log(chosenPipeDia);
-
-    if (chosenPipeDia == 0.25)
-        actualPipeDia = 0.0092;
-    else if (chosenPipeDia == 0.50)
-        actualPipeDia = 0.0157;
-    else if (chosenPipeDia == 1.00)
-        actualPipeDia = 0.0266;
-    else if (chosenPipeDia == 1.50)
-        actualPipeDia = 0.0408;
-
-    // console.log("ActDia: " + actualPipeDia);
-    area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
-    // console.log("area1 " + area);
-}
-
-
-area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+// erin
 // console.log("area1 " + area);
 var chosenVenturiTube = "Welded Tube";
 var a = 0.7030497,
@@ -721,8 +702,34 @@ var chosenVenturiDia = 0.3;
 
 function setVenturiDia() {
     chosenVenturiDia = document.getElementById("venturiDia").value;
+
+    area = (3.14 * Math.pow(chosenVenturiDia, 2)) / 4;
+    // console.log("area1 " + area);
     // console.log(chosenVenturiDia);
 }
+area = (3.14 * Math.pow(chosenVenturiDia, 2)) / 4;
+
+// erinend
+function setPipeDia() {
+    chosenPipeDia = document.getElementById("pipeDiaSelect").value;
+    // console.log(chosenPipeDia);
+
+    if (chosenPipeDia == 0.25)
+        actualPipeDia = 0.0092;
+    else if (chosenPipeDia == 0.50)
+        actualPipeDia = 0.0157;
+    else if (chosenPipeDia == 1.00)
+        actualPipeDia = 0.0266;
+    else if (chosenPipeDia == 1.50)
+        actualPipeDia = 0.0408;
+
+    // console.log("ActDia: " + actualPipeDia);
+    
+}
+
+
+
+
 
 
 var processFluid = "Water";
@@ -842,7 +849,7 @@ function fluidMoveAndPinMove(angle) {
     //Added by Haneena 
 
 
-    area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+    area = (3.14 * Math.pow(chosenVenturiDia, 2)) / 4;
     // console.log("area1 " + area);
     //first step of Calculation: Velocity
     var velocity = 0.0;
@@ -874,8 +881,8 @@ function fluidMoveAndPinMove(angle) {
     dh = hf * densitypf / (mfdensity - densitypf);
 
     // console.log("codExp: " + codExp);
-    // console.log("hf: " + hf);
-    // console.log("dh: " + dh);
+     console.log("hf: " + hf);
+     console.log("dh: " + dh);
 
     // codExp = a + (b * Math.pow(lnNre, 2)) + (c * (Math.pow(lnNre), 3));
     // console.log("codExp: " + codExp);
@@ -932,8 +939,8 @@ function fluidMoveAndPinMove(angle) {
 
     h1Final = h1New.toFixed(2);
     h2Final = h2New.toFixed(2);
-    // console.log("The h1 final val is: ", h1Final);
-    // console.log("The h2 final val is: ", h2Final);
+     console.log("The h1 final val is: ", h1Final);
+     console.log("The h2 final val is: ", h2Final);
 
     heightLeft = (356 - angle) * 0.093;
     heightLeftNew = heightLeft.toFixed(0);
@@ -1436,8 +1443,7 @@ function setPipeDiaEval() {
         actDiaEval = 0.0408;
 
     // console.log("ActDia: " + actDiaEval);
-    areaEval = (3.14 * Math.pow(actDiaEval, 2)) / 4;
-    // console.log("area1 " + area);
+   
 }
 
 var chosenVenturiDiaEval = 0.3;
@@ -1445,6 +1451,9 @@ var chosenVenturiDiaEval = 0.3;
 function setVenturiDiaEval() {
     chosenVenturiDiaEval = document.getElementById("venturiDiaEval").value;
     console.log(chosenVenturiDiaEval);
+
+    areaEval = (3.14 * Math.pow(chosenVenturiDiaEval, 2)) / 4;
+    // console.log("area1 " + area);
 }
 
 var processFluidEval = "Water"
@@ -1529,7 +1538,7 @@ function evaluateConfig() {
             // visco = 0.00164;
             visco = 0.00215;
         }
-        diaMeter = actDiaEval; // convert inch to meter
+        diaMeter = chosenVenturiDiaEval; // convert inch to meter
         // console.log("diaMeter: ", diaMeter);
 
         areaEval = (3.14 * diaMeter * diaMeter) / 4;

@@ -56,7 +56,7 @@ function goToStart(id) {
 
 function changeOriginal(id) {
     var r = document.getElementById(id);
-    r.innerText = "Flow Through Orifice";
+    r.innerText = "Flow Through Orifice Meter";
     //xx-large
     // r.style.fontSize = "20px";
     // r.style.paddingTop="2px";
@@ -660,7 +660,7 @@ var chosenActivity
 
 function selectAction(n) {
     chosenActivity = n
-    // console.log(chosenActivity);
+        // console.log(chosenActivity);
     simsubscreennum = 5;
     gotoPage5();
 }
@@ -668,7 +668,7 @@ function selectAction(n) {
 var Oridia = 0.1;
 
 function setoriDia() {
-    Oridia = document.getElementById("orificeDia").value;
+    Oridia = document.getElementById("oriDia").value;
     // console.log(Oridia);
 }
 
@@ -713,12 +713,12 @@ function setPipeDia() {
         actualPipeDia = 0.0408;
 
     // console.log("ActDia: " + actualPipeDia);
-    area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+    // area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
     // console.log("area1 " + area);
 }
 
 
-area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
+// area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
 // console.log("area1 " + area);
 var processFluid = "Water";
 var densitypf = 1000;
@@ -736,7 +736,7 @@ function setProcessFluid() {
     } else if (processFluid == "Kerosene") {
         densitypf = 820;
         viscositypf = 0.00215;
-     }
+    }
     // console.log("dpf: " + densitypf);
     // console.log("vpf: " + viscositypf);
 
@@ -834,11 +834,11 @@ function fluidMoveAndPinMove(angle) {
         // console.log("multiplier: 0.0198"); //prior;0.1066..for mercury maxrota-37.92
 
     } else {
-        valOfRato = (356 - angle) * 0.0339;
+        valOfRato = (356 - angle) * 0.0539;
         // console.log("multiplier: 0.3158"); //prior;0.1066..for mercury maxrota-6.53
 
     }
-    // console.log("Val of Rato is ", valOfRato);
+    console.log("Val of Rato is ", valOfRato);
 
     if (valOfRato < 0) {
         valOfRato = 0;
@@ -854,44 +854,58 @@ function fluidMoveAndPinMove(angle) {
     //Added by Haneena 
 
 
-    area = (3.14 * Math.pow(actualPipeDia, 2)) / 4;
-    // console.log("area1 " + area);
+    area = (3.14 * Math.pow(Oridia, 2)) / 4;
+    console.log("area1 " + area);
     //first step of Calculation: Velocity
     var velocity = 0.0;
 
     velocity = valOfRatoNew / (60000 * area);
-    // console.log("velocity: " + velocity);
+    console.log("velocity: " + velocity);
     // console.log("densitypf: " + densitypf);
     // console.log("viscositypf: " + viscositypf);
 
     //2- Reynold's number
     var Nre = 0.0;
     // this.rho * this.pipedia * this.velocity / (this.visco 
-    Nre = (actualPipeDia * velocity * densitypf) / viscositypf;
-    // console.log("Nre: " + Nre);
+    Nre = (Oridia * velocity * densitypf) / viscositypf;
+    console.log("Nre: " + Nre);
     lnNre = Math.log(Nre);
     // console.log("eq1: " + lnNre);
 
 
 
-    // console.log("Oridia:before: " + Oridia);
+    console.log("Oridia:before: " + Oridia);
     // console.log("actualPipeDia:before: " + actualPipeDia);
     betaExp = Oridia / 100 / actualPipeDia;
-    // console.log("betaExp: after:" + betaExp);
+    console.log("betaExp: after:" + betaExp);
+
+    if (betaExp < 0) {
+        document.getElementById("infoAboutWhatToDo").innerText = "Orifice diameter is greater than Pipe diameter";
+
+    } else {
+        document.getElementById("infoAboutWhatToDo").innerText = "Click on Gatewall to rotate it."
+
+    }
+
+
 
     codExp = 0.00;
     hf = 0.00;
     dh = 0.00;
-    // console.log("L1:" + L1);
-    // console.log("L2:" + L2);
+    console.log("L1:" + L1);
+    console.log("L2:" + L2);
     codExp = 0.5961 + 0.0261 * betaExp * betaExp - 0.216 * Math.pow(betaExp, 8) + 0.000521 * Math.pow(1000000 * betaExp / Nre, 0.7) + (0.0188 + 0.0063 * Math.pow(19000 * betaExp / Nre, 0.8)) * Math.pow(1000000 / Nre, 0.3) * Math.pow(betaExp, 3.5) + (0.043 + 0.08 * Math.exp(-10 * L1) - 0.123 * Math.exp(-7 * L1)) * (1 - 0.11 * Math.pow(19000 * betaExp / Nre, 0.8)) * (Math.pow(betaExp, 4) / (1 - Math.pow(betaExp, 4))) - 0.031 * (2 * L2 / (1 - betaExp) - 0.8 * Math.pow(2 * L2 / (1 - betaExp), 1.1)) * Math.pow(betaExp, 1.3);
     hf = (1 - Math.pow(betaExp, 4)) / 2 / 9.8 / Math.pow(codExp / velocity, 2);
-    dh = hf * densitypf / (mfdensity - densitypf);
+    dh = hf * densitypf * 10000 / (mfdensity - densitypf);
+    console.log("codExp: " + codExp);
+    console.log("hf: " + hf);
+    console.log("dh: " + dh);
+
     // cdeq1 = -10 * L1;
     // cdeq2 = -7 * L1;
     // console.log("cdeq1:" + cdeq1);
     // console.log("cdeq2:" + cdeq2);
-    e = 2.7182;
+    // e = 2.7182;
     // c1 = 0.5961 + (0.0261 * Math.pow(betaExp, 2)) - (0.216 * Math.pow(betaExp, 8)) + (0.000521 * Math.pow((1000000 * betaExp / Nre), 0.7));
     // c2 = (0.0188 + (0.0063 * Math.pow((19000 * betaExp / Nre), 0.8))) * (Math.pow((1000000 / Nre), 0.3) * Math.pow(betaExp, 3.5));
     // c3 = (0.043 + 0.08 * Math.pow(e, cdeq1) - 0.123 * Math.pow(e, cdeq2));
@@ -925,7 +939,7 @@ function fluidMoveAndPinMove(angle) {
     // console.log("divided by  " + 2 * 9.81 * eq2);
     // console.log("hfpart2  " + (Math.pow(betaExp, 4) / (2 * 9.81 * eq2)));
 
-    console.log("hf: " + hf);
+    // console.log("hf: " + hf);
 
 
     //5- Difference in manometer readings, delta H=h1-h2
@@ -953,15 +967,15 @@ function fluidMoveAndPinMove(angle) {
     // console.log("h= " + halfDeltaH);
     // console.log("h1= " + h1New);
     // console.log("h2= " + h2New);
-    h1New = 35.00 + dh * 50;
-    // console.log("The h1 new dec fixed is: ", h1New);
-    h2New = 35.00 - dh * 50;
-    // console.log("The h2 new dec fixed is: ", h2New);
+    h1New = 35.00 + (dh * 50);
+    console.log("The h1 new dec fixed is: ", h1New);
+    h2New = 35.00 - (dh * 50);
+    console.log("The h2 new dec fixed is: ", h2New);
 
     h1Final = h1New.toFixed(2);
     h2Final = h2New.toFixed(2);
-    // console.log("The h1 final val is: ", h1Final);
-    // console.log("The h2 final val is: ", h2Final);
+    console.log("The h1 final val is: ", h1Final);
+    console.log("The h2 final val is: ", h2Final);
     if (h1Final < 70) {
         document.getElementById('overflow').style.visibility = "hidden";
 
@@ -996,7 +1010,7 @@ function fluidMoveAndPinMove(angle) {
         // console.log("Overflow condition");
         document.getElementById('overflow').style.visibility = "visible";
         if (manoFluid == "Mercury") {
-            document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer.";
+            document.getElementById('overflowMessage').innerHTML = "Manometric Fluid is about to Overflow.<br> Change the Manometer. Please increase Orifice diameter since the current Orifice diameter is giving a high Pressure drop. ";
             // console.log("Overflow mercury");
 
         } else
@@ -1166,7 +1180,7 @@ function sendEmail() {
 
 function setemail(val) {
     emid = val
-    // console.log(emid);
+        // console.log(emid);
 }
 
 function remSelRead() {
@@ -1380,10 +1394,10 @@ function goBacktoStep2() {
 
 // ============================  EVALUATION PART
 
-var pipeLengthEval = 1;
+var OridiaEval = 0.1;
 
-function setPipeLengthEval() {
-    pipeLengthEval = document.getElementById("pipeLengthEval").value;
+function setOriEval() {
+    OridiaEval = document.getElementById("OriEval").value;
     // console.log(pipeLengthEval);
 }
 
@@ -1405,7 +1419,7 @@ function setPipeDiaEval() {
         actDiaEval = 0.0408;
 
     // console.log("ActDia: " + actDiaEval);
-    areaEval = (3.14 * Math.pow(actDiaEval, 2)) / 4;
+    // areaEval = (3.14 * Math.pow(actDiaEval, 2)) / 4;
     // console.log("area1 " + area);
 }
 
@@ -1463,7 +1477,8 @@ function setEvalSets() {
 }
 
 var lpm, pres, reyn, fric, cod, sideEq1, sideEq2, sideEq1final, sideEq2final;
-var den, area2, diaMeter, lpmConvVelocity, visco, calculatedReyn, denMano, presInMeter, hf, calculatedFricFact, beta;
+var den, area2, diaMeter, lpmConvVelocity, visco = 0.001,
+    calculatedReyn, denMano, presInMeter, hf, calculatedFricFact, beta;
 
 function evaluateConfig() {
     var table = document.getElementById("configInputTable");
@@ -1495,7 +1510,7 @@ function evaluateConfig() {
         diaMeter = actDiaEval; // convert inch to meter
         // console.log("diaMeter: ", diaMeter);
 
-        areaEval = (3.14 * diaMeter * diaMeter) / 4;
+        areaEval = (3.14 * OridiaEval * OridiaEval) / 4;
         // console.log("Area: ", areaEval);
         // console.log("Diameter is inch: ", chosenPipeDiaEval);
         // console.log("Diameter of the pipe in meter is: ", diaMeter);
@@ -1511,7 +1526,7 @@ function evaluateConfig() {
         // console.log("Viscosity value of " + processFluid + " at 20 deg C is: ", visco);
         // console.log("Density of " + processFluidEval + " fluid is: ", den);
         // Calculate Reynold's
-        calculatedReyn = ((den * diaMeter * lpmConvVelocity) / visco);
+        calculatedReyn = ((den * OridiaEval * lpmConvVelocity) / visco);
         calculatedReyn = calculatedReyn.toFixed(5); // ======    toFixed(5)
         // console.log("Calculated Reynold's value is: ", calculatedReyn);
 
@@ -1531,7 +1546,7 @@ function evaluateConfig() {
         // console.log("Calculated hf value's: ", hf);
 
         //beta=Orifice diameter/Actual Dia
-        beta = Oridia / 100 / diaMeter;
+        beta = OridiaEval / 100 / diaMeter;
         // console.log(beta);
         sideEq1 = 1 - Math.pow(beta, 4);
         // console.log("sideEq1: " + sideEq1);
